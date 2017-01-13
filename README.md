@@ -21,11 +21,10 @@
 - 金句卡：`STC`-sentence
 - 行动卡：`ACT`-action
 - 技巧卡：`TIP`-tips
-- 任意卡：`FRE`-free
+- 主题卡：`SUB`-subject
 - 灵感卡：`INS`-inspiration
 - 读书笔记卡：`BOK`-book
 - 文章笔记卡：`ART`-artical
-- 论文笔记卡：`PAP`-paper
 - 演讲笔记卡：`SPC`-speech
 - 卡片模板：`TEMPLATE`
 - hacking：trouble shooting
@@ -38,7 +37,7 @@
 
 > //TODO
 
-## 索引
+## 主题索引
 
 > //TODO
 
@@ -63,6 +62,7 @@ change log:
 
 	- 初稿（2017-01-08）
 	- 托管到GitHub（2017-01-12）
+	- 修改卡片分类（2017-01-13）
 
 ---
 
