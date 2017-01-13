@@ -1,6 +1,11 @@
 
 # 让 Spotlight 全文检索 Markdown 文件
 
+macOS 中的 Spotlight 默认情况下是不对 Markdown 文件（文件名后缀为 .md ）建立全文索引的，因此无法在 Spotlight 中搜索到 Markdown 文件中的内容。
+但是我们可以通过手动修改 Spotlight 的配置，让它支持 Markdown 文件的全文检索。
+
+具体步骤如下：
+
 ## 进入恢复模式，关闭系统文件保护
 
 * 重启 macOS ，按住 `Command + R` 直到屏幕出现 Apple logo ，进入恢复模式
