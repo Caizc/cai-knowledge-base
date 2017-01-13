@@ -3,18 +3,18 @@
 
 ## 进入恢复模式，关闭系统文件保护
 
-* 重启 Mac OS ，按住 `Command + R` 直到屏幕出现 Apple logo ，进入恢复模式
+* 重启 macOS ，按住 `Command + R` 直到屏幕出现 Apple logo ，进入恢复模式
 * 选择中文为界面显示语言
 * 选择 工具 > 终端
 * 在终端中输入 `csrutil disable` 然后按 `Enter`
-* 重启 Mac OS，正常进入系统
+* 重启 macOS，正常进入系统
 
 ## 修改 Spotlight 配置并重建索引
 
 * 打开终端，输入以下命令
 
 ```
-cd /System/Library/Spotlight/RichText.mdimporter/Contents/Info.plist
+cd /System/Library/Spotlight/RichText.mdimporter/Contents
 sudo vi Info.plist
 ```
 
@@ -36,11 +36,11 @@ sudo mdutil -E /
 
 ## 进入恢复模式，重新开启系统文件保护
 
-* 再次重启 Mac OS ，按住 `Command + R` 直到屏幕出现 Apple logo ，重新开启系统文件保护
+* 再次重启 macOS ，按住 `Command + R` 直到屏幕出现 Apple logo ，重新开启系统文件保护
 * 选择中文为界面显示语言
 * 选择 工具 > 终端
 * 在终端中输入 `csrutil enable` 然后按 `Enter`
-* 重启 Mac OS 即可继续正常使用了
+* 重启 macOS 即可继续正常使用了
 
 ## 参考资料
 
