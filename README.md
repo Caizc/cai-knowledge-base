@@ -27,7 +27,7 @@
 - 文章笔记卡：`ART`-artical
 - 演讲笔记卡：`SPC`-speech
 - 卡片模板：`TEMPLATE`
-- hacking：trouble shooting
+- hacking：learning & trouble shooting
 
 ## 卡片命名规则
 
