@@ -40,13 +40,17 @@ Markdown 编辑器
 
 即时通讯
 
-## GitHub Desktop
+## Git for Windows
 
-GitHub 客户端
+Git 客户端
+
+## TortoiseGit
+
+Git Shell
 
 ## SourceTree
 
-版本管理客户端
+可视化版本管理客户端
 
 ## Pomotodo
 
@@ -72,6 +76,10 @@ FTP 客户端
 
 游戏开发
 
+## Visual Studio 2015
+
+集成开发环境 IDE
+
 ## Steam VR
 
 Steam VR 客户端
@@ -88,4 +96,6 @@ Steam 商店
 
 iCloud 客户端
 
+## TrueCrypt
 
+虚拟磁盘加密
