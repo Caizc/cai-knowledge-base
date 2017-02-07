@@ -117,12 +117,44 @@
 **重点：**
 
 * 使用 Visual Studio 作为 Unity 中 C# 脚本的编辑器进行开发和调试，提高生产效率。
+* 安装 Visual Studio Tools for Unity，以便在 Visual Studio 中调试 C# 脚本。
 
 ![](media/14863982154035.png)
 
 > 参考资料：《VR开发实战》
 
-## Day 7
+## Day 7：将单机版的第一人称射击游戏改造成联机游戏
+
+**了解 Unity 提供的多玩家在线工具 UNET （ Unity Networking ），及其两个类型的API：HighLevelAPI 和 LowLevelAPI**
+
+**理解 HLAPI 中的几个重要概念**
+
+* 主机、本地客户端、远程客户端、本地用户、权限
+* 主机与客户机之间的通信方式和数据同步方式
+* 如何产生联机物体
+
+**网络管理组件 NetworkManager**
+
+* 在场景中添加网络管理组件 NetworkManager 以及简单的联机控制 UI —— NetworkManagerHUD
+* 两个重要的属性：SpawnInfo 和 Registered Spawnable Prefabs。
+
+**添加玩家控制器来控制玩家的所有网络行为，使用网络组件的特有属性来实现主机和客户端之间的远程调用和数据同步**
+
+**重写游戏管理逻辑**
+
+**为怪物添加网络通信组件**
+
+**设置玩家的固定出生点**
+
+**未解决的 bug ：**
+
+* 按照书中步骤配置好游戏对象以及控制脚本后，运行游戏后 Console 持续报错：`"There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene."` Google 后无果。
+* 另外，游戏不能正常运行，貌似存在不少 bug。
+* 暂时搁置这个 demo，待更加深入地学习了 Unity 的运行机制后，再回过头来解决。
+
+> 参考资料：《VR开发实战》
+
+## Day 8
 
 > to be continued...
 
