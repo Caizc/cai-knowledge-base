@@ -114,6 +114,10 @@
 * 使用 SteamVR 进行调试时，预制件 CameraRig 在编辑模式和 Play 模式下，Inspector 中的组件列表并不一致，这会导致运行时的效果与预期不一致，这个问题暂时还没有头绪，需要更深入地了解 Unity 引擎的运行机制才得以解答。
 * 基于以上问题的存在，为了调试效果，尝试在 Play 模式下动态调整 Camera(head) 为 Enable，勾选后发现 Console 中持续报错：`Assertion failed on expression: 'IsMatrixValid (matrix)'`，且画面中手柄出现刷新卡顿，暂未找到解决方法。
 
+**重点：**
+
+* 使用 Visual Studio 作为 Unity 中 C# 脚本的编辑器进行开发和调试，提高生产效率。
+
 ![](media/14863982154035.png)
 
 > 参考资料：《VR开发实战》
