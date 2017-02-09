@@ -76,7 +76,7 @@ FTP 客户端
 
 游戏开发
 
-## Visual Studio 2015
+## Visual Studio
 
 集成开发环境 IDE
 
@@ -99,3 +99,4 @@ iCloud 客户端
 ## TrueCrypt
 
 虚拟磁盘加密
+
