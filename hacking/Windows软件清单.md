@@ -86,11 +86,11 @@ Steam VR 客户端
 
 ## Vive
 
-Viveport
+Viveport 应用商店
 
 ## Steam
 
-Steam 商店
+Steam 应用商店
 
 ## iCloud Drive
 

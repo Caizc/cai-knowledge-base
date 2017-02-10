@@ -136,7 +136,7 @@
 **网络管理组件 NetworkManager**
 
 * 在场景中添加网络管理组件 NetworkManager 以及简单的联机控制 UI —— NetworkManagerHUD
-* 两个重要的属性：SpawnInfo 和 Registered Spawnable Prefabs。
+* 两个重要的属性：SpawnInfo 和 Registered Spawnable Prefabs
 
 **添加玩家控制器来控制玩家的所有网络行为，使用网络组件的特有属性来实现主机和客户端之间的远程调用和数据同步**
 
@@ -154,7 +154,13 @@
 
 > 参考资料：《VR开发实战》
 
-## Day 8
+## Day 8：了解 Cardboard 开发、Oculus 开发和 MR 视频拍摄
+
+阅读 **Cardboard** 开发、**Oculus** 开发和 **MR 视频**拍摄的入门知识，由于无相应硬件设备，暂时不做更深入的了解。
+
+> 参考资料：《VR开发实战》
+
+## Day 9
 
 > to be continued...
 
@@ -163,6 +169,7 @@
 change log: 
 
 	- 创建（2017-01-18）
+	- 持续更新中...（2017-02-10）
 
 ---
 
