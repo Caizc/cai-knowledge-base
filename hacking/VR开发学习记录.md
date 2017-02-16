@@ -190,11 +190,19 @@
 
 ![](media/14871357635348.png)
 
-**项目源码：**（待上传 GitHub...）
+**项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 10
+## Day 10：为 FPS 游戏实现玩家射击和具有简单 AI 的敌人
+
+![](media/14871736110886.png)
+
+**项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 11
 
 > to be continued...
 
@@ -203,7 +211,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-15）
+	- 持续更新中...（2017-02-16）
 
 ---
 
