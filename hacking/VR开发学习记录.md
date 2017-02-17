@@ -196,13 +196,34 @@
 
 ## Day 10：为 FPS 游戏实现玩家射击和具有简单 AI 的敌人
 
+通过射线射击
+脚本化反应的目标
+基本漫游 AI
+产生敌人预设
+通过实例化对象进行射击
+
 ![](media/14871736110886.png)
 
 **项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 11
+## Day 11：为 FPS 游戏开发图形
+
+了解美术资源
+构建基础 3D 场景：白盒
+使用 2D 图像给场景贴图
+使用贴图图像产生天空视觉效果
+使用自定义 3D 模型
+使用粒子系统创建效果
+
+![](media/14872320935277.png)
+
+**项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 12：2D 记忆力游戏
 
 > to be continued...
 
@@ -211,7 +232,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-16）
+	- 持续更新中...（2017-02-17）
 
 ---
 
