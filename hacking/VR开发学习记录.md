@@ -225,6 +225,20 @@
 
 ## Day 12：2D 记忆力游戏
 
+设置 2D 图像
+构建卡片对象并让它响应单击
+显示不同的卡片图像
+实现匹配和匹配得分
+重启按钮
+
+![](media/14873201448900.png)
+
+**项目源码：**[https://github.com/Caizc/learn-memory-game-2d](https://github.com/Caizc/learn-memory-game-2d)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 13
+
 > to be continued...
 
 ---
