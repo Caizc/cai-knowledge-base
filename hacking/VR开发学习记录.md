@@ -237,7 +237,21 @@
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 13
+## Day 13：为 3D 游戏创建 2D 的 GUI
+
+认识 Unity 的 GUI 系统
+创建用于界面的画布
+通过锚点定位 UI 元素
+为 UI 添加交互（按钮、滑动条等）
+从 UI 广播和侦听事件
+
+![](media/14875651565447.png)
+
+**项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 14
 
 > to be continued...
 
@@ -246,7 +260,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-17）
+	- 持续更新中...（2017-02-20）
 
 ---
 
