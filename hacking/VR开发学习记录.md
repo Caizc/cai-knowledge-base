@@ -251,7 +251,21 @@
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 14
+## Day 14：实现第三人称 3D 游戏中玩家的移动和动画
+
+* 将角色模型导入到场景
+* 实现摄像机控制，以观察角色
+* 编写脚本，让玩家能够在地面上跑
+* 添加能够跳跃、移动的脚本
+* 基于移动来播放模型的动画
+
+![](media/14876498835691.png)
+
+**项目源码：**[https://github.com/Caizc/learn-third-person-view-game](https://github.com/Caizc/learn-third-person-view-game)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 15
 
 > to be continued...
 
@@ -260,7 +274,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-20）
+	- 持续更新中...（2017-02-21）
 
 ---
 
