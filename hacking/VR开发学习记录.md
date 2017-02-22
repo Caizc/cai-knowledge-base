@@ -265,7 +265,21 @@
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 15
+## Day 15：在游戏中添加交互设施和物品
+
+* 编写脚本，让玩家控制门的开关（通过按键或者进入触发区域）
+* 创建响应物理碰撞的箱子
+* 创建可收集的物品供玩家存储在仓库中
+* 管理仓库数据和游戏状态
+* 装备及使用仓库中的物品
+
+![](media/14877500231752.png)
+
+**项目源码：**[https://github.com/Caizc/learn-third-person-view-game](https://github.com/Caizc/learn-third-person-view-game)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 16
 
 > to be continued...
 
@@ -274,7 +288,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-21）
+	- 持续更新中...（2017-02-22）
 
 ---
 
