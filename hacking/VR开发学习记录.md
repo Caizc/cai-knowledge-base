@@ -279,7 +279,21 @@
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 16
+## Day 16：将游戏连接到互联网
+
+* 修改天空盒的 shader 来实现从晴天向阴天过渡的效果
+* 从互联网服务获取实时的天气数据
+* 解析 XML 或 JSON 格式的天气数据并应用于场景中的天空效果
+* 从互联网下载图像并应用在场景中的物品上
+* 将游戏中的数据发送到服务器上
+
+![](media/14878574344831.png)
+
+**项目源码：**
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 17
 
 > to be continued...
 
@@ -288,7 +302,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-22）
+	- 持续更新中...（2017-02-23）
 
 ---
 
