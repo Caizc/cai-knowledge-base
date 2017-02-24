@@ -289,7 +289,7 @@
 
 ![](media/14878574344831.png)
 
-**项目源码：**
+**项目源码：**[https://github.com/Caizc/learn-online-game](https://github.com/Caizc/learn-online-game)
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
