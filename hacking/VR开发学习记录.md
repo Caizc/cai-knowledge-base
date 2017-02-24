@@ -293,7 +293,22 @@
 
 > 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 
-## Day 17
+## Day 17：为游戏添加音效和音乐
+
+* 导入音效，并调整导入设置
+* 将 2D 音效用于 UI，3D 音效用于场景
+* 编写音频管理器控制场景中的音量
+* 优化背景音乐的加载
+* 分别控制音乐和音效的音量
+* 实现不同背景音乐切换时的淡入淡出效果
+
+![](media/14879498943454.png)
+
+**项目源码：**[https://github.com/Caizc/learn-fps-play-with-km](https://github.com/Caizc/learn-fps-play-with-km)
+
+> 参考资料：《Unity in Action: Multiplatform Game Development in C# with Unity 5》
+
+## Day 18
 
 > to be continued...
 
@@ -302,7 +317,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-02-23）
+	- 持续更新中...（2017-02-24）
 
 ---
 
