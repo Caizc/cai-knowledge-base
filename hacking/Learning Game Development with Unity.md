@@ -1,4 +1,4 @@
-# 游戏开发学习记录
+# Learning Game Development with Unity
 
 ## Day 1：认识 Unity
 
@@ -370,7 +370,7 @@
 
 ## Day 22
 
-> to be continued...
+> To be continued...
 
 ---
 
