@@ -356,7 +356,7 @@
 
 > 参考资料：[Roll-a-Ball tutorial - Unity-Learn-Tutorials](https://unity3d.com/cn/learn/tutorials/projects/roll-ball-tutorial)
 
-## Day 21：游戏 Space Shooter
+## Day 21：游戏 Space Shooter（项目设置，初始化场景设置和玩家对象）
 
 * Project settings：项目设置为 Web 平台应用（在 Unity 5.5.2 中应选择目标平台为 WebGL），屏幕分辨率为 600*900。
 * Player GameObject：为玩家对象添加自定义网格的 Mesh Collider，设置为 Is Trigger，添加 Rigidbody 组件，添加粒子系统 prefab。
@@ -368,7 +368,28 @@
 
 > 参考资料：[Space Shooter tutorial - Unity-Learn-Tutorials](https://unity3d.com/cn/learn/tutorials/projects/space-shooter-tutorial)
 
-## Day 22
+## Day 22：游戏 Space Shooter（玩家移动、攻击，游戏边界、障碍物，粒子系统，游戏控制器）
+
+* 获取键盘输入，控制玩家对象的移动，限制游戏对象的活动区域
+* 创建玩家武器，自定义 Collider 适应激光束的大小，编写脚本实现发射效果
+* 创建游戏边界，销毁离开边界的游戏对象
+* 创建游戏中的障碍，增加游戏难度
+* 添加粒子系统，打造爆炸特效
+* 添加游戏控制脚本，控制障碍物的生成
+
+**重点：**
+
+* FixedUpdate()：当处理具有 Rigidbody 组件的游戏对象或需要考虑物理计算时，必须在 FixedUpdate() 方法中编写逻辑，而不是在 Update() 方法中。
+* Random.insideUnitSphere：Random 包中的该属性返回一个半径为 1 的球体中的一个随机点，也就是返回一个 Vector3 类型的值，其中 x,y,z 的值分别为 0~1 之间的一个随机浮点数。
+* Rigidbody 组件的角速度 angularVelocity，会受到 Angular Drag 属性的影响。添加 Rigidbody 组件时，Angular Drag 属性有一个大于零的默认值，因此组件的角速度会在它的影响下越来越小。
+* Destroy() 方法的真正执行销毁的时机：首先标记需要销毁的对象，然后在每一帧的最后再统一执行销毁。
+* Quaternion.identity：该变量表示「不旋转」或「没有旋转」。
+
+![](media/14890368432648.png)
+
+> 参考资料：[Space Shooter tutorial - Unity-Learn-Tutorials](https://unity3d.com/cn/learn/tutorials/projects/space-shooter-tutorial)
+
+## Day 23
 
 > To be continued...
 
@@ -377,7 +398,7 @@
 change log: 
 
 	- 创建（2017-01-18）
-	- 持续更新中...（2017-03-07）
+	- 持续更新中...（2017-03-09）
 
 ---
 
