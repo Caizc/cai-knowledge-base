@@ -1,9 +1,11 @@
 # Alan Thorn-《Game Development Principles》
 
 * 《Game Development Principles》
-* 游戏开发原理
-* Alan Thorn 著
+* 《游戏开发原理》
+* `Alan Thorn` 著
 * 2016 年 7 月第 1 版第 1 次印刷
+
+![](media/14919667758952.jpg)
 
 -------
 
@@ -507,7 +509,7 @@ GDD 概述和详述部分旨在适当的采用文字、图像和图表给出清�
 
 ## 程序的几何学
 
-> 例子：战争之舞
+> 例子：战争迷雾
 
 ## 带状轨迹
 

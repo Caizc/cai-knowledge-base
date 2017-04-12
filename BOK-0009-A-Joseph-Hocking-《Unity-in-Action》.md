@@ -2,8 +2,12 @@
 
 * 《Unity in Action: Multiplatform Game Development in C# with Unity 5》
 * 《Unity 5 实战：使用 C# 和 Unity 开发多平台游戏》
-* Joseph Hocking 著
+* `Joseph Hocking` 著
 * 2016 年 5 月第 1 版
+
+![](media/14919666490844.jpg)
+
+-------
 
 # 初识 Unity
 

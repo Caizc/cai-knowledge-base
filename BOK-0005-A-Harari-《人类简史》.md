@@ -4,7 +4,11 @@
 
 * Sapiens: A Brief History of Humankind
 * 智人：人类简史
-* [以色列]尤瓦尔·赫拉利 Yuval Noah Harari 著
+* [以色列]尤瓦尔·赫拉利 `Yuval Noah Harari` 著
+
+![](media/14919657916171.jpg)
+
+-------
 
 ## 认知革命
 

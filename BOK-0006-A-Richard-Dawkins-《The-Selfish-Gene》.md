@@ -4,7 +4,11 @@
 
 * 《The Selfish Gene》
 * 《自私的基因》
-* [英] Richard Dawkins（理查德·道金斯） 著
+* [英] `Richard Dawkins`（理查德·道金斯） 著
+
+![](media/14919657416518.jpg)
+
+-------
 
 ## 一图以蔽之
 

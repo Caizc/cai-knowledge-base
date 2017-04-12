@@ -1,5 +1,7 @@
 # Unity Certified Developer Courseware
 
+![](media/14919673014239.jpg)
+
 # Welcome to Unity
 
 * Exploring the Zombie Toys Game Project
