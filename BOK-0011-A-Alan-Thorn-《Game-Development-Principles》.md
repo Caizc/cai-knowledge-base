@@ -3,7 +3,7 @@
 * 《Game Development Principles》
 * 《游戏开发原理》
 * `Alan Thorn` 著
-* 2016 年 7 月第 1 版第 1 次印刷
+* 2016 年 7 月第 1 版
 
 ![](media/14919667758952.jpg)
 

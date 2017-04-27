@@ -3,7 +3,7 @@
 * 《Game Development with Unity》
 * 《Unity 游戏开发实战》（原书第 2 版）
 * [美] `Michelle Menard` & `Bryan Wagstaff` 著
-* 2016 年 1 月第 1 版第 1 次印刷
+* 2016 年 1 月第 1 版
 
 ![](media/14919666924537.jpg)
 
