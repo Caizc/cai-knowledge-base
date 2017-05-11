@@ -13,10 +13,46 @@
 
 # 开始
 
-* chunk（程序块）
-* 词法规范
-* global variables（全局变量）
-* interperter（解释器程序）
+```lua
+print("Hello World!")
+```
+
+
+```lua
+function pairsByKeys (t, f)
+    local a = {}
+    for n in pairs(t) do
+        a[#a + 1] = n
+    end
+
+    table.sort(a, f)
+
+    local i = 0
+
+    return function ()
+        i = i + 1
+        return a[i], t[a[i]]
+    end
+end
+
+local lines = { boy = 2, apple = 1, dog = 4, cat = 3}
+
+local function sortfunction (a, b)
+    return a > b
+end
+
+for name, line in pairsByKeys(lines, sortfunction) do
+    print(name, line)
+end
+```
+
+## chunk（程序块）
+
+
+
+## 词法规范
+## global variables（全局变量）
+## interperter（解释器程序）
 
 # 类型与值
 
@@ -230,4 +266,13 @@
 # 延伸阅读
 
 [Lua简明教程 | | 酷 壳 - CoolShell](http://coolshell.cn/articles/10739.html)
+
+---
+
+change log: 
+
+	- 创建（2017-04-29）
+	- 更新（2017-05-10）
+
+---
 
