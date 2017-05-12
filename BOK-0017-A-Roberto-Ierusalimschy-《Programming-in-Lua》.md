@@ -123,6 +123,9 @@ print(type(type(X)))            --> string
 * 使用函数 `tostring` 显式的将 number 转为 string
 
 ## table
+
+
+
 ## function
 
 * 函数是第一类值（和其他变量相同），可以存储在变量中，可以作为函数的参数，也可以作为函数的返回值
@@ -368,22 +371,317 @@ repeat
 until conditions;
 ```
 
-* **numeric for**（数值 for 循环）
-* **generic for**（泛型 for）
+* `numeric for`（数值 for 循环）
 
-## break & return
+```lua
+for var=exp1,exp2,exp3 do
+    loop-part
+end
+```
+
+`for` 将用 `exp3` 作为 step 从 `exp1`（初始值）到 `exp2`（终止值），执行 `loop-part`，其中 `exp3` 可以省略，默认`step=1`
+
+**注意：**
+三个表达式只会被计算一次，并且是在循环开始前
+控制变量 `var` 是局部变量自动被声明，并且只在循环内有效
+循环过程中不要改变控制变量的值，那样做的结果是不可预知的
+如果要退出循环，使用 `break` 语句
+
+* `generic for`（泛型 for 循环）
+
+```lua
+-- print all values of array 'a'
+for i,v in ipairs(a) do print(v) end
+
+-- print all keys of table 't'
+for k in pairs(t) do print(k) end
+```
+
+## break 与 return 语句
+
+* `break` 语句用来退出当前循环（for、repeat、while），在循环外部不可以使用
+* `return` 用来从函数返回结果，当一个函数自然结束时，结尾会有一个默认的 `return`
+* Lua 语法要求 `break` 和 `return` 只能出现在 block 的结尾一句
+* 有时候为了调试或者其他目的需要在 block 的中间使用 `return` 或者 `break` ，可以显式的使用 `do..end` 来实现：
+
+```lua
+function foo ()
+    return            --<< SYNTAX ERROR
+    -- 'return' is the last statement in the next block
+    do return end        -- OK
+    ...               -- statements not reached
+end
+```
+
+-------
 
 # 函数
 
-* multiple results（多重返回值）
-* variable number of arguments（变长参数）
-* named arguments（具名实参）
+* 函数有两种用途：
+
+    - 完成指定的任务，这种情况下函数作为调用语句使用
+    - 计算并返回值，这种情况下函数作为赋值语句的表达式使用
+
+* 调用函数的时候，如果参数列表为空，必须使用 `()` 表明是函数调用
+* 上述规则有一个例外，当函数只有一个参数并且这个参数是字符串或者表构造的时候，`()` 可有可无：
+
+```lua
+print "Hello World"      --等价于       print("Hello World")
+dofile 'a.lua'           --等价于       dofile ('a.lua')
+print [[a multi-line     --等价于       print([[a multi-line
+           message]]                          message]])
+f{x=10, y=20}            --等价于      f({x=10, y=20})
+type{}                   --等价于      type({})
+```
+
+* Lua 提供了面向对象方式调用函数的语法，比如 `o:foo(x)` 与 `o.foo(o, x)` 是等价的
+* Lua 函数实参和形参的匹配与赋值语句类似，多余部分被忽略，缺少部分用 `nil` 补足：
+
+```lua
+function f(a, b) return a or b end
+ 
+CALL             PARAMETERS
+
+f(3)                 a=3, b=nil
+f(3, 4)             a=3, b=4
+f(3, 4, 5)         a=3, b=4   (5 is discarded)
+```
+
+## multiple results（多返回值）
+
+* Lua 函数中，在 `return` 后列出要返回的值得列表即可返回多值
+* `return f()` 即返回「`f()` 的返回值」
+
+```lua
+function foo0 () end                   -- returns no results
+function foo1 () return 'a' end        -- returns 1 result
+function foo2 () return 'a','b' end    -- returns 2 results
+
+function foo (i)
+    if i == 0 then return foo0()
+    elseif i == 1 then return foo1()
+    elseif i == 2 then return foo2()
+    end
+end
+ 
+print(foo(1))        --> a
+print(foo(2))        --> a  b
+print(foo(0))        -- (no results)
+print(foo(3))        -- (no results)
+```
+
+可以使用圆括号强制使调用返回一个值：
+
+```lua
+print((foo0()))      --> nil
+print((foo1()))      --> a
+print((foo2()))      --> a
+```
+
+一个 return 语句如果使用圆括号将返回值括起来也将导致返回一个值
+
+* 函数多值返回的特殊函数 `unpack`，接受一个数组作为输入参数，返回数组的所有元素，该函数可以被用来实现调用可变参数的可变函数：
+
+```lua
+f = string.find
+a = {"hello", "ll"}
+print(f(unpack(a)))      --> 3  4
+```
+
+## variable number of arguments（变长参数）
+
+* 在函数参数列表中使用三点（...）表示函数有可变的参数
+* Lua 将函数的参数放在一个叫 arg 的表中，除了参数以外，arg 表中还有一个域 n 表示参数的个数
+* 也可以在几个固定参数后面加上变长参数，Lua 会将前面的实参传给函数的固定参数，后面的实参放在 arg 表中
+
+```lua
+function g (a, b, ...) end
+ 
+CALL              PARAMETERS
+ 
+g(3)              a=3, b=nil, arg={n=0}
+g(3, 4)           a=3, b=4, arg={n=0}
+g(3, 4, 5, 8)     a=3, b=4, arg={5, 8; n=2}
+```
+
+* 如果我们只想要 `string.find` 返回的第二个值，一个典型的方法是使用「哑元」（dummy variable，下划线）：
+
+```lua
+local _, x = string.find(s, p)
+-- now use `x'
+...
+```
+
+* 可以利用可变参数声明一个 `select` 函数：
+
+```lua
+function select (n, ...)
+    return arg[n]
+end
+ 
+print(string.find("hello hello", " hel")) --> 6  9
+print(select(1, string.find("hello hello", " hel"))) --> 6
+print(select(2, string.find("hello hello", " hel"))) --> 9
+```
+
+## named arguments（具名实参）
+
+* Lua 的**函数参数是和位置相关的**，调用时实参会按顺序依次传给形参
+* Lua 可以通过将所有的参数放在一个表中，把表作为函数的唯一参数来实现一个文件重命名函数的功能，当函数的参数很多的时候，这种函数参数的传递方式很方便：
+
+```lua
+function rename (arg)
+    return os.rename(arg.old, arg.new)
+end
+
+rename{old="temp.lua", new="temp1.lua"}
+```
+
+-------
 
 # 深入函数
 
-* closure（闭合函数）
-* non-global function（非全局函数）
-* proper tail call（正确的尾调用）
+* Lua 中的函数是带有**词法定界**（lexical scoping）的**第一类值**（first-class values）
+
+    - **第一类值**指：在 Lua 中函数和其他值（数值、字符串）一样，函数可以被存放在变量中，也可以存放在表中，可以作为函数的参数，还可以作为函数的返回值
+    - **词法定界**指：嵌套的函数可以访问他外部函数中的变量，这一特性给 Lua 提供了强大的编程能力
+
+* Lua 中的函数可以没有名字，也就是匿名的。当我们提到函数名时（比如 `print`），实际上是说一个指向函数的变量，就像持有其他类型值的变量一样
+* Lua 中经常创建函数的写法，实际上是 Lua 语法的特例，函数定义实际上是一个赋值语句，将类型为 `function` 的变量赋给一个变量：
+
+```lua
+function foo (x) return 2*x end
+-- 原本的函数如下：
+foo = function (x) return 2*x end
+```
+
+* 以其他函数作为参数的函数在 Lua 中被称作**高级函数**（higher-order function）。但高级函数与普通函数没有区别，它们只是把「作为参数的函数」当作第一类值（first-class value）处理而已
+
+## closure（闭包）
+
+* 当一个函数内部嵌套另一个函数定义时，内部的函数体可以访问**外部的函数的局部变量**，这种特征我们称作**词法定界**
+
+```lua
+function newCounter()
+    local i = 0
+    return function()     -- anonymous function
+       i = i + 1
+        return i
+    end
+end
+ 
+c1 = newCounter()
+print(c1())  --> 1
+print(c1())  --> 2
+
+c2 = newCounter()
+print(c2())  --> 1
+print(c1())  --> 3
+print(c2())  --> 2
+```
+
+* 闭包指值而不是指函数，函数仅仅是闭包的一个原型声明
+* 我们可以创建一个安全的环境（也称作沙箱，和java里的沙箱一样），当我们运行一段不信任的代码（比如我们运行网络服务器上获取的代码）时安全的环境是需要的，比如我们可以使用闭包重定义io库的open函数来限制程序打开的文件：
+
+```lua
+do
+    local oldOpen = io.open
+    io.open = function (filename, mode)
+       if access_OK(filename, mode) then
+           return oldOpen(filename, mode)
+       else
+           return nil, "access denied"
+       end
+    end
+end
+```
+
+## non-global function（非全局函数）
+
+* Lua 中函数可以作为全局变量也可以作为局部变量，例如：函数作为 table 的域（大部分 Lua 标准库使用这种机制来实现的比如 `io.read`、`math.sin`）。在这种情况下，必须注意函数和表语法：
+
+1. 表和函数放在一起
+
+```lua
+Lib = {}
+Lib.foo = function (x,y) return x + y end
+Lib.goo = function (x,y) return x - y end
+```
+    
+2. 使用表构造函数
+
+```lua
+Lib = {
+    foo = function (x,y) return x + y end,
+    goo = function (x,y) return x - y end
+}
+```
+
+3. Lua 提供另一种语法方式
+
+```lua
+Lib = {}
+function Lib.foo (x,y)
+    return x + y
+end
+function Lib.goo (x,y)
+    return x - y
+end
+```
+
+* 将函数保存在一个局部变量内时，将得到一个局部函数，也就是说局部函数像局部变量一样在一定范围内有效，以下是声明局部函数的两种方式：
+
+1. 方式一：
+
+```lua
+local f = function (...)
+    ...
+end
+ 
+local g = function (...)
+    ...
+    f()   -- external local `f' is visible here
+    ...
+end
+```
+
+2. 方式二：
+
+```lua
+local function f (...)
+    ...
+end
+```
+
+* 声明递归函数的方式：
+
+```lua
+local fact      -- 最好在定义函数之前先声明
+ 
+fact = function (n)
+    if n == 0 then
+       return 1
+    else
+       return n*fact(n-1)
+    end
+end
+```
+
+* 在定义非直接递归局部函数时要先声明然后再定义
+
+```lua
+local f, g        -- `forward' declarations
+ 
+function g ()
+    ...  f() ...
+end
+ 
+function f ()
+    ...  g() ...
+end
+```
+
+## Proper Tail Calls（正确的尾调用）
 
 # 迭代器与泛型 for
 
