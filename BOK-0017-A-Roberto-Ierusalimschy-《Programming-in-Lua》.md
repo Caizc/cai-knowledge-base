@@ -1,11 +1,10 @@
 # Roberto Ierusalimschy-《Programming in Lua》
 
-* **Programming in Lua**
-* 《Lua 程序设计（第 2 版）》
+* **Programming in Lua, Third Edition**
 * [巴西] `Roberto Ierusalimschy` 著
-* 2008 年 5 月
+* 2013
 
-![](media/14934801635148.jpg)
+![](media/14945854516029.jpg)
 
 -------
 
