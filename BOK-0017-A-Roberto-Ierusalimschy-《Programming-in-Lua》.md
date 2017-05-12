@@ -953,11 +953,11 @@ end
 
 # 延伸阅读
 
-[Lua 程序设计 - 中国 Lua 开发者](http://www.shouce.ren/api/lua/5/_3.htm)
-[Lua 教程 - RUNOOB.COM](http://www.runoob.com/lua/lua-tutorial.html)
-[Lua简明教程 | | 酷 壳 - CoolShell](http://coolshell.cn/articles/10739.html)
-[Lua Unofficial FAQ](http://www.luafaq.org/)
-[Lua 5.1 参考手册 - 云风译](http://www.codingnow.com/2000/download/lua_manual.html)
+* [Lua 程序设计 - 中国 Lua 开发者](http://www.shouce.ren/api/lua/5/_3.htm)
+* [Lua 教程 - RUNOOB.COM](http://www.runoob.com/lua/lua-tutorial.html)
+* [Lua简明教程 | | 酷 壳 - CoolShell](http://coolshell.cn/articles/10739.html)
+* [Lua Unofficial FAQ](http://www.luafaq.org/)
+* [Lua 5.1 参考手册 - 云风译](http://www.codingnow.com/2000/download/lua_manual.html)
 
 ---
 
