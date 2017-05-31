@@ -956,6 +956,7 @@ end
 * [Lua 教程 - RUNOOB.COM](http://www.runoob.com/lua/lua-tutorial.html)
 * [Lua简明教程 | | 酷 壳 - CoolShell](http://coolshell.cn/articles/10739.html)
 * [Lua Unofficial FAQ](http://www.luafaq.org/)
+* [Lua 5.3 - 云风编](http://cloudwu.github.io/lua53doc/)
 * [Lua 5.1 参考手册 - 云风译](http://www.codingnow.com/2000/download/lua_manual.html)
 
 ---
@@ -963,7 +964,7 @@ end
 change log: 
 
 	- 创建（2017-04-29）
-	- 更新（2017-05-12）
+	- 更新（2017-05-31）
 
 ---
 
