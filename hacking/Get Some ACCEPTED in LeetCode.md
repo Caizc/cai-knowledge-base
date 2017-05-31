@@ -135,6 +135,92 @@ public class Solution {
 }
 ```
 
+## 476. Number Complement
+
+[Number Complement](https://leetcode.com/problems/number-complement/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findComplement(num)
+    local result
+    for i = 31, 0, -1 do
+        if num / (2^i) >= 1 then
+            result = num ~ (2^(i+1) - 1)
+            break
+        end
+    end
+    return result
+end
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+public class Solution {
+    public int findComplement(int num) {
+        return ~num & (Integer.highestOneBit(num) - 1);
+    }
+}
+```
+
+## 557. Reverse Words in a String III
+
+[Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string-iii/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function reverseWords(s)
+    i = i or 1
+    result = result or ""
+    local a, b = string.find(s, " ", i)
+    if b == nil then
+        result = result .. string.reverse(string.sub(s, i, #s))
+        return
+    end
+    result = result .. string.reverse(string.sub(s, i, a - 1)) .. " "
+    i = b + 1
+    reverseWords(s)
+    return result
+end
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+public class Solution {
+    public String reverseWords(String s) {
+        char[] ca = s.toCharArray();
+        for (int i = 0; i < ca.length; i++) {
+            if (ca[i] != ' ') {   // when i is a non-space
+                int j = i;
+                while (j + 1 < ca.length && ca[j + 1] != ' ') { j++; } // move j to the end of the word
+                reverse(ca, i, j);
+                i = j;
+            }
+        }
+        return new String(ca);
+    }
+
+    private void reverse(char[] ca, int i, int j) {
+        for (; i < j; i++, j--) {
+            char tmp = ca[i];
+            ca[i] = ca[j];
+            ca[j] = tmp;
+        }
+    }
+}
+```
+
 ---
 
 change log: 
