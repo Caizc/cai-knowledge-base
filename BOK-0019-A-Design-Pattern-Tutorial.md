@@ -1,6 +1,6 @@
 # Design Pattern Tutorial
 
-[设计模式 - RUNOOB.COM](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+* [设计模式 - RUNOOB.COM](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
 
 ## 简介
 

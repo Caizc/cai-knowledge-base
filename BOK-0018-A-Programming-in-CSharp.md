@@ -1,8 +1,8 @@
 # Programming in C#
 
-[C# 教程 - RUNOOB.COM](http://www.runoob.com/csharp/csharp-tutorial.html)
-[C# 编程指南 - Microsoft](https://docs.microsoft.com/zh-cn/dotnet/articles/csharp/programming-guide/index)
-[.NET API Browser - Microsoft](https://docs.microsoft.com/en-us/dotnet/api/)
+* [C# 教程 - RUNOOB.COM](http://www.runoob.com/csharp/csharp-tutorial.html)
+* [C# 编程指南 - Microsoft](https://docs.microsoft.com/zh-cn/dotnet/articles/csharp/programming-guide/index)
+* [.NET API Browser - Microsoft](https://docs.microsoft.com/en-us/dotnet/api/)
 
 ## 简介
 ## 程序结构
