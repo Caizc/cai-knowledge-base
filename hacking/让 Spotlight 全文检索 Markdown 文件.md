@@ -52,7 +52,13 @@ sudo mdutil -E /
 * [How can I make spotlight index markdown files?](http://stackoverflow.com/questions/365669/how-can-i-make-spotlight-index-markdown-files)
 * [讓 Spotlight 檢索 Markdown 文件](http://www.itread01.com/articles/1476601557.html)
 
--------
+---
+
+change log: 
+
+	- 创建（2017-01-12）
+
+---
 
 
 
