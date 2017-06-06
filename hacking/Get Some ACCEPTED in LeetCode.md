@@ -221,12 +221,101 @@ public class Solution {
 }
 ```
 
+## 566. Reshape the Matrix
+
+[Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function matrixReshape(matrix, r, c)
+    local result = {}
+    local oRow = 0
+    local oCol = 0
+    local tempArray = {}
+    local index = 0
+    for k, v in pairs(matrix) do
+        oRow = oRow + 1
+        oCol = 0
+        for k2, v2 in pairs(v) do
+            index = index + 1
+            oCol = oCol + 1
+            tempArray[index] = v2
+        end
+    end
+    print(oRow, oCol)
+    if r * c == oRow * oCol then
+        print(r, c)
+        index = 0
+        for i=1, r, 1 do
+            local innerArray = {}
+            for j=1, c, 1 do
+                index = index + 1
+                innerArray[j] = tempArray[index]
+            end
+            result[i] = innerArray
+        end
+    else
+        result = matrix
+    end
+    return result
+end
+
+function printArray(array)
+    local row = "["
+    local firstRow = true
+    for k, v in pairs(array) do
+        if firstRow == true then
+            firstRow = false
+            row = row .. "["
+        else
+            row = row .. ",\n ["
+        end
+        local firstCol = true
+        for k2, v2 in pairs(v) do
+            if firstCol == true then
+                row = row .. v2
+                firstCol = false
+            else
+                row = row .. "," .. v2
+            end
+        end
+        row = row .. "]"
+    end
+    row = row .. "]"
+    print(row)
+end
+
+local matrix = {{7, 8, 9}, {10, 11, 12}, {13, 14, 15}, {16, 17, 18}}
+local r = 2
+local c = 6
+local result = matrixReshape(matrix, r, c)
+printArray(result)
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+public int[][] matrixReshape(int[][] nums, int r, int c) {
+    int n = nums.length, m = nums[0].length;
+    if (r*c != n*m) return nums;
+    int[][] res = new int[r][c];
+    for (int i=0;i<r*c;i++) 
+        res[i/c][i%c] = nums[i/m][i%m];
+    return res;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-05-31）
+	- 更新（2017-06-06）
 
 ---
 
