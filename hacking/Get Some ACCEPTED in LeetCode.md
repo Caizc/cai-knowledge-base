@@ -310,12 +310,51 @@ public int[][] matrixReshape(int[][] nums, int r, int c) {
 }
 ```
 
+## 575. Distribute Candies
+
+[Distribute Candies](https://leetcode.com/problems/distribute-candies/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function distributeCandies(candies)
+    local count = 0
+    local sister = {}
+    for i=1,#candies,1 do
+        if sister[candies[i]] == nil and count < #candies/2 then
+            count = count + 1
+            sister[candies[i]] = i
+        end
+    end
+    return count
+end
+
+local candies = {3, 3, 3, 3, 2, 4, 0, 0, 0, -3, 9, 7}
+print(distributeCandies(candies))
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+public class Solution {
+    public int distributeCandies(int[] candies) {
+        Set<Integer> kinds = new HashSet<>();
+        for (int candy : candies) kinds.add(candy);
+        return kinds.size() >= candies.length / 2 ? candies.length / 2 : kinds.size();
+    }
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-06）
+	- 更新（2017-06-08）
 
 ---
 
