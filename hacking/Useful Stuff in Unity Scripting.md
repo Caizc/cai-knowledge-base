@@ -15,6 +15,12 @@ The parent of the transform.
 
 * using System.Collections.Generic;
 
+* OnEnable()
+
+* Reset()
+
+* public static float GetAxisRaw(string axisName);
+
 ---
 
 change log: 
