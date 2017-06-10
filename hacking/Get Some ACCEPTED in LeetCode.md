@@ -440,12 +440,118 @@ public:
 };
 ```
 
+## 344. Reverse String
+
+[Reverse String](https://leetcode.com/problems/reverse-string/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function reverseString(s)
+    return string.reverse(s)
+end
+
+local s = "abcdefg"
+print(reverseString(s))
+```
+
+* **Impressive solution:**
+
+> Complexity Analysis
+
+> Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. The algorithm need to reverse the whole string.
+
+> Auxiliary Space: `O(n)` space is used where `n` is the total number character in the input string. Space is needed to transform string to character array.
+
+```java
+public class Solution {
+    public String reverseString(String s) {
+        char[] word = s.toCharArray();
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+            char temp = word[i];
+            word[i] = word[j];
+            word[j] = temp;
+            i++;
+            j--;
+        }
+        return new String(word);
+    }
+}
+```
+
+## 496. Next Greater Element I
+
+[Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function nextGreaterElement(findNums, nums)
+    local results = {}
+    for i=1,#findNums do
+        local hasFound = false
+        for j=1,#nums do
+            if hasFound == false and findNums[i] == nums[j] then
+                hasFound = true
+            else
+                if hasFound == true and findNums[i] < nums[j] then
+                    results[i] = nums[j]
+                    break
+                else
+                    results[i] = -1
+                end
+            end
+        end
+    end
+    return results
+end
+
+local findNums = {4, 1, 2}
+local nums = {1, 3, 4, 2}
+local results = nextGreaterElement(findNums, nums)
+for i=1,#results do
+    print(results[i])
+end
+```
+
+* **Impressive solution:**
+
+> Java 10 lines linear time complexity O(n) with explanation
+> 
+> Key observation:
+> Suppose we have a decreasing sequence followed by a greater number
+> For example [5, 4, 3, 2, 1, 6] then the greater number 6 is the next greater element for all previous numbers in the sequence
+> We use a stack to keep a decreasing sub-sequence, whenever we see a number x greater than stack.peek() we pop all elements less than x and for all the popped ones, their next greater element is x
+> For example [9, 8, 7, 3, 2, 1, 6]
+> The stack will first contain [9, 8, 7, 3, 2, 1] and then we see 6 which is greater than 1 so we pop 1 2 3 whose next greater element should be 6
+
+```java
+public int[] nextGreaterElement(int[] findNums, int[] nums) {
+    Map<Integer, Integer> map = new HashMap<>(); // map from x to next greater element of x
+    Stack<Integer> stack = new Stack<>();
+    for (int num : nums) {
+        while (!stack.isEmpty() && stack.peek() < num)
+            map.put(stack.pop(), num);
+        stack.push(num);
+    }   
+    for (int i = 0; i < findNums.length; i++)
+        findNums[i] = map.getOrDefault(findNums[i], -1);
+    return findNums;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-09）
+	- 更新（2017-06-10）
 
 ---
 
