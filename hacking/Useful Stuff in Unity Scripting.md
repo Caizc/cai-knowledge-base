@@ -308,7 +308,7 @@ public class ExampleClass : MonoBehaviour {
 
 ## Execution Order of Event Functions
 
-[Execution Order of Event Functions](file:///Applications/Unity/Unity.app/Contents/Documentation/en/Manual/ExecutionOrder.html)
+[Execution Order of Event Functions](https://docs.unity3d.com/Manual/ExecutionOrder.html)
 
 ### Editor
 
