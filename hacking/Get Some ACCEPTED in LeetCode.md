@@ -614,12 +614,81 @@ public class Solution {
 }
 ```
 
+## 292. Nim Game
+
+[Nim Game](https://leetcode.com/problems/nim-game/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function canWinNim(n)
+    return n % 4 ~= 0
+end
+
+local n = 4
+print(canWinNim(n))
+```
+
+* **Impressive solution:**
+
+> The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.
+
+```java
+public boolean canWinNim(int n) {    
+    return n % 4 != 0 ;
+}
+```
+
+## 485. Max Consecutive Ones
+
+[Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findMaxConsecutiveOnes(nums)
+    local maxCount = 0
+    local temp = 0
+    for i=1,#nums do
+        if nums[i] == 1 then
+            temp = temp + 1
+        else
+            temp = 0
+        end
+        if temp > maxCount then
+            maxCount = temp
+        end
+    end
+    return maxCount
+end
+
+local nums = {0, 1, 1, 0, 0, 1, 1, 1}
+print(findMaxConsecutiveOnes(nums))
+```
+
+* **Impressive solution:**
+
+> The idea is to reset maxHere to 0 if we see 0, otherwise increase maxHere by 1.
+
+```java
+public int findMaxConsecutiveOnes(int[] nums) {
+    int maxHere = 0, max = 0;
+    for (int n : nums)
+        max = Math.max(max, maxHere = n == 0 ? 0 : maxHere + 1);
+    return max; 
+} 
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-11）
+	- 更新（2017-06-12）
 
 ---
 
