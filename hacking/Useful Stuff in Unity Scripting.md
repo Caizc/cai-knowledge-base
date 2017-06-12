@@ -216,7 +216,148 @@ public class ExampleClass : MonoBehaviour
 
 ## Input
 
+[Input](https://docs.unity3d.com/ScriptReference/Input.html)
 
+> Use this class to read the axes set up in the `Input Manager`, and to access multi-touch/accelerometer data on mobile devices.
+> To read an axis use `Input.GetAxis` with one of the following default axes: "`Horizontal`" and "`Vertical`" are mapped to joystick, A, W, S, D and the arrow keys. "`Mouse X`" and "`Mouse Y`" are mapped to the mouse delta. "`Fire1`", "`Fire2`" "`Fire3`" are mapped to Ctrl, Alt, Cmd keys and three mouse or joystick buttons. New input axes can be added in the Input Manager.
+
+Note also that the `Input` flags are not reset until "`Update()`", so its suggested you make all the `Input Calls` in the `Update` Loop.
+
+-------
+
+[Input.GetAxis](https://docs.unity3d.com/ScriptReference/Input.GetAxis.html)
+
+* `public static float GetAxis(string axisName);`
+
+> Returns the value of the virtual axis identified by axisName.
+> The value will be in the range -1...1 for keyboard and joystick input. If the axis is setup to be delta mouse movement, the mouse delta is multiplied by the axis sensitivity and the range is not -1...1.
+
+This is frame-rate independent; you do not need to be concerned about varying frame-rates when using this value.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    public float speed = 10.0F;
+    public float rotationSpeed = 100.0F;
+    void Update() {
+        float translation = Input.GetAxis("Vertical") * speed;
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
+        transform.Translate(0, 0, translation);
+        transform.Rotate(0, rotation, 0);
+    }
+}
+```
+
+-------
+
+[Input.GetAxisRaw](https://docs.unity3d.com/ScriptReference/Input.GetAxisRaw.html)
+
+* `public static float GetAxisRaw(string axisName);`
+
+> Returns the value of the virtual axis identified by axisName with no smoothing filtering applied.
+> The value will be in the range -1...1 for keyboard and joystick input. Since input is not smoothed, keyboard input will always be either -1, 0 or 1. This is useful if you want to do all smoothing of keyboard input processing yourself.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    void Update() {
+        float speed = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        transform.Rotate(0, speed, 0);
+    }
+}
+```
+
+-------
+
+[Input.GetButton](https://docs.unity3d.com/ScriptReference/Input.GetButton.html)
+
+* `public static bool GetButton(string buttonName);`
+
+> Returns true while the virtual button identified by buttonName is held down.
+> Think auto fire - this will return true as long as the button is held down.
+
+Use this only when implementing events that trigger an action, eg, shooting a weapon. Use `GetAxis` for input that controls continuous movement.
+
+```c#
+// Instantiates a projectile every 0.5 seconds, if the Fire1 button (default is Ctrl) is pressed.
+public class ExampleClass : MonoBehaviour
+{
+    public GameObject projectile;
+    public float fireDelta = 0.5F;
+
+    private float nextFire = 0.5F;
+    private GameObject newProjectile;
+    private float myTime = 0.0F;
+
+    void Update()
+    {
+        myTime = myTime + Time.deltaTime;
+        if (Input.GetButton("Fire1") && myTime > nextFire)
+        {
+            nextFire = myTime + fireDelta;
+            newProjectile = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+
+            // create code here that animates the newProjectile
+
+            nextFire = nextFire - myTime;
+            myTime = 0.0F;
+        }
+    }
+}
+```
+
+-------
+
+[Input.GetButtonDown](https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html)
+
+* `public static bool GetButtonDown(string buttonName);`
+
+> Returns true during the frame the user pressed down the virtual button identified by buttonName.
+> You need to call this function from the `Update` function, since the state gets reset each frame. It will not return true until the user has released the key and pressed it again.
+
+Use this only when implementing action like events IE: shooting a weapon.
+Use `Input.GetAxis` for any kind of movement behaviour.
+
+```c#
+public class ExampleClass : MonoBehaviour
+{
+    public GameObject projectile;
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+            Instantiate(projectile, transform.position, transform.rotation);
+    }
+}
+```
+
+## Time
+
+[Time](https://docs.unity3d.com/ScriptReference/Time.html)
+
+-------
+
+[Time.deltaTime](https://docs.unity3d.com/ScriptReference/Time-deltaTime.html)
+
+* `public static float deltaTime;`
+
+> The time in seconds it took to complete the last frame (Read Only).
+
+Use this function to make your game frame rate independent.
+
+If you add or subtract to a value every frame chances are you should multiply with `Time.deltaTime`. When you multiply with `Time.deltaTime` you essentially express: I want to move this object 10 meters per second instead of 10 meters per frame.
+
+When called from inside MonoBehaviour's `FixedUpdate`, returns the fixed framerate delta time.
+
+Note that you should not rely on `Time.deltaTime` from inside `OnGUI` since OnGUI can be called multiple times per frame and deltaTime would hold the same value each call, until next frame where it would be updated again.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    void Update() {
+        float translation = Time.deltaTime * 10;
+        transform.Translate(0, 0, translation);
+    }
+}
+```
 
 ## Debug
 
@@ -371,11 +512,10 @@ public class ExampleClass : MonoBehaviour {
 * int Random.Range(int min, int max)
 Returns a random integer number between min [inclusive] and max [exclusive] (Read Only). min: max:
 
-* public static float GetAxisRaw(string axisName)
-
 -------
 
 > www link prefix：https://docs.unity3d.com
+> 
 > local link prefix：file:///Applications/Unity/Unity.app/Contents/Documentation/en
 
 ---
@@ -383,7 +523,7 @@ Returns a random integer number between min [inclusive] and max [exclusive] (Rea
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-06-12）
+	- 更新（2017-06-13）
 
 ---
 
