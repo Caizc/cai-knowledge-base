@@ -683,12 +683,48 @@ public int findMaxConsecutiveOnes(int[] nums) {
 } 
 ```
 
+## 136. Single Number
+
+[Single Number](https://leetcode.com/problems/single-number/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function singleNumber(nums)
+    local result = 0
+    for i=1,#nums do
+        result = result ~ nums[i]
+    end
+    return result
+end
+
+local nums = {1, 2, 3, 3, 1, 5, 2}
+print(singleNumber(nums))
+```
+
+* **Impressive solution:**
+
+> Known that A XOR A = 0 and the XOR operator is commutative, the solution will be very straightforward.
+
+```java
+int singleNumber(int A[], int n) {
+    int result = 0;
+    for (int i = 0; i<n; i++)
+    {
+		result ^=A[i];
+    }
+	return result;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-12）
+	- 更新（2017-06-13）
 
 ---
 
