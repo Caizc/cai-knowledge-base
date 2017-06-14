@@ -1,5 +1,105 @@
 # Useful Stuff in Unity Scripting
 
+![](media/14973662245734.jpg)
+
+## MonoBehaviour
+
+[MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
+
+> `MonoBehaviour` is the base class from which every Unity script derives.
+
+Note: There is a checkbox for disabling `MonoBehaviour` on the Unity Editor; it disables `Start()`, `Awake()`, `Update()`, `FixedUpdate()`, and `OnGUI()` from executing when unticked. If none of these functions are present in the script, the Editor does not display the checkbox.
+
+-------
+
+[MonoBehaviour.StartCoroutine](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html)
+
+* `public Coroutine StartCoroutine(IEnumerator routine);`
+
+> Starts a coroutine.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    IEnumerator Start() {
+        print("Starting " + Time.time);
+        yield return StartCoroutine(WaitAndPrint(2.0F));
+        print("Done " + Time.time);
+    }
+    IEnumerator WaitAndPrint(float waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        print("WaitAndPrint " + Time.time);
+    }
+}
+```
+
+* `public Coroutine StartCoroutine(string methodName, object value = null);`
+
+> Starts a coroutine named `methodName`.
+> In most cases you want to use the StartCoroutine variation above. However StartCoroutine using a string method name allows you to use `StopCoroutine` with a specific method name. The downside is that the string version has a higher runtime overhead to start the coroutine and you can pass only one parameter.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    IEnumerator Start() {
+        StartCoroutine("DoSomething", 2.0F);
+        yield return new WaitForSeconds(1);
+        StopCoroutine("DoSomething");
+    }
+    IEnumerator DoSomething(float someParameter) {
+        while (true) {
+            print("DoSomething Loop");
+            yield return null;
+        }
+    }
+}
+```
+
+-------
+
+[MonoBehaviour.StopCoroutine](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StopCoroutine.html)
+
+* `public void StopCoroutine(string methodName);`
+* `public void StopCoroutine(IEnumerator routine);`
+
+> Stops the first coroutine named `methodName`, or the coroutine stored in `routine` running on this behaviour.
+> StopCoroutine takes one of two arguments which specify which coroutine is stopped:
+> 
+> - A string function naming the active coroutine
+> - The IEnumerator variable used earlier to create the coroutine.
+
+```c#
+public class Example : MonoBehaviour
+{
+    private IEnumerator coroutine;
+    void Start()
+    {
+        print("Starting " + Time.time);
+        coroutine = WaitAndPrint(3.0f);
+        StartCoroutine(coroutine);
+        print("Done " + Time.time);
+    }
+
+    // print to the console every 3 seconds.
+    // yield is causing WaitAndPrint to pause every 3 seconds
+    public IEnumerator WaitAndPrint(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            print("WaitAndPrint " + Time.time);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            StopCoroutine(coroutine);
+            print("Stopped " + Time.time);
+        }
+    }
+}
+```
+
 ## GameObject
 
 [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html)
@@ -147,6 +247,156 @@ public class ExampleClass : MonoBehaviour
 > The x, y, and z angles represent a rotation z degrees around the z axis, x degrees around the x axis, and y degrees around the y axis (in that order).
 > **Only use this variable to read and set the angles to absolute values. Don't increment them, as it will fail when the angle exceeds 360 degrees. Use Transform.Rotate instead.**
 
+-------
+
+[Transform.TransformDirection](https://docs.unity3d.com/ScriptReference/Transform.TransformDirection.html)
+
+* `public Vector3 TransformDirection(Vector3 direction);`
+
+> Transforms direction from local space to world space.
+> This operation is not affected by `scale` or `position` of the transform. The returned vector has the same length as `direction`.
+
+You should use `Transform.TransformPoint` for the conversion if the vector represents a position rather than a direction.
+
+-------
+
+[Transform.InverseTransformDirection](https://docs.unity3d.com/ScriptReference/Transform.InverseTransformDirection.html)
+
+* `public Vector3 InverseTransformDirection(Vector3 direction);`
+
+> Transforms a direction from world space to local space. The opposite of `Transform.TransformDirection`.
+> This operation is unaffected by `scale`.
+
+You should use `Transform.InverseTransformPoint` if the vector represents a position in space rather than a direction.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    private Vector3 relative;
+    void Example() {
+        relative = transform.InverseTransformDirection(Vector3.forward);
+        Debug.Log(relative);
+    }
+}
+```
+
+-------
+
+[Transform.TransformPoint](https://docs.unity3d.com/ScriptReference/Transform.TransformPoint.html)
+
+* `public Vector3 TransformPoint(Vector3 position);`
+
+> Transforms position from local space to world space.
+
+Note that the returned position is affected by `scale`. Use `Transform.TransformDirection` if you are dealing with direction vectors.
+You can perform the opposite conversion, from world to local space using `Transform.InverseTransformPoint`.
+
+-------
+
+[Transform.InverseTransformPoint](https://docs.unity3d.com/ScriptReference/Transform.InverseTransformPoint.html)
+
+* `public Vector3 InverseTransformPoint(Vector3 position);`
+
+> Transforms position from world space to local space.
+
+This function is essentially the opposite of `Transform.TransformPoint`, which is used to convert from local to world space.
+Note that the returned position is affected by `scale`. Use `Transform.InverseTransformDirection` if you are dealing with direction vectors rather than positions.
+
+```c#
+// Calculate the transform's position relative to the camera.
+public class ExampleClass : MonoBehaviour
+{
+    public Transform cam;
+    public Vector3 cameraRelative;
+    
+    void Start()
+    {
+        cam = Camera.main.transform;
+        Vector3 cameraRelative = cam.InverseTransformPoint(transform.position);
+        if (cameraRelative.z > 0)
+            print("The object is in front of the camera");
+        else
+            print("The object is behind the camera");
+    }
+}
+```
+
+## Quaternion
+
+[Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)
+
+> Quaternions are used to represent rotations.
+
+-------
+
+[Quaternion.identity](https://docs.unity3d.com/ScriptReference/Quaternion-identity.html)
+
+* `public static Quaternion identity;`
+
+> The identity rotation (Read Only).
+> This quaternion corresponds to "no rotation" - the object is perfectly aligned with the world or parent axes.
+
+## Vector3
+
+[Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html)
+
+> Representation of 3D vectors and points.
+
+-------
+
+[Vector3.magnitude](https://docs.unity3d.com/ScriptReference/Vector3-magnitude.html)
+
+* `public float magnitude;`
+
+> Returns the length of this vector (Read Only).
+> The length of the vector is square root of (x*x+y*y+z*z).
+
+If you only need to compare magnitudes of some vectors, you can compare squared magnitudes of them using sqrMagnitude (computing squared magnitudes is faster).
+
+-------
+
+[Vector3.sqrMagnitude](https://docs.unity3d.com/ScriptReference/Vector3-sqrMagnitude.html)
+
+* `public float sqrMagnitude;`
+
+> Returns the squared length of this vector (Read Only).
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    public Transform other;
+    public float closeDistance = 5.0F;
+    void Update() {
+        if (other) {
+            Vector3 offset = other.position - transform.position;
+            float sqrLen = offset.sqrMagnitude;
+            if (sqrLen < closeDistance * closeDistance)
+                print("The other transform is close to me!");
+        }
+    }
+}
+```
+
+-------
+
+[Vector3.ClampMagnitude](https://docs.unity3d.com/ScriptReference/Vector3.ClampMagnitude.html)
+
+* `public static Vector3 ClampMagnitude(Vector3 vector, float maxLength);`
+
+> Returns a copy of vector with its magnitude clamped to maxLength.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    public Vector3 centerPt;
+    public float radius;
+    void Update() {
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 newPos = transform.position + movement;
+        Vector3 offset = newPos - centerPt;
+        transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
+    }
+}
+```
+
+
 ## Space
 
 [Space](https://docs.unity3d.com/ScriptReference/Space.html)
@@ -188,8 +438,8 @@ public class ExampleClass : MonoBehaviour
 
 [CharacterController](https://docs.unity3d.com/ScriptReference/CharacterController.html)
 
-> A CharacterController allows you to easily do movement constrained by collisions without having to deal with a rigidbody.
-> A CharacterController is not affected by forces and will only move when you call the Move funtion. It will then carry out the movement but be constrained by collisions.
+> A `CharacterController` allows you to easily do movement constrained by collisions without having to deal with a rigidbody.
+> A `CharacterController` is not affected by forces and will only move when you call the `Move` funtion. It will then carry out the movement but be constrained by collisions.
 
 -------
 
@@ -199,20 +449,66 @@ public class ExampleClass : MonoBehaviour
 
 > A more complex move function taking absolute movement deltas.
 
-## Quaternion
+## Camera
 
-[Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)
+[Camera](https://docs.unity3d.com/ScriptReference/Camera.html)
 
-> Quaternions are used to represent rotations.
+> A `Camera` is a device through which the player views the world.
+
+* A `screen space point` is defined in pixels. The bottom-left of the screen is (0,0); the right-top is (`pixelWidth`,`pixelHeight`). The z position is in world units from the Camera.
+* A `viewport space point` is normalized and relative to the Camera. The bottom-left of the Camera is (0,0); the top-right is (1,1). The z position is in world units from the Camera.
+* A `world space point` is defined in global coordinates (for example, Transform.position).
 
 -------
 
-[Quaternion.identity](https://docs.unity3d.com/ScriptReference/Quaternion-identity.html)
+[Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)
 
-* `public static Quaternion identity;`
+* `public static Camera main;`
 
-> The identity rotation (Read Only).
-> This quaternion corresponds to "no rotation" - the object is perfectly aligned with the world or parent axes.
+> The first enabled camera tagged "`MainCamera`" (Read Only).
+
+-------
+
+[Camera.pixelWidth](https://docs.unity3d.com/ScriptReference/Camera-pixelWidth.html)
+
+* `public int pixelWidth;`
+
+> How wide is the camera in pixels (Read Only).
+
+-------
+
+[Camera.pixelHeight](https://docs.unity3d.com/ScriptReference/Camera-pixelHeight.html)
+
+* `public int pixelHeight;`
+
+> How tall is the camera in pixels (Read Only).
+
+-------
+
+[Camera.ScreenPointToRay](https://docs.unity3d.com/ScriptReference/Camera.ScreenPointToRay.html)
+
+* `public Ray ScreenPointToRay(Vector3 position);`
+
+> Returns a ray going from camera through a screen point.
+> Resulting ray is in world space, starting on the near plane of the camera and going through position's (x,y) pixel coordinates on the screen (position.z is ignored).
+> Screenspace is defined in pixels. The bottom-left of the screen is `(0,0)`; the right-top is `(pixelWidth,pixelHeight)`.
+
+```c#
+// Draws a line in the scene view going through a point 200 pixels from the lower-left corner of the screen
+public class ExampleClass : MonoBehaviour
+{
+    Camera camera;
+    void Start()
+    {
+        camera = GetComponent<Camera>();
+    }
+    void Update()
+    {
+        Ray ray = camera.ScreenPointToRay(new Vector3(200, 200, 0));
+        Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+    }
+}
+```
 
 ## Input
 
@@ -330,6 +626,26 @@ public class ExampleClass : MonoBehaviour
 }
 ```
 
+-------
+
+[Input.GetMouseButton](https://docs.unity3d.com/ScriptReference/Input.GetMouseButton.html)
+
+* `public static bool GetMouseButton(int button);`
+
+> Returns whether the given mouse button is held down.
+
+button values are `0` for `left button`, `1` for `right button`, `2` for the `middle button`.
+
+-------
+
+[Input.GetMouseButtonDown](https://docs.unity3d.com/ScriptReference/Input.GetMouseButtonDown.html)
+
+* `public static bool GetMouseButtonDown(int button);`
+
+> Returns `true` during the frame the user pressed the given mouse button.
+
+You need to call this function from the `Update` function, since the state gets reset each frame. It will not return `true` until the user has released the mouse button and pressed it again.
+
 ## Time
 
 [Time](https://docs.unity3d.com/ScriptReference/Time.html)
@@ -359,24 +675,68 @@ public class ExampleClass : MonoBehaviour {
 }
 ```
 
-## Debug
+## Physics
 
-[Debug](https://docs.unity3d.com/ScriptReference/Debug.html)
+[Physics](https://docs.unity3d.com/ScriptReference/Physics.html)
 
-> Class containing methods to ease debugging while developing a game.
+> Global physics properties and helper methods.
 
 -------
 
-* `public static void Log(object message);`
+[Physics.Raycast](https://docs.unity3d.com/ScriptReference/Physics.Raycast.html)
 
-> Logs message to the Unity Console.
+* `public static bool Raycast(Ray ray, out RaycastHit hitInfo, float maxDistance = Mathf.Infinity, int layerMask = DefaultRaycastLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);`
+
+> Casts a ray, from point `origin`, in direction `direction`, of length `maxDistance`, against all colliders in the scene.
+
+You may optionally provide a `LayerMask`, to filter out any Colliders you aren't interested in generating collisions with.
 
 ```c#
-// Message with a link to an object.
-Debug.Log("Hello", gameObject);
-// Message using rich text.
-Debug.Log("<color=red>Fatal error:</color> AssetBundle not found");
+public class ExampleClass : MonoBehaviour
+{
+    void Update()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100))
+            Debug.DrawLine(ray.origin, hit.point);
+    }
+}
 ```
+
+## Ray
+
+[Ray](https://docs.unity3d.com/ScriptReference/Ray.html)
+
+> A ray is an infinite line starting at `origin` and going in some `direction`.
+
+-------
+
+[Ray Constructor](https://docs.unity3d.com/ScriptReference/Ray-ctor.html)
+
+* `public Ray(Vector3 origin, Vector3 direction);`
+
+> Creates a ray starting at `origin` along `direction`.
+
+## RaycastHit
+
+[RaycastHit](https://docs.unity3d.com/ScriptReference/RaycastHit.html)
+
+> Structure used to get information back from a raycast.
+
+* `RaycastHit.transform`: The Transform of the rigidbody or collider that was hit.
+* `RaycastHit.point`: The impact point in world space where the ray hit the collider.
+* `RaycastHit.collider`: The Collider that was hit.
+* `RaycastHit.distance`: The distance from the ray's `origin` to the impact point.
+* `RaycastHit.rigidbody`: The Rigidbody of the collider that was hit. If the collider is not attached to a rigidbody then it is null.
+
+## Coroutine
+
+[Coroutine](https://docs.unity3d.com/ScriptReference/Coroutine.html)
+
+> A coroutine is a function that can suspend its execution (`yield`) until the given `YieldInstruction` finishes.
+
+`MonoBehaviour.StartCoroutine` returns a Coroutine. Instances of this class are only used to reference these coroutines and do not hold any exposed properties or functions.
 
 ## Mathf
 
@@ -396,6 +756,42 @@ Debug.Log("<color=red>Fatal error:</color> AssetBundle not found");
 public class ExampleClass : MonoBehaviour {
     void Update() {
         transform.position = new Vector3(Mathf.Clamp(Time.time, 1.0F, 3.0F), 0, 0);
+    }
+}
+```
+
+## Debug
+
+[Debug](https://docs.unity3d.com/ScriptReference/Debug.html)
+
+> Class containing methods to ease debugging while developing a game.
+
+-------
+
+* `public static void Log(object message);`
+
+> Logs message to the Unity Console.
+
+```c#
+// Message with a link to an object.
+Debug.Log("Hello", gameObject);
+// Message using rich text.
+Debug.Log("<color=red>Fatal error:</color> AssetBundle not found");
+```
+
+-------
+
+[Debug.DrawRay](https://docs.unity3d.com/ScriptReference/Debug.DrawRay.html)
+
+* `public static void DrawRay(Vector3 start, Vector3 dir, Color color = Color.white, float duration = 0.0f, bool depthTest = true);`
+
+> Draws a line from `start` to `start + dir` in world coordinates.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    void Update() {
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+        Debug.DrawRay(transform.position, forward, Color.green);
     }
 }
 ```
@@ -421,14 +817,9 @@ public class SomePerson : MonoBehaviour
     //This field does not get serialized because it is private.
     private int age = 40;
 
-    //This field gets serialized even though it is private
-    //because it has the SerializeField attribute applied.
+    //This field gets serialized even though it is private because it has the SerializeField attribute applied.
     [SerializeField]
     private bool hasHealthPotion = true;
-
-    void Update()
-    {
-    }
 }
 ```
 
@@ -444,6 +835,46 @@ public class SomePerson : MonoBehaviour
 public class ExampleClass : MonoBehaviour {
     [HideInInspector]
     public int p = 5;
+}
+```
+
+-------
+
+[RequireComponent](https://docs.unity3d.com/ScriptReference/RequireComponent.html)
+
+> The `RequireComponent` attribute automatically adds required components as dependencies.
+
+```c#
+// PlayerScript requires the GameObject to have a Rigidbody component
+[RequireComponent(typeof(Rigidbody))]
+public class PlayerScript : MonoBehaviour
+{
+    Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        rb.AddForce(Vector3.up);
+    }
+}
+```
+
+-------
+
+[AddComponentMenu](https://docs.unity3d.com/ScriptReference/AddComponentMenu.html)
+
+> The `AddComponentMenu` attribute allows you to place a script anywhere in the "Component" menu, instead of just the "Component->Scripts" menu.
+
+You use this to organize the Component menu better, this way improving workflow when adding scripts. Important notice: You need to restart.
+
+```c#
+[AddComponentMenu("Transform/Follow Transform")]
+public class FollowTransform : MonoBehaviour
+{
 }
 ```
 
@@ -523,7 +954,7 @@ Returns a random integer number between min [inclusive] and max [exclusive] (Rea
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-06-13）
+	- 更新（2017-06-14）
 
 ---
 
