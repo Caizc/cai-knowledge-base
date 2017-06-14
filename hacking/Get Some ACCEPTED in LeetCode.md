@@ -719,12 +719,107 @@ int singleNumber(int A[], int n) {
 }
 ```
 
+## 606. Construct String from Binary Tree
+
+[Construct String from Binary Tree](https://leetcode.com/problems/construct-string-from-binary-tree/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local treeNode = {
+    val,
+    left,
+    right
+}
+
+function treeNode:new(val)
+    t = t or {}
+    setmetatable(t, self)
+    self.__index = self
+    self.val = val
+    return t
+end
+
+function createBinaryTree(nums, i, str)
+    if i > #nums then
+        return nil, str
+    end
+
+    local node = treeNode:new(nums[i])
+
+    if i == 1 then
+        str = str .. node.val
+    else
+        if node.val ~= nil then
+            str = str .. "(" .. node.val
+        else
+            str = str .. "("
+        end  
+    end
+
+    node.left, str = createBinaryTree(nums, 2 * i, str)
+    node.right, str = createBinaryTree(nums, 2 * i + 1, str)
+
+    if i ~= 1 then
+        str = str .. ")"
+    end
+
+    return node, str
+end
+
+function tree2str(nums)
+    local str = ""
+    local n = 0
+    while (true) do
+        if #nums < 2 ^ n then
+            break
+        end
+        n = n + 1
+    end
+    local tree, str = createBinaryTree(nums, 1, str)
+    return str
+end
+
+local nums = {1, 2, 3, nil, 4}
+print(tree2str(nums))
+```
+
+* **Impressive solution:**
+
+> Java Solution, Tree Traversal
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+ public class Solution {
+    public String tree2str(TreeNode t) {
+        if (t == null) return "";
+        String result = t.val + "";
+        String left = tree2str(t.left);
+        String right = tree2str(t.right);
+        if (left == "" && right == "") return result;
+        if (left == "") return result + "()" + "(" + right + ")";
+        if (right == "") return result + "(" + left + ")";
+        return result + "(" + left + ")" + "(" + right + ")";
+    }
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-13）
+	- 更新（2017-06-14）
 
 ---
 
