@@ -1121,6 +1121,26 @@ public class FollowTransform : MonoBehaviour
 
 ![](media/14972781767662.jpg)
 
+## Third Party
+
+-------
+
+[CSharpMessenger](http://wiki.unity3d.com/index.php/CSharpMessenger)
+
+> This is a delegate-based event system for C#. It uses generics to achieve static typing.
+
+-------
+
+[CSharp Messenger Extended](http://wiki.unity3d.com/index.php/CSharpMessenger_Extended)
+
+> This tries to be a programmer-mistake-resilient delegate-based event system for C#. It uses generics to achieve static typing.
+
+-------
+
+[Advanced CSharp Messenger](http://wiki.unity3d.com/index.php/Advanced_CSharp_Messenger)
+
+> This is an advanced version of a messaging system for C#. It will automatically clean up its event table after a new level has been loaded. This will prevent the programmer from accidentally invoking destroyed methods and thus will help prevent many MissingReferenceExceptions.
+
 -------
 
 > www link prefix：https://docs.unity3d.com
