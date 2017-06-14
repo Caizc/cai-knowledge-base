@@ -1,4 +1,4 @@
-# Accepted Questiones in LeetCode.com
+# Accepted Questions in LeetCode.com
 
 ## 1. Two Sum
 
