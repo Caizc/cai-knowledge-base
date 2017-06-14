@@ -149,6 +149,57 @@ public class GetComponentExample : MonoBehaviour
 }
 ```
 
+-------
+
+[Object.Destroy](https://docs.unity3d.com/ScriptReference/Object.Destroy.html)
+
+* `public static void Destroy(Object obj, float t = 0.0F);`
+
+> Removes a gameobject, component or asset.
+> The object `obj` will be destroyed now or if a time is specified `t` seconds from now. If `obj` is a Component it will remove the component from the GameObject and destroy it. If `obj` is a GameObject it will destroy the GameObject, all its components and all transform children of the GameObject. 
+
+Actual object destruction is always delayed until after the current Update loop, but will always be done before rendering.
+
+```c#
+// Kills the game object
+Destroy(gameObject);
+
+// Removes this script instance from the game object
+Destroy(this);
+
+// Removes the rigidbody from the game object
+Destroy(rigidbody);
+
+// Kills the game object in 5 seconds after loading the object
+Destroy(gameObject, 5);
+
+// When the user presses Ctrl, it will remove the script named FooScript from the game object
+void Update()
+{
+    if (Input.GetButton("Fire1") && GetComponent<FooScript>())
+    {
+        Destroy(GetComponent<FooScript>());
+    }
+}
+```
+
+-------
+
+[GameObject.CreatePrimitive](https://docs.unity3d.com/ScriptReference/GameObject.CreatePrimitive.html)
+
+* `public static GameObject CreatePrimitive(PrimitiveType type);`
+
+> Creates a game object with a primitive mesh renderer and appropriate collider.
+
+```c#
+public class ExampleClass : MonoBehaviour {
+    void Start() {
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.position = new Vector3(0, 0.5F, 0);
+     }
+}
+```
+
 ## Transform
 
 [Transform](https://docs.unity3d.com/ScriptReference/Transform.html)
@@ -395,18 +446,6 @@ public class ExampleClass : MonoBehaviour {
     }
 }
 ```
-
-
-## Space
-
-[Space](https://docs.unity3d.com/ScriptReference/Space.html)
-
-> The coordinate space in which to operate.
-
--------
-
-* `Space.World`
-* `Space.Self`
 
 ## Rigidbody
 
@@ -704,6 +743,16 @@ public class ExampleClass : MonoBehaviour
 }
 ```
 
+-------
+
+[Physics.SphereCast](https://docs.unity3d.com/ScriptReference/Physics.SphereCast.html)
+
+* `public static bool SphereCast(Ray ray, float radius, out RaycastHit hitInfo, float maxDistance = Mathf.Infinity, int layerMask = DefaultRaycastLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);`
+
+> Casts a sphere along a ray and returns detailed information on what was hit.
+
+This is useful when a Raycast does not give enough precision, because you want to find out if an object of a specific size, such as a character, will be able to move somewhere without colliding with anything on the way. Think of the sphere cast like a thick raycast. In this case the ray is specified by a start vector and a direction.
+
 ## Ray
 
 [Ray](https://docs.unity3d.com/ScriptReference/Ray.html)
@@ -738,6 +787,84 @@ public class ExampleClass : MonoBehaviour
 
 `MonoBehaviour.StartCoroutine` returns a Coroutine. Instances of this class are only used to reference these coroutines and do not hold any exposed properties or functions.
 
+## WaitForSeconds
+
+[WaitForSeconds](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html)
+
+> Suspends the coroutine execution for the given amount of seconds using scaled time.
+
+**The actual time suspended is equal to the given time multiplied by `Time.timeScale`.**
+See `WaitForSecondsRealtime` if you wish to wait using unscaled time.
+`WaitForSeconds` can only be used with a yield statement in coroutines.
+
+**Note: There are some factors which can mean the actual amount of time waited does not precisely match the amount of time specified.**
+
+- `WaitForSeconds` starts waiting at the end of the current frame. So, if you start a `WaitForSeconds` with duration '`t`' in a very long frame (for example, one which has a long operation which blocks the main thread such as some synchronous loading), the coroutine will return '`t`' seconds after the end of the frame, not 't' seconds after it was called.
+
+- `WaitForSeconds` will allow the coroutine to resume on the first frame after '`t`' seconds has passed, not exactly after '`t`' seconds has passed.
+
+-------
+
+[WaitForSecondsRealtime](https://docs.unity3d.com/ScriptReference/WaitForSecondsRealtime.html)
+
+> Suspends the coroutine execution for the given amount of seconds using unscaled time.
+> `WaitForSecondsRealtime` can only be used with a `yield` statement in coroutines.
+
+## Cursor
+
+[Cursor](https://docs.unity3d.com/ScriptReference/Cursor.html)
+
+-------
+
+[Cursor.lockState](https://docs.unity3d.com/ScriptReference/Cursor-lockState.html)
+
+* `public static CursorLockMode lockState;`
+
+> Determines whether the hardware pointer is locked to the center of the view, constrained to the window, or not constrained at all.
+
+-------
+
+[Cursor.visible](https://docs.unity3d.com/ScriptReference/Cursor-visible.html)
+
+* `public static bool visible;`
+
+> Determines whether the hardware pointer is visible or not.
+> Set this to true to reveal the cursor. Set it to false to hide the cursor. 
+
+Note that in `CursorLockMode.Locked` mode, the cursor is invisible regardless of the value of this property.
+
+```c#
+public class CursorScript : MonoBehaviour
+{
+    void Start()
+    {
+        //Set Cursor to not be visible
+        Cursor.visible = false;
+    }
+}
+```
+
+## GUI
+
+[GUI](https://docs.unity3d.com/ScriptReference/GUI.html)
+
+> The GUI class is the interface for Unity's GUI with manual positioning.
+
+-------
+
+[GUI.Label](https://docs.unity3d.com/ScriptReference/GUI.Label.html)
+
+* `public static void Label(Rect position, string text);`
+* `public static void Label(Rect position, Texture image);`
+
+> Make a text or texture label on screen.
+
+## Rect
+
+[Rect](https://docs.unity3d.com/ScriptReference/Rect.html)
+
+> A 2D Rectangle defined by `X` and `Y` position, `width` and `height`.
+
 ## Mathf
 
 [Mathf](https://docs.unity3d.com/ScriptReference/Mathf.html)
@@ -759,6 +886,28 @@ public class ExampleClass : MonoBehaviour {
     }
 }
 ```
+
+## Random
+
+[Random](https://docs.unity3d.com/ScriptReference/Random.html)
+
+> Class for generating random data.
+
+-------
+
+[Random.Range](https://docs.unity3d.com/ScriptReference/Random.Range.html)
+
+* `public static float Range(float min, float max);`
+
+> Returns a random float number between and `min` [inclusive] and `max` [inclusive].
+
+**Note that max is inclusive, so using Random.Range( 0.0f, 1.0f ) could return 1.0 as a value.**
+
+* `public static int Range(int min, int max);`
+
+> Returns a random integer number between `min` [inclusive] and `max` [exclusive].
+
+**Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned.**
 
 ## Debug
 
@@ -878,6 +1027,40 @@ public class FollowTransform : MonoBehaviour
 }
 ```
 
+## Enumerations
+
+-------
+
+[Space](https://docs.unity3d.com/ScriptReference/Space.html)
+
+> The coordinate space in which to operate.
+
+* `Space.World`
+* `Space.Self`
+
+-------
+
+[PrimitiveType](https://docs.unity3d.com/ScriptReference/PrimitiveType.html)
+
+> The various primitives that can be created using the `GameObject.CreatePrimitive` function.
+
+* `Sphere`
+* `Capsule`
+* `Cylinder`
+* `Cube`
+* `Plane`
+* `Quad`
+
+-------
+
+[CursorLockMode](https://docs.unity3d.com/ScriptReference/CursorLockMode.html)
+
+> How the cursor should behave.
+
+* `None`: Cursor behavior is unmodified.
+* `Locked`: Lock cursor to the center of the game window.
+* `Confined`: Confine cursor to the game window.
+
 ## Execution Order of Event Functions
 
 [Execution Order of Event Functions](https://docs.unity3d.com/Manual/ExecutionOrder.html)
@@ -937,11 +1120,6 @@ public class FollowTransform : MonoBehaviour
 > The following diagram summarises the ordering and repetition of event functions during a script’s lifetime.
 
 ![](media/14972781767662.jpg)
-
--------
-
-* int Random.Range(int min, int max)
-Returns a random integer number between min [inclusive] and max [exclusive] (Read Only). min: max:
 
 -------
 
