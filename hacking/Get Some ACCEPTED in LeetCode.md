@@ -814,12 +814,72 @@ print(tree2str(nums))
 }
 ```
 
+## 520. Detect Capital
+
+[Detect Capital](https://leetcode.com/problems/detect-capital/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function detectCapitalUse(word)
+    local pattern1 = "%u+"
+    local pattern2 = "%l+"
+    local pattern3 = "%u%l+"
+    local a1, b1 = string.find(word, pattern1)
+    if a1 == 1 and b1 == #word then
+        return true
+    end
+    local a2, b2 = string.find(word, pattern2)
+    if a2 == 1 and b2 == #word then
+        return true
+    end
+    local a3, b3 = string.find(word, pattern3)
+    if a3 == 1 and b3 == #word then
+        return true
+    end
+    return false
+end
+
+local word1 = "USA"
+print(word1, detectCapitalUse(word1))
+local word2 = "leetcode"
+print(word2, detectCapitalUse(word2))
+local word3 = "Google"
+print(word3, detectCapitalUse(word3))
+local word4 = "FlaG"
+print(word4, detectCapitalUse(word4))
+```
+
+* **Impressive solution:**
+
+> ASCII 码
+
+```java
+public class Solution {
+    public boolean detectCapitalUse(String word) {
+        int cnt = 0;
+        for(char c: word.toCharArray()) if('Z' - c >= 0) cnt++;
+        return ((cnt==0 || cnt==word.length()) || (cnt==1 && 'Z' - word.charAt(0)>=0));
+    }
+}
+```
+
+> 正则表达式
+
+```java
+public boolean detectCapitalUse(String word) {
+    return word.matches("[A-Z]+|[a-z]+|[A-Z][a-z]+");
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-14）
+	- 更新（2017-06-15）
 
 ---
 
