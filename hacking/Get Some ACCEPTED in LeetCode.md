@@ -752,10 +752,11 @@ function createBinaryTree(nums, i, str)
     if i == 1 then
         str = str .. node.val
     else
-        if node.val ~= nil then
+        if node.val ~= nil and node.val ~= -1 then
             str = str .. "(" .. node.val
         else
-            str = str .. "("
+            str = str .. "()"
+            return node, str
         end  
     end
 
@@ -782,7 +783,7 @@ function tree2str(nums)
     return str
 end
 
-local nums = {1, 2, 3, nil, 4}
+local nums = {1, 2, 3, -1, 5, 6, -1, -1, -1, 10}
 print(tree2str(nums))
 ```
 
@@ -874,12 +875,84 @@ public boolean detectCapitalUse(String word) {
 }
 ```
 
+## 104. Maximum Depth of Binary Tree
+
+[Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local treeNode = {
+    val,
+    left,
+    right
+}
+
+function treeNode:new(val)
+    t = t or {}
+    setmetatable(t, self)
+    self.__index = self
+    self.val = val
+    return t
+end
+
+function createBinaryTree(nums, i, count)
+    if i > #nums then
+        return nil, count
+    end
+
+    local node = treeNode:new(nums[i])
+
+    if node.val ~= nil and node.val ~= -1 then
+        count = count + 1
+        local leftDepth
+        local rightDepth
+        node.left, leftDepth = createBinaryTree(nums, 2 * i, count)
+        node.right, rightDepth = createBinaryTree(nums, 2 * i + 1, count)
+        return node, math.max(leftDepth, rightDepth)
+    else
+        return nil, count
+    end  
+end
+
+function maxDepth(nums)
+    local count = 0
+    local n = 0
+    while (true) do
+        if #nums < 2 ^ n then
+            break
+        end
+        n = n + 1
+    end
+    local tree, count = createBinaryTree(nums, 1, count)
+    return count
+end
+
+local nums = {1, 2, 3, -1, 5, 6, -1, -1, -1, 10}
+print(maxDepth(nums))
+```
+
+* **Impressive solution:**
+
+> if the node does not exist, simply return 0. Otherwise, return the 1+the longer distance of its subtree.
+
+```java
+public int maxDepth(TreeNode root) {
+    if(root==null){
+        return 0;
+    }
+    return 1 + Math.max(maxDepth(root.left),maxDepth(root.right));
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-15）
+	- 更新（2017-06-16）
 
 ---
 
