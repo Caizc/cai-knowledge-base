@@ -947,12 +947,66 @@ public int maxDepth(TreeNode root) {
 }
 ```
 
+## 448. Find All Numbers Disappeared in an Array
+
+[Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findDisappearedNumbers(nums)
+    local result = {}
+    local temp = {}
+    for i=1,#nums do
+        temp[nums[i]] = 0
+    end
+    local j = 0
+    for i=1,#nums do
+        if temp[i] ~= 0 then
+            j = j + 1
+            result[j] = i
+        end
+    end
+    return result
+end
+
+local nums = {4, 3, 2, 8, 8, 2, 3, 1}
+local result = findDisappearedNumbers(nums)
+for i=1,#result do
+    print(result[i])
+end
+```
+
+* **Impressive solution:**
+
+> The basic idea is that we iterate through the input array and mark elements as negative using `nums[nums[i] -1] = -nums[nums[i]-1]`. In this way all the numbers that we have seen will be marked as negative. In the second iteration, if a value is not marked as negative, it implies we have never seen that index before, so just add it to the return list.
+
+```java
+public List<Integer> findDisappearedNumbers(int[] nums) {
+    List<Integer> ret = new ArrayList<Integer>();
+    for(int i = 0; i < nums.length; i++) {
+        int val = Math.abs(nums[i]) - 1;
+        if(nums[val] > 0) {
+            nums[val] = -nums[val];
+        }
+    }
+    for(int i = 0; i < nums.length; i++) {
+        if(nums[i] > 0) {
+            ret.add(i+1);
+        }
+    }
+    return ret;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-16）
+	- 更新（2017-06-17）
 
 ---
 
