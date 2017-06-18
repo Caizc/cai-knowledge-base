@@ -1001,12 +1001,69 @@ public List<Integer> findDisappearedNumbers(int[] nums) {
 }
 ```
 
+## 389. Find the Difference
+
+[Find the Difference](https://leetcode.com/problems/find-the-difference/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findTheDifference(s, t)
+    local result = 0
+    local byte = string.byte
+    for i=1,string.len(s) do
+        result = result ~ byte(s, i, i)
+    end    
+    for i=1,string.len(t) do
+        result = result ~ byte(t, i, i)
+    end
+    return string.char(result)
+end
+
+local s = "abcd"
+local t = "cdeab"
+print(findTheDifference(s, t))
+```
+
+* **Impressive solution:**
+
+> Java solution using bit manipulation
+
+```java
+public char findTheDifference(String s, String t) {
+	char c = 0;
+	for (int i = 0; i < s.length(); ++i) {
+		c ^= s.charAt(i);
+	}
+	for (int i = 0; i < t.length(); ++i) {
+		c ^= t.charAt(i);
+	}
+	return c;
+}
+```
+
+> maybe a more elegant version
+
+```java
+public char findTheDifference(String s, String t) {
+	int n = t.length();
+	char c = t.charAt(n - 1);
+	for (int i = 0; i < n - 1; ++i) {
+		c ^= s.charAt(i);
+		c ^= t.charAt(i);
+	}
+	return c;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-17）
+	- 更新（2017-06-18）
 
 ---
 
