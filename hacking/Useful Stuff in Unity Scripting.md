@@ -1141,6 +1141,16 @@ public class FollowTransform : MonoBehaviour
 
 > This is an advanced version of a messaging system for C#. It will automatically clean up its event table after a new level has been loaded. This will prevent the programmer from accidentally invoking destroyed methods and thus will help prevent many MissingReferenceExceptions.
 
+## Programming in CSharp
+
+-------
+
+[What is the difference between an abstract function and a virtual function?](https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abstract-function-and-a-virtual-function)
+
+* **An abstract function cannot have functionality.** You're basically saying, any child class MUST give their own version of this method, however it's too general to even try to implement in the parent class.
+
+* **A virtual function, is basically saying look, here's the functionality that may or may not be good enough for the child class.** So if it is good enough, use this method, if not, then override me, and provide your own functionality.
+
 -------
 
 > www link prefix：https://docs.unity3d.com
@@ -1152,7 +1162,7 @@ public class FollowTransform : MonoBehaviour
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-06-14）
+	- 更新（2017-06-18）
 
 ---
 
