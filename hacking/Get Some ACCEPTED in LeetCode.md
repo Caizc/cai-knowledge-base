@@ -771,19 +771,11 @@ function createBinaryTree(nums, i, str)
 end
 
 function tree2str(nums)
-    local str = ""
-    local n = 0
-    while (true) do
-        if #nums < 2 ^ n then
-            break
-        end
-        n = n + 1
-    end
-    local tree, str = createBinaryTree(nums, 1, str)
+    local _, str = createBinaryTree(nums, 1, "")
     return str
 end
 
-local nums = {1, 2, 3, -1, 5, 6, -1, -1, -1, 10}
+local nums = {1, 2, 3, -1, 4}
 print(tree2str(nums))
 ```
 
@@ -918,15 +910,7 @@ function createBinaryTree(nums, i, count)
 end
 
 function maxDepth(nums)
-    local count = 0
-    local n = 0
-    while (true) do
-        if #nums < 2 ^ n then
-            break
-        end
-        n = n + 1
-    end
-    local tree, count = createBinaryTree(nums, 1, count)
+    local _, count = createBinaryTree(nums, 1, 0)
     return count
 end
 
@@ -1058,12 +1042,144 @@ public char findTheDifference(String s, String t) {
 }
 ```
 
+## 226. Invert Binary Tree
+
+[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local treeNode = {
+    val,
+    left,
+    right
+}
+
+function treeNode:new(val)
+    t = t or {}
+    setmetatable(t, self)
+    self.__index = self
+    self.val = val
+    return t
+end
+
+function createBinaryTree(nums, i, str)
+    if i > #nums then
+        return nil, str
+    end
+
+    local node = treeNode:new(nums[i])
+
+    if i == 1 then
+        str = str .. node.val
+    else
+        if node.val ~= nil and node.val ~= -1 then
+            str = str .. "(" .. node.val
+        else
+            str = str .. "()"
+            return node, str
+        end  
+    end
+
+    node.left, str = createBinaryTree(nums, 2 * i + 1, str)
+    node.right, str = createBinaryTree(nums, 2 * i, str)
+
+    if i ~= 1 then
+        str = str .. ")"
+    end
+
+    return node, str
+end
+
+function invertTree(nums)
+    local _, str = createBinaryTree(nums, 1, "")
+    return str
+end
+
+local nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print(invertTree(nums))
+```
+
+* **Impressive solution:**
+
+> recursive DFS solution
+
+```java
+public class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        final TreeNode left = root.left,  right = root.right;
+        root.left = invertTree(right);
+        root.right = invertTree(left);
+        return root;
+    }
+}
+```
+
+> The above solution is correct, but it is also bound to the application stack, which means that it's no so much scalable - (you can find the problem size that will overflow the stack and crash your application), so more robust solution would be to use stack data structure.
+
+```java
+public class Solution {
+    public TreeNode invertTree(TreeNode root) {      
+        if (root == null) {
+            return null;
+        }
+        final Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            final TreeNode node = stack.pop();
+            final TreeNode left = node.left;
+            node.left = node.right;
+            node.right = left;
+            if(node.left != null) {
+                stack.push(node.left);
+            }
+            if(node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        return root;
+    }
+}
+```
+
+> we can easly convert the above solution to BFS - or so called level order traversal.
+
+```java
+public class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        final Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            final TreeNode node = queue.poll();
+            final TreeNode left = node.left;
+            node.left = node.right;
+            node.right = left;
+            if(node.left != null) {
+                queue.offer(node.left);
+            }
+            if(node.right != null) {
+                queue.offer(node.right);
+            }
+        }
+        return root;
+    }
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-18）
+	- 更新（2017-06-19）
 
 ---
 
