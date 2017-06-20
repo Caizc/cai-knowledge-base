@@ -1174,12 +1174,79 @@ public class Solution {
 }
 ```
 
+## 371. Sum of Two Integers
+
+[Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function getSum(a, b)
+    if b == 0 then
+        return a
+    else
+        return getSum(a ~ b, (a & b) << 1)
+    end
+end
+
+local a = 1
+local b = 3
+print(getSum(a, b))
+```
+
+* **Impressive solution:**
+
+[A summary: How to use bit manipulation to solve problems easily and efficiently - LeetCode.com](https://discuss.leetcode.com/topic/50315/a-summary-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently)
+
+[Java simple easy understand solution with explanation](https://discuss.leetcode.com/topic/49771/java-simple-easy-understand-solution-with-explanation)
+
+```java
+// Iterative
+public int getSum(int a, int b) {
+	if (a == 0) return b;
+	if (b == 0) return a;
+	while (b != 0) {
+		int carry = a & b;
+		a = a ^ b;
+		b = carry << 1;
+	}
+	return a;
+}
+
+// Iterative
+public int getSubtract(int a, int b) {
+	while (b != 0) {
+		int borrow = (~a) & b;
+		a = a ^ b;
+		b = borrow << 1;
+	}
+	return a;
+}
+
+// Recursive
+public int getSum(int a, int b) {
+	return (b == 0) ? a : getSum(a ^ b, (a & b) << 1);
+}
+
+// Recursive
+public int getSubtract(int a, int b) {
+	return (b == 0) ? a : getSubtract(a ^ b, (~a & b) << 1);
+}
+
+// Get negative number
+public int negate(int x) {
+	return ~x + 1;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-19）
+	- 更新（2017-06-20）
 
 ---
 
