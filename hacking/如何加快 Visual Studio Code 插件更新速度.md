@@ -4,7 +4,7 @@
 
 ![](media/14967407398314.png)
 
-如果你是「科学上网」，可以如下在 Visual Studio Code 的设置里修改 `http.proxyStrictSSL` 属性为 `false`，并且将 `http.proxy` 属性设置为「科学上网」软件（例如 Lantern）的代理地址和端口，以加快插件更新的速度。
+如果你是「科学上网」，可以在 Visual Studio Code 的设置里修改 `http.proxyStrictSSL` 属性为 `false`，并且将 `http.proxy` 属性设置为「科学上网」软件（例如 Lantern）的代理地址和端口，以加快插件更新的速度。
 
 ![](media/14967405561346.png)
 
