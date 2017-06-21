@@ -1241,12 +1241,60 @@ public int negate(int x) {
 }
 ```
 
+## 258. Add Digits
+
+[Add Digits](https://leetcode.com/problems/add-digits/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function addDigits(num)
+    local digit = 0
+    repeat
+        m = num // 10
+        digit = digit + (num % 10)
+        num = m
+    until m <= 0
+    if digit >= 10 then
+        return addDigits(digit)
+    end
+    return digit
+end
+
+local num = 389
+print(addDigits(num))
+```
+
+* **Impressive solution:**
+
+[Digital root - Wikipedia](https://en.wikipedia.org/wiki/Digital_root)
+
+> The problem, widely known as digit root problem, has a congruence formula.
+> For base b (decimal case b = 10), the digit root of an integer is:
+> 
+> * dr(n) = 0 if n == 0
+> * dr(n) = (b-1) if n != 0 and n % (b-1) == 0
+> * dr(n) = n mod (b-1) if n % (b-1) != 0
+> or
+> * dr(n) = 1 + (n - 1) % 9
+
+```c++
+class Solution {
+public:
+    int addDigits(int num) {
+        return 1 + (num - 1) % 9;
+    }
+};
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-20）
+	- 更新（2017-06-21）
 
 ---
 
