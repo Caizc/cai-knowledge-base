@@ -1356,12 +1356,52 @@ public void moveZeroes(int[] nums) {
 }
 ```
 
+## 599. Minimum Index Sum of Two Lists
+
+[Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findRestaurant(list1, list2)
+    local result = {}
+    local k = 1
+    for sum=2,#list1+#list2 do
+        for i=1,#list1 do
+            while true do
+                if i >= sum or sum-i >= #list2 then
+                    break
+                end
+                if list1[i] == list2[sum-i] then
+                    result[k] = list1[i]
+                    k = k + 1
+                end
+                break
+            end
+        end
+        if #result ~= 0 then
+            break
+        end
+    end
+    return result
+end
+
+local list1 = {"Shogun", "KFC", "Burger King", "Tapioca Express"}
+local list2 = {"KFC", "Shogun", "Burger King"}
+local result = findRestaurant(list1, list2)
+for i=1,#result do
+    print(result[i])
+end
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-22）
+	- 更新（2017-06-23）
 
 ---
 
