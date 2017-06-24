@@ -738,7 +738,7 @@ function treeNode:new(val)
     t = t or {}
     setmetatable(t, self)
     self.__index = self
-    self.val = val
+    t.val = val
     return t
 end
 
@@ -886,7 +886,7 @@ function treeNode:new(val)
     t = t or {}
     setmetatable(t, self)
     self.__index = self
-    self.val = val
+    t.val = val
     return t
 end
 
@@ -1061,7 +1061,7 @@ function treeNode:new(val)
     t = t or {}
     setmetatable(t, self)
     self.__index = self
-    self.val = val
+    t.val = val
     return t
 end
 
@@ -1396,12 +1396,135 @@ for i=1,#result do
 end
 ```
 
+## 2. Add Two Numbers
+
+[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local ListNode = {
+    val,
+    next
+}
+
+function ListNode:new(v)
+    local o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    o.val = v or 0
+    return o
+end
+
+function createList(list, i)
+    if i > #list then
+        return nil
+    end
+    local node = ListNode:new(list[i])
+    node.next = createList(list, i+1)
+    return node
+end
+
+function addTwoNumbers(listNode1, listNode2, carry)
+    if listNode1 == nil and listNode2 == nil and carry == 0 then
+        return nil
+    end
+
+    local sumListNode = ListNode:new()
+    local a, b
+    local nextNode1, nextNode2
+
+    if listNode1 == nil then
+        a = 0
+        nextNode1 = nil
+    else
+        a = listNode1.val
+        nextNode1 = listNode1.next
+    end
+
+    if listNode2 == nil then
+        b = 0
+        nextNode2 = nil
+    else
+        b = listNode2.val
+        nextNode2 = listNode2.next
+    end
+
+    local sum = a + b + carry
+
+    if sum < 10 then
+        sumListNode.val = sum
+        carry = 0
+    else
+        sumListNode.val = sum % 10
+        carry = 1
+    end
+
+    sumListNode.next = addTwoNumbers(nextNode1, nextNode2, carry)
+
+    return sumListNode
+end
+
+local list1 = {0, 4, 3, 5}
+local list2 = {5, 6, 4, 8}
+local listNode1 = createList(list1, 1)
+local listNode2 = createList(list2, 1)
+
+local result = addTwoNumbers(listNode1, listNode2, 0)
+repeat
+    print(result.val)
+    result = result.next
+until (result == nil)
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+ public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode c1 = l1;
+        ListNode c2 = l2;
+        ListNode sentinel = new ListNode(0);
+        ListNode d = sentinel;
+        int sum = 0;
+        while (c1 != null || c2 != null) {
+            sum /= 10;
+            if (c1 != null) {
+                sum += c1.val;
+                c1 = c1.next;
+            }
+            if (c2 != null) {
+                sum += c2.val;
+                c2 = c2.next;
+            }
+            d.next = new ListNode(sum % 10);
+            d = d.next;
+        }
+        if (sum / 10 == 1)
+            d.next = new ListNode(1);
+        return sentinel.next;
+    }
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-23）
+	- 更新（2017-06-24）
 
 ---
 
