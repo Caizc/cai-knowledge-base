@@ -1519,12 +1519,98 @@ Language: Java
 }
 ```
 
+## 20. Valid Parentheses
+
+[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function isValid(str)
+    for i=1,#str do
+        while true do
+            if str[i] == "(" then
+                if i+1 <= #str and str[i+1] == ")" then
+                    break
+                else
+                    return false
+                end
+            end
+            if str[i] == ")" then
+                if i-1 >= 1 and str[i-1] == "(" then
+                    break
+                else
+                    return false
+                end
+            end
+            if str[i] == "[" then
+                if i+1 <= #str and str[i+1] == "]" then
+                    break
+                else
+                    return false
+                end
+            end
+            if str[i] == "]" then
+                if i-1 >= 1 and str[i-1] == "[" then
+                    break
+                else
+                    return false
+                end
+            end
+            if str[i] == "{" then
+                if i+1 <= #str and str[i+1] == "}" then
+                    break
+                else
+                    return false
+                end
+            end
+            if str[i] == "{" then
+                if i-1 >= 1 and str[i-1] == "}" then
+                    break
+                else
+                    return false
+                end
+            end
+            break
+        end
+        i = i + 1
+    end
+    return true
+end
+
+local str = {"(", ")", "[", "]", "{", "}"}
+print(isValid(str))
+```
+
+* **Impressive solution:**
+
+Language: Java
+
+```java
+public boolean isValid(String s) {
+	Stack<Character> stack = new Stack<Character>();
+	for (char c : s.toCharArray()) {
+		if (c == '(')
+			stack.push(')');
+		else if (c == '{')
+			stack.push('}');
+		else if (c == '[')
+			stack.push(']');
+		else if (stack.isEmpty() || stack.pop() != c)
+			return false;
+	}
+	return stack.isEmpty();
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-24）
+	- 更新（2017-06-25）
 
 ---
 
