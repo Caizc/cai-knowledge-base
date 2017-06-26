@@ -1605,12 +1605,71 @@ public boolean isValid(String s) {
 }
 ```
 
+## 3. Longest Substring Without Repeating Characters
+
+[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function lengthOfLongestSubstring(str)
+    if string.len(str) == 0 then
+        return "", 0
+    end
+    local longestSubstring = ""
+    local maxLength = 0
+    local length = 0
+    local sentinel = 1
+    local hashtable = {}
+    for i=1,string.len(str) do
+        local char = string.sub(str, i, i)
+        if hashtable[char] ~= nil then
+            if i - sentinel > maxLength then
+                longestSubstring = string.sub(str, sentinel, i-1)
+                maxLength = length
+            end
+            sentinel = hashtable[char] + 1
+        else
+            length = i - sentinel + 1
+        end
+        hashtable[char] = i
+    end
+    return longestSubstring, maxLength
+end
+
+-- local str = "abcabcbb"
+local str = "pwwkew"
+print(lengthOfLongestSubstring(str))
+```
+
+* **Impressive solution:**
+
+> the basic idea is, keep a hashmap which stores the characters in string as keys and their positions as values, and keep two pointers which define the max substring. move the right pointer to scan through the string , and meanwhile update the hashmap. If the character is already in the hashmap, then move the left pointer to the right of the same character last found. Note that the two pointers can only move forward.
+
+```java
+public int lengthOfLongestSubstring(String s) {
+    if (s.length()==0) return 0;
+    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+    int max=0;
+    for (int i=0, j=0; i<s.length(); ++i){
+        if (map.containsKey(s.charAt(i))){
+            j = Math.max(j,map.get(s.charAt(i))+1);
+        }
+        map.put(s.charAt(i),i);
+        max = Math.max(max,i-j+1);
+    }
+    return max;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-25）
+	- 更新（2017-06-26）
 
 ---
 
