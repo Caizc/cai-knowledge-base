@@ -1664,12 +1664,101 @@ public int lengthOfLongestSubstring(String s) {
 }
 ```
 
+## 21. Merge Two Sorted Lists
+
+[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local ListNode = {
+    val,
+    next
+}
+
+function ListNode:new(val)
+    local o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    o.val = val
+    return o
+end
+
+function createList(list, i)
+    if i > #list then
+        return nil
+    end
+    local node = ListNode:new(list[i])
+    node.next = createList(list, i+1)
+    return node
+end
+
+function getListNode(list1, list2)
+    local l1 = createList(list1, 1)
+    local l2 = createList(list2, 1)
+    return l1, l2
+end
+
+function mergeTwoLists(l1, l2)
+    if l1 == nil then
+        return l2
+    end
+    if l2 == nil then
+        return l1
+    end
+    local newList = {}
+    if l1.val < l2.val then
+        newList.val = l1.val
+        newList.next = mergeTwoLists(l1.next, l2)
+    else
+        newList.val = l2.val
+        newList.next = mergeTwoLists(l1, l2.next)
+    end
+    return newList
+end
+
+local list1 = {2, 4, 6, 7, 9, 10}
+local list2 = {1, 3, 5, 8}
+local l1, l2 = getListNode(list1, list2)
+local newList = mergeTwoLists(l1, l2)
+while newList ~= nil do
+    print(newList.val)
+    newList = newList.next
+end
+```
+
+* **Impressive solution:**
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public ListNode mergeTwoLists(ListNode l1, ListNode l2){
+	if(l1 == null) return l2;
+	if(l2 == null) return l1;
+	if(l1.val < l2.val){
+		l1.next = mergeTwoLists(l1.next, l2);
+		return l1;
+	} else{
+		l2.next = mergeTwoLists(l1, l2.next);
+		return l2;
+	}
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-26）
+	- 更新（2017-06-27）
 
 ---
 
