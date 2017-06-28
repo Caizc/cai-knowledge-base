@@ -1753,12 +1753,67 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2){
 }
 ```
 
+## 53. Maximum Subarray
+
+[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/#/description)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function maxSubArray(nums)
+    local dp = {}
+    dp[1] = nums[1]
+    local maxSum = dp[1]
+    local a = 1
+    local b = 1
+    for i=2,#nums do
+        if dp[i-1] >= 0 then
+            dp[i] = dp[i-1] + nums[i]
+        else
+            dp[i] = nums[i]
+            a = i
+        end
+        if maxSum <= dp[i] then
+            maxSum = dp[i]
+            b = i
+        end
+    end
+    print("start index: " .. a)
+    print("end index: " .. b)
+    return maxSum
+end
+
+local nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4}
+print("largest sum: " .. maxSubArray(nums))
+```
+
+* **Impressive solution:**
+
+> Dynamic Programming Solution
+> [动态规划 - 维基百科](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
+
+```java
+public int maxSubArray(int[] A) {
+    int n = A.length;
+    int[] dp = new int[n];//dp[i] means the maximum subarray ending with A[i];
+    dp[0] = A[0];
+    int max = dp[0]; 
+    for(int i = 1; i < n; i++){
+        dp[i] = A[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
+        max = Math.max(max, dp[i]);
+    }
+    return max;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-27）
+	- 更新（2017-06-28）
 
 ---
 
