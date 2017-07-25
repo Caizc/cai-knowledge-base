@@ -1,6 +1,6 @@
 # 蔡升达-《Design Patterns in Game Development》
 
-* 《Design Patterns in Game Development》
+* Design Patterns in Game Development
 * 《设计模式与游戏完美开发》
 * `蔡升达` 著
 * 2017 年 1 月第 1 版
