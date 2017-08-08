@@ -1,6 +1,8 @@
-# Animation - Unity Manual
+# Animation * Unity Manual
 
 # Animation System Overview（动画系统概述）#
+
+[图片]
 
 # Animation Clips（动画剪辑）#
 
@@ -8,16 +10,16 @@
 
 ### Working with humanoid animations（使用人型动画） ###
 
-- Creating the Avatar（创建 Avatar）
-- Configuring the Avatar（配置 Avatar）
-- Muscle setup（肌肉设置）
+* Creating the Avatar（创建 Avatar）
+* Configuring the Avatar（配置 Avatar）
+* Muscle setup（肌肉设置）
 
 ### Asset Preparation and Import（资源准备和导入） ###
 
-- Using Humanoid Characters（使用人型角色）
-- Preparing your own character（为你的角色准备资源）
+* Using Humanoid Characters（使用人型角色）
+* Preparing your own character（为你的角色准备资源）
 
-### Non-humanoid Animations（非人型动画） ###
+### Non*humanoid Animations（非人型动画） ###
 
 ### Splitting Animations（分割动画） ###
 
