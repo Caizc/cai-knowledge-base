@@ -128,6 +128,10 @@
 
 [Euler Curve Import](https://docs.unity3d.com/Manual/AnimationEulerCurveImport.html)
 
+[四元数（Quaternion）和旋转 - CSDN 博客](http://blog.csdn.net/candycat1992/article/details/41254799)
+
+// TODO
+
 ## Animation Window Guide
 
 // TODO
