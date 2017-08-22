@@ -32,7 +32,44 @@
 
 # 第 12 章 游戏资源更新
 
+## AssetBundle 资源包
+
+### AssetBundle 简介
+### 创建 AssetBundle
+
+* AssetBundle 系统
+* BuildAssetBundles 方法
+
+### AssetBundle 的下载
+
+* 非缓存机制
+* 缓存机制
+
+### AssetBundle 的加载和卸载
+
+* 如何加载 AssetBundle
+* 如何卸载 AssetBundle
+
+### 关于 AssetBundle
+
+* 管理 AssetBundle 之间的依赖
+* 存储和加载二进制数据
+* 将脚本打包入 AssetBundle
+
+## Lua 热更新
+
+### 热更新的基本介绍
+### Lua 的基本情况介绍
+### LuaFramework 框架介绍
+### 热更新案例
+
 # 第 13 章 多线程技术与网络开发
+
+## 多线程技术
+## WWW 类
+## 网络类 —— NetWork
+## 基于 Unity Network 开发网络
+## 基于 Socket 开发 Unity 网络游戏
 
 # 第 14 章 Unity 2D 游戏开发
 
@@ -45,6 +82,7 @@
 change log: 
 
 	- 创建（2017-08-16）
+	- 更新（2017-08-17）
 
 ---
 
