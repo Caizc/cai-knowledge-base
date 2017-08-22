@@ -1,10 +1,9 @@
-# Visual Studio & ReSharper 快捷键
-
-[ReSharper的快捷键](https://my.oschina.net/u/935978/blog/131287)
-[8项Resharper快捷键](http://www.cnblogs.com/redmoon/p/4458697.html)
-* StyleCop
+# Visual Studio & ReSharper Tips
 
 ## ReSharper 快捷键
+
+[ReSharper的快捷键](https://my.oschina.net/u/935978/blog/131287)
+[8项Resharper快捷键](http://www.cnblogs.com/redmoon/p/4458697.html)
 
 | 功能 | 快捷键 |
 | --- | --- |
@@ -35,11 +34,16 @@
 | Go to implementation | Ctrl+Shift+Alt+B |
 | Highlight usages in file |	Ctrl+Shift+F7 |
 
+## 实用插件
+
+* StyleCop
+
 ---
 
 change log: 
 
 	- 创建（2017-08-22）
+	- 更新（2017-08-23）
 
 ---
 
