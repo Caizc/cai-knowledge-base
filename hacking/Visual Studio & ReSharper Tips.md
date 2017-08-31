@@ -38,12 +38,16 @@
 
 * StyleCop
 
+## Trouble Shooting
+
+[Unity keeps opening new instances of Microsoft Visual Studio](http://answers.unity3d.com/questions/1078859/unity-keeps-opening-new-instances-of-microsoft-vis.html)
+
 ---
 
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2017-08-23）
+	- 更新（2017-08-24）
 
 ---
 
