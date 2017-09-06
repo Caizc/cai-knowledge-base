@@ -373,6 +373,8 @@ public class ExampleClass : MonoBehaviour
 
 ## Quaternion
 
+[四元数（Quaternion）和旋转](http://blog.csdn.net/candycat1992/article/details/41254799)
+
 [Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)
 
 > Quaternions are used to represent rotations.
@@ -887,6 +889,25 @@ public class ExampleClass : MonoBehaviour {
 }
 ```
 
+-------
+
+[Mathf.Deg2Rad](https://docs.unity3d.com/ScriptReference/Mathf.Deg2Rad.html)
+
+* `public static float Deg2Rad;`
+
+> Degrees-to-radians conversion constant (Read Only).
+> This is equal to (PI * 2) / 360.
+
+```csharp
+public class ExampleClass : MonoBehaviour {
+    public float deg = 30.0F;
+    void Start() {
+        float rad = deg * Mathf.Deg2Rad;
+        Debug.Log(deg + "degrees are equal to " + rad + " radians.");
+    }
+}
+```
+
 ## Random
 
 [Random](https://docs.unity3d.com/ScriptReference/Random.html)
@@ -1162,7 +1183,7 @@ public class FollowTransform : MonoBehaviour
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-06-18）
+	- 更新（2017-09-05）
 
 ---
 
