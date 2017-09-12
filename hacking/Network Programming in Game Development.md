@@ -2,13 +2,73 @@
 
 -------
 
+## Game Networking
+
+[Game Networking](https://gafferongames.com/categories/game-networking/)
+
+[What Every Programmer Needs To Know About Game Networking](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/)
+
+[Latency Compensating Methods in Client/Server In-game Protocol Design and Optimization](https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization)
+
+[网络游戏基本模型](https://wuzhou.github.io/programming/2016/09/16/game-network.html)
+
+* Peer-to-Peer
+* Client/Server
+* 客户端模拟
+* 服务器端延迟补偿
+
+-------
+
+## 状态同步与帧同步
+
+[状态同步与帧同步](http://www.cnblogs.com/sevenyuan/p/5283265.html)
+
+**帧同步技术关键点：**
+
+![](media/15033297231549.png)
+
+* 基于**指令驱动**各个客户端自计算逻辑。服务端只管分发指令，每个客户端根据完整的规则运算整个战场。
+每个客户端播放效果就像是**看视频**
+* 保证所有客户端**每帧的输入都一样**--同步性
+* **相同的输入下要有相同的输出**--确定性
+* **只需要同步指令**，所以流量消耗非常小
+* 采用囚徒模式，所有c端强制**采用一个逻辑帧率**，从而保证输出一致
+* 游戏的过程就是每一个turn不断向前推进，每一个玩家的turn推进速度一致
+* 每一帧只有当服务器**集齐了所有玩家的操作指令**，也就是输入确定了之后，才可以进行计算，进入下一个turn，否则就要等待最慢的玩家。之后再广播给所有的玩家，如此才能保证帧一致
+* Lockstep的游戏是严格按照turn向前推进的，如果有人延迟比较高，其他玩家必须等待该玩家跟上之后再继续计算，不存在某个玩家领先或落后其他玩家若干个turn的情况。使用Lockstep同步机制的游戏中，每个玩家的**延迟都等于延迟最高的那个人**
+* 由于大家的turn一致，以及输入固定，所以每一步**所有客户端的计算结果都一致**的
+* 采用“**定时不等待**”的乐观方式在每次Interval时钟发生时固定将操作广播给所有用户，不依赖具体每个玩家是否有操作更新。如此帧率的时钟在由服务器控制，当客户端有操作的时候及时的发送服务器，然后服务端每秒钟20-50次向所有客户端发送更新消息
+* **伪随机**。在游戏开始前，服务器为每个玩家分配一个**随机种子**，然后同步给client，如此每个client在计算每个角色的技能时候，就能保证伤害是一致的
+* 客户端按照**单机战斗**方式实现，**显示层和逻辑层分离**，逻辑层**不要用到浮点数**
+* **不要用到 Unity 的 physics 和 navmesh**
+
+对于联网游戏来讲，同步的方式主要分为两种，状态同步、帧同步。
+
+　　1、**状态同步**：顾名思义，是指的**将其他玩家的状态行为同步的方式**，一般情况下AI逻辑，技能逻辑，战斗计算都由服务器运算，只是将运算的结果同步给客户端，客户端只需要接受服务器传过来的状态变化，然后更新自己本地的动作状态、Buff状态，位置等就可以了，但是为了给玩家好的体验，减少同步的数据量，客户端也会做很多的本地运算，减少服务器同步的频率以及数据量。
+
+　　2、 **帧同步**：RTS游戏常采用的一种同步技术 ，上一种状态同步方式数据量会随着需要同步的单位数量增长，对于RTS游戏来讲动不动就是几百个的单位可以被操作，如果这些都需要同步的话，数据量是不能被接受的，所以帧同步**不同步状态，只同步操作**，每个客户端接受到操作以后，通过运算可以达到一致的状态（通过随机种子保证所有客户端随机序列一致），这样的情况下就算单位再多，他的同步量也不会随之增加。
+
+　　下面我们从以上的5个方面对各自实现方式进行描述：
+
+![](media/15033278933489.jpg)
+
+　总结一下：
+
+　　1、对于回合制战斗来讲，其实选用哪种方式实现不是特别重要了，因为本身实现难度不是很高，采用状态同步也能实现离线战斗验证。所以采用帧同步的必要性不是很大。
+　　2、对于单位比较多的RTS游戏一定是帧同步，对于COC来讲，他虽然是离线游戏，但是他在一样输入的情况下是能得到一样结果的，所以也可以认为他是用帧同步方式实现的战斗系统。
+　　3、对于对操作要求比较高的，例如MOBA类游戏有碰撞（玩家、怪物可以互相卡位）、物理逻辑，纯物理类即时可玩休闲游戏，帧同步实现起来比较顺畅，（有开源的Dphysics 2D物理系统可用 它是Determisti的）。
+　　4、对于战斗时大地图MMORPG的，一个地图内会有成千上百的玩家，不是小房间性质的游戏，只能使用状态同步，只同步自己视野的状态。    
+　　5、帧同步有个缺点，不能避免玩家采用作弊工具开图。
+
+-------
+
 ## 帧同步
 
 [游戏中的网络同步机制—— Lockstep](https://bindog.github.io/blog/2015/03/10/synchronization-in-multiplayer-networked-game-lockstep/)
 
-> Warcraft III中的主机的主要功能是广播并设置timeout，也就是说在每个turn内，游戏玩家并非直接将自己的操作指令广播给其他玩家，而是先发送给主机，由主机负责广播，且每个turn都有timeout，如果超过了timeout仍然没有收到某个掉线玩家的操作指令，则忽略该玩家在该turn的行为，即认定他什么都没有做，并与其他延迟正常的玩家同步进入下一个turn。而当掉线玩家网络恢复时，主机会将之前保存的turn中操作指令集合发送给该名玩家，而该名玩家为了赶上进度，就会出现游戏快放的情况。
+Warcraft III中的主机的主要功能是广播并设置timeout，也就是说在每个turn内，游戏玩家并非直接将自己的操作指令广播给其他玩家，而是先发送给主机，由主机负责广播，且每个turn都有timeout，如果超过了timeout仍然没有收到某个掉线玩家的操作指令，则忽略该玩家在该turn的行为，即认定他什么都没有做，并与其他延迟正常的玩家同步进入下一个turn。而当掉线玩家网络恢复时，主机会将之前保存的turn中操作指令集合发送给该名玩家，而该名玩家为了赶上进度，就会出现游戏快放的情况。
 
-> 所以Warcraft III中只有在主机延迟高或掉线时，其他玩家才会受影响，否则不受影响。在局域网中，如果主机是正常退出的，那么会选定另一玩家电脑作为主机，如果是崩溃退出的，则所有人都会直接掉线。至于在对战平台上是否有优化就不太清楚了。
+所以Warcraft III中只有在主机延迟高或掉线时，其他玩家才会受影响，否则不受影响。在局域网中，如果主机是正常退出的，那么会选定另一玩家电脑作为主机，如果是崩溃退出的，则所有人都会直接掉线。至于在对战平台上是否有优化就不太清楚了。
 
 [帧同步的一点人参经验](http://jjyy.guru/about-lockstep)
 
@@ -24,6 +84,62 @@
 
 从游戏效果上对比帧同步与状态同步：帧同步的整体感会更强，角色与环境的交互更加自然。而状态同步个人感受会更强，视角受限（因为无法观察整个世界）的第一人称用状态同步会非常合适。
 
+[从王者荣耀聊聊游戏的帧同步](https://my.oschina.net/u/1859679/blog/1137723)
+
+* 服务器架构
+
+![](media/15052100602043.jpg)
+
+* 通信方式（UDP）
+
+* 同步方案
+
+![](media/15052101931559.jpg)
+
+* 乐观锁 & 断线重连
+
+![](media/15052102132654.jpg)
+
+服务器会保存玩家当场游戏的游戏指令以及状态信息，在玩家断线重连的时候，能够恢复到断线前的状态。
+
+采用“定时不等待”的乐观方式在每次Interval时钟发生时固定将操作广播给所有用户，不依赖具体每个玩家是否有操作更新。如此帧率的时钟在由服务器控制，当客户端有操作的时候及时的发送服务器，然后服务端每秒钟20-50次向所有客户端发送更新消息。
+
+* 技能同步（伪随机）
+
+[帧同步游戏开发基础指南](http://imgtec.eetrend.com/blog/8635)
+
+![](media/15052121009299.png)
+
+![](media/15052121194061.png)
+
+![](media/15052121271026.png)
+
+![](media/15052121526010.png)
+
+![](media/15052121657999.png)
+
+![](media/15052121729411.png)
+
+![](media/15052121855030.png)
+
+-------
+
+## 手游帧同步
+
+[手游帧同步的研究](http://blog.csdn.net/langresser_king/article/details/46756393)
+
+如果拿Unity实现一个RTS手游，**要实现确定性的模拟就非常困难**了。因为Unity中的Start Awake Update等函数的调用是不受控制的，协程、SendMessage、Invoke也是不受控制的，动画事件更加不受控制，物理使用Physic也是不保证确定性模拟的，即OnTriggerEnter这些函数的调用或者RigidBody的运动都可能存在误差。
+
+实现一个“确定性”模拟的客户端，其难度很高，并且**维护成本非常大**。每个添加的技能都要深思熟虑，并且要花大量的时间去测试。每个新添加的代码都可能造成不同步现象，除非战斗部分写好后一百年不动，否则无论是重构还是添加新功能都会战战兢兢，如履薄冰。
+
+不光是Unity本身的问题，底层和上层都需要做相应的处理。
+
+**底层要保证浮点数的“确定性”**，这个本身就是一个高级课题，保证后还要考虑修改后的效率问题，毕竟手游上单位多了，简单ai也会成为大问题，如果浮点数计算的效率低了，很可能会大大的降低运行效率。数据结构如List也可能会有不稳定排序的问题。
+
+**上层的ai逻辑也要精心设计**，以尽可能“准确”的描述来执行行为，比如a单位移动到b点，攻击c，这样的ai执行起来相对可靠。而如果是a追踪b单位，直到x单位进入攻击范围则开始攻击，这个就埋下了很大的隐患，除非所有的计算和调用都是确定性的。
+
+以手游来说，以帧同步来实现战斗同步还有一些副作用。比如**要保证客户端完全匹配**，无论是配置还是版本，差一点儿都没有办法一同游戏。所以无论是安装包还是配置，只要有修改就必须要让玩家更新，否则不能进入战斗。  而不同设备、不同cpu，是否会造成不同的结果，这个不能百分百的肯定，也就是说，游戏的兼容性有很大的隐患。
+
 -------
 
 ## Lockstep Implementation in Unity3D (Open Source)
@@ -36,8 +152,10 @@
 
 * **Lockstep turn**
 A lockstep turn will be made up of multiple game turns. One action per player will be processed in one lockstep turn. The length of the lockstep turn will be adjusted based on performance. At this time it is just hard coded as 200ms.
+
 * **Game turn**
 A game turn is when the game logic and physics simulation will be updated. The number of game turns per lockstep turn will be adjusted based on performance. At this time it is hard coded to 50ms, or 4 per lockstep. This means there would be 20 game turns per second.
+
 * **Action**
 An action is a command issued by a player. For example select units in a specified area, or move the selected units to the target location.
 
@@ -209,6 +327,10 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 [网络游戏同步法则](http://www.skywind.me/blog/archives/112)
 [再谈网游同步技术](http://www.skywind.me/blog/topics/gamedev)
+
+-------
+
+
 
 -------
 
