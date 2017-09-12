@@ -21,6 +21,7 @@
 
 * SSH（Spring、Strut、Hibernate）
 * Tomcat
+* ICE
 
 # 前端开发
 
@@ -41,6 +42,7 @@
 # 操作系统
 
 * Linux
+* Docker
 
 # 版本管理
 
@@ -49,13 +51,14 @@
 
 # 感兴趣
 
-* Docker
+
 
 ---
 
 change log: 
 
 	- 创建（2017-09-07）
+	- 更新（2017-09-11）
 
 ---
 
