@@ -1,7 +1,5 @@
 # Network Programming in Game Development - 游戏开发中的网络编程
 
--------
-
 ## Game Networking
 
 [Game Networking](https://gafferongames.com/categories/game-networking/)
@@ -16,8 +14,6 @@
 * Client/Server
 * 客户端模拟
 * 服务器端延迟补偿
-
--------
 
 ## 状态同步与帧同步
 
@@ -60,8 +56,6 @@
 　　4、对于战斗时大地图MMORPG的，一个地图内会有成千上百的玩家，不是小房间性质的游戏，只能使用状态同步，只同步自己视野的状态。    
 　　5、帧同步有个缺点，不能避免玩家采用作弊工具开图。
 
--------
-
 ## 帧同步
 
 [游戏中的网络同步机制—— Lockstep](https://bindog.github.io/blog/2015/03/10/synchronization-in-multiplayer-networked-game-lockstep/)
@@ -69,6 +63,8 @@
 Warcraft III中的主机的主要功能是广播并设置timeout，也就是说在每个turn内，游戏玩家并非直接将自己的操作指令广播给其他玩家，而是先发送给主机，由主机负责广播，且每个turn都有timeout，如果超过了timeout仍然没有收到某个掉线玩家的操作指令，则忽略该玩家在该turn的行为，即认定他什么都没有做，并与其他延迟正常的玩家同步进入下一个turn。而当掉线玩家网络恢复时，主机会将之前保存的turn中操作指令集合发送给该名玩家，而该名玩家为了赶上进度，就会出现游戏快放的情况。
 
 所以Warcraft III中只有在主机延迟高或掉线时，其他玩家才会受影响，否则不受影响。在局域网中，如果主机是正常退出的，那么会选定另一玩家电脑作为主机，如果是崩溃退出的，则所有人都会直接掉线。至于在对战平台上是否有优化就不太清楚了。
+
+-------
 
 [帧同步的一点人参经验](http://jjyy.guru/about-lockstep)
 
@@ -83,6 +79,8 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 * 一致性：如何定位问题（浮点数和随机数、约束每个帧同步的对象）
 
 从游戏效果上对比帧同步与状态同步：帧同步的整体感会更强，角色与环境的交互更加自然。而状态同步个人感受会更强，视角受限（因为无法观察整个世界）的第一人称用状态同步会非常合适。
+
+-------
 
 [从王者荣耀聊聊游戏的帧同步](https://my.oschina.net/u/1859679/blog/1137723)
 
@@ -106,6 +104,8 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 * 技能同步（伪随机）
 
+-------
+
 [帧同步游戏开发基础指南](http://imgtec.eetrend.com/blog/8635)
 
 ![](media/15052121009299.png)
@@ -121,8 +121,6 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 ![](media/15052121729411.png)
 
 ![](media/15052121855030.png)
-
--------
 
 ## 手游帧同步
 
@@ -141,6 +139,8 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 以手游来说，以帧同步来实现战斗同步还有一些副作用。比如**要保证客户端完全匹配**，无论是配置还是版本，差一点儿都没有办法一同游戏。所以无论是安装包还是配置，只要有修改就必须要让玩家更新，否则不能进入战斗。  而不同设备、不同cpu，是否会造成不同的结果，这个不能百分百的肯定，也就是说，游戏的兼容性有很大的隐患。
 
 -------
+
+[球球大作战客户端优化](http://www.gad.qq.com/article/detail/28052)
 
 ## Lockstep Implementation in Unity3D (Open Source)
 
@@ -165,8 +165,6 @@ An action is a command issued by a player. For example select units in a specifi
 * 发送平均数
 
 * 支持单个玩家
-
--------
 
 ## 帧同步在竞技类网络游戏中的应用
 
@@ -199,13 +197,9 @@ GSS模块中各个系统的执行，由帧数驱动，不引入其他时间线�
 
 由于渲染层与GSS只做到事务级的同步，而GSS与渲染层的播放速率有可能不同，则为保证较好的表现效果，GSS的逻辑帧需要与渲染层的渲染帧做固定比率的绑定，譬如图13的1:2，当GSS逻辑帧数不变的情况下，渲染帧掉帧时，能经过换算得到当前逻辑帧对应的渲染帧数，出现GSS帧数暂停时，则逻辑帧也跟着一起暂停。
 
--------
-
 ## Client-Server Game Architecture（Live Demo）
 
 [Fast-Paced Multiplayer](http://www.gabrielgambetta.com/)
-
--------
 
 ## Doom3
 
@@ -221,8 +215,6 @@ GSS模块中各个系统的执行，由帧数驱动，不引入其他时间线�
 * 对于每一客户端，**初始条件相同 -> 操作相同 -> 判定相同 -> 结果也相同**。
 * 在游戏开始时，服务器给每一个客户端分一个**统一的随机数种子**就行了。
 
--------
-
 ## 动态预测与延时补偿
 
 [客户端动态预测技术和延时补偿技术](http://gulu-dev.com/post/2014-03-15-dynamic-prediction-and-latency-compensation)
@@ -232,8 +224,6 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 这种预测会在B有新的操作事件发生的时候失败，而这里的处理与Q3稍有不同。比如B正在往前飞，突然松开了W键开始减速直到停下。在未收到B的减速及停止消息前，A仍保持了B在全速往前飞的预测，此时若收到了减速的信号（同步过来的加速度突然变为负向的，速度开始变化）此时A可以意识到，自己坐标系中的B已然偏离了正确的位置。那么可以采用一个补偿算法去修正B。修正的幅度可以参考当前客户端的延迟情况。这个算法可以是激进的（尽量迅速地校准，牺牲平滑性）或保守的（保证飞行的平滑性，牺牲修正速度）。
 
 怎么判断什么时候用这个预测和补偿，用的时候强度有多大呢？仍以前面的AB客户端为例的话，一般来讲约 100ms 的阙值即可（延时越敏感，客户端B的avatar移动速度越快，这个值应越低）。当A与服务器之间的延时(可定期roundtrip测得)高于阙值时，就可以开始缓存操作序列来做预测了。
-
--------
 
 ## 放置类游戏的网络同步
 
@@ -261,8 +251,6 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 但这套数据模型因为有可能因为同步原因，需要重新计算状态，会引起状态的跳变。为了避免玩家操作上的步适，可以建立第二套模型。第二套模型和第一套模型的初始状态是一致的，在第一套状态变化后，和第二套做插值，计算出一个变更比较小的结果作用在第二套上。减少玩家的跳变感受。
 
--------
-
 ## 基于确定性状态机的小战场同步方案
 
 [基于确定性状态机的小战场同步方案](http://blog.kezhuw.name/2016/02/25/deterministic-state-machine-based-moba-battleground-synchronization/)
@@ -272,8 +260,6 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 **版本兼容**
 如果新版本服务器需要兼容老版本的客户端的话，需要在初始化阶段协商版本号。实现的时候，需要对新逻辑做版本过滤。最好只迭代维护最新的几个版本。
-
--------
 
 ## 网络游戏的移动同步
 
@@ -309,11 +295,13 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 服务端逻辑：
 
-1. 收集所有客户端本关键帧K1的CTRL数据（Ctrl-K）等待知道收集完成所有的CTRL-K。
+1. 收集所有客户端本关键帧K1的CTRL数据（Ctrl-K）等待直到收集完成所有的CTRL-K。
 2. 根据所有CTRL-K，计算下一个关键帧K2的Update，计算再下一个关键帧的编号K3。
 3. 将Update发送给所有客户端
 4. 令K1=K2
 5. 跳转（1）
+
+-------
 
 [网络游戏的移动同步（五）帧同步算法](http://www.zhust.com/index.php/2015/08/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%EF%BC%88%E4%BA%94%EF%BC%89%E5%B8%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E6%B3%95/)
 
@@ -321,31 +309,65 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 * 客户端发送指令，比如（选中，移动，攻击目标等），指令包含当前帧索引；
 * 服务器每隔一段时间（假设是100ms）发送帧更新包，该更新包将客户端逻辑心跳步进，并且处理当前帧索引的指令，当前帧索引步进1。
 
+-------
+
 [帧锁定同步算法](http://www.skywind.me/blog/archives/131)
 
 ![](media/15052072029953.jpg)
 
+-------
+
 [网络游戏同步法则](http://www.skywind.me/blog/archives/112)
 [再谈网游同步技术](http://www.skywind.me/blog/topics/gamedev)
 
--------
+## Lockstep Framework
 
+[LockstepFramework - GitHub](https://github.com/SnpM/LockstepFramework)
+[The Lockstep Framework - Unity Forums](https://forum.unity.com/threads/the-lockstep-framework.318829/)
+[DPhysics Beta - Cross-platform Deterministic Physics engine - Unity Forums](https://forum.unity.com/threads/dphysics-beta-cross-platform-deterministic-physics-engine.318827/)
+[Author of Lockstep Framework - YouTube](https://www.youtube.com/channel/UC-whUyNZYl1eF8suN8LFwfA)
 
+> The Lockstep Framework (LSF) is a framework designed for games that especially need lockstep simulations. It includes a deterministic 2D physics engine, pathfinding, behavior system, and more.
 
--------
+* Deterministic math library and simulation
+* Custom 2D physics engine on the X-Z plane.
+* Behaviour system for both individual agents and globally
+* Lockstep variables - know when and where desyncs happen
+* Size-based pathfinding (big units won't get stuck in those narrow gaps)
+* Customizable database system
+* Support for DakrRift and Photon Networking (Forge Networking support deprecated but let me know if you need it)
+* 3D Raycasting
 
 ## Photon TrueSync
 
+[TRUESYNC - Photon](https://www.photonengine.com/en-US/TrueSync)
 [Photon TrueSync - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/73228)
+[TrueSync Documentation](https://doc.photonengine.com/en-us/truesync/current/getting-started/truesync-intro)
+[TrueSync API](http://doc-api.photonengine.com/en/TrueSync/current/)
 
-appid:
-2df1abbc-ba2e-4f28-8de0-046f11ff11ef
+> TrueSync is based on a synchronous lockstep architecture with its own physics engine to keep a deterministic game state for Unity multiplayer games. All features from PUN are included.
+
+**App ID:**
+104462ad-8174-49b7-aeaa-2ed058bb93d2
+
+## Photon Unity Networking
+
+[Photon Unity Networking Free - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/1786)
+[PUN Documentation](https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro)
+
+## KBEngine
+
+[KBEngine](http://kbengine.org/cn/)
+[kbengine - GitHub](https://github.com/kbengine/kbengine)
+
+> 一款开源的游戏服务端引擎，客户端通过简单的约定协议就能与服务端通讯，使用 KBEngine 插件能够快速与(Unity3D、UE4、OGRE、HTML5、等等)技术结合形成一个完整的客户端。 服务端底层框架使用 C++ 编写，游戏逻辑层使用 Python(支持热更新)，开发者无需重复的实现一些游戏服务端通用的底层技术，将精力真正集中到游戏开发层面上来，快速的打造各种网络游戏。
 
 ---
 
 change log: 
 
 	- 创建（2017-09-12）
+	- 更新（2017-09-13）
 
 ---
 
