@@ -6,7 +6,7 @@
 
 * Client 基于**指令驱动**
 * Client 统一**步进帧率**
-* Client 每一步进帧向 Server **发送输入数据**，并加上帧索引
+* Client 每一步进帧向 Server **发送输入数据**，并加上**帧索引**
 * 所有 Client 每一步进帧的**输入一致**
 * 仅通过 Server **交换用户输入**
 * Server 每一步进帧要收**集齐**所有 Client 输入再进入下一步进帧
@@ -33,7 +33,7 @@
 * 优化时要考虑清楚**网络延迟和执行延迟**
 * **使用 UDP，冗余帧数据来对抗丢包**，Client 请求缺失帧数据可以使用 TCP
 * AI 行为设计保证可以「确定无误」地执行，即**「确定性的 AI」**
-* 确保**所有 Client 的版本一致**，版本不一致无法进行游戏，兼容是个大问题
+* 确保**所有 Client 的版本一致**，版本不一致无法进行游戏（匹配相同版本的玩家到同一个房间中）
 * **Server 版本与 Client 版本的兼容问题**
 
 * 以 Game Turn 游戏帧作为唯一的时间线，物品持续时间、状态持续时间都由此帧数控制
@@ -41,7 +41,7 @@
 * Client 逻辑帧数与渲染帧数可作固定比例绑定
 
 * **Lockstep Turn - 步进帧**，一个步进帧处理一次玩家操作，一个步进帧由多个游戏帧组成，一般是固定的
-* **Game Turn - 游戏帧**，在游戏帧中处理游戏逻辑和物理模拟（这个待商榷？），游戏帧的执行速率取决于性能，也可以处理成固定的
+* **Game Turn - 游戏帧**，在游戏帧中处理游戏逻辑和物理模拟（这个待确认？），游戏帧的执行速率取决于性能，也可以处理成固定的
 * **Action - 一次玩家操作指令**
 * **Game Turn Frame -> 1 -> 2 -> 3 -> 4 -> Lockstep Turn Frame**，Lockstep Turn Frame 将 CTRL 数据给到 Client，Client 在 Game Turn Frame 的关键帧中收集当前 CTRL+1 数据发送到 Server，然后使用 CTRL 数据作为接下来 1、2、3、4 非关键帧中的虚拟操控数据
 
@@ -63,11 +63,56 @@
 * PUN 提供了登录系统、房间系统，TrueSync 实现战斗同步
 * PUN 还提供了 RPC 调用等特性
 
+## 帧同步框架
+
+**TrueSync 与 PUN 耦合的类：**
+
+_PhotonTrueSyncCommunicator_
+_TrueSyncManager_
+_UnityUtils_
+
+**TrueSync 使用到 PUN 的功能接口：**
+
+_Photon.PunBehaviour_: This class provides a .photonView and all callbacks/events that PUN can call. Override the events/methods you want to use.
+
+* OnJoinedLobby()：加入游戏大厅后的回调方法
+Called on entering a lobby on the Master Server. The actual room-list updates will call OnReceivedRoomListUpdate().
+
+_PhotonNetwork_
+
+* PhotonNetwork.ConnectUsingSettings("v1.0")
+* PhotonNetwork.automaticallySyncScene = true
+* PhotonNetwork.JoinOrCreateRoom("room1", null, null)
+* PhotonNetwork.playerList
+* PhotonNetwork.isMasterClient
+* PhotonNetwork.LoadLevel("_HelloWorld/Game")
+* PhotonNetwork.connected
+* PhotonNetwork.inRoom
+* PhotonNetwork.networkingPeer
+* PhotonNetwork.OnEventCall += lastEventCallback
+
+_LoadBalancingPeer_
+
+* loadBalancingPeer.RoundTripTime
+* loadBalancingPeer.PeerState
+* loadBalancingPeer.OpRaiseEvent(eventCode, message, reliable, eventOptions)
+
+_ExitGames.Client.Photon.PeerStateValue_ ：enum
+
+* ExitGames.Client.Photon.PeerStateValue.Connected
+
+_RaiseEventOptions_
+
+* RaiseEventOptions.TargetActors
+
+_PhotonPlayer_ :需要将 PhotonPlayer 转换位 TSPlayer
+
 ---
 
 change log: 
 
 	- 创建（2017-09-13）
+	- 更新（2017-09-16）
 
 ---
 

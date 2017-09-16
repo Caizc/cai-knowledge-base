@@ -354,6 +354,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 [Photon Unity Networking Free - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/1786)
 [PUN Documentation](https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro)
+[PUN API](https://github.com/Caizc/learn-photon-truesync)
 
 ## KBEngine
 
@@ -367,7 +368,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 change log: 
 
 	- 创建（2017-09-12）
-	- 更新（2017-09-13）
+	- 更新（2017-09-15）
 
 ---
 
