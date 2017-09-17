@@ -66,6 +66,10 @@ version
 
 [Docker Documentation](https://docs.docker.com/)
 
+# Docker Hub
+
+[Docker Hub](https://hub.docker.com/explore/)
+
 # macOS install Docker
 
 [Mac 上 Docker 的安装和使用初探](http://blog.devzeng.com/blog/using-docker-on-macos.html)
@@ -136,6 +140,76 @@ Password: 123456
 [Download MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 [Mac 下安装 mysql 服务及基于 workbench 的使用方法](https://my.oschina.net/u/2391658/blog/716741)
 
+## 连接到 Docker 容器中的 MySQL console
+
+[DOCKER – HOW TO CONNECT TO A MYSQL RUNNING CONTAINER](https://littletechblogger.wordpress.com/2016/02/26/docker-how-to-connect-to-a-mysql-running-container-using-mysql-command-line-client/)
+
+Bash into the running container and run MySQL client.
+
+1. Bash into the running MySQL container:
+
+```
+$ docker exec -t -i <container_name> /bin/bash
+```
+
+2. Run MySQL client:
+
+```
+$ mysql -u “<useranme>” -p
+```
+
+## 开启 CentOS 中 MySQL 的远程连接权限
+
+[CentOS下开启mysql远程连接，远程管理数据库](http://www.fantxi.com/blog/archives/enable-remote-access-mysql-centos/)
+
+```
+$ mysql -u root -p mysql
+// 第1个mysql是执行命令，第2个mysql是系统数据名称
+```
+
+* 在 mysql 控制台执行:
+
+```
+mysql> grant all privileges on *.* to 'root'@'%' identified by '123456' with grant option;
+// root是用户名，%代表任意主机，'123456'指定的登录密码（这个和本地的root密码可以设置不同的，互不影响）
+mysql> flush privileges;
+// 重载系统权限
+mysql> exit;
+```
+
+* 添加防火墙规则，允许 3306 端口
+
+```
+$ iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+// 查看规则是否生效
+$ iptables -L -n
+// 或者
+$ service iptables status
+```
+
+```
+// 此时生产环境是不安全的，远程管理之后应该关闭端口，删除之前添加的规则
+$ iptables -D INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+```
+
+另外，上面为 iptables 添加/删除规则都是临时的，如果需要重启后也生效，需要保存修改：
+
+```
+$ service iptables save
+// 或者
+$ /etc/init.d/iptables save
+```
+
+另一种方法是：
+
+```
+$ vi /etc/sysconfig/iptables
+// 加上下面这行规则也是可以的
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+```
+
+> 可部分参考：[远程连接腾讯云Centos系统的MySQL数据库](http://linux.it.net.cn/CentOS/course/2016/0530/22995.html)
+
 # Dockerfile
 
 [使用 Dockerfile 构建 Docker 镜像](http://blog.devzeng.com/blog/build-docker-image-with-dockerfile.html)
@@ -146,6 +220,7 @@ Password: 123456
 change log: 
 
 	- 创建（2017-09-11）
+	- 更新（2017-09-16）
 
 ---
 
