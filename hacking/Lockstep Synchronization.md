@@ -63,7 +63,7 @@
 * PUN 提供了登录系统、房间系统，TrueSync 实现战斗同步
 * PUN 还提供了 RPC 调用等特性
 
-## 帧同步框架
+## TrueSync 从 PUN 基础上剥离
 
 **TrueSync 与 PUN 耦合的类：**
 
@@ -117,7 +117,7 @@ _PhotonPlayer_ : 需要将 PhotonPlayer 转换为 TSPlayer
 change log: 
 
 	- 创建（2017-09-13）
-	- 更新（2017-09-16）
+	- 更新（2017-09-22）
 
 ---
 
