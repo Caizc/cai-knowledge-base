@@ -89,6 +89,7 @@ _PhotonNetwork_
 * PhotonNetwork.connected
 * PhotonNetwork.inRoom
 * PhotonNetwork.networkingPeer
+* PhotonNetwork.EventCallback
 * PhotonNetwork.OnEventCall += lastEventCallback
 
 _LoadBalancingPeer_
@@ -105,7 +106,11 @@ _RaiseEventOptions_
 
 * RaiseEventOptions.TargetActors
 
-_PhotonPlayer_ :需要将 PhotonPlayer 转换位 TSPlayer
+_PhotonPlayer_ : 需要将 PhotonPlayer 转换为 TSPlayer
+
+**问题：**
+
+* 如何防止 TrueSync 发送空的数据包给 Server ？
 
 ---
 

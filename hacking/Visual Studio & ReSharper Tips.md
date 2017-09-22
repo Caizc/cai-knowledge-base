@@ -26,7 +26,7 @@
 | View type hierarchy | Ctrl + Alt + H |
 | 生成代码 | Alt + Insert |
 | 根据模板创建文件 | Ctrl + Alt + Insert |
-| Go to type	 | Ctrl+N |
+| Go to type | Ctrl+N |
 | Go To File | Ctrl+Shift+N |
 | Go to file member | Ctrl+F12 |
 | Go to symbol	 | Ctrl+Shift+Alt+N |
@@ -36,6 +36,7 @@
 | 折叠所有大纲显示 | Ctrl + M, Ctrl + A |
 | 展开所有大纲显示 | Ctrl + M, Ctrl + X |
 | 展开当前区域 | Ctrl + M, Ctrl + E |
+| View recent files | Ctrl + E |
 
 ## 实用插件
 
@@ -50,7 +51,7 @@
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2017-09-01）
+	- 更新（2017-09-19）
 
 ---
 
