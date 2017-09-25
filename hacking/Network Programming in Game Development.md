@@ -385,6 +385,11 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 **App ID:**
 104462ad-8174-49b7-aeaa-2ed058bb93d2
 
+![](media/15063355169841.png)
+
+* 官方介绍说，TrueSync 很适合用于制作 2 个玩家的 RTS 游戏，但对于那种 8 个玩家的需要持续控制的 FPS 游戏或者 VR 游戏，PUN 会是更好的选择。
+* 混合使用了帧同步和状态同步的特性。
+
 ## Photon Unity Networking
 
 [Photon Unity Networking Free - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/1786)
@@ -404,12 +409,19 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 > 基于 lua 和 love UDP 网络通信库的简单实现，但还不够成熟。
 
+## UNet
+
+[Multiplayer and Networking - Unity Manual](https://docs.unity3d.com/Manual/UNet.html)
+
+* Unity 内嵌的网络模块，其指导思想、核心概念和 Photon 很相似，都是为了抽象网络底层，让开发者面对高层次的 API 接口而不需要关心底层网络的细节。
+* 实际使用起来性能调优或许会是个较为麻烦的问题（待深入研究）。
+
 ---
 
 change log: 
 
 	- 创建（2017-09-12）
-	- 更新（2017-09-21）
+	- 更新（2017-09-25）
 
 ---
 

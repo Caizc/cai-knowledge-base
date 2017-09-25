@@ -57,7 +57,7 @@
 * 帧同步，仅交换输入，本地计算模拟（需要）
 * 跨平台确定性物理引擎（需要）
 * 自动回放（非必需）
-* 回退和状态跟踪（非必需，优化提高项，使用起来有风险）
+* 回退和状态跟踪（非必需，优化提高项，使用有风险）
 * 基于 Photon Unity Networking（PUN）构建，并完美兼容 PUN（非必需，除非使用了 Photon Server）
 
 * PUN 提供了登录系统、房间系统，TrueSync 实现战斗同步
@@ -108,16 +108,12 @@ _RaiseEventOptions_
 
 _PhotonPlayer_ : 需要将 PhotonPlayer 转换为 TSPlayer
 
-**问题：**
-
-* 如何防止 TrueSync 发送空的数据包给 Server ？
-
 ---
 
 change log: 
 
 	- 创建（2017-09-13）
-	- 更新（2017-09-22）
+	- 更新（2017-09-25）
 
 ---
 
