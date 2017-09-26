@@ -716,6 +716,20 @@ public class ExampleClass : MonoBehaviour {
 }
 ```
 
+-------
+
+[Time.timeScale](https://docs.unity3d.com/ScriptReference/Time-timeScale.html)
+
+> The scale at which the time is passing. This can be used for slow motion effects.
+
+When `timeScale` is `1.0` the time is passing as fast as realtime. When `timeScale` is `0.5` the time is passing `2x` slower than realtime.When `timeScale` is set to `zero` the game is basically **paused** if all your functions are frame rate independent.Except for `realtimeSinceStartup`, `timeScale` **affects all the time and delta time measuring variables of the Time class.**If you lower `timeScale` it is recommended to also lower `Time.fixedDeltaTime` by the same amount.**`FixedUpdate` functions will not be called when timeScale is set to zero.**
+
+* timeScale 不影响 Update 和 LateUpdate，会影响 FixedUpdate* timeScale 不影响 Time.realtimeSinceStartup，会影响 Time.timeSinceLevelLoad 和 Time.time* timeScale 不影响 Time.fixedDeltaTime 和 Time.unscaleDeltaTime，会影响 Time.deltaTime 
+**Reference：**
+
+* [对 Time.timeScale 的一些理解](http://blog.csdn.net/lyh916/article/details/44133003)
+* [Unity3D 研究院之 Time.timeScale、游戏暂停](http://www.xuanyusong.com/archives/2956)
+
 ## Physics
 
 [Physics](https://docs.unity3d.com/ScriptReference/Physics.html)
@@ -1183,7 +1197,7 @@ public class FollowTransform : MonoBehaviour
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-09-05）
+	- 更新（2017-09-26）
 
 ---
 
