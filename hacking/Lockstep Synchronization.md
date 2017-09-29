@@ -135,12 +135,319 @@ _RaiseEventOptions_
 
 _PhotonPlayer_ : 需要将 PhotonPlayer 转换为 TSPlayer
 
+## TrueSync 解构
+
+### 核心类
+
+_TrueSyncManager_
+管理 Player Prefab 的创建和 Lockstep 流程的执行，提供引擎主要功能特性的 API 接口
+
+1. **Awake()**
+
+    - 加载配置
+    - 初始化 Rollback 窗口大小
+    - 初始化 TSRandom 随机类
+    - 初始化物理引擎 PhysicsManager
+    - 初始化状态跟踪器
+    
+2. **Start()**
+
+    - 初始化 PUN 网络通信接口
+    - 初始化 Lockstep 引擎，向 AbstractLockstep 传入配置参数和帧同步生命周期回调方法
+    - 加载回放记录
+    - 附加 TrueSync 状态显示组件
+    - 初始化协程调度器 CoroutineScheduler
+    - 将 PhotonPlayer 转换为 TSPlayer，初始化玩家队列
+    - 初始化场景中动态生成的 Player 对象实体，将其中继承了 TrueSyncBehaviour 的组件注册到 TrueSyncManagedBehaviour 中集中管理，并初始化这些托管组件中的 Player 信息
+    - 初始化场景中通用的 TrueSyncBehaviour 组件，处理过程与上一个步骤相似
+    - 为物理引擎 PhysicsManager 注册 OnRemovedRigidBody 回调
+    - 标记「开始状态」为 `BEHAVIOR_INITIALIZED`
+
+3. **FixedUpdate()**
+
+    - 更新所有协程 CoroutineScheduler.UpdateAllCoroutines()
+    - 执行一次帧逻辑 Lockstep.Update()
+
+4. **Update()**
+
+    - 更新 startState
+    - 调用 Lockstep engine 执行模拟 RunSimulation
+
+5. **GetLocalData(InputDataBase)**
+
+    - 设置 TrueSyncInput 中的当前输入数据容器 currentInputData 为刚刚从资源池中取出来的「新的」 SyncedData 对象中的 InputData
+    - 调用每个 Player 所有的 TrueSyncBehaviour 组件的 OnSyncedInput()，收集这一帧的输入信息保存到 InputData 对象中
+
+6. **OnStepUpdate(List<InputDataBase>)**
+
+    - CheckGameObjectsSafeMap，安全检查，移除标记为 Destroy 的 GameObject
+    - TrueSyncInput.SetAllInputs(null)，清空所有输入数据
+    - 调用场景中所有通用 TrueSyncBehaviour 组件的 OnPreSyncedUpdate 方法，更新所有协程
+    - 调用所有 Player 相关 TrueSyncBehaviour 组件的 OnPreSyncedUpdate 方法，更新所有协程
+    - TrueSyncInput.SetAllInputs(allInputData)，设置所有输入数据
+    - 调用场景中所有通用 TrueSyncBehaviour 组件的 OnSyncedUpdate 方法，更新所有协程
+    - 调用所有 Player 相关 TrueSyncBehaviour 组件的 OnSyncedUpdate 方法，更新所有协程
+    - CheckQueuedBehaviour ?
+
+7. **CheckGameObjectsSafeMap()**
+
+    - 移除场景中标记为 Destroy 的 GameObject ？
+
+8. **CheckQueuedBehaviour()**
+
+    - 检查 queuedBehaviours 列表中 TrueSyncManageBehaviour 组件
+    - 调用 TrueSyncManageBehaviour 中组件的 OnSyncedStart 方法
+    - 清空 queuedBehaviours 列表
+
+_AbstractLockstep_
+Lockstep engine 的抽象处理逻辑
+
+1. **NewInstance()**
+
+    - 根据配置中回滚窗口大小和是否有网络通信接口决定实例化 DefaultLockstep 还是 RollbackLockstep 帧锁定引擎实现类
+
+2. **AbstractLockstep()**
+
+    - 构造方法，初始化所有成员变量
+
+3. **Update()**
+
+    - 如果正在等待玩家，则向玩家发送「开始同步」消息
+    - 否则更新界面的同步状态显示
+    - 检查是否有玩家掉线
+    - 检查帧数据是否已准备好
+    - 如果数据已准备好，则发送 Player InputData 帧数据到 Server，重置 ElapsedPanicTicks 丢帧危险计数
+    - 然后每隔 100 帧向 Server 发送信息校验和 SendInfoChecksum
+    - 更新最后的安全帧 lastSafeTick 为当前帧
+    - BeforeStepUpdate，在步进到下一帧的模拟状态之前，检查安全性，移除需要 Destroy 的对象和掉线的 Player
+    - 获取同步窗口 SyncWindow（配置中指定）帧数之前的帧数据（向 Server 发送的 InputData 和执行当前帧所用的 InputData 相差 SyncWindow 个帧，用来补偿网络延迟）
+    - 执行帧逻辑 ExecutePhysicsStep（重要）
+    - AfterStepUpdate，移除 ActivePlayers 已执行过的帧数据
+    - 增加 tick 计数
+    - 否则增加错过的帧计数，增加 ElapsedPanicTicks 丢帧危险计数（超过阈值则结束帧同步，踢掉延迟过大的玩家）
+    - 执行物理引擎的 Update()
+    - 更新数据 UpdateData()
+    - 增加 tick 计数
+
+4. **RunSimulation()**
+
+    - 调用 Run() 执行模拟
+    - 如果不是首次执行模拟，则向 Server 发送一个模拟帧
+
+5. **Run()**
+
+    - 根据 SimulationState 状态，确定目前 Lockstep engine 是处于等待玩家状态、暂停状态或者是运行状态，并调用相应的 OnGameStarted()、OnGameUnPaused() 回调方法
+
+6. **UpdateData()**
+
+    - 从资源池中取出一个新的同步数据容器 SyncedData，将本地 Player 的输入数据放入其中，再将该同步数据容器添加到 LocalPlayer 的 control 数据中
+    - 获取 LocalPlayer 当前帧 tick 的待同步数据 SyncedData 数组（可以设置每一逻辑帧发送多少个 tick 的 SyncedData，这里默认为 1）
+    - 将待同步数据 SyncedData 数组编码为 byte[] 后，调用底层网络通信接口 PhotonTrueSyncCommunicator，发送该模拟帧到 Server
+
+7. **SendInfoChecksum(int)**
+
+    - MD5 校验？
+
+8. **CheckSafeRemotion(int)**
+
+    - 检查安全移动？
+
+9. **ExecutePhysicsStep(List<SyncedData>,int)**
+
+    - ExecuteDelegates，执行一些常规的委托，检查 Player 是否掉线？
+    - SyncedArrayToInputArray，将数据从 SyncedData 取出转移到 InputData 中
+    - StepUpdate，使用刚取出的 InputData 作为输入执行该帧逻辑
+    - PhysicsManager.UpdateStep()，物理模拟步进？
+
+10. **AfterStepUpdate(int, int)**
+
+    - 移除 ActivePlayers 已执行过的帧数据
+
+11. **OnEventDataReceived(byte, object)**
+
+    - 接收到底层网络回传的帧数据包
+    - 将 byte[] 解码为 SyncedData List
+    - 找到帧数据包对应的 TSPlayer，检查它是否掉线
+    - 将 SyncedData 数据添加给对应的 TSPlayer
+    - 将 SyncedData List 放回资源池
+
+12. **OnSyncedDataReceived(TSPlayer, List<SyncedData>)**
+
+    - TSPlayer.AddData(List<SyncedData>)
+
+_TrueSyncBehaviour_
+连接到游戏中的在不同设备上模拟运行的每个 Player 的行为抽象
+
+_TrueSyncManagedBehaviour_
+托管的 TrueSyncBehaviour 类，TrueSyncBehaviour 实现类的封装，负责调用 TrueSyncBehaviour 的自定义扩展脚本中的父类方法
+
+_PhotonTrueSyncCommunicator_
+TrueSync 对 ICommunicator 接口的实现，负责与底层网络引擎通信
+
+1. RoundTripTime()
+
+2. OpRaiseEvent(byte, object, bool, int[])
+
+3. AddEventListener(OnEventReceived)
+
+_TSPlayer_
+帧同步玩家抽象
+
+1. **AddData(SyncedData)**
+
+    - 添加新的待同步的帧数据
+    - 以帧序号 tick 判断是否已有该帧数据
+    - 如果还没有该帧的数据则为该 Player 添加该 SyncedData，记录 lastTick = tick，否则丢弃该 SyncedData
+
+2. **GetData(int)**
+
+    - 根据帧序号 tick 获取玩家同步数据 SyncData
+    - 如果没有当前帧序号的同步数据，则获取 tick - 1 即上一帧的同步数据
+    - 如果连上一帧的同步数据都没有，就从资源池取一个「新的」 SyncedData 并初始化它为「假」（fake）数据
+
+3. **RemoveData(int)**
+
+    - 移除该 Player 某一帧的 SyncedData 容器，将该对象放回资源池中
+
+_TSPlayerInfo_
+帧同步玩家信息
+
+_TrueSyncInput_
+管理 Player 的输入信息
+
+_InputData_
+提供 Player 的输入信息
+
+1. **Serialize(List<byte>)**
+
+    - 将该 InputData 中的所有字典成员变量都序列化到 byte List 中（追加）
+
+2. **Deserialize(byte[], ref int)**
+
+    - 将 byte[] 中的数据反序列化为该 InputData 相应字典成员变量中的键值对（追加）
+
+_SyncedData_
+同步的数据，ResourcePoolItem 资源池物品的扩展
+
+1. **Init()**
+
+    - 初始化输入信息 InputData 的所有者、tick、fake、dirty 这些成员变量
+
+2. **Encode(SyncedData[])**
+
+    - 为 SyncedData 添加头部信息
+    - 序列化 SyncedData 数组
+    - 返回编码后的 byte[]
+
+3. **GetEncodedHeader(List<byte>)**
+
+    - 获取数据编码后的头部，包括该同步数据的所有者、掉线玩家 ID、是否掉线玩家标识
+
+4. **GetEncodedActions(List<byte>)**
+
+    - 获取 InputData 序列化后的 byte List
+
+5. **Decode(byte[])**
+
+    - 将 byte 数组解码为 SyncedData List
+
+_SyncedInfo_
+同步的信息
+
+_ResourcePool_
+资源池抽象
+
+_ResourcePoolItem_
+资源池物品接口
+
+_ResourcePoolSyncedData_
+继承于 ResourcePool<SyncedData> 的资源池同步数据类
+
+1. **NewInstance()**
+
+    - 获取新的 SyncedData 对象
+
+2. **FillStack(int)**
+
+    - 向资源池中初始化制定数量的新 SyncedData 对象
+
+_GenericBufferWindow_
+通用缓存窗口
+
+_StateTracker_
+状态跟踪类（与 Rollback 相关）
+
+_SerializableDictionary_
+序列化字典
+
+_ReplayRecord_
+回放记录
+
+_CoroutineScheduler_
+协程调度器
+
+1. **UpdateAllCoroutines()**
+
+-------
+
+_DefaultLockstep_
+Lockstep engine 的默认实现
+
+_RollbackLockstep_
+Lockstep engine 的回滚实现
+
+_ICommunicator_
+Lockstep engine 与底层网络引擎的通信接口
+
+_ITrueSyncBehaviour_
+TrueSync 抽象行为接口（Game 层面）
+
+_ITrueSyncBehaviourCallbacks_
+TrueSync 抽象行为回调接口（帧同步层面）
+
+_ITrueSyncBehaviourGameplay_
+TrueSync 抽象行为接口（GamePlay 中）
+
+-------
+
+_Stats_
+状态类
+
+_ChecksumExtractor_
+校验和提取器
+
+_TrueSyncStats_
+状态信息显示
+
+_TrueSyncConfig_
+TrueSync 的配置集合
+
+_TrueSyncExtensions_
+Unity 基础组件类与 TrueSync 自定义基础组件类的转换工具集
+
+_UnityUtils_
+提供了一些工具函数
+
+### 核心组件
+
+_Math_
+数学库
+
+_Physics_
+物理库
+
+_Coroutine_
+协程库
+
+_Unity_
+TrueSync 的对外的主要接口类
+
 ---
 
 change log: 
 
 	- 创建（2017-09-13）
-	- 更新（2017-09-26）
+	- 更新（2017-09-29）
 
 ---
 
