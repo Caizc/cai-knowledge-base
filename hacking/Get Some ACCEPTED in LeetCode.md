@@ -1808,12 +1808,94 @@ public int maxSubArray(int[] A) {
 }
 ```
 
+## 215. Kth Largest Element in an Array
+
+[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+function findKthLargest(nums, k)
+    -- 选择排序，从大到小倒序排列数组
+    for i = 1, #nums do
+        for j = i, #nums do
+            if i ~= j then
+                if nums[j] > nums[i] then
+                    local temp = nums[i]
+                    nums[i] = nums[j]
+                    nums[j] = temp
+                end
+            end
+        end
+        if k <= i then
+            -- 执行完第 k 趟即可
+            break
+        end
+    end
+    return nums[k]
+end
+local nums = {3, 2, 1, 5, 6, 4}
+local k = 2
+print("the kth largest element is " .. findKthLargest(nums, k))
+```
+
+* **Impressive solution:**
+
+[选择排序 - 百度百科](https://baike.baidu.com/item/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F)
+[快速排序 - 百度百科](https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95?fromtitle=%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F&fromid=2084344)
+
+```java
+public int findKthLargest(int[] nums, int k) {
+    k = nums.length - k;
+    int lo = 0;
+    int hi = nums.length - 1;
+    while (lo < hi) {
+        final int j = partition(nums, lo, hi);
+        if(j < k) {
+            lo = j + 1;
+        } else if (j > k) {
+            hi = j - 1;
+        } else {
+            break;
+        }
+    }
+    return nums[k];
+}
+    
+private int partition(int[] a, int lo, int hi) {
+    int i = lo;
+    int j = hi + 1;
+    while(true) {
+        while(i < hi && less(a[++i], a[lo]));
+        while(j > lo && less(a[lo], a[--j]));
+        if(i >= j) {
+            break;
+        }
+        exch(a, i, j);
+    }
+    exch(a, lo, j);
+    return j;
+}
+
+private void exch(int[] a, int i, int j) {
+    final int tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+}
+
+private boolean less(int v, int w) {
+    return v < w;
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-06-28）
+	- 更新（2017-10-09）
 
 ---
 
