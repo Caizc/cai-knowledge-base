@@ -1,49 +1,59 @@
-# Unity Certified Developer Courseware
+# Unity Certified Developer Courseware - Unity 认证开发者课程
 
-![](media/14919673014239.jpg)
+![](media/15075429293927.png)
+![](media/15075429375925.png)
 
-# Welcome to Unity
+# Welcome to Unity - 欢迎使用 Unity
 
-* Exploring the Zombie Toys Game Project
-* Assessing Game Markets
-* Describing the Game Production Pipeline
-* Game Development Jobs and Roles
-* Establishing Basic Game Design Principles
-* The Game Design Document (GDD)
-* The Technical Design Document (TDD)
-* Marketing Methods for Games
-* Introducing Made with Unity
-* Creating a New Unity Project
-* Using the Unity Asset Store
-* Collaboration in Game Development
-* Importing Downloaded Content
+## 认证开发者课程介绍
 
-# The Unity User Interface
+* 探究《僵尸玩偶》游戏项目
+* 认证开发者课程介绍
+* 导航认证开发者课程
 
-* Analyzing the Unity Editor User Interface* Navigating in the Scene View Window
-* Utilizing the Game View Window
-* Navigating the Hierarchy Window
-* Using the Inspector Window
-* Managing Assets in the Project Window
-* Searching and Filtering in the Project Window
-* Organizing the Scene with Layers
+## 游戏开发商业化
+
+* 游戏市场和平台分析
+* 游戏的商业模式
+* 游戏货币化和升级
+
+## 游戏制作介绍
+
+* 游戏平台和种类
+* 游戏的制作流程
+* 游戏开发中的角色和职责
+* 游戏设计文档
+* 技术设计文档
+
+## 开始使用 Unity
+
+* 创建 Unity 项目
+* 使用 Unity Asset Store 资源商店
+* 团队协作中的源代码管理
+
+## 本章课程回顾
+
+# The Unity User Interface - 熟悉 Unity 用户界面
+
+## 介绍 Unity 编辑器用户界面
+
+* 解析 Unity 编辑器用户界面
+
+## 使用 Unity 编辑器用户界面
+
+* 场景视图介绍
+* 使用游戏视图
+* 层级视图介绍
+* 使用检视面板
+* 在项目视图中管理资源
+* 在项目视图中搜索和筛选
+* 使用层管理场景
+
+## 本章课程回顾
 
 # Using GameObjects and Assets
 
-* Defining Unity Editor Units and Importance of Correct Scale
-* Describing Assets in the Production Pipeline
-* Defining the Role of the Prefab in Unity
-* Creating and Saving a Scene
-* Importing and Configuring a 3D Model
-* Improting Textures for Use in Materials
-* Introduction to Sprites in Game Development
-
 # Managing Projects and Assets
-
-* Introduction to Game Project Management
-* Creating the Project Structure Based on the Assets Needed
-* Sorting the Zombie Toys Assets of the Props Models
-* Setting Resolution and Type of Texture Files
 
 # Preparing Assets for Implementation
 # Assembling the Game Level
@@ -62,14 +72,12 @@
 # Building and Deploying the Game
 # Preparing for Mobile Development
 
-
--------
-
 ---
 
 change log: 
 
-	- 因下载到的 Courseware 配套视频教程资源不完整，暂停对该课程的学习，转而直接根据游戏设计文档实现游戏 Zombie Toys 的完整功能（2017-04-06）
+	- 创建（2017-04-06）
+	- 更新（2017-10-09）
 
 ---
 

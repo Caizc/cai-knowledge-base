@@ -1890,12 +1890,98 @@ private boolean less(int v, int w) {
 }
 ```
 
+## 617. Merge Two Binary Trees
+
+[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/description/)
+
+* **My solution:**
+
+Language: Lua
+
+```lua
+local treeNode = {
+    val,
+    left,
+    right
+}
+
+function treeNode:new(val)
+    local t = t or {}
+    setmetatable(t, self)
+    self.__index = self
+    t.val = val
+    return t
+end
+
+function mergeTrees(tree1, tree2, i, str)
+    if i > #tree1 and i > #tree2 then
+        return nil, str
+    end
+
+    local sum = -1
+
+    if i > #tree1 or tree1[i] == -1 then
+        sum = tree2[i]
+    elseif i > #tree2 or tree2[i] == -1 then
+        sum = tree1[i]
+    else
+        sum = tree1[i] + tree2[i]
+    end
+
+    local node = treeNode:new(sum)
+
+    if i == 1 then
+        str = str .. node.val
+    else
+        if node.val ~= nil and node.val ~= -1 then
+            str = str .. "(" .. node.val
+        else
+            str = str .. "()"
+            return node, str
+        end
+    end
+
+    node.left, str = mergeTrees(tree1, tree2, 2 * i, str)
+    node.right, str = mergeTrees(tree1, tree2, 2 * i + 1, str)
+
+    if i ~= 1 then
+        str = str .. ")"
+    end
+
+    return node, str
+end
+
+function tree2str(tree1, tree2)
+    local _, str = mergeTrees(tree1, tree2, 1, "")
+    return str
+end
+
+local tree1 = {1, 3, 2, 5}
+local tree2 = {2, 1, 3, -1, 4, -1, 7}
+print(tree2str(tree1, tree2))
+```
+
+* **Impressive solution:**
+
+```java
+public class Solution {
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        if (t1 == null) return t2;
+        if (t2 == null) return t1;
+        TreeNode result = new TreeNode(t1.val + t2.val);
+        result.left = mergeTrees(t1.left, t2.left);
+        result.right = mergeTrees(t1.right, t2.right);
+        return result;
+    }
+}
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-05-31）
-	- 更新（2017-10-09）
+	- 更新（2017-10-10）
 
 ---
 
