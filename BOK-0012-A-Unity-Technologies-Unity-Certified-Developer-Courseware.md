@@ -291,6 +291,16 @@
 ## 本章课程回顾
 
 # Implementing Navigation and Pathfinding - 实现导航和寻路
+
+## 导航与寻路介绍
+
+* Unity 中的导航系统
+* 什么是导航网格
+* 定义导航网格代理
+* 什么是导航网格障碍物
+
+## 本章课程回顾
+
 # Building the Player and Allies - 制作玩家和盟友角色
 # Building the Enemies - 制作敌人
 # Creating Particle Systems - 创建粒子系统
@@ -305,7 +315,7 @@
 change log: 
 
 	- 创建（2017-04-06）
-	- 更新（2017-10-12）
+	- 更新（2017-10-13）
 
 ---
 
