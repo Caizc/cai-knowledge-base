@@ -404,6 +404,34 @@
 ## 本章课程回顾
 
 # Adding Audio to Game Levels - 为游戏关卡添加音频
+
+## 游戏开发中的音频简介
+
+* 游戏开发中的音频简介
+
+## Unity 音频导入
+
+* Unity 音频导入简介
+* Unity 中支持的音频格式
+
+## 在 Unity 编辑器播放音频
+
+* 音频监听器和音频源
+* 测试场景中的音频源
+
+## 在 Unity 中混音
+
+* 使用音频混合器和混合器组
+* 设置《僵尸玩偶》音频混合器
+
+## 创建音频效果
+
+* 音频效果简介
+* 为角色添加音频
+* 实现音频互切
+
+## 本章课程回顾
+
 # Building the Camera and Player Selection System - 制作摄像机和玩家选择系统
 # Designing User Interfaces for Games - 设计游戏用户界面
 # Building and Deploying the Game - 构建和部署游戏
@@ -414,7 +442,7 @@
 change log: 
 
 	- 创建（2017-04-06）
-	- 更新（2017-10-14）
+	- 更新（2017-10-15）
 
 ---
 
