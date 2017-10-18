@@ -3,7 +3,7 @@
 ![](media/15075429293927.png)
 ![](media/15075429375925.png)
 
-# Welcome to Unity - 欢迎使用 Unity
+# 01. Welcome to Unity - 欢迎使用 Unity
 
 ## 认证开发者课程介绍
 
@@ -33,7 +33,7 @@
 
 ## 本章课程回顾
 
-# The Unity User Interface - 熟悉 Unity 用户界面
+# 02. The Unity User Interface - 熟悉 Unity 用户界面
 
 ## 介绍 Unity 编辑器用户界面
 
@@ -51,7 +51,7 @@
 
 ## 本章课程回顾
 
-# Using GameObjects and Assets - 使用游戏对象和资源
+# 03. Using GameObjects and Assets - 使用游戏对象和资源
 
 ## 新建与修改游戏对象
 
@@ -84,7 +84,7 @@
 
 ## 本章课程回顾
 
-# Managing Projects and Assets - 项目和资源管理
+# 04. Managing Projects and Assets - 项目和资源管理
 
 ## Unity 中的项目管理
 
@@ -100,7 +100,7 @@
 
 ## 本章课程回顾
 
-# Preparing Assets for Implementation - 项目资源的准备
+# 05. Preparing Assets for Implementation - 项目资源的准备
 
 ## 创建 3D 内容的最佳实践
 
@@ -127,7 +127,7 @@
 
 ## 本章课程回顾
 
-# Assembling the Game Level - 组建游戏关卡
+# 06. Assembling the Game Level - 组建游戏关卡
 
 ## 分支与层级
 
@@ -154,7 +154,7 @@
 
 ## 本章课程回顾
 
-# Lighting in Games - 游戏中的光照
+# 07. Lighting in Games - 游戏中的光照
 
 ## 游戏中的光照
 
@@ -186,7 +186,7 @@
 
 ## 本章课程回顾
 
-# Baking Lighting in Game Production - 游戏制作中的光照烘焙
+# 08. Baking Lighting in Game Production - 游戏制作中的光照烘焙
 
 ## 游戏中的光照烘焙
 
@@ -209,7 +209,7 @@
 
 ## 本章课程回顾
 
-# Animating GameObjects in the Unity Editor - 为游戏对象添加动画
+# 09. Animating GameObjects in the Unity Editor - 为游戏对象添加动画
 
 ## 游戏开发中的动画系统
 
@@ -222,7 +222,7 @@
 
 ## 本章课程回顾
 
-# Bringing Animations into the Game - 为游戏添加动画
+# 10. Bringing Animations into the Game - 为游戏添加动画
 
 ## 导入带动画的角色
 
@@ -240,7 +240,7 @@
 
 ## 本章课程回顾
 
-# Scripting in Game Development - 游戏开发中的脚本编程
+# 11. Scripting in Game Development - 游戏开发中的脚本编程
 
 ## 游戏开发中的脚本编程介绍
 
@@ -290,7 +290,7 @@
 
 ## 本章课程回顾
 
-# Implementing Navigation and Pathfinding - 实现导航和寻路
+# 12. Implementing Navigation and Pathfinding - 实现导航和寻路
 
 ## 导航与寻路介绍
 
@@ -301,7 +301,7 @@
 
 ## 本章课程回顾
 
-# Building the Player and Allies - 制作玩家和盟友角色
+# 13. Building the Player and Allies - 制作玩家和盟友角色
 
 ## 创建玩家控制器
 
@@ -327,7 +327,7 @@
 
 ## 本章课程回顾
 
-# Building the Enemies - 制作敌人
+# 14. Building the Enemies - 制作敌人
 
 ## 创建一个敌人
 
@@ -348,7 +348,7 @@
 
 ## 本章课程回顾
 
-# Creating Particle Systems - 创建粒子系统
+# 15. Creating Particle Systems - 创建粒子系统
 
 ## Unity 编辑器中的粒子系统简介
 
@@ -403,7 +403,7 @@
 
 ## 本章课程回顾
 
-# Adding Audio to Game Levels - 为游戏关卡添加音频
+# 16. Adding Audio to Game Levels - 为游戏关卡添加音频
 
 ## 游戏开发中的音频简介
 
@@ -432,7 +432,7 @@
 
 ## 本章课程回顾
 
-# Building the Camera and Player Selection System - 制作摄像机和玩家选择系统
+# 17. Building the Camera and Player Selection System - 制作摄像机和玩家选择系统
 
 ## 摄像机与玩家选择行为简介
 
@@ -452,7 +452,7 @@
 
 ## 本章课程回顾
 
-# Designing User Interfaces for Games - 设计游戏用户界面
+# 18. Designing User Interfaces for Games - 设计游戏用户界面
 
 ## 用户界面设计简介
 
@@ -470,7 +470,7 @@
 
 ## 本章课程回顾
 
-# Building and Deploying the Game - 构建和部署游戏
+# 19. Building and Deploying the Game - 构建和部署游戏
 
 ## 编译游戏
 
@@ -489,7 +489,7 @@
 
 ## 本章课程回顾
 
-# Preparing for Mobile Development - 准备移动端部署
+# 20. Preparing for Mobile Development - 准备移动端部署
 
 ## 修改《僵尸玩偶》以适应移动端平台
 
@@ -505,7 +505,7 @@
 change log: 
 
 	- 创建（2017-04-06）
-	- 更新（2017-10-17）
+	- 更新（2017-10-18）
 
 ---
 
