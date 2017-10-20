@@ -1062,6 +1062,24 @@ public class FollowTransform : MonoBehaviour
 }
 ```
 
+## Application
+
+> This class contains static methods for looking up information about and controlling the run-time data.
+
+-------
+
+[Application.platform](https://docs.unity3d.com/ScriptReference/Application-platform.html)
+
+* `public static RuntimePlatform platform;`
+
+> Returns the platform the game is running on (Read Only).
+> Use this property if you need to do some platform dependent work.
+
+```c#
+if (Application.platform == RuntimePlatform.WindowsPlayer)
+    Debug.Log("Do something special here");
+```
+
 ## Enumerations
 
 -------
@@ -1197,7 +1215,7 @@ public class FollowTransform : MonoBehaviour
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-09-26）
+	- 更新（2017-10-20）
 
 ---
 
