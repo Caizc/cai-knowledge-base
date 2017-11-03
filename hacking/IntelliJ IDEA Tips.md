@@ -16,6 +16,8 @@
 * 自动显示 Javadoc
 转到 File/Settings，Editor，单击 General ，勾选 `Show quick documentation on mouse move`
 
+* 大小写切换：Ctrl + Shift + U
+
 [快捷键](http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-introduce.html)
 [十大Intellij IDEA快捷键](http://blog.csdn.net/dc_726/article/details/42784275)
 [IDEA mac 快捷键](http://www.jianshu.com/p/157d7628ed1a)
@@ -42,7 +44,7 @@
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2017-08-28）
+	- 更新（2017-11-02）
 
 ---
 

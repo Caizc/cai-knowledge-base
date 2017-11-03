@@ -86,6 +86,23 @@ docker run -d -p 127.0.0.1:3306:3306 \
 -e MYSQL_ROOT_PASSWORD="123zxc" mysql:latest
 ```
 
+**使用宿主机 IP 才能用它来远程访问：**
+```
+docker run -d -p 192.168.1.186:3306:3306 \
+--name mysql \
+-v /Users/zicongcai/04-Dev/docker/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD="123zxc" mysql:latest
+```
+
+查看 Docker 中的 MySQL 容器映射到的宿主 IP：
+`docker port mysql 3306`
+
+腾讯云 Docker 中的 MySQL 容器：
+
+```
+docker run -d -p 119.29.53.39:3306:3306 --name mysql -v /usr/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="123zxc" mysql:latest
+```
+
 ## 安装 MySQL
 
 [Mac 上 Docker 的安装和使用初探](http://blog.devzeng.com/blog/using-docker-on-macos.html)
@@ -220,7 +237,7 @@ $ vi /etc/sysconfig/iptables
 change log: 
 
 	- 创建（2017-09-11）
-	- 更新（2017-09-16）
+	- 更新（2017-10-31）
 
 ---
 
