@@ -232,12 +232,16 @@ $ vi /etc/sysconfig/iptables
 [使用 Dockerfile 构建 Docker 镜像](http://blog.devzeng.com/blog/build-docker-image-with-dockerfile.html)
 [docker 构建 java、tomcat、mysql 生产环境镜像](http://kaimingwan.com/post/rong-qi-yu-rong-qi-yun/dockergou-jian-java-tomcat-mysqlsheng-chan-huan-jing-jing-xiang)
 
+# JDK & Tomcat in Docker
+
+[在 docker 中制作自己的 JDK + tomcat 镜像](http://blog.csdn.net/smile326/article/details/51447757)（已保存到印象笔记）
+
 ---
 
 change log: 
 
 	- 创建（2017-09-11）
-	- 更新（2017-10-31）
+	- 更新（2017-11-05）
 
 ---
 
