@@ -20,12 +20,16 @@ docker -v
 
 ```
 service docker start
+或
+systemctl start docker
 ```
 
 设置开机启动
 
 ```
 chkconfig docker on
+或
+systemctl enable docker
 ```
 
 ## 配置 Docker

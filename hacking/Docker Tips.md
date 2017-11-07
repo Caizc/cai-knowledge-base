@@ -87,6 +87,7 @@ docker run -d -p 127.0.0.1:3306:3306 \
 ```
 
 **使用宿主机 IP 才能用它来远程访问：**
+
 ```
 docker run -d -p 192.168.1.186:3306:3306 \
 --name mysql \
@@ -100,7 +101,7 @@ docker run -d -p 192.168.1.186:3306:3306 \
 腾讯云 Docker 中的 MySQL 容器：
 
 ```
-docker run -d -p 119.29.53.39:3306:3306 --name mysql -v /usr/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="123zxc" mysql:latest
+docker run -d -p 127.0.0.1:3306:3306 --name mysql -v /usr/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD="123zxc" mysql:8.0
 ```
 
 ## 安装 MySQL
@@ -111,10 +112,11 @@ docker run -d -p 119.29.53.39:3306:3306 --name mysql -v /usr/docker/mysql/data:/
 ### 下载MySQL镜像
 
 ```
-docker pull mysql
+docker pull mysql:8.0
 ```
 
 ### 使用镜像创建并启动容器
+
 Docker以镜像为基础创建启动容器的方式为：
 
 ```
@@ -122,7 +124,6 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
 启动成功后会在终端输出容器的ID，启动MySQL容器的脚本为：
-
 
 ```
 docker run -d -p 127.0.0.1:3306:3306 \
