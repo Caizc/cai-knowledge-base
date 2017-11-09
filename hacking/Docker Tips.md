@@ -237,12 +237,34 @@ $ vi /etc/sysconfig/iptables
 
 [在 docker 中制作自己的 JDK + tomcat 镜像](http://blog.csdn.net/smile326/article/details/51447757)（已保存到印象笔记）
 
+# Trouble Shooting
+
+```
+docker run -d -p 127.0.0.1:23306:3306 --name mysql3 -e MYSQL_ROOT_PASSWORD="123zxc" mysql:8.0
+
+docker exec -it mysql2 /bin/bash
+
+mysql -uroot -p
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+CREATE USER 'game'@'localhost' IDENTIFIED BY '123zxc';
+
+GRANT ALL PRIVILEGES ON *.* TO 'game'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'game'@'%' IDENTIFIED BY '123zxc';
+
+GRANT ALL PRIVILEGES ON *.* TO 'game'@'%' WITH GRANT OPTION;
+
+select user,host from mysql.user;
+```
+
 ---
 
 change log: 
 
 	- 创建（2017-09-11）
-	- 更新（2017-11-05）
+	- 更新（2017-11-08）
 
 ---
 
