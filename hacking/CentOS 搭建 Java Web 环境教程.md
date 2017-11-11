@@ -146,7 +146,30 @@ service mysqld restart
 
 # Trouble Shooting
 
-* mysqld 服务要在 iptables 服务之后启动，否则将导致 MySQL 的端口无法访问，这种情况下只要重启一下 mysqld 服务即可。
+## 防火墙 iptables 导致无法访问
+
+确保 mysqld 服务在 iptables 服务之后启动，否则将导致 MySQL 的端口无法访问，这种情况下只要重启一下 mysqld 服务即可。
+
+## 内存不足导致自动退出
+
+* 创建用于交换分区的文件
+
+```
+dd if=/dev/zero of=/mnt/swap bs=1M count=2048
+# block_size、number_of_block 大小可以自定义，比如 bs=1M count=2048 代表设置 2G 大小swap 分区
+```
+
+* 设置交换分区文件
+```
+mkswap /mnt/swap
+```* 立即启用交换分区文件
+```
+swapon /mnt/swap
+# 如果在 /etc/rc.local 中有 swapoff -a 需要修改为 swapon -a
+```* 设置开机时自启用 swap 分区需要修改文件 /etc/fstab 中的 swap 行：添加 `/mnt/swap swap swap defaults 0 0`注：/mnt/swap 路径可以修改，可以根据创建的swap文件具体路径来配置。* 查看效果设置后可以执行 `free -m` 命令查看效果
+
+[解决阿里云 VPS 服务器 mysql 自动关闭的问题](https://zhuanlan.zhihu.com/p/24888793)
+[Linux服务器mysql,nginx等自动停止的排查,以及解决方法](https://www.jisec.com/linux/302.html)
 
 -------
 
