@@ -7,7 +7,7 @@
 * Scripting
 * Multiplayer and Networking
 * Audio
-* [Animation](https://github.com/Caizc/cai-knowledge-base/blob/master/BOK-0022-L-Animation.md)
+* Animation
 * UI
 * Navigation and Pathfinding
 * Unity Services

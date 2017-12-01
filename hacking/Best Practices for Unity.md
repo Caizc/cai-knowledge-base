@@ -255,6 +255,12 @@
 
 * 使用 Unity Remote APP 可以获取 Android/iOS 上的触摸输入信息，从而在 Unity 编辑器中调试为移动平台构建的游戏。同时，还需要设置 `Edit -> Project Settings -> Editor` 中 Unity Remote 相关的属性。
 
+* [Unity Remote - Unity Manual](https://docs.unity3d.com/Manual/UnityRemote5.html)
+
+* [Android 手机使用 Unity Remote 调试游戏](http://forum.china.unity3d.com/forum.php?mod=viewthread&tid=25717)
+
+    - 小米手机需在「开发者选项」中同时打开「USB 调试」和「USB 调试（安全设置）」才能让 Unity 识别到手机上运行的 Unity Remote 5 APP。
+
 # 12. Scripting
 
 # 13. Multiplayer Networking
@@ -279,7 +285,7 @@
 change log: 
 
 	- 创建（2017-10-18）
-	- 更新（2017-10-23）
+	- 更新（2017-11-27）
 
 ---
 
