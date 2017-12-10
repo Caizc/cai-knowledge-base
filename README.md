@@ -26,7 +26,7 @@
 - 读书笔记卡：`BOK`-book
 - ~~文章笔记卡：`ART`-artical~~
 - ~~演讲笔记卡：`SPC`-speech~~
-- 编程卡：`PRG`
+- 编程卡：`PRG`-program
 - 卡片模板：`TEMPLATE`
 - hacking：learning & trouble shooting
 
