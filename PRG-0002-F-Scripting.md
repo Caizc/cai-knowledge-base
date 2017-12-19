@@ -132,6 +132,20 @@
 
 ### Classes
 
+* C# 脚本的名字和其中的类名必须一致。
+* 利用面向对象的思想将冗长的类切分成各司其职的几个类，更便于管理、阅读和维护。
+
+### Instantiate
+
+* `Object.Instantiate(Object original, Vector3 position, Quaternion rotation, Transform parent)`
+    在运行时的场景中实例化 Prefab 的克隆，并指定它默认的位置和转向，甚至附加到指定的父对象。
+
+* 使用该方法时需要考虑实例化的对象的回收问题，避免内存泄露。
+
+### Arrays
+
+### Invoke
+
 // TODO: GO ON HERE
 
 ## Intermediate Gameplay Scripting
@@ -159,7 +173,7 @@
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2017-12-13）
+	- 更新（2017-12-19）
 
 ---
 
