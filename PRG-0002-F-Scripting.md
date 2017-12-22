@@ -146,6 +146,29 @@
 
 ### Invoke
 
+* `MonoBehaviour.nvoke(string methodName, float time)`
+    延迟调用某个方法。值得注意的是，**被调用的方法必须是无参且无返回值的方法**。
+
+* `MonoBehaviour.InvokeRepeating(string methodName, float time, float repeatRate)`
+    以指定的延迟和频率重复地调用某个方法。
+
+* `MonoBehaviour.CancelInvoke()`
+    取消当前脚本中的所有 Invoke 调用
+    
+* `MonoBehaviour.CancelInvoke(string methodName)`
+    取消当前脚本中指定方法名的 Invoke 调用
+
+### Enumerations
+
+```csharp
+enum Direction : short {North, East, South, West}
+```
+
+* 枚举可位于类的内部或外部，如果位于类的内部，则只有该类内部可以访问得到。
+* 枚举值的类型默认为从 `0` 开始的 `int`，但也可以在枚举名称后声明它为其他类型的值。
+
+### Switch Statements
+
 // TODO: GO ON HERE
 
 ## Intermediate Gameplay Scripting
@@ -173,7 +196,7 @@
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2017-12-19）
+	- 更新（2017-12-22）
 
 ---
 

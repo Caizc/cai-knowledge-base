@@ -1,5 +1,7 @@
 # Optimization in Unity
 
+[Unity 优化百科 - UWA](https://blog.uwa4d.com/archives/Index.html)
+
 # CPU
 
 [性能优化，永无止境：CPU篇 - UWA](https://blog.uwa4d.com/archives/optimzation_cpu.html)
@@ -85,9 +87,11 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 
 绝大多数项目中的性能开销都遵循「二八原则」，即 80% 的性能开销都集中在 20% 的函数上。
 
-# GPU
-
 # 内存
+
+[性能优化，进无止境：内存篇（上）- UWA](https://blog.uwa4d.com/archives/optimzation_memory_1.html)
+
+# GPU
 
 ---
 
