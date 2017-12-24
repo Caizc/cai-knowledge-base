@@ -169,9 +169,42 @@ enum Direction : short {North, East, South, West}
 
 ### Switch Statements
 
-// TODO: GO ON HERE
+* Switch 声明经常与 Enumeration 枚举结合使用，用于对比单个变量与一系列常量的值，以执行相应逻辑。
 
 ## Intermediate Gameplay Scripting
+
+### Properties
+
+```csharp
+private int experience;
+public int Experience
+{
+    get
+    {
+        //Some other code
+        return experience;
+    }
+    set
+    {
+        //Some other code
+        experience = value;
+    }
+} 
+
+//This is an example of an auto-implemented property
+public int Health{ get; set;}
+```
+
+* 属性与 public 变量的区别是：
+
+    - 通过移除属性的 get/set，可以使得类的成员变量变得只写/只读
+    - 可以在 get/set 代码块中编写自定义逻辑，使得属性像方法一样可以对变量进行加工，甚至可以在 set 中启动 coroutine 协程
+
+### Ternary Operator
+
+* 三元操作符
+
+// TODO: GO ON HERE
 
 ## Editor Scripting
 
