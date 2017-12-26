@@ -15,6 +15,8 @@
 * 客户端模拟
 * 服务器端延迟补偿
 
+[《守望先锋》技术分享视频：如何处理网络同步与减少网络迟疑](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
+
 ## 状态同步与帧同步
 
 [状态同步与帧同步](http://www.cnblogs.com/sevenyuan/p/5283265.html)
@@ -453,7 +455,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 change log: 
 
 	- 创建（2017-09-12）
-	- 更新（2017-12-10）
+	- 更新（2017-12-27）
 
 ---
 

@@ -214,6 +214,10 @@ git config --global user.email "email@gmail.com"
 
 恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。
 
+# Mac 上搭建 Git 服务器
+
+[Mac环境下搭建Git服务器](http://www.liuchungui.com/2015/10/23/gitzong-jie/)
+
 -------
 
 **Reference:**
@@ -228,7 +232,7 @@ git config --global user.email "email@gmail.com"
 change log: 
 
 	- 创建（2017-09-10）
-	- 更新（2017-12-06）
+	- 更新（2017-12-26）
 
 ---
 
