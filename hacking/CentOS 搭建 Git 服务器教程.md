@@ -203,6 +203,13 @@ cd ~
 git clone git@<服务器 IP 地址>:/usr/git/repositories/test.git
 ```
 
+## 为客户端配置用户名和 Email
+
+```
+git config --global user.name "username"
+git config --global user.email "email@gmail.com"
+```
+
 ## 完成
 
 恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。
@@ -221,7 +228,7 @@ git clone git@<服务器 IP 地址>:/usr/git/repositories/test.git
 change log: 
 
 	- 创建（2017-09-10）
-	- 更新（2017-11-06）
+	- 更新（2017-12-06）
 
 ---
 
