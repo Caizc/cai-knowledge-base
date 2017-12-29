@@ -163,27 +163,27 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 
 ## 参考
 
-[《守望先锋》技术分享视频：如何处理网络同步与减少网络迟疑](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
-[Unite 2017《王者荣耀》技术分享 - 知乎](https://zhuanlan.zhihu.com/p/26887204)
-[Unite 2017 MOBA 游戏的网络同步技术分享](http://bbs.gameres.com/forum.php?mod=viewthread&tid=750888)
-[《乱斗西游》开发经验分享](http://www.sohu.com/a/20405348_204728)
-[关于帧同步和网游游戏开发的一些心得](https://www.kisence.com/2017/11/12/guan-yu-zheng-tong-bu-de-xie-xin-de)
-[【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
+* [《守望先锋》技术分享视频：如何处理网络同步与减少网络迟疑](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
+* [Unite 2017《王者荣耀》技术分享 - 知乎](https://zhuanlan.zhihu.com/p/26887204)
+* [Unite 2017 MOBA 游戏的网络同步技术分享](http://bbs.gameres.com/forum.php?mod=viewthread&tid=750888)
+* [《乱斗西游》开发经验分享](http://www.sohu.com/a/20405348_204728)
+* [关于帧同步和网游游戏开发的一些心得](https://www.kisence.com/2017/11/12/guan-yu-zheng-tong-bu-de-xie-xin-de)
+* [【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
 
 # Game Networking
 
-[Game Networking](https://gafferongames.com/categories/game-networking/)
+* [Game Networking](https://gafferongames.com/categories/game-networking/)
 
-[What Every Programmer Needs To Know About Game Networking](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/)
+* [What Every Programmer Needs To Know About Game Networking](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/)
 
-[Latency Compensating Methods in Client/Server In-game Protocol Design and Optimization](https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization)
+* [Latency Compensating Methods in Client/Server In-game Protocol Design and Optimization](https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization)
 
-[网络游戏基本模型](https://wuzhou.github.io/programming/2016/09/16/game-network.html)
+* [网络游戏基本模型](https://wuzhou.github.io/programming/2016/09/16/game-network.html)
 
-* Peer-to-Peer
-* Client/Server
-* 客户端模拟
-* 服务器端延迟补偿
+    - Peer-to-Peer
+    - Client/Server
+    - 客户端模拟
+    - 服务器端延迟补偿
 
 # 状态同步与帧同步对比
 
@@ -295,6 +295,12 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 [帧同步Moba游戏相关的经验总结](http://www.tk4479.net/yl33489/article/details/78585162)
 
+-------
+
+**《自研游戏帧同步方案分享.ppt》**
+
+![](media/15145347711587.jpg)
+
 # 手游帧同步
 
 [手游帧同步的研究](http://blog.csdn.net/langresser_king/article/details/46756393)
@@ -329,8 +335,8 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 # 手游 PVP 网络同步
 
-[动作手游实时PVP帧同步方案（客户端）](http://www.cnblogs.com/shown/p/6108617.html)
-[动作手游实时PVP技术揭密（服务器篇）](http://www.cnblogs.com/shown/p/6108629.html)
+* [动作手游实时PVP帧同步方案（客户端）](http://www.cnblogs.com/shown/p/6108617.html)
+* [动作手游实时PVP技术揭密（服务器篇）](http://www.cnblogs.com/shown/p/6108629.html)
 
 ![](media/15145284129417.jpg)
 
@@ -338,16 +344,16 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 -------
 
-[手游后台PVP系统网络同步方案总结](http://bbs.gameres.com/forum.php?mod=viewthread&tid=476063)
-[手游服务器实时同步方案 - GAD](http://gad.qq.com/article/detail/22115)
+* [手游后台PVP系统网络同步方案总结](http://bbs.gameres.com/forum.php?mod=viewthread&tid=476063)
+* [手游服务器实时同步方案 - GAD](http://gad.qq.com/article/detail/22115)
 
 # Lockstep Implementation in Unity3D (Open Source)
 
-[Lockstep Implementation in Unity3D - Part 1](http://clintonbrennan.com/2013/12/lockstep-implementation-in-unity3d/)
-[Lockstep Implementation in Unity3D – Part 2](http://clintonbrennan.com/2014/04/lockstep-implementation-in-unity3d-part-2/)
+* [Lockstep Implementation in Unity3D - Part 1](http://clintonbrennan.com/2013/12/lockstep-implementation-in-unity3d/)
+* [Lockstep Implementation in Unity3D – Part 2](http://clintonbrennan.com/2014/04/lockstep-implementation-in-unity3d-part-2/)
 
-[Unity3D中实现帧同步 - Part 1](http://jjyy.guru/unity3d-lock-step-part-1)
-[Unity3D中实现帧同步 - Part 2](http://jjyy.guru/unity3d-lock-step-part-2)
+* [Unity3D中实现帧同步 - Part 1](http://jjyy.guru/unity3d-lock-step-part-1)
+* [Unity3D中实现帧同步 - Part 2](http://jjyy.guru/unity3d-lock-step-part-2)
 
 * **Lockstep turn**
 A lockstep turn will be made up of multiple game turns. One action per player will be processed in one lockstep turn. The length of the lockstep turn will be adjusted based on performance. At this time it is just hard coded as 200ms.
@@ -404,11 +410,11 @@ GSS模块中各个系统的执行，由帧数驱动，不引入其他时间线�
 
 # Doom3
 
-[Doom3](https://github.com/TTimo/doom3.gpl)
-[魔兽争霸3技术分析资源汇总](http://jjyy.guru/war3-tech)
-[游戏开发汇总 (Gu Lu's Blog)](https://zhuanlan.zhihu.com/p/20289098)
+* [Doom3](https://github.com/TTimo/doom3.gpl)
+* [魔兽争霸3技术分析资源汇总](http://jjyy.guru/war3-tech)
+* [游戏开发汇总 (Gu Lu's Blog)](https://zhuanlan.zhihu.com/p/20289098)
 
-[《魔兽争霸III》是如何实现野怪同步的? - 知乎](https://www.zhihu.com/question/26072198)
+* [《魔兽争霸III》是如何实现野怪同步的? - 知乎](https://www.zhihu.com/question/26072198)
 
 * 当某玩家A用鼠标选中一个单位，让他放个技能后。客户端A首先会向服务器发一条信息，说，我要放技能吧。服务器接到这条信息后，会给这个信息定一个时间，如某年某月某日某分某秒，客户端A放了个技能。然后把这个结果（包括时间戳）广播给所有客户端。于是所有客户端受到了这条广播（包括最初向服务器发我要放技能这条信息的客户端A）。
 * 于是所有的客户端根据服务器广播的信息，分别判定和计算客户端A的玩家在特定时间放这个技能可能带来的影响。
@@ -495,9 +501,9 @@ GSS模块中各个系统的执行，由帧数驱动，不引入其他时间线�
 
 # 网络物理模拟
 
-[网络物理模拟(一)：关于网络物理部分的简介](http://gad.qq.com/program/translateview/7161830)
-[网络物理模拟(二)：关于物理模拟](http://gad.qq.com/program/translateview/7164334)
-[网络物理模拟(三)：具有确定性的帧同步](http://gad.qq.com/program/translateview/7164497)
+* [网络物理模拟(一)：关于网络物理部分的简介](http://gad.qq.com/program/translateview/7161830)
+* [网络物理模拟(二)：关于物理模拟](http://gad.qq.com/program/translateview/7164334)
+* [网络物理模拟(三)：具有确定性的帧同步](http://gad.qq.com/program/translateview/7164497)
 
 # 多玩家的 RTS 游戏开发
 
@@ -551,11 +557,11 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # 网络游戏的移动同步
 
-[网络游戏的移动同步](http://www.zhust.com/index.php/category/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/)
+* [网络游戏的移动同步](http://www.zhust.com/index.php/category/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/)
 
-[网络游戏的移动同步（四）帧锁定算法](http://www.zhust.com/index.php/2014/02/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%EF%BC%88%E5%9B%9B%EF%BC%89%E5%B8%A7%E9%94%81%E5%AE%9A%E7%AE%97%E6%B3%95/)
+* [网络游戏的移动同步（四）帧锁定算法](http://www.zhust.com/index.php/2014/02/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%EF%BC%88%E5%9B%9B%EF%BC%89%E5%B8%A7%E9%94%81%E5%AE%9A%E7%AE%97%E6%B3%95/)
 
-[网络游戏的移动同步（五）帧同步算法](http://www.zhust.com/index.php/2015/08/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%EF%BC%88%E4%BA%94%EF%BC%89%E5%B8%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E6%B3%95/)
+* [网络游戏的移动同步（五）帧同步算法](http://www.zhust.com/index.php/2015/08/%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%EF%BC%88%E4%BA%94%EF%BC%89%E5%B8%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E6%B3%95/)
 
 * 服务器同步随机种子，初始帧索引等会造成每个客户端运算不一致的初始数据；
 * 客户端发送指令，比如（选中，移动，攻击目标等），指令包含当前帧索引；
@@ -660,16 +666,16 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 -------
 
-[解密：腾讯如何打造一款实时对战手游](https://mp.weixin.qq.com/s?__biz=MjM5MDI5MjAyMA==&mid=402528028&idx=1&sn=50b90cadc10d545865ebd6897fc6a6c0&scene=23&srcid=03191karOzdEnKKkG78DqeSR#rd)
-[游戏里的帧同步机制](https://yrsc.github.io/2017/09/%E6%B8%B8%E6%88%8F%E5%B8%A7%E5%90%8C%E6%AD%A5/)
+* [解密：腾讯如何打造一款实时对战手游](https://mp.weixin.qq.com/s?__biz=MjM5MDI5MjAyMA==&mid=402528028&idx=1&sn=50b90cadc10d545865ebd6897fc6a6c0&scene=23&srcid=03191karOzdEnKKkG78DqeSR#rd)
+* [游戏里的帧同步机制](https://yrsc.github.io/2017/09/%E6%B8%B8%E6%88%8F%E5%B8%A7%E5%90%8C%E6%AD%A5/)
 
 # Lockstep Framework
 
-[UnityLockStepDemo - GitHub](https://github.com/GaoKaiHaHa/UnityLockStepDemo)
-[LockstepFramework - GitHub](https://github.com/SnpM/LockstepFramework)
-[The Lockstep Framework - Unity Forums](https://forum.unity.com/threads/the-lockstep-framework.318829/)
-[DPhysics Beta - Cross-platform Deterministic Physics engine - Unity Forums](https://forum.unity.com/threads/dphysics-beta-cross-platform-deterministic-physics-engine.318827/)
-[Author of Lockstep Framework - YouTube](https://www.youtube.com/channel/UC-whUyNZYl1eF8suN8LFwfA)
+* [UnityLockStepDemo - GitHub](https://github.com/GaoKaiHaHa/UnityLockStepDemo)
+* [LockstepFramework - GitHub](https://github.com/SnpM/LockstepFramework)
+* [The Lockstep Framework - Unity Forums](https://forum.unity.com/threads/the-lockstep-framework.318829/)
+* [DPhysics Beta - Cross-platform Deterministic Physics engine - Unity Forums](https://forum.unity.com/threads/dphysics-beta-cross-platform-deterministic-physics-engine.318827/)
+* [Author of Lockstep Framework - YouTube](https://www.youtube.com/channel/UC-whUyNZYl1eF8suN8LFwfA)
 
 > The Lockstep Framework (LSF) is a framework designed for games that especially need lockstep simulations. It includes a deterministic 2D physics engine, pathfinding, behavior system, and more.
 
@@ -684,10 +690,10 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # Photon TrueSync
 
-[TRUESYNC - Photon](https://www.photonengine.com/en-US/TrueSync)
-[Photon TrueSync - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/73228)
-[TrueSync Documentation](https://doc.photonengine.com/en-us/truesync/current/getting-started/truesync-intro)
-[TrueSync API](http://doc-api.photonengine.com/en/TrueSync/current/)
+* [TRUESYNC - Photon](https://www.photonengine.com/en-US/TrueSync)
+* [Photon TrueSync - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/73228)
+* [TrueSync Documentation](https://doc.photonengine.com/en-us/truesync/current/getting-started/truesync-intro)
+* [TrueSync API](http://doc-api.photonengine.com/en/TrueSync/current/)
 
 > TrueSync is based on a synchronous lockstep architecture with its own physics engine to keep a deterministic game state for Unity multiplayer games. All features from PUN are included.
 
@@ -701,14 +707,14 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # Photon Unity Networking
 
-[Photon Unity Networking Free - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/1786)
-[PUN Documentation](https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro)
-[PUN API](https://doc-api.photonengine.com/en/pun/current/index.html)
+* [Photon Unity Networking Free - Unity Asset Store](https://www.assetstore.unity3d.com/cn/#!/content/1786)
+* [PUN Documentation](https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro)
+* [PUN API](https://doc-api.photonengine.com/en/pun/current/index.html)
 
 # KBEngine
 
-[KBEngine](http://kbengine.org/cn/)
-[kbengine - GitHub](https://github.com/kbengine/kbengine)
+* [KBEngine](http://kbengine.org/cn/)
+* [kbengine - GitHub](https://github.com/kbengine/kbengine)
 
 > 一款开源的游戏服务端引擎，客户端通过简单的约定协议就能与服务端通讯，使用 KBEngine 插件能够快速与(Unity3D、UE4、OGRE、HTML5、等等)技术结合形成一个完整的客户端。 服务端底层框架使用 C++ 编写，游戏逻辑层使用 Python(支持热更新)，开发者无需重复的实现一些游戏服务端通用的底层技术，将精力真正集中到游戏开发层面上来，快速的打造各种网络游戏。
 
