@@ -174,6 +174,8 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 
 * [Game Networking](https://gafferongames.com/categories/game-networking/)
 
+* [1500 Archers on a 28.8: Network Programming in Age of Empires and Beyond](https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php)
+
 * [What Every Programmer Needs To Know About Game Networking](https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/)
 
 * [Latency Compensating Methods in Client/Server In-game Protocol Design and Optimization](https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization)

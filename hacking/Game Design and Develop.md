@@ -43,6 +43,10 @@
 [采用行为树快速开发游戏 AI - 腾讯 GAD](http://gad.qq.com/article/detail/12729#)
 [使用行为树实现游戏 AI - CSDN](http://blog.csdn.net/wangxiong_zh/article/details/50994889)
 
+### 行为树插件
+
+[Behaviour Machine](http://www.behaviourmachine.com/)
+
 ### BT-Framework 行为树框架
 
 [游戏 AI - 行为树 Part1：简介 - 知乎](https://zhuanlan.zhihu.com/indiegamepixel/19890016)
