@@ -146,7 +146,7 @@
 
 ### Invoke
 
-* `MonoBehaviour.nvoke(string methodName, float time)`
+* `MonoBehaviour.Invoke(string methodName, float time)`
     延迟调用某个方法。值得注意的是，**被调用的方法必须是无参且无返回值的方法**。
 
 * `MonoBehaviour.InvokeRepeating(string methodName, float time, float repeatRate)`
@@ -202,11 +202,570 @@ public int Health{ get; set;}
 
 ### Ternary Operator
 
-* 三元操作符
+* 三元操作符 `IF-SOMETHING-IS-TRUE ? THEN X : OTHERWISE Y` 是 `IF-ELSE` 条件语句的简短写法。
 
-// TODO: GO ON HERE
+### Statics
+
+* static variable 静态变量
+* static method 静态方法
+* static class 静态类
+
+### Method Overloading
+
+* 方法的签名由方法名称和参数列表构成，拥有相同的方法名称但不同的参数列表的多个方法，即为方法的重载。
+
+### Generics
+
+* 「泛型方法」或「泛型类」可以理解为在编写程序时定义了一个（或多个）占位符，而在程序实际运行时再确定其真正的数据类型。
+* 泛型占位符的名称可随意指定（并不一定为 `T`），且可定义多个（一般不超过 3 个）。
+* 为了对泛型变量执行更多的操作，可以使用 `where` 关键词为泛型变量约束其为指定的类型：
+
+    - `where T : class` ：约束 T 为引用类型
+    - `where T : struct` ：约束 T 为结构体
+    - `where T : new()` ：约束 T 具有一个 public 的无参构造体
+    - `where T : MonoBehaviour` ：约束 T 为 MonoBehaviour 类的实例或扩展类
+    - `where T : IEnumerable` : 约束 T 为实现了 IEnumerable 接口的类
+
+```csharp
+public class SomeClass 
+{
+    //Here is a generic method. Notice the generic type 'T'. This 'T' will be replaced at runtime with an actual type. 
+    public T GenericMethod<T>(T param)
+    {
+        return param;
+    }
+}
+```
+
+```csharp
+//Here is a generic class. Notice the generic type 'T'.
+//'T' will be replaced with an actual type, as will also instances of the type 'T' used in the class.
+public class GenericClass <T>
+{
+    T item;
+    
+    public void UpdateItem(T newItem)
+    {
+        item = newItem;
+    }
+}
+```
+
+### Inheritance
+
+* 继承是面向对象语言的基石。
+* 子类会自动继承父类的 public 和 protected 变量和方法。
+* 子类不会继承父类的构造方法，但在调用子类的构造方法之前，会先调用父类的构造方法。
+* 可以在子类的构造方法后添加 `: base(参数列表)` 来指定调用它之前所需调用的父类构造方法。
+
+```csharp
+//This is the base class which is also known as the Parent class.
+public class Fruit 
+{
+    public string color;
+    
+    //This is the first constructor for the Fruit class and is not inherited by any derived classes.
+    public Fruit()
+    {
+        color = "orange";
+        Debug.Log("1st Fruit Constructor Called");
+    }
+    
+    //This is the second constructor for the Fruit class and is not inherited by any derived classes.
+    public Fruit(string newColor)
+    {
+        color = newColor;
+        Debug.Log("2nd Fruit Constructor Called");
+    }
+}
+```
+
+```csharp
+//This is the derived class whis is also know as the Child class.
+public class Apple : Fruit 
+{
+    //This is the first constructor for the Apple class.
+    //It calls the parent constructor immediately, even before it runs.
+    public Apple()
+    {
+        //Notice how Apple has access to the public variable color, which is a part of the parent Fruit class.
+        color = "red";
+        Debug.Log("1st Apple Constructor Called");
+    }
+    
+    //This is the second constructor for the Apple class.
+    //It specifies which parent constructor will be called using the "base" keyword.
+    public Apple(string newColor) : base(newColor)
+    {
+        //Notice how this constructor doesn't set the color since the base constructor sets the color that is passed as an argument.
+        Debug.Log("2nd Apple Constructor Called");
+    }
+}
+```
+
+### Polymorphism
+
+* 多态往往表现为**「一个接口，多个功能」**。
+* 父类引用可以持有子类对象，即 upcasting，但此时只能访问到父类方法，除非子类重写了父类的 virtual 方法；子类引用通过强制类型转换也可以持有父类对象，即 downcasting，但此时访问的是子类的方法。
+
+### Member Hiding
+
+* 在子类的字段和方法、甚至是内部类声明前添加 `new` 关键字，可以隐藏父类的成员。
+* 当通过子类引用访问被隐藏的成员时，被调用的是子类的成员，而不是父类的成员，该效果与使用 `override` 重写父类的 `virtual` 成员相同；但通过父类引用子类对象时，被调用的依然是父类的成员，这与 `override` 的效果不同。
+
+```csharp
+public class Humanoid
+{
+    //Base version of the Yell method
+    public void Yell()
+    {
+        Debug.Log ("Humanoid version of the Yell() method");
+    }
+}
+
+public class Enemy : Humanoid
+{
+    //This hides the Humanoid version.
+    new public void Yell()
+    {
+        Debug.Log ("Enemy version of the Yell() method");
+    }
+}
+
+public class Orc : Enemy
+{
+    //This hides the Enemy version.
+    new public void Yell()
+    {
+        Debug.Log ("Orc version of the Yell() method");
+    }
+}
+
+public class WarBand : MonoBehaviour 
+{
+    void Start () 
+    {
+        Humanoid human = new Humanoid();
+        Humanoid enemy = new Enemy();
+        Humanoid orc = new Orc();
+        
+        //Notice how each Humanoid variable contains a reference to a different class in the
+        //inheritance hierarchy, yet each of them calls the Humanoid Yell() method.
+        human.Yell();
+        enemy.Yell();
+        orc.Yell();
+    }
+}
+```
+
+### Overriding
+
+* 当父类方法被声明为 `virtual` 时，子类方法可以使用 `override` 关键字来重写父类实现，这样通过父类引用访问同名方法时，实际被调用的是子类的重写方法。
+* 如果想在父类的 `virtual` 方法基础上叠加行为，则可以在子类重写的方法中通过 `base` 关键字提前调用父类方法，再执行子类特定的行为。
+
+### Interfaces
+
+* 接口定义了所有类继承接口时应遵循的语法合**同。接口定义了语法合同 「是什么」 部分，派生类定义了语法合同「怎么做」部分**。
+* 接口无法被实例化。
+* 类无法继承多个父类，但可以继承多个接口。
+* 使用继承来管理逻辑上相关联的类，而使用接口则可以将为逻辑上不相关的类定义相同的功能接口。
+
+### Extension Methods
+
+* 扩展方法允许你在不改变原类或者继承原类的基础上，为原类添加新的方法，这个特性很适合我们无法编辑原类的情况。
+* 通常创建一个新的类来包含所有的扩展方法，这个类必须是 `static` 静态的。
+* 扩展方法必须声明为 `static`，且其第一个参数必须使用 `this` 关键字声明，表明该扩展方法所属的原类。
+
+```csharp
+//It is common to create a class to contain all of your
+//extension methods. This class must be static.
+public static class ExtensionMethods
+{
+    //Even though they are used like normal methods, extension
+    //methods must be declared static. Notice that the first
+    //parameter has the 'this' keyword followed by a Transform
+    //variable. This variable denotes which class the extension
+    //method becomes a part of.
+    public static void ResetTransformation(this Transform trans)
+    {
+        trans.position = Vector3.zero;
+        trans.localRotation = Quaternion.identity;
+        trans.localScale = new Vector3(1, 1, 1);
+    }
+}
+```
+
+```csharp
+public class SomeClass : MonoBehaviour 
+{
+    void Start () {
+        //Notice how you pass no parameter into this
+        //extension method even though you had one in the
+        //method declaration. The transform object that
+        //this method is called from automatically gets
+        //passed in as the first parameter.
+        transform.ResetTransformation();
+    }
+}
+```
+
+### Namespaces
+
+* 使用命名空间有利于组织代码，避免命名冲突。
+
+### Lists and Dictionaries
+
+* `IComparable<>`
+* `CompareTo()`
+* `List.Sort()`
+* `TryGetValue()`
+
+```csharp
+using UnityEngine;
+using System; //This allows the IComparable Interface
+
+//This is the class you will be storing
+//in the different collections. In order to use
+//a collection's Sort() method, this class needs to
+//implement the IComparable interface.
+public class BadGuy : IComparable<BadGuy>
+{
+    public string name;
+    public int power;
+    
+    public BadGuy(string newName, int newPower)
+    {
+        name = newName;
+        power = newPower;
+    }
+    
+    //This method is required by the IComparable interface. 
+    public int CompareTo(BadGuy other)
+    {
+        if(other == null)
+        {
+            return 1;
+        }
+        
+        //Return the difference in power.
+        return power - other.power;
+    }
+}
+```
+
+```csharp
+using UnityEngine;
+using System.Collections.Generic;
+
+public class SomeClass : MonoBehaviour
+{
+    void Start () 
+    {
+        //This is how you create a list. Notice how the type
+        //is specified in the angle brackets (< >).
+        List<BadGuy> badguys = new List<BadGuy>();
+        
+        //Here you add 3 BadGuys to the List
+        badguys.Add( new BadGuy("Harvey", 50));
+        badguys.Add( new BadGuy("Magneto", 100));
+        badguys.Add( new BadGuy("Pip", 5));
+        
+        badguys.Sort();
+        
+        foreach(BadGuy guy in badguys)
+        {
+            print (guy.name + " " + guy.power);
+        }
+        
+        //This clears out the list so that it is empty.
+        badguys.Clear();
+    }
+}
+```
+
+```csharp
+using UnityEngine;
+using System.Collections.Generic;
+
+public class SomeOtherClass : MonoBehaviour 
+{
+    void Start ()
+    {
+        //This is how you create a Dictionary. Notice how this takes
+        //two generic terms. In this case you are using a string and a
+        //BadGuy as your two values.
+        Dictionary<string, BadGuy> badguys = new Dictionary<string, BadGuy>();
+        BadGuy bg1 = new BadGuy("Harvey", 50);
+        BadGuy bg2 = new BadGuy("Magneto", 100);
+        
+        //You can place variables into the Dictionary with the Add() method.
+        badguys.Add("gangster", bg1);
+        badguys.Add("mutant", bg2);
+        
+        BadGuy magneto = badguys["mutant"];
+        BadGuy temp = null;
+        
+        //This is a safer, but slow, method of accessing values in a dictionary.
+        if(badguys.TryGetValue("birds", out temp))
+        {
+            //success!
+        }
+        else
+        {
+            //failure!
+        }
+    }
+}
+```
+
+### Coroutines
+
+* 协程可以认为是一个固定时间间隔调用的「方法」，当协程执行过程中遇到 `yield` 语句时，即返回执行「方法」外部的逻辑，直到「方法」再次继续执行时，它会从上次离开时的位置继续执行下去。
+* `yield return` 语句是协程的关键，每次执行到该语句，协程就会返回相应的值，跳转到协程之外，等待下一次 Update 的到来才继续执行协程余下的逻辑，循环往复，直到整个协程结束。
+* 可以在类的属性中使用协程，这样就不需要在 Update 方法中持续地拉取变量值，从而提高程序性能。
+
+```csharp
+public class CoroutinesExample : MonoBehaviour
+{
+    public float smoothing = 1f;
+    public Transform target;
+    
+    void Start ()
+    {
+        StartCoroutine(MyCoroutine(target));
+    }
+    
+    IEnumerator MyCoroutine (Transform target)
+    {
+        while(Vector3.Distance(transform.position, target.position) > 0.05f)
+        {
+            transform.position = Vector3.Lerp(transform.position, target.position, smoothing * Time.deltaTime);
+            
+            yield return null;
+        }
+        
+        print("Reached the target.");
+        yield return new WaitForSeconds(3f);
+        print("MyCoroutine is now finished.");
+    }
+}
+```
+
+```csharp
+public class PropertiesAndCoroutines : MonoBehaviour
+{
+    public float smoothing = 7f;
+    public Vector3 Target
+    {
+        get { return target; }
+        set
+        {
+            target = value;
+            StopCoroutine("Movement");
+            StartCoroutine("Movement", target);
+        }
+    }
+    
+    private Vector3 target;
+
+    IEnumerator Movement (Vector3 target)
+    {
+        while(Vector3.Distance(transform.position, target) > 0.05f)
+        {
+            transform.position = Vector3.Lerp(transform.position, target, smoothing * Time.deltaTime);
+            yield return null;
+        }
+    }
+}
+```
+
+```csharp
+public class ClickSetPosition : MonoBehaviour
+{
+    public PropertiesAndCoroutines coroutineScript;
+    
+    void OnMouseDown ()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        
+        Physics.Raycast(ray, out hit);
+        if(hit.collider.gameObject == gameObject)
+        {
+            Vector3 newTarget = hit.point + new Vector3(0, 0.5f, 0);
+            coroutineScript.Target = newTarget;
+        }
+    }
+}
+```
+
+### Quaternions
+
+[Quaternion - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Quaternion.html)
+
+* Unity 中所有的转向信息都是由 Quaternion 四元数存储的，它可以避免「万向节锁」的问题，而 Euler Angle 欧拉角则无法避免这个问题。
+* 在 Inspector 面板的 Transform 组件中，`Rotation` 是通过 Euler Angle 欧拉角的形式来表示的，因为它更易于理解，Unity 会将四元数转化为欧拉角用于显示。
+* 不要单独修改 Quaternion 四元数的 X/Y/Z/W 组件参数，而是使用 Quaternion 提供的相关方法来操作物体的转向。
+* 常用的 Quaternion 方法包括：
+
+    - Quaternion.LookRotation
+    - Quaternion.Angle
+    - Quaternion.Euler
+    - Quaternion.Slerp
+    - Quaternion.FromToRotation
+    - Quaternion.identity
+
+```csharp
+public class LookAtScript : MonoBehaviour 
+{
+    public Transform target;
+    void Update () 
+    {
+        Vector3 relativePos = target.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(relativePos);
+    }
+}
+```
+
+### Delegates
+
+* delegate 委托可以认为是方法的容器，可以像变量一样被传递和使用。
+* 利用委托可以在运行时方便地动态改变要调用的方法。
+* 一个委托变量可以代表多个方法，利用该特性可以方便地实现方法的广播，即同时调用多个方法。
+* 调用委托之前必须判定其是否为 `null`，如果没有任何方法注册到该委托上，则调用会出错。
+
+```csharp
+public class DelegateScript : MonoBehaviour 
+{   
+    delegate void MyDelegate(int num);
+    MyDelegate myDelegate;
+    
+    void Start () 
+    {
+        myDelegate = PrintNum;
+        myDelegate(50);
+        myDelegate = DoubleNum;
+        myDelegate(50);
+    }
+    
+    void PrintNum(int num)
+    {
+        print ("Print Num: " + num);
+    }
+    
+    void DoubleNum(int num)
+    {
+        print ("Double Num: " + num * 2);
+    }
+}
+```
+
+```csharp
+public class MulticastScript : MonoBehaviour 
+{
+    delegate void MultiDelegate();
+    MultiDelegate myMultiDelegate;
+
+    void Start () 
+    {
+        myMultiDelegate += PowerUp;
+        myMultiDelegate += TurnRed;
+        
+        if(myMultiDelegate != null)
+        {
+            myMultiDelegate();
+        }
+    }
+    
+    void PowerUp()
+    {
+        print ("Orb is powering up!");
+    }
+    
+    void TurnRed()
+    {
+        renderer.material.color = Color.red;
+    }
+}
+```
+
+### Attributes
+
+* Attribute 属性可用于变量、方法或类上，用于增强或改变原有代码的某些功能。
+
+    - `Range` 属性附加在变量上，以限定变量的大小范围
+    - `ExecuteInEditMode` 属性附加在类上，使得该类在编辑模式下就能运作，而不需要等到运行场景时才生效。需要特别注意的是，**该属性对场景对象造成的更改是无法恢复的**，不像运行模式下对场景对象的更改不会永久生效
+
+```csharp
+public class SpinScript : MonoBehaviour 
+{
+    [Range(-100, 100)] public int speed = 0;
+    void Update () 
+    {
+        transform.Rotate(new Vector3(0, speed * Time.deltaTime, 0));
+    }
+}
+```
+
+```csharp
+[ExecuteInEditMode]
+public class ColorScript : MonoBehaviour 
+{
+    void Start()
+    {
+        renderer.sharedMaterial.color = Color.red;
+    }
+}
+```
+
+### Events
+
+* 事件是委托的一种，可用于实现一个广播系统，通知它的订阅者们刚刚发生的事件。
+* 需要注意的是，与委托类似，如果事件没有任何订阅者，调用它的时候会出错，所以要在调用它之前要确保其不为 `null`。
+* 在需要的时候为事件注册订阅者，而在不需要它的时候取消订阅，否则将导致内存泄露和运行错误。**通常在为事件注册订阅的时候，同时要编写取消事件订阅的代码**。
+* 为什么使用 `static Event` 而不是 `public delegate`？因为 `Event` 具备更好的安全性，其他类只能订阅或取消订阅事件；而使用 `public delegate` 的话，其他类可以随意调用甚至重写该变量。
+
+```csharp
+public class EventManager : MonoBehaviour 
+{
+    public delegate void ClickAction();
+    public static event ClickAction OnClicked;
+    void OnGUI()
+    {
+        if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Click"))
+        {
+            if(OnClicked != null)
+                OnClicked();
+        }
+    }
+}
+```
+
+```csharp
+public class TeleportScript : MonoBehaviour 
+{
+    void OnEnable()
+    {
+        EventManager.OnClicked += Teleport;
+    }
+    
+    void OnDisable()
+    {
+        EventManager.OnClicked -= Teleport;
+    }
+    
+    void Teleport()
+    {
+        Vector3 pos = transform.position;
+        pos.y = Random.Range(1.0f, 3.0f);
+        transform.position = pos;
+    }
+}
+```
 
 ## Editor Scripting
+
+// TODO: GO ON HERE
 
 ## Community Posts
 
@@ -229,7 +788,7 @@ public int Health{ get; set;}
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2017-12-22）
+	- 更新（2018-01-01）
 
 ---
 
