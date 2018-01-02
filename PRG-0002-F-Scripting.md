@@ -229,7 +229,8 @@ public int Health{ get; set;}
 ```csharp
 public class SomeClass 
 {
-    //Here is a generic method. Notice the generic type 'T'. This 'T' will be replaced at runtime with an actual type. 
+    //Here is a generic method. Notice the generic type 'T'. 
+    //This 'T' will be replaced at runtime with an actual type. 
     public T GenericMethod<T>(T param)
     {
         return param;
@@ -788,7 +789,7 @@ public class TeleportScript : MonoBehaviour
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2018-01-01）
+	- 更新（2018-01-02）
 
 ---
 

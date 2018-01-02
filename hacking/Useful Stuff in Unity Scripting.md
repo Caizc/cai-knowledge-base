@@ -1154,11 +1154,20 @@ if (Application.platform == RuntimePlatform.WindowsPlayer)
 
 ### Rendering
 
+* **OnGUI:** Called multiple times per frame in response to GUI events. The Layout and Repaint events are processed first, followed by a Layout and keyboard/mouse event for each input event.
+* **OnDrawGizmos:** Used for drawing Gizmos in the scene view for visualisation purposes.
+
 // TODO
 
 ### Coroutines
 
-// TODO
+> Normal coroutine updates are run after the Update function returns. A coroutine is a function that can suspend its execution (yield) until the given YieldInstruction finishes. Different uses of Coroutines:
+
+* **yield** The coroutine will continue after all Update functions have been called on the next frame.
+* **yield WaitForSeconds** Continue after a specified time delay, after all Update functions have been called for the frame.
+* **yield WaitForFixedUpdate** Continue after all FixedUpdate has been called on all scripts.
+* **yield WWW** Continue after a WWW download has completed.
+* **yield StartCoroutine** Chains the coroutine, and will wait for the MyFunc coroutine to complete first.
 
 ### When the Object is Destroyed
 
@@ -1166,7 +1175,10 @@ if (Application.platform == RuntimePlatform.WindowsPlayer)
 
 ### When Quitting
 
-// TODO
+> These functions get called on all the active objects in your scene:
+
+* **OnApplicationQuit:** This function is called on all game objects before the application is quit. In the editor it is called when the user stops playmode.
+* **OnDisable:** This function is called when the behaviour becomes disabled or inactive.
 
 ### Script Lifecycle Flowchart
 
@@ -1215,7 +1227,7 @@ if (Application.platform == RuntimePlatform.WindowsPlayer)
 change log: 
 
 	- 创建（2017-06-09）
-	- 更新（2017-10-20）
+	- 更新（2018-01-02）
 
 ---
 
