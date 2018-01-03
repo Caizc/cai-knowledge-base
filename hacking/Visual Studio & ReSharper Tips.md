@@ -44,14 +44,20 @@
 
 ## Trouble Shooting
 
+* Unity 总是打开新的 Visual Studio 实例
+
 [Unity keeps opening new instances of Microsoft Visual Studio](http://answers.unity3d.com/questions/1078859/unity-keeps-opening-new-instances-of-microsoft-vis.html)
+
+* 显示所有打开的选项卡
+
+[multiple rows of document or file tabs in visual studio IDE](https://stackoverflow.com/questions/37121040/multiple-rows-of-document-or-file-tabs-in-visual-studio-ide/40668536)
 
 ---
 
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2017-09-19）
+	- 更新（2018-01-02）
 
 ---
 
