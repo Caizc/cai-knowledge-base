@@ -4,6 +4,8 @@
 * 《Unity 人工智能游戏开发（第 2 版）》
 * [美] `Ray Barrera` 著
 * 2016 年 9 月第 1 版
+* [随书示例代码](http://www.packtpub.com/code_download/22512)
+* [书中截图和图表 PDF](https://www.packtpub.com/sites/default/files/downloads/8272OT_ColorImages.pdf)
 
 ![](media/15149402893400.jpg)
 
@@ -81,6 +83,7 @@
 change log: 
 
 	- 创建（2018-01-03）
+	- 更新（2018-01-04）
 
 ---
 

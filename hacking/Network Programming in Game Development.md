@@ -738,6 +738,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 [uLink](http://developer.muchdifferent.com/unitypark/uLink/uLink)
 
 [Experience with Unity Networking, Photon, and uLink for My Giants](https://forum.unity.com/threads/experience-with-unity-networking-photon-and-ulink-unitypark-suite-for-my-giants.113321/)
+[Multiplayer Networking Solutions Review: Photon, uLink, DarkRift, Forge, and PlayFab](https://forum.unity.com/threads/multiplayer-networking-solutions-review-photon-ulink-darkrift-forge-and-playfab.294852/)
 
 ---
 
