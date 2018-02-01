@@ -784,12 +784,19 @@ public class TeleportScript : MonoBehaviour
 
 ## Live Session: Text Adventure Game
 
+# Tricks
+
+## string to int
+
+* int.Parse(string s)
+* int.TryParse(string s, out int result)
+
 ---
 
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2018-01-02）
+	- 更新（2018-02-01）
 
 ---
 
