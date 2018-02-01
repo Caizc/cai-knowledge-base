@@ -5,38 +5,57 @@
 [ReSharper的快捷键](https://my.oschina.net/u/935978/blog/131287)
 [8项Resharper快捷键](http://www.cnblogs.com/redmoon/p/4458697.html)
 
+* 编码援助
+
 | 功能 | 快捷键 |
 | --- | --- |
 | 智能提示 | Alt + Enter |
-| 查找引用 | Alt + F7 |
-| 显示文件结构 | Ctrl + F11 |
 | 重命名 | F2 |
 | 重构工具 | Ctrl + Shift + R |
 | 快速完成代码 | Alt + Insert |
 | 新增一行 | Ctrl + Shift + Enter |
-| 代码行上下移动 | Ctrl + Alt + Shift + Up/Down/Left/Right |
-| Duplicate a line or selection | Ctrl+D |
-| Comment with line comment | Ctrl+/ |
-| Comment with block comment | Ctrl+Shift+/ |
+| Paste multiple | Ctrl + Shift + V |
+| Duplicate a line or selection | Ctrl + D |
+| Comment with line comment | Ctrl + / |
+| Comment with block comment | Ctrl + Shift + / |
+| 代码行上下移动 | Ctrl + Shift + Alt + Up/Down/Left/Right |
 | 代码模板 | Ctrl + J |
-| 导航到上/下一个成员 | Alt + Up/Down |
-| 在解决方案管理器中定位正在编辑的文件 | Shift + Alt + L |
-| 格式化代码 | Ctrl + Alt + F |
-| Go to next error | Alt + F12 |
-| View type hierarchy | Ctrl + Alt + H |
+| Code cleanup | Ctrl + Alt + F |
+| Silent code cleanup | Ctrl + Shift + Alt + F |
 | 生成代码 | Alt + Insert |
 | 根据模板创建文件 | Ctrl + Alt + Insert |
-| Go to type | Ctrl+N |
-| Go To File | Ctrl+Shift+N |
-| Go to file member | Ctrl+F12 |
-| Go to symbol	 | Ctrl+Shift+Alt+N |
-| Go to declaration | Ctrl+B |
-| Go to implementation | Ctrl+Shift+Alt+B |
-| Highlight usages in file |	Ctrl+Shift+F7 |
 | 折叠所有大纲显示 | Ctrl + M, Ctrl + A |
 | 展开所有大纲显示 | Ctrl + M, Ctrl + X |
 | 展开当前区域 | Ctrl + M, Ctrl + E |
+
+* 导航搜索
+
+| 功能 | 快捷键 |
+| --- | --- |
+| 查找引用 | Ctrl + K, Ctrl + R |
+| 查找引用 | Alt + F7 |
+| 查找引用（高级） | Shift + Alt + F7 |
+| Highlight usages in file |	Ctrl + Shift + F7 |
+| Go to type | Ctrl + N |
+| Go to file | Ctrl + Shift + N |
+| Go to file member | Ctrl + F12 | 
+| Go to symbol	 | Ctrl + Shift + Alt + N |
+| Go to declaration | Ctrl + B |
+| Go to implementation | Ctrl + Shift + Alt + B |
+| Go to containing declaration | Ctrl + [ |
 | View recent files | Ctrl + E |
+| View recent edits | Ctrl + Shift + Alt + Backspace |
+| 在解决方案管理器中定位正在编辑的文件 | Shift + Alt + L |
+| 导航到上/下一个成员 | Alt + Up/Down |
+| 导航到下一个代码问题 | F12 |
+| 导航到下一个错误 | Alt + F12 |
+
+* 代码分析
+
+| 功能 | 快捷键 |
+| --- | --- |
+| File structure | Ctrl + F11 |
+| View type hierarchy | Ctrl + Alt + H |
 
 ## 实用插件
 
@@ -57,7 +76,7 @@
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2018-01-02）
+	- 更新（2018-02-01）
 
 ---
 
