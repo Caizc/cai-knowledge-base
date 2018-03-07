@@ -4,43 +4,43 @@
 
 ### 腾讯专家答疑
 
-[腾讯专家答疑专场（汇总）](http://gad.qq.com/article/detail/38214)
+* [腾讯专家答疑专场（汇总）](http://gad.qq.com/article/detail/38214)
 
 ### 网易游戏技术分享
 
-[网易游戏技术分享](https://blog.coderzh.com/2015/06/28/163GameOpenDay/)
+* [网易游戏技术分享](https://blog.coderzh.com/2015/06/28/163GameOpenDay/)
 
 ### ECS 架构
 
-[《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
-[浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
+* [《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
+* [浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
 
 ### Unity 框架
 
-[Unity 游戏框架搭建系列 - GAD](http://gad.qq.com/u/profile/38901#)
+* [Unity 游戏框架搭建系列 - GAD](http://gad.qq.com/u/profile/38901#)
 
 ### 寻路算法
 
-[深入理解游戏中的寻路算法](http://gad.qq.com/article/detail/33637)
+* [深入理解游戏中的寻路算法](http://gad.qq.com/article/detail/33637)
 
 ### 行为树
 
 #### Behavior Tree 行为树
 
-[基于行为树与状态机的游戏 AI - Unity3D 学习网](http://www.unity.5helpyou.com/3359.html)
-[Unity 行为树 Behavior Designer - CSDN](http://blog.csdn.net/yupu56/article/details/50151527)
-[采用行为树快速开发游戏 AI - 腾讯 GAD](http://gad.qq.com/article/detail/12729#)
-[使用行为树实现游戏 AI - CSDN](http://blog.csdn.net/wangxiong_zh/article/details/50994889)
+* [基于行为树与状态机的游戏 AI - Unity3D 学习网](http://www.unity.5helpyou.com/3359.html)
+* [Unity 行为树 Behavior Designer - CSDN](http://blog.csdn.net/yupu56/article/details/50151527)
+* [采用行为树快速开发游戏 AI - 腾讯 GAD](http://gad.qq.com/article/detail/12729#)
+* [使用行为树实现游戏 AI - CSDN](http://blog.csdn.net/wangxiong_zh/article/details/50994889)
 
 #### 行为树插件
 
-[Behaviour Machine](http://www.behaviourmachine.com/)
+* [Behaviour Machine](http://www.behaviourmachine.com/)
 
 #### BT-Framework 行为树框架
 
-[游戏 AI - 行为树 Part1：简介 - 知乎](https://zhuanlan.zhihu.com/indiegamepixel/19890016)
-[游戏 AI - 行为树 Part2：框架 - 知乎](https://zhuanlan.zhihu.com/p/19891875)
-[BT-Framework - GitHub](https://github.com/f15gdsy/BT-Framework)
+* [游戏 AI - 行为树 Part1：简介 - 知乎](https://zhuanlan.zhihu.com/indiegamepixel/19890016)
+* [游戏 AI - 行为树 Part2：框架 - 知乎](https://zhuanlan.zhihu.com/p/19891875)
+* [BT-Framework - GitHub](https://github.com/f15gdsy/BT-Framework)
 
 ![](media/15145212909492.jpg)
 
@@ -101,7 +101,7 @@
 
 ### struct & class
 
-[C# 中 Struct 与 Class 的区别，以及两者的适用场合 - cnblogs](http://www.cnblogs.com/waitrabbit/archive/2008/05/18/1202064.html)
+* [C# 中 Struct 与 Class 的区别，以及两者的适用场合 - cnblogs](http://www.cnblogs.com/waitrabbit/archive/2008/05/18/1202064.html)
 
 * class 是引用类型，struct 是值类型
 * class 有面向对象的扩展优势，struct 有性能优势
@@ -153,13 +153,13 @@ Buff 回调点：
 6. BuffBeforeKilled
 7. BuffAfterKilled
 
-[通用型buff机制在实战中的运用 - GameRes](http://bbs.gameres.com/thread_454153.html)
+* [通用型buff机制在实战中的运用 - GameRes](http://bbs.gameres.com/thread_454153.html)
 
 1、Buff 在同一款游戏中并非只能有一套
 2、Buff 机制并非只能在 ARPG 中使用
 3、现实生活中也有 Buff 机制的落脚点
 
-[游戏 BUFF 设计 - cnblogs](http://www.cnblogs.com/damowang/p/5799967.html)
+* [游戏 BUFF 设计 - cnblogs](http://www.cnblogs.com/damowang/p/5799967.html)
 
 总体上来说，BUFF/DEBUFF都属于“临时的技能效果”，因此它们可以沿用绝大部分的技能逻辑对角色进行程序处理。
 
@@ -189,18 +189,18 @@ Buff 回调点：
 * [策划公式的 DSL 设计 - 云风的 BLOG](https://blog.codingnow.com/2012/01/dev_note_8.html)
 * [AOE机制的DSL及其实际运用 - GameRes](http://bbs.gameres.com/forum.php?mod=viewthread&tid=225054)
 
-[不要用海量表项压垮“技能流程” - GameRes](http://bbs.gameres.com/thread_229210_1_1.html)
+* [不要用海量表项压垮“技能流程” - GameRes](http://bbs.gameres.com/thread_229210_1_1.html)
 
 技能，说穿了只是一个流程，而不该是一个实体。
 
-[游戏开发笔记（九）——技能系统 - CSDN](http://blog.csdn.net/mooke/article/details/9771545)
+* [游戏开发笔记（九）——技能系统 - CSDN](http://blog.csdn.net/mooke/article/details/9771545)
 
 对于技能系统这个比较大的主题，通常要先拆小了来分析。也许不太恰当，但姑且先分为动作表现、技能逻辑和伤害判定这三块吧。
 
 ### 判断动画是否播放结束
 
-[Unity Animator 怎么判断一个动画播放结束 - cnblog](http://www.cnblogs.com/mimime/p/6599798.html)
-[AnimatorStateInfo.normalizedTime - Unity Scripting API](https://docs.unity3d.com/ScriptReference/AnimatorStateInfo-normalizedTime.html)
+* [Unity Animator 怎么判断一个动画播放结束 - cnblog](http://www.cnblogs.com/mimime/p/6599798.html)
+* [AnimatorStateInfo.normalizedTime - Unity Scripting API](https://docs.unity3d.com/ScriptReference/AnimatorStateInfo-normalizedTime.html)
 
 **三种方法：**
 
@@ -213,7 +213,7 @@ Buff 回调点：
 ### Rotating an object in relation to its velocity
 
 Rigidbody 的转向跟随其速度方向的实现采用这种方法：
-[Rotating gameobject to velocity - Unity Answers](https://answers.unity.com/questions/293282/rotating-gameobject-to-velocity.html)
+* [Rotating gameobject to velocity - Unity Answers](https://answers.unity.com/questions/293282/rotating-gameobject-to-velocity.html)
 
 * [Rotating an object in relation to its velocity - StackExchange](https://gamedev.stackexchange.com/questions/99244/unity-3d-rotating-an-object-in-relation-to-its-velocity)
 * [How to rotate object in unity3d using Rigidbody](http://www.cuelogic.com/blog/how-to-rotate-object-in-unity3d-using-rigidbody/)
@@ -222,7 +222,7 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### 物体移动方式
 
-[物体移动方式总结 - CSDN](http://blog.csdn.net/MyArrow/article/details/45846567)
+* [物体移动方式总结 - CSDN](http://blog.csdn.net/MyArrow/article/details/45846567)
 
 ## 2018-01-13 星期六
 
@@ -230,12 +230,12 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 **Collider 和 Trigger 的区别？OnCollisionEnter 和 OnTriggerEnter 的区别？**
 
-[Collider.OnCollisionEnter - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html)
+* [Collider.OnCollisionEnter - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Collider.OnCollisionEnter.html)
 
 > OnCollisionEnter is called when this collider/rigidbody has begun touching another rigidbody/collider.
 > In contrast to OnTriggerEnter, OnCollisionEnter is passed the Collision class and not a Collider. The Collision class contains information about contact points, impact velocity etc. If you don't use collisionInfo in the function, leave out the collisionInfo parameter as this avoids unneccessary calculations. Notes: Collision events are only sent if one of the colliders also has a non-kinematic rigidbody attached. Collision events will be sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.
 
-[Collider.OnTriggerEnter - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html)
+* [Collider.OnTriggerEnter - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html)
 
 > OnTriggerEnter is called when the Collider other enters the trigger.
 > This message is sent to the trigger Collider and the Rigidbody (if any) that the trigger Collider belongs to, and to the Rigidbody (or the Collider if there is no Rigidbody) that touches the trigger. Notes: Trigger events are only sent if one of the Colliders also has a Rigidbody attached. Trigger events will be sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions. OnTriggerEnter occurs on the FixedUpdate after a collision. The Colliders involved are not guaranteed to be at the point of initial contact.
@@ -243,11 +243,11 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### readonly
 
-[readonly - C# Reference](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly)
+* [readonly - C# Reference](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly)
 
 > The `readonly` keyword is a modifier that you can use on fields. When a field declaration includes a `readonly` modifier, assignments to the fields introduced by the declaration can only occur as part of the declaration or in a constructor in the same class.
 
-[What are the benefits to marking a field as `readonly` in C#? - stack overflow](https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c)
+* [What are the benefits to marking a field as `readonly` in C#? - stack overflow](https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c)
 
 > The `readonly` keyword is used to declare a member variable a constant, but allows the value to be calculated at runtime. This differs from a constant declared with the `const` modifier, which must have its value set at compile time. Using `readonly` you can set the value of the field either in the declaration, or in the constructor of the object that the field is a member of.
 > Also use it if you don't want to have to recompile external DLLs that reference the constant (since it gets replaced at compile time).
@@ -256,18 +256,18 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### 坐标系转化
 
-[坐标系转化](https://li-kang.gitbooks.io/unity-concise-course/content/Summary/coordinate.html)
+* [坐标系转化](https://li-kang.gitbooks.io/unity-concise-course/content/Summary/coordinate.html)
 
 ### 弧度与角度
 
-[Radian - 维基百科](https://en.wikipedia.org/wiki/Radian)
-[Why convert degrees to radians?](https://answers.unity.com/questions/989535/why-convert-degrees-to-radians.html)
+* [Radian - 维基百科](https://en.wikipedia.org/wiki/Radian)
+* [Why convert degrees to radians?](https://answers.unity.com/questions/989535/why-convert-degrees-to-radians.html)
 
 ![](media/15156578153800.gif)
 
 ### float 值是否相等判定
 
-[Mathf.Approximately - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Mathf.Approximately.html)
+* [Mathf.Approximately - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Mathf.Approximately.html)
 
 ## 2018-01-04 星期四
 
@@ -279,7 +279,7 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### Sublime Text 文本不换行显示
 
-[Sublime 小技巧：文本自动换行显示？- 简书](https://www.jianshu.com/p/c75d21d2e967)
+* [Sublime 小技巧：文本自动换行显示？- 简书](https://www.jianshu.com/p/c75d21d2e967)
 
 ```
 "word_wrap": "false"
@@ -302,7 +302,7 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### NGUI 自适应屏幕
 
-[NGUI研究院之自适应屏幕](http://www.xuanyusong.com/archives/2536)
+* [NGUI研究院之自适应屏幕](http://www.xuanyusong.com/archives/2536)
 
 ## 2017-12-23 星期六
 
@@ -310,13 +310,13 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 * 当脚本中存在 Start/Update/FixedUpdate/LateUpdate/OnGUI 等 MonoBehaviour 方法时，该勾选框会显示，反之不会显示，即使存在 Awake 方法也不会显示。
 
-[为什么Inspector视图中脚本前面的勾选框没了](http://www.xuanyusong.com/archives/3130)
+* [为什么Inspector视图中脚本前面的勾选框没了](http://www.xuanyusong.com/archives/3130)
 
 ### Animator.CrossFade
 
-[Animator.CrossFade - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Animator.CrossFade.html)
-[记一次Animator状态快速切换问题的解决 - cnblogs](http://www.cnblogs.com/hont/p/5196485.html)
-[Unity中使用Animation提高Animator的性能](http://georgejin.me/2016/09/09/Unity%E4%B8%AD%E4%BD%BF%E7%94%A8Animation%E6%8F%90%E9%AB%98Animator%E7%9A%84%E6%80%A7%E8%83%BD/)
+* [Animator.CrossFade - Unity Scripting API](https://docs.unity3d.com/ScriptReference/Animator.CrossFade.html)
+* [记一次Animator状态快速切换问题的解决 - cnblogs](http://www.cnblogs.com/hont/p/5196485.html)
+* [Unity中使用Animation提高Animator的性能](http://georgejin.me/2016/09/09/Unity%E4%B8%AD%E4%BD%BF%E7%94%A8Animation%E6%8F%90%E9%AB%98Animator%E7%9A%84%E6%80%A7%E8%83%BD/)
 
 ## 2017-12-06 星期三
 
@@ -329,20 +329,20 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 
 ### 逻辑帧与渲染帧
 
-[游戏主循环 - cnblog](http://www.cnblogs.com/kekec/p/3670389.html)
+* [游戏主循环 - cnblog](http://www.cnblogs.com/kekec/p/3670389.html)
 
 ### 性能优化
 
-[深入浅出聊优化：从Draw Calls到GC](http://www.cnblogs.com/murongxiaopifu/p/4284988.html)
-[再议 Unity 优化 - 知乎](https://zhuanlan.zhihu.com/p/26763624)
+* [深入浅出聊优化：从Draw Calls到GC](http://www.cnblogs.com/murongxiaopifu/p/4284988.html)
+* [再议 Unity 优化 - 知乎](https://zhuanlan.zhihu.com/p/26763624)
 
-[Unity性能优化大合集，All In One !（更新至8.18）](https://blog.uwa4d.com/archives/allinone.html)
+* [Unity性能优化大合集，All In One !（更新至8.18）](https://blog.uwa4d.com/archives/allinone.html)
 
-[性能优化，永无止境---CPU篇](https://blog.uwa4d.com/archives/optimzation_cpu.html)
-[性能优化，进无止境-内存篇（上）](https://blog.uwa4d.com/archives/optimzation_memory_1.html)
-[性能优化，进无止境-内存篇（下）](https://blog.uwa4d.com/archives/optimzation_memory_2.html)
+* [性能优化，永无止境---CPU篇](https://blog.uwa4d.com/archives/optimzation_cpu.html)
+* [性能优化，进无止境-内存篇（上）](https://blog.uwa4d.com/archives/optimzation_memory_1.html)
+* [性能优化，进无止境-内存篇（下）](https://blog.uwa4d.com/archives/optimzation_memory_2.html)
 
-[Unity中的优化技术 - CSDN 博客](http://blog.csdn.net/candycat1992/article/details/42127811)
+* [Unity中的优化技术 - CSDN 博客](http://blog.csdn.net/candycat1992/article/details/42127811)
 
 ## 2017-12-02 星期六
 
@@ -353,16 +353,16 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 ## 2017-12-01 星期五
 
 ### 游戏程序员之路 
-[游戏程序员养成计划 - cnblog](http://www.cnblogs.com/clayman/archive/2009/05/17/1459001.html)
+* [游戏程序员养成计划 - cnblog](http://www.cnblogs.com/clayman/archive/2009/05/17/1459001.html)
 
 ### Shader
 
-[Unity3D Shader入门指南（一）](https://onevcat.com/2013/07/shader-tutorial-1/)
-[Unity3D Shader入门指南（二）](https://onevcat.com/2013/08/shader-tutorial-2/)[Shader Part 1 - UnityGems](https://unitygem.wordpress.com/shader-part-1/)
-[Surface Shader examples - Unity Manual](https://docs.unity3d.com/Manual/SL-SurfaceShaderExamples.html)
-[Materials, Shaders & Textures - Unity Manual](https://docs.unity3d.com/Manual/Shaders.html)
-[初探Surface Shader背后的机制 - CSDN](http://blog.csdn.net/candycat1992/article/details/39994049)
-[如何系统的学习 Unity 3D 中的 shader 编写（nvidia cg 编程）？- 知乎](https://www.zhihu.com/question/21451211)
+* [Unity3D Shader入门指南（一）](https://onevcat.com/2013/07/shader-tutorial-1/)
+* [Unity3D Shader入门指南（二）](https://onevcat.com/2013/08/shader-tutorial-2/)[Shader Part 1 - UnityGems](https://unitygem.wordpress.com/shader-part-1/)
+* [Surface Shader examples - Unity Manual](https://docs.unity3d.com/Manual/SL-SurfaceShaderExamples.html)
+* [Materials, Shaders & Textures - Unity Manual](https://docs.unity3d.com/Manual/Shaders.html)
+* [初探Surface Shader背后的机制 - CSDN](http://blog.csdn.net/candycat1992/article/details/39994049)
+* [如何系统的学习 Unity 3D 中的 shader 编写（nvidia cg 编程）？- 知乎](https://www.zhihu.com/question/21451211)
 
 ## 2017-11-22 星期三
 
@@ -374,30 +374,30 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 Failed running /Applications/Unity/Unity.app/Contents/il2cpp/build/UnityLinker.exe --api=NET_2_0_Subset
 ```
 
-[Unity2017.2 : build error : UnityLinker.exe did not run properly!](https://forum.unity.com/threads/unity2017-2-build-error-unitylinker-exe-did-not-run-properly.485006/)
-[ios build error on macos "UnityLinker.exe did not run properly!"](https://forum.unity.com/threads/ios-build-error-on-macos-unitylinker-exe-did-not-run-properly.486265/)
-[iOS build error after update to 2017.1.0f3](https://answers.unity.com/questions/1394481/ios-build-error-after-update-to-201710f3.html)
+* [Unity2017.2 : build error : UnityLinker.exe did not run properly!](https://forum.unity.com/threads/unity2017-2-build-error-unitylinker-exe-did-not-run-properly.485006/)
+* [ios build error on macos "UnityLinker.exe did not run properly!"](https://forum.unity.com/threads/ios-build-error-on-macos-unitylinker-exe-did-not-run-properly.486265/)
+* [iOS build error after update to 2017.1.0f3](https://answers.unity.com/questions/1394481/ios-build-error-after-update-to-201710f3.html)
 
 ## 2017-11-19 星期日
 
 ### UGUI RectTransform
 
-[RectTransform 详解 - 简书](http://www.jianshu.com/p/dbefa746e50d)
-[How to calculate sizeDelta in RectTransform?](https://stackoverflow.com/questions/44471568/how-to-calculate-sizedelta-in-recttransform)
-[RectTransform.sizeDelta](https://docs.unity3d.com/ScriptReference/RectTransform-sizeDelta.html)
+* [RectTransform 详解 - 简书](http://www.jianshu.com/p/dbefa746e50d)
+* [How to calculate sizeDelta in RectTransform?](https://stackoverflow.com/questions/44471568/how-to-calculate-sizedelta-in-recttransform)
+* [RectTransform.sizeDelta](https://docs.unity3d.com/ScriptReference/RectTransform-sizeDelta.html)
 
 * 将 Android SDK 的 tools 降级为 tools_r25.2.5-windows.zip 即可。
 * 同时 JDK 使用 1.8 版本，而不是 1.7 或 1.9。
 
 ### 编译 Android 失败
 
-[Unable to list target platforms. Please make sure the android sdk path is correct. See the Console for more details.](https://answers.unity.com/questions/1323731/unable-to-list-target-platforms-please-make-sure-t.html)
-[Build apk 失败](https://ukyoappdev.blogspot.jp/2017/05/unityandroid-sdk-toolsbuild-apkafter.html)
-[Unable to list target platforms](http://www.jianshu.com/p/fe4c334ee9fe)
+* [Unable to list target platforms. Please make sure the android sdk path is correct. See the Console for more details.](https://answers.unity.com/questions/1323731/unable-to-list-target-platforms-please-make-sure-t.html)
+* [Build apk 失败](https://ukyoappdev.blogspot.jp/2017/05/unityandroid-sdk-toolsbuild-apkafter.html)
+* [Unable to list target platforms](http://www.jianshu.com/p/fe4c334ee9fe)
 
 ### idea 编译项目错误
 
-[编译报错，javacTask:源发行版1.8需要目标发行版1.8](http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-windows-x64.exe?AuthParam=1511150650_dfc5d83b121b76d58e82c4b2679486dc)
+* [编译报错，javacTask:源发行版1.8需要目标发行版1.8](http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-windows-x64.exe?AuthParam=1511150650_dfc5d83b121b76d58e82c4b2679486dc)
 
 ## 2017-11-17 星期五
 
@@ -432,7 +432,7 @@ CREATE TABLE `player` (
 
 ### 帧同步技术问答
 
-[【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
+* [【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
 
 * 《实时碰撞检测算法技术》
 
@@ -450,47 +450,47 @@ CREATE TABLE `player` (
 
 ### ASCII 码表
 
-[ASCII - 百度百科](https://baike.baidu.com/item/ASCII)
+* [ASCII - 百度百科](https://baike.baidu.com/item/ASCII)
 
 ### Frame Sync
 
-[帧同步的初步探究](https://musoucrow.github.io/2017/08/26/frame_sync/)
+* [帧同步的初步探究](https://musoucrow.github.io/2017/08/26/frame_sync/)
 
 ## 2017-09-15 星期五
 
 ### C# decompile
-[推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
+* [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
 
 ## 2017-09-12 星期二
 
 ### MVC & MVVM & Unity 项目架构
 
-[PureMVC](http://puremvc.org/)
+* [PureMVC](http://puremvc.org/)
 
-[StrangeIoC](https://strangeioc.github.io/strangeioc/index.html)
+* [StrangeIoC](https://strangeioc.github.io/strangeioc/index.html)
 
 ![](media/15052143407916.png)
 
-[Unity应用架构设计(1)—— MVVM 模式的设计和实施(Part 1)](http://www.cnblogs.com/OceanEyes/p/unity3d_framework_designing_get_started_with_mvvm_part1.html)
+* [Unity应用架构设计(1)—— MVVM 模式的设计和实施(Part 1)](http://www.cnblogs.com/OceanEyes/p/unity3d_framework_designing_get_started_with_mvvm_part1.html)
 
-[浅谈Unity开发中的分层设计](https://zhuanlan.zhihu.com/p/28401100)
+* [浅谈Unity开发中的分层设计](https://zhuanlan.zhihu.com/p/28401100)
 
 ## 2017-09-11 星期一
 
 ### Splatoon
 
-[Splatoon GamePlay](https://www.youtube.com/watch?v=-7DVixaWbWo)
+* [Splatoon GamePlay](https://www.youtube.com/watch?v=-7DVixaWbWo)
 
 ### Client-Server Game Architecture
 
-[Fast-Paced Multiplayer](http://www.gabrielgambetta.com/)
-[Doom3](https://github.com/TTimo/doom3.gpl)
+* [Fast-Paced Multiplayer](http://www.gabrielgambetta.com/)
+* [Doom3](https://github.com/TTimo/doom3.gpl)
 
 ## 2017-09-09 星期六
 
 ### uFrame
 
-[uFrame](https://www.assetstore.unity3d.com/cn/#!/content/14381)
+* [uFrame](https://www.assetstore.unity3d.com/cn/#!/content/14381)
 
 ## 2017-09-07 星期四
 
@@ -503,12 +503,12 @@ Drawcall
 
 ### Bombermaaan
 
-[Bombermaaan game project on sourceforge.net](http://bombermaaan.sourceforge.net/)
-[Bombermaaan - GitHub](https://github.com/bjaraujo/Bombermaaan)
+* [Bombermaaan game project on sourceforge.net](http://bombermaaan.sourceforge.net/)
+* [Bombermaaan - GitHub](https://github.com/bjaraujo/Bombermaaan)
 
 ### UML
 
-[UML 类图中各种关系总结](http://www.open-open.com/lib/view/open1328059700311.html)
+* [UML 类图中各种关系总结](http://www.open-open.com/lib/view/open1328059700311.html)
 
 ## 2017-09-04 星期一
 
@@ -522,12 +522,12 @@ Drawcall
 * Unity 会自动将这两个顶点无缝拼接在一起
 * 这个小技巧在做「滚动背景」时很有效
 
-[为游戏开发者总结的20个最好的 Unity 建议和技巧](http://imgtec.eetrend.com/forum/10259)
-[Unity 小技巧介绍](http://imgtec.eetrend.com/blog/7818)
+* [为游戏开发者总结的20个最好的 Unity 建议和技巧](http://imgtec.eetrend.com/forum/10259)
+* [Unity 小技巧介绍](http://imgtec.eetrend.com/blog/7818)
 
 **让粒子系统跟随 GameObject 旋转：**
 
-[How can I rotate a particle effect?](http://answers.unity3d.com/questions/762742/how-can-i-rotate-a-particle-effect.html)
+* [How can I rotate a particle effect?](http://answers.unity3d.com/questions/762742/how-can-i-rotate-a-particle-effect.html)
 
 ```csharp
 thrust_flare.particleSystem.startRotation = gameObject.transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
@@ -535,13 +535,13 @@ thrust_flare.particleSystem.startRotation = gameObject.transform.rotation.eulerA
 
 **Unity 平台依赖编译：**
 
-[Platform dependent compilation](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)
+* [Platform dependent compilation](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)
 
 ## 2017-08-31 星期四
 
 ### mysql
 
-[mysql 安装](http://www.runoob.com/mysql/mysql-install.html)
+* [mysql 安装](http://www.runoob.com/mysql/mysql-install.html)
 
 **Windows 上安装Mysql**
 
@@ -565,7 +565,7 @@ mysqld.exe --console
 
 Socket 客户端的接收字节流的方法，可以自动读取流中所有的可用数据（一个长度不确定的消息包的所有字节），前提是用于接收的字节数组 byte[] 大小够大（或者 ByteBuffer）：
 
-[C# API](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket.receive?view=netframework-4.7#System_Net_Sockets_Socket_Receive_System_Byte___)：
+* [C# API](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket.receive?view=netframework-4.7#System_Net_Sockets_Socket_Receive_System_Byte___)
 
 ```csharp
 // Socket.​Receive
@@ -573,7 +573,7 @@ public int Receive (byte[] buffer);
 // Returns: The number of bytes received.
 ```
 
-[Java API](https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html)：
+* [Java API](https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html)
 
 ```java
 // java.io.InputStream
@@ -585,7 +585,7 @@ public int read(byte[] b) throws IOException
 
 ### Using VS with Unity - Trouble Shooting 
 
-[Unity keeps opening new instances of Microsoft Visual Studio](http://answers.unity3d.com/questions/1078859/unity-keeps-opening-new-instances-of-microsoft-vis.html)
+* [Unity keeps opening new instances of Microsoft Visual Studio](http://answers.unity3d.com/questions/1078859/unity-keeps-opening-new-instances-of-microsoft-vis.html)
 
 ## 2017-08-18 星期五
 
@@ -643,9 +643,9 @@ https://github.com/cloudwu/pbc/issues/97
 
 ## 2017-08-10 星期四
 
-[炸弹小分队](http://www.iqiyi.com/w_19ru4qh3uh.html)
+* [炸弹小分队](http://www.iqiyi.com/w_19ru4qh3uh.html)
 
-[zlib](http://www.zlib.net/)
+* [zlib](http://www.zlib.net/)
 
 ## 2017-08-07 星期一
 
