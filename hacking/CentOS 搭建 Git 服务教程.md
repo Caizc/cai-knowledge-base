@@ -1,4 +1,4 @@
-# CentOS 搭建 Git 服务器教程
+# CentOS 搭建 Git 服务教程
 
 # 卸载旧版本 git
 
