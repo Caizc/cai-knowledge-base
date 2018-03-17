@@ -163,7 +163,7 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 
 ## 参考
 
-* [《守望先锋》技术分享视频：如何处理网络同步与减少网络迟疑](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
+* [《守望先锋》技术分享视频：如何处理网络同步与减少网络延迟](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
 * [Unite 2017《王者荣耀》技术分享 - 知乎](https://zhuanlan.zhihu.com/p/26887204)
 * [Unite 2017 MOBA 游戏的网络同步技术分享](http://bbs.gameres.com/forum.php?mod=viewthread&tid=750888)
 * [《乱斗西游》开发经验分享](http://www.sohu.com/a/20405348_204728)

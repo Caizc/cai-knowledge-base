@@ -1,5 +1,17 @@
 # Game Development Blackboard
 
+## 2018-03-16 星期五
+
+### NavMesh 导航网格
+
+测试某一点坐标是否在导航网格中：
+[NavMesh.SamplePosition](https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html)
+
+获取某一点坐标就近导航网格边缘的坐标：
+[NavMesh.FindClosestEdge](https://docs.unity3d.com/ScriptReference/AI.NavMesh.FindClosestEdge.html)
+
+[导出NavMesh可行走区域信息 - CSDN](http://blog.csdn.net/fansongy/article/details/51699058)
+
 ## 2018-03-07 星期三
 
 ### 腾讯专家答疑
