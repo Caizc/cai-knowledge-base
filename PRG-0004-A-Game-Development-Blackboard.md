@@ -1,5 +1,18 @@
 # Game Development Blackboard
 
+## 2018-03-19 星期一
+
+### 获取子对象中组件的引用
+
+* [Component.GetComponentsInChildren](https://docs.unity3d.com/ScriptReference/Component.GetComponentsInChildren.html)
+
+`includeInactive` 参数设置为 `true` 时，即使该对象为 inactive 也可以获取到其组件的引用
+
+### 关闭两个 Collider 间的碰撞检测
+
+* [Physics.IgnoreCollision](https://docs.unity3d.com/ScriptReference/Physics.IgnoreCollision.html)
+* [ControllerColliderHit](https://docs.unity3d.com/ScriptReference/ControllerColliderHit.html)
+
 ## 2018-03-16 星期五
 
 ### NavMesh 导航网格
