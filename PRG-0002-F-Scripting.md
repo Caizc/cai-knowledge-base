@@ -126,6 +126,10 @@
     建议调低 `timeScale` 的同时也要对应调低 `Time.fixedDeltaTime` 的值。
     **当 `timeScale` 被设置为 0 时，FixedUpdate 方法不会被调用。**
 
+* [Unity3D研究院之Time.timeScale、游戏暂停 - 雨松 MOMO](http://www.xuanyusong.com/archives/2956)
+
+> timeScale 不会影响 Update 和 LateUpdate 的执行速度。因为 FixedUpdate 是根据时间来的，所以 timeScale 只会影响 FixedUpdate 的速度。
+
 ### Data Types
 
 ![](media/15131774937303.png)
@@ -796,7 +800,7 @@ public class TeleportScript : MonoBehaviour
 change log: 
 
 	- 创建（2017-12-12）
-	- 更新（2018-02-01）
+	- 更新（2018-04-04）
 
 ---
 
