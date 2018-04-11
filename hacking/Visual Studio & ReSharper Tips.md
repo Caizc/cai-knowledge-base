@@ -20,6 +20,8 @@
 | Comment with block comment | Ctrl + Shift + / |
 | 代码行上下移动 | Ctrl + Shift + Alt + Up/Down/Left/Right |
 | 代码模板 | Ctrl + J |
+| 格式化代码块 | Ctrl + K, Ctrl + F |
+| 格式化整个文档 | Ctrl + K, Ctrl + D |
 | Code cleanup | Ctrl + Alt + F |
 | Silent code cleanup | Ctrl + Shift + Alt + F |
 | 生成代码 | Alt + Insert |
@@ -76,7 +78,7 @@
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2018-02-01）
+	- 更新（2018-04-11）
 
 ---
 
