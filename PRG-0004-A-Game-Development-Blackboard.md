@@ -1,5 +1,11 @@
 # Game Development Blackboard
 
+## 2018-05-19 星期六
+
+### 持续优化
+
+[基于团队的持续优化之道 - 知乎专栏](https://zhuanlan.zhihu.com/p/36930662)
+
 ## 2018-04-12 星期四
 
 ### C# 中的 var 关键字
