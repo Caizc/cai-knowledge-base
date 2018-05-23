@@ -1,5 +1,24 @@
 # Game Development Blackboard
 
+## 2018-05-23 星期三
+
+## 将 Quaternion 装换为一个方向向量
+
+* [How can I convert a Quaternion to a direction vector? - Unity Answers](https://answers.unity.com/questions/525952/how-i-can-converting-a-quaternion-to-a-direction-v.html)
+
+> A quaternion doesn't have a direction by itself. It is a rotation.
+> It can be used to rotate any vector by the rotation it represents.
+> Just multiply a Vector3 by the quaternion.
+
+```csharp
+Vector3 targetForward = targetRot * Vector3.forward;
+```
+
+## C# 代码文档注释
+
+* [How to: Use the XML Documentation Features](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/how-to-use-the-xml-documentation-features)
+* [Recommended Tags for Documentation Comments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments)
+
 ## 2018-05-19 星期六
 
 ### 持续优化
