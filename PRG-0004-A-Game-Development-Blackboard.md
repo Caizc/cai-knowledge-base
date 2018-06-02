@@ -94,6 +94,7 @@ var 可以理解为匿名类型，是一个声明变量的占位符，主要用�
 * [Unity 行为树 Behavior Designer - CSDN](http://blog.csdn.net/yupu56/article/details/50151527)
 * [采用行为树快速开发游戏 AI - 腾讯 GAD](http://gad.qq.com/article/detail/12729#)
 * [使用行为树实现游戏 AI - CSDN](http://blog.csdn.net/wangxiong_zh/article/details/50994889)
+* [AI 行为树的工作原理 - INDIENOVA](https://indienova.com/indie-game-development/ai-behavior-trees-how-they-work/)
 
 #### 行为树插件
 
