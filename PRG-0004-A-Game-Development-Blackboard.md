@@ -1,5 +1,13 @@
 # Game Development Blackboard
 
+## 2018-06-14 星期四
+
+### 查找资源引用
+
+* [Unity3D研究院之查找资源被哪里引用了](http://www.xuanyusong.com/archives/4207)
+* [FindProjectReferences.cs - GitHub](https://gist.github.com/jringrose/617d4cba87757591ce28)
+* [Unity查找脚本被哪些Perfab或场景引用 - CSDN](https://blog.csdn.net/wiker_yong/article/details/47108341)
+
 ## 2018-05-23 星期三
 
 ## 将 Quaternion 装换为一个方向向量
