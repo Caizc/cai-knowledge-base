@@ -1,5 +1,12 @@
 # Game Development Blackboard
 
+## 2018-06-27 星期三
+
+### Java 读写文件
+
+* [Reading and Writing File in Java](https://www.caveofprogramming.com/java/java-file-reading-and-writing-files-in-java.html)
+* [How to Read a File in Java](http://www.baeldung.com/reading-file-in-java)
+
 ## 2018-06-14 星期四
 
 ### 查找资源引用
