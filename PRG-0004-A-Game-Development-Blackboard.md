@@ -7,6 +7,11 @@
 * [Reading and Writing File in Java](https://www.caveofprogramming.com/java/java-file-reading-and-writing-files-in-java.html)
 * [How to Read a File in Java](http://www.baeldung.com/reading-file-in-java)
 
+### Eclipse 反编译插件
+
+* [Eclipse-Class-Decompiler - GitHub](https://github.com/cnfree/Eclipse-Class-Decompiler)
+* [Eclipse Class Decompiler——Java反编译插件 - blogjava](http://www.blogjava.net/cnfree/archive/2012/10/30/390457.html)
+
 ## 2018-06-14 星期四
 
 ### 查找资源引用
