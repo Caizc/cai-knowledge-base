@@ -1,5 +1,175 @@
 # Game Development Blackboard
 
+## 2018-07-24
+
+### 优化 NGUI 堆内存分配
+
+[如何大幅优化 NGUI 的堆内存分配 - 侑虎科技](https://mp.weixin.qq.com/s?__biz=MzI3MzA2MzE5Nw==&mid=2668910742&idx=1&sn=227d7dcb7f7c5cbbbf689ddcd4129ac4&chksm=f1c9f4e4c6be7df2d9b6a379e845d3c067fdb3426cee05bb14c472f7f3848c1f4d513c6b87b4&mpshare=1&scene=1&srcid=0724iF1knRhhu7KkvKZReFZX#rd)
+
+### 通用 Java 程序启动脚本
+
+[linux 下通用的 Java 程序启动脚本 - 博客园](http://www.cnblogs.com/langtianya/p/4164151.html)
+
+> shell 脚本最后部分有语法错误，需留意！
+
+**简化注释版本的 shell 脚本如下：**
+
+```shell
+#!/bin/sh
+
+#############################################
+#环境变量及 JVM 参数设置
+#############################################
+
+#JDK所在路径
+JAVA_HOME=/Users/developer/dev/jdk1.8.0_181
+
+#执行程序使用的系统用户（不推荐使用 root）
+RUNNING_USER=root
+
+#Java程序所在路径（classes的上一级目录）
+APP_HOME=/Users/developer/dev/jdk1.8.0_181/bin/robot
+
+#需要启动的Java主程序（main方法类）
+APP_MAINCLASS=com.tc.performance.Test
+
+#拼接CLASSPATH参数，包括项目引用的所有jar包
+CLASSPATH=$APP_HOME/classes
+for i in "$APP_HOME"/lib/*.jar; do
+    CLASSPATH="$CLASSPATH":"$i"
+done
+
+#日志文件路径
+LOG_FILE=$APP_HOME/logs/`date +%Y%m%d%H%M%S`.log
+touch ${LOG_FILE}
+
+#Java虚拟机启动参数
+JAVA_OPTS="-ms128m -mx128m -Xmn64m -Djava.awt.headless=true -XX:MaxPermSize=64m"
+
+#############################################
+#（函数）判断程序是否已启动
+#############################################
+
+psid=0
+
+checkpid() {
+   javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAINCLASS`
+   if [ -n "$javaps" ]; then
+      psid=`echo $javaps | awk '{print $1}'`
+   else
+      psid=0
+   fi
+}
+
+#############################################
+#（函数）启动程序
+#############################################
+
+start() {
+   checkpid
+   if [ $psid -ne 0 ]; then
+      echo "================================"
+      echo "warn: $APP_MAINCLASS already started! (pid=$psid)"
+      echo "================================"
+   else
+      echo -n "Starting $APP_MAINCLASS ..."
+      JAVA_CMD="nohup $JAVA_HOME/bin/java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS >${LOG_FILE} 2>&1 &"
+      su - $RUNNING_USER -c "$JAVA_CMD"
+      checkpid
+      if [ $psid -ne 0 ]; then
+         echo "(pid=$psid) [OK]"
+         echo "================================"
+         tail -f ${LOG_FILE}
+      else
+         echo "[Failed]"
+      fi
+   fi
+}
+
+#############################################
+#（函数）停止程序
+#############################################
+
+stop() {
+   checkpid
+   if [ $psid -ne 0 ]; then
+      echo -n "Stopping $APP_MAINCLASS ...(pid=$psid) "
+      su - $RUNNING_USER -c "kill -9 $psid"
+      if [ $? -eq 0 ]; then
+         echo "[OK]"
+      else
+         echo "[Failed]"
+      fi
+      checkpid
+      if [ $psid -ne 0 ]; then
+         stop
+      fi
+   else
+      echo "================================"
+      echo "warn: $APP_MAINCLASS is not running"
+      echo "================================"
+   fi
+}
+
+#############################################
+#（函数）检查程序运行状态
+#############################################
+
+status() {
+   checkpid
+   if [ $psid -ne 0 ];  then
+      echo "$APP_MAINCLASS is running! (pid=$psid)"
+   else
+      echo "$APP_MAINCLASS is not running"
+   fi
+}
+
+#############################################
+#（函数）打印系统环境参数
+#############################################
+
+info() {
+   echo "System Information:"
+   echo "****************************"
+   echo `head -n 1 /etc/issue`
+   echo `uname -a`
+   echo
+   echo "JAVA_HOME=$JAVA_HOME"
+   echo `$JAVA_HOME/bin/java -version`
+   echo
+   echo "APP_HOME=$APP_HOME"
+   echo "APP_MAINCLASS=$APP_MAINCLASS"
+   echo "****************************"
+}
+
+#############################################
+#根据第一个参数执行相应操作
+#############################################
+
+case "$1" in
+   'start')
+      start
+      ;;
+   'stop')
+      stop
+      ;;
+   'restart')
+      stop
+      start
+      ;;
+   'status')
+      status
+      ;;
+   'info')
+      info
+      ;;
+      *)
+   echo "Usage: $0 {start|stop|restart|status|info}"
+   exit 1
+   ;;
+esac
+```
+
 ## 2018-06-27 星期三
 
 ### Java 读写文件
