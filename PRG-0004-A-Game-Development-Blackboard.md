@@ -1,6 +1,74 @@
 # Game Development Blackboard
 
-## 2018-07-24
+## 2018-08-21 星期二
+
+### C# Reference Docs
+
+[csharp refdocs](http://www1.cs.columbia.edu/~lok/csharp/refdocs/)
+
+### Java 与 C# 的类型
+
+* [Java 基本数据类型总结 - cnblogs](https://www.cnblogs.com/doit8791/archive/2012/05/25/2517448.html)
+
+```
+byte：8位，最大存储数据量是255，存放的数据范围是-128~127之间
+short：16位，最大数据存储量是65536，数据范围是-32768~32767之间
+int：32位，最大数据存储容量是2的32次方减1，数据范围是负的2的31次方到正的2的31次方减1
+long：64位，最大数据存储容量是2的64次方减1，数据范围为负的2的63次方到正的2的63次方减1
+float：32位，数据范围在3.4e-45~1.4e38，直接赋值时必须在数字后加上f或F
+double：64位，数据范围在4.9e-324~1.8e308，赋值时可以加d或D也可以不加
+boolean：只有true和false两个取值
+char：16位，存储Unicode码，用单引号赋值
+```
+
+* [C# 类型和变量 - Microsoft](https://docs.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/types-and-variables)
+
+```
+有符号的整型
+sbyte：8 位，介于 -128 到 127 之间
+short：16 位，介于 -32,768 到 32,767 之间
+int：32 位，介于 -2,147,483,648 到 2,147,483,647 之间
+long：64 位，介于 -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807 之间
+
+无符号的整型
+byte：8 位，介于 0 到 255 之间
+ushort：16 位，介于 0 到 65,535 之间
+uint：32 位，介于 0 到 4,294,967,295 之间
+ulong：64 位，介于 0 到 18,446,744,073,709,551,615 之间
+
+浮点
+float：32 位，介于 1.5 × 10-45 到 3.4 × 1038 之间，7 位精度
+double：64 位，介于 5.0 × 10-324 到 1.7 × 10308 之间，15 位精度
+
+十进制
+decimal：128 位，至少介于 -7.9 × 10-28 到 7.9 × 1028 之间，至少为 28 位精度
+```
+
+### C# 的字节操作工具类 BitConverter
+
+使用 `System.BitConverter` 在所有基本数值类型和 byte 类型之间相互转换。
+
+### C# 中的字节集合工具类 MemoryStream
+
+使用 `System.IO.MemoryStream` 操作字节数组
+
+* [byte collection based similar with ByteBuffer from java - stack overflow](https://stackoverflow.com/questions/10078348/byte-collection-based-similar-with-bytebuffer-from-java)
+
+### 将 long 数值装换为十六进制字符串显示
+
+* [Convert long into hexadecimal string - stack overflow](https://stackoverflow.com/questions/26956025/convert-long-into-hexadecimal-string-like-a-memory-address)
+
+```csharp
+Console.WriteLine(string.Format("{0:X}", 5488461193L));
+```
+
+## 2018-08-17 星期五
+
+### Unity 中定位 C# 脚本中的死循环
+
+* [Unity 中如何中断 C# 脚本的无限循环 - CSDN](https://blog.csdn.net/suifcd/article/details/51755131)
+
+## 2018-07-24 星期二
 
 ### 优化 NGUI 堆内存分配
 
