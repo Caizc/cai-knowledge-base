@@ -1,10 +1,23 @@
 # Game Development Blackboard
 
+## 2018-08-23 星期三
+
+### finally in Java
+
+* [Does finally always execute in Java? Yes! - stack overflow](https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java)
+
+### GC in Java
+
+* [Java 内存泄露详解（原因、例子及解决） - CSDN](https://blog.csdn.net/anxpp/article/details/51325838)
+* [深入理解 Java 垃圾回收机制 - cnblogs](https://www.cnblogs.com/sunniest/p/4575144.html)
+* [Java 代码内存泄露分析 - cnblogs](https://www.cnblogs.com/liuroy/p/6442888.html)
+* [Java 内存泄露分析和解决 - 简书](https://www.jianshu.com/p/54b5da7c6816)
+
 ## 2018-08-21 星期二
 
 ### C# Reference Docs
 
-[csharp refdocs](http://www1.cs.columbia.edu/~lok/csharp/refdocs/)
+* [csharp refdocs](http://www1.cs.columbia.edu/~lok/csharp/refdocs/)
 
 ### Java 与 C# 的类型
 
