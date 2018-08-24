@@ -1,6 +1,6 @@
 # Game Development Blackboard
 
-## 2018-08-23 星期三
+## 2018-08-23 星期四
 
 ### finally in Java
 
@@ -12,6 +12,37 @@
 * [深入理解 Java 垃圾回收机制 - cnblogs](https://www.cnblogs.com/sunniest/p/4575144.html)
 * [Java 代码内存泄露分析 - cnblogs](https://www.cnblogs.com/liuroy/p/6442888.html)
 * [Java 内存泄露分析和解决 - 简书](https://www.jianshu.com/p/54b5da7c6816)
+
+### MonoBehaviour 单例和 DontDestroyOnLoad
+
+[DontDestroyOnLoad duplicate object when using a singleton - Unity Answers](https://answers.unity.com/questions/408518/dontdestroyonload-duplicate-object-in-a-singleton.html)
+
+### Unity 场景加载完毕回调
+
+* [Since OnLevelWasLoaded is deprecated (in 5.4.0b15) What should be use instead? - Unity Answers](https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html)
+* [Where is OnLevelWasLoaded on Unity 5? - stack overflow](https://stackoverflow.com/questions/39801130/where-is-onlevelwasloaded-on-unity-5)
+
+```csharp
+using UnityEngine.SceneManagement;
+void OnEnable()
+{
+    //Tell our 'OnLevelFinishedLoading' function to start listening for a scene change as soon as this script is enabled.
+    SceneManager.sceneLoaded += OnLevelFinishedLoading;
+}
+
+void OnDisable()
+{
+    //Tell our 'OnLevelFinishedLoading' function to stop listening for a scene change as soon as this script is disabled. Remember to always have an unsubscription for every delegate you subscribe to!
+    SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+}
+
+void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+{
+    Debug.Log("Level Loaded");
+    Debug.Log(scene.name);
+    Debug.Log(mode);
+}
+```
 
 ## 2018-08-21 星期二
 
