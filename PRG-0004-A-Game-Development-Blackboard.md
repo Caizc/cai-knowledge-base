@@ -100,6 +100,7 @@ decimal：128 位，至少介于 -7.9 × 10-28 到 7.9 × 1028 之间，至少�
 
 ### 将 long 数值装换为十六进制字符串显示
 
+* [Standard Numeric Format Strings - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings)
 * [Convert long into hexadecimal string - stack overflow](https://stackoverflow.com/questions/26956025/convert-long-into-hexadecimal-string-like-a-memory-address)
 
 ```csharp
