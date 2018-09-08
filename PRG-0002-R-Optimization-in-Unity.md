@@ -1,10 +1,10 @@
 # Optimization in Unity
 
-[Unity 优化百科 - UWA](https://blog.uwa4d.com/archives/Index.html)
+* [Unity 优化百科 - UWA](https://blog.uwa4d.com/archives/Index.html)
 
 # CPU
 
-[性能优化，永无止境：CPU篇 - UWA](https://blog.uwa4d.com/archives/optimzation_cpu.html)
+* [性能优化，永无止境：CPU篇 - UWA](https://blog.uwa4d.com/archives/optimzation_cpu.html)
 
 CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开销和**自身代码**性能开销。
 
@@ -93,6 +93,22 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 * [性能优化，进无止境：内存篇（下）- UWA](https://blog.uwa4d.com/archives/optimzation_memory_2.html)
 * [关于 Unity 内存优化，你可能遇到这些问题 - UWA](https://blog.uwa4d.com/archives/QA_Memory-1.html)
 
+## 内存泄露
+
+* [深入浅出再谈 Unity 内存泄漏 - WeTest](https://wetest.qq.com/lab/view/150.html)
+* [扒一扒 Profiler 中这几个“占坑鬼” - UWA](https://blog.uwa4d.com/archives/presentandsync.html)
+
+## 内存泄露排查工具
+
+* [Unity MemoryProfiler - bitbucket](https://bitbucket.org/Unity-Technologies/memoryprofiler)
+* [Unity 5.3 新 Memory Profiler - 简书](https://www.jianshu.com/p/171d63ed8ba0)
+* [使用 Unity 新的 Memory Profiler - 简书](https://www.jianshu.com/p/b6562986fc99)
+
+* [DetectLeaks - wiki Unity 3D](https://wiki.unity3d.com/index.php?title=DetectLeaks)
+
+* [Unity 内存泄露之 Render 的 sharedMaterial 和 material - 程序园](http://www.voidcn.com/article/p-mnynllwh-bee.html)
+* [Unity 内存优化教程笔记 - CSDN](https://blog.csdn.net/wwanrong/article/details/78676275)
+
 # GPU
 
 ---
@@ -100,6 +116,7 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 change log: 
 
 	- 创建（2017-12-19）
+	- 增加内存优化相关内容（2018-09-07）
 
 ---
 
