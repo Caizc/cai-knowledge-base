@@ -1,5 +1,16 @@
 # Game Development Blackboard
 
+## 2018-09-11 星期二
+
+### 弱网模拟工具 clumsy
+
+* [clumsy - GitHub](https://github.com/jagt/clumsy)
+* [差网络模拟工具 - clumsy](https://blog.csdn.net/cnhk1225/article/details/53300607)
+
+### C# 中获取毫秒数
+
+* [C# 的时间函数：自 1970.1.1 起至今的毫秒数 - cnblogs](https://www.cnblogs.com/yangyxd/articles/5318899.html)
+
 ## 2018-08-23 星期四
 
 ### finally in Java
@@ -15,7 +26,7 @@
 
 ### MonoBehaviour 单例和 DontDestroyOnLoad
 
-[DontDestroyOnLoad duplicate object when using a singleton - Unity Answers](https://answers.unity.com/questions/408518/dontdestroyonload-duplicate-object-in-a-singleton.html)
+* [DontDestroyOnLoad duplicate object when using a singleton - Unity Answers](https://answers.unity.com/questions/408518/dontdestroyonload-duplicate-object-in-a-singleton.html)
 
 ### Unity 场景加载完毕回调
 
