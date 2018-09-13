@@ -109,6 +109,9 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 * [Unity 内存泄露之 Render 的 sharedMaterial 和 material - 程序园](http://www.voidcn.com/article/p-mnynllwh-bee.html)
 * [Unity 内存优化教程笔记 - CSDN](https://blog.csdn.net/wwanrong/article/details/78676275)
 
+* [Unity Memory Porfiler 的工作机制及可能的改进 - 顾路的博客](http://gulu-dev.com/post/perf_assist/2017-01-25-unity-memoryprofiler)
+* [PerfAssist - GitHub](https://github.com/GameBuildingBlocks/PerfAssist/)
+
 # GPU
 
 ---

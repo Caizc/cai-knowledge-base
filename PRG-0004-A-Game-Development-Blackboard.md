@@ -1,5 +1,11 @@
 # Game Development Blackboard
 
+## 2018-09-12 星期三
+
+### 游戏引擎
+
+* [游戏引擎技术点滴 - 顾路的博客](http://gulu-dev.com/post/2017-01-15-game-engine-talk-2016)
+
 ## 2018-09-11 星期二
 
 ### 弱网模拟工具 clumsy
@@ -390,7 +396,10 @@ var 可以理解为匿名类型，是一个声明变量的占位符，主要用�
 ### ECS 架构
 
 * [《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
+* [《守望先锋》中的网络脚本化的武器和技能系统 - GAD](http://gad.qq.com/article/detail/28219)
+* [Networking Scripted Weapons and Abilities in Overwatch - GDC Vault](https://www.gdcvault.com/play/1024653/Networking-Scripted-Weapons-and-Abilities)
 * [浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
+* [GDC 2017 技术选荐合辑 - 知乎专栏](https://zhuanlan.zhihu.com/p/25703934)
 
 ### Unity 框架
 

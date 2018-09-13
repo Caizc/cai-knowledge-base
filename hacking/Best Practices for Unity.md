@@ -278,7 +278,8 @@
 
 **Reference：**
 
-[50 Tips and Best Practices for Unity (2016 Edition)](https://www.gamasutra.com/blogs/HermanTulleken/20160812/279100/50_Tips_and_Best_Practices_for_Unity_2016_Edition.php)
+* [50 Tips and Best Practices for Unity (2016 Edition)](https://www.gamasutra.com/blogs/HermanTulleken/20160812/279100/50_Tips_and_Best_Practices_for_Unity_2016_Edition.php)
+* [使用 Unity 的 50 个技巧（最佳实践）- GAD](http://gad.qq.com/program/translateview/7165585)
 
 ---
 
@@ -286,6 +287,7 @@ change log:
 
 	- 创建（2017-10-18）
 	- 更新（2017-11-27）
+	- 更新（2018-09-13）
 
 ---
 
