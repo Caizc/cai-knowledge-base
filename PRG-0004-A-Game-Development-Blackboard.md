@@ -1,5 +1,59 @@
 # Game Development Blackboard
 
+## 2018-09-19 星期三
+
+### Unity 物理系统问题
+
+* [TRANSFORM.POSITION() VALUES BECOMES TO NAN WHEN ONE GAMEOBJECT ROTATES WHILE COLLIDING THE EDGE OF ANOTHER GAMEOBJECT - Unity Issue Tracker](https://issuetracker.unity3d.com/issues/transform-dot-position-values-becomes-to-nan-when-one-gameobject-rotates-while-colliding-the-edge-of-another-gameobject)
+
+> Solution was easy. Simply disable PCM in PhysicsManager!
+
+* [What is the error "infinity or nan float numbers appear when calculating matrices for collider"? - Unity Forums](https://forum.unity.com/threads/what-is-the-error-infinity-or-nan-float-numbers-appear-when-calculating-matrices-for-collider.346132/)
+
+* [infinity or nan floating point numbers appear when calculating matrices for collider - Unity Forums](https://forum.unity.com/threads/infinity-or-nan-floating-point-numbers-appear-when-calculating-matrices-for-collider.318207/)
+
+* [Physics Manager - Unity Documentation](https://docs.unity3d.com/Manual/class-PhysicsManager.html)
+
+> **Enable PCM**
+
+> Tick this checkbox to enable the persistent contacts manifold (PCM) contacts generation method of the physics engine. This means that fewer contacts are regenerated every physics frame, and more contact data is shared across frames. The PCM contacts generation path is also more accurate, and usually produces better collision feedback in most of the cases. See Nvidia documentation on Persistent Contact Manifold for more information. 
+> Note: Before Unity 5.5, Unity used a contacts generation method called SAT, based on the separating axis theorem (see dyn4j.org’s guide to SAT). PCM is more efficient, but for older projects, you might find it easier to continue using SAT, to avoid needing to retweak physics slightly. PCM can result in a slightly different bounce, and fewer useless contacts end up in the contacts buffers (that is, the arrays you get in the Collision instance passed to OnCollisionEnter, OnCollisionStay, OnCollisionExit).
+
+### Android Debug Bridge 的使用
+
+* [ADB Shell 下载官网](http://adbshell.com/downloads)
+* [Android environment setup - Unity Documentation](https://docs.unity3d.com/Manual/android-sdksetup.html)
+* [adb 工具使用简介 - CSDN](https://blog.csdn.net/guotianqing/article/details/79173270)
+* [使用 adb logcat 查看在 Android 真机上 Unity Debug.Log 日志 - 简书](https://www.jianshu.com/p/ab0139da5e39)
+* [使用 adb 将 Android 日志输出到文件并查看 - CSDN](https://blog.csdn.net/qq_25806863/article/details/54137707)
+* [使用 Unity 开发 Android 的几种调试方法 - cnblogs](https://www.cnblogs.com/zhaoqingqing/p/3554123.html)
+* [logcat 命令行工具 - Android Developers](https://developer.android.com/studio/command-line/logcat)
+
+**常用的 adb 命令：**
+
+```shell
+# 查看已连接的设备列表
+adb devices
+# 通过 IP 和端口号连接到指定设备
+adb connect 127.0.0.1:7555
+# 清除所有旧的日志
+adb logcat -c
+# 将最新的 Unity 日志 dump 到指定文件中
+adb logcat -s Unity -d > c:/adblog.txt
+# 将日志持续输出到指定文件中
+adb logcat -s Unity > c:/adblog.txt
+```
+
+* [Android 各模拟器的 adb 连接端口 - CSDN](https://blog.csdn.net/boyStray/article/details/81221865)
+
+![](media/15374373330373.jpg)
+
+* [TTEmulatorPortFinder 扫描各模拟器的 adb 连接端口 - 码云](https://gitee.com/tp7309/TTEmulatorPortFinder)
+
+### LogViewer 日志查看工具
+
+* [LogViewer](http://uvviewsoft.com/logviewer/index.htm)
+
 ## 2018-09-12 星期三
 
 ### 游戏引擎
@@ -774,7 +828,7 @@ CREATE TABLE `player` (
 ## 2017-09-15 星期五
 
 ### C# decompile
-* [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
+* [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
 
 ## 2017-09-12 星期二
 
