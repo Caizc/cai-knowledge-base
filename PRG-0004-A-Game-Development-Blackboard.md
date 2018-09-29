@@ -1,5 +1,12 @@
 # Game Development Blackboard
 
+## 2018-09-29 星期六
+
+### C# 编码约定
+
+* [C# 编码约定 - Microsoft](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+* [C# 编码规范 - GitHub](https://gist.github.com/zhuqling/a2700703d088b8746f0c)
+
 ## 2018-09-19 星期三
 
 ### Unity 物理系统问题
