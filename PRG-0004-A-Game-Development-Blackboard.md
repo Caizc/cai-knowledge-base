@@ -1,5 +1,17 @@
 # Game Development Blackboard
 
+## 2018-12-01 星期六
+
+### Unity 日志保存位置
+
+**Mac OS X**
+
+`~/Library/Logs/Unity/Editor.log`
+
+**Windows**
+
+`C:\Users\username\AppData\Local\Unity\Editor\Editor.log`
+
 ## 2018-09-29 星期六
 
 ### C# 编码约定
