@@ -1,5 +1,25 @@
 # Game Development Blackboard
 
+## 2019-01-11 星期五
+
+### C# 计算代码运行时间
+
+[Calculate the execution time of a method - stackoverflow](https://stackoverflow.com/questions/14019510/calculate-the-execution-time-of-a-method)
+
+```csharp
+var watch = System.Diagnostics.Stopwatch.StartNew();
+// the code that you want to measure comes here
+watch.Stop();
+var elapsedMs = watch.ElapsedMilliseconds;
+```
+
+### 使用 Unity Profiler 调试 Android 包
+
+* [unity-Profiler调试Android的正确姿势 - CSDN](https://blog.csdn.net/yangxuan0261/article/details/70161022)
+* [为何你无法使用ADB USB Profiling Android Player - 知乎专栏](https://zhuanlan.zhihu.com/p/30247546)
+* [Unity3D 中 Android 和 iOS 真机调试测 Profiler - GAD](http://gad.qq.com/article/detail/47054)
+* [Android 设备连接 Unity Profiler 性能分析器 - GAD](http://gad.qq.com/article/detail/35381)
+
 ## 2018-12-01 星期六
 
 ### Unity 日志保存位置
