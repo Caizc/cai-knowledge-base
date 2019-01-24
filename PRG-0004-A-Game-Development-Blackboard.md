@@ -1,10 +1,28 @@
 # Game Development Blackboard
 
+## 2019-01-24 星期四
+
+### Unity Android 包的加密
+
+* [Unity3D 之 Android 加密 DLL 与破解 DLL - CSDN](https://blog.csdn.net/yupu56/article/details/53216705?tdsourcetag=s_pcqq_aiomsg)
+* [Unity3d 加密 Assembly-CSharp.dll (Android平台) 全记录 - CSDN](https://blog.csdn.net/huutu/article/details/50829828)
+* [把代码混淆过的游戏返混淆回来 - 雨松MOMO](https://www.xuanyusong.com/archives/3055)
+
+### Android 平台下 Unity 应用 Crash
+
+* [Unity 手游崩溃异常如何捕获：C#及 JVM 捕获 - WeTest](https://wetest.qq.com/lab/view/24.html)
+* [Android 程序 Crash 时的异常上报 - CSDN](https://blog.csdn.net/singwhatiwanna/article/details/17289479)
+
+### 在 Unity 中使用多线程
+
+* [Using threads with Unity - THE KNIGHTS OF UNITY](https://blog.theknightsofunity.com/using-threads-unity/)
+* [优秀的 Unity 技术 Blog - THE KNIGHTS OF UNITY](https://blog.theknightsofunity.com/)
+
 ## 2019-01-11 星期五
 
 ### C# 计算代码运行时间
 
-[Calculate the execution time of a method - stackoverflow](https://stackoverflow.com/questions/14019510/calculate-the-execution-time-of-a-method)
+* [Calculate the execution time of a method - stackoverflow](https://stackoverflow.com/questions/14019510/calculate-the-execution-time-of-a-method)
 
 ```csharp
 var watch = System.Diagnostics.Stopwatch.StartNew();
