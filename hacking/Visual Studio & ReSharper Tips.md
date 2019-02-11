@@ -74,12 +74,18 @@
 
 [multiple rows of document or file tabs in visual studio IDE](https://stackoverflow.com/questions/37121040/multiple-rows-of-document-or-file-tabs-in-visual-studio-ide/40668536)
 
+* 开启 ReSharper 的 Decompiler 代码反编译器
+
+[How to enable the decompiler in ReSharper for Visual Studio](https://knowledge.zomers.eu/visualstudio/Pages/How-to-enable-the-decompiler-in-ReSharper-for-Visual-Studio.aspx)
+
+![](media/15498676649425.jpg)
+
 ---
 
 change log: 
 
 	- 创建（2017-08-22）
-	- 更新（2018-04-11）
+	- 更新（2019-02-11）
 
 ---
 
