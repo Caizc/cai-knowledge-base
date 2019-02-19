@@ -1,5 +1,27 @@
 # Game Development Blackboard
 
+## 2019-02-16 星期六
+
+### Time.unscaledTime VS Time.realtimeSinceStartup
+
+* [unscaledTime vs. realtimeSinceStartup - Unity Forums](https://forum.unity.com/threads/unscaledtime-vs-realtimesincestartup.533310/)
+
+unscaledTime:
+
+```csharp
+The timeScale-independant time for this frame (Read Only). This is the time in seconds since the start of the game.
+```
+
+It's the amount of time that has passed since the start of the game at the beginning of this frame.Where as realTimeSinceStartup:
+
+```csharp
+Note that realtimeSinceStartup returns time as reported by system timer. Depending on the platform and the hardware, it may report the same time even in several consecutive frames. If you're dividing something by time difference, take this into account (time difference may become zero!).
+```
+
+### Unity 的文件引用
+
+* [Unity 文件、文件引用、Meta 详解 - UWA](https://blog.uwa4d.com/archives/USparkle_inf_UnityEngine.html)
+
 ## 2019-01-24 星期四
 
 ### Unity Android 包的加密
