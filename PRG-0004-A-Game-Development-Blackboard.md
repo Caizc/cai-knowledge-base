@@ -22,6 +22,11 @@ Note that realtimeSinceStartup returns time as reported by system timer. Dependi
 
 * [Unity 文件、文件引用、Meta 详解 - UWA](https://blog.uwa4d.com/archives/USparkle_inf_UnityEngine.html)
 
+### 环形 Buffer 组件
+
+* [CircularBuffer - GitHub](https://github.com/cyotek/Cyotek.Collections.Generic.CircularBuffer)
+* [CircularBuffer-CSharp - GitHub](https://github.com/joaoportela/CircullarBuffer-CSharp)
+
 ## 2019-01-24 星期四
 
 ### Unity Android 包的加密
