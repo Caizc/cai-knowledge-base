@@ -1,5 +1,58 @@
 # Game Development Blackboard
 
+## 2019-04-10 星期三
+
+### Android Crash 堆栈解读和 so 文件反编译
+
+* [诊断原生代码奔溃问题 - Android](https://source.android.com/devices/tech/debug/native-crash)
+* [Android 平台 Native 代码的崩溃捕获机制及实现 - 知乎专栏](https://zhuanlan.zhihu.com/p/27834417)
+* [Android NDK 开发 Crash 错误定位 - CSDN](https://blog.csdn.net/xyang81/article/details/42319789?tdsourcetag=s_pcqq_aiomsg)
+* [教你 Debug 的正确姿势 —— 记一次 CoreMotion 的 Crash - 知乎专栏](https://zhuanlan.zhihu.com/p/27359979)
+
+![](media/15548745896149.jpg)
+
+* [反编译 so 文件（IDA Pro） - 博客园](https://www.cnblogs.com/whycxb/p/9143896.html)
+* [使用 IDA Pro 静态分析 so 文件 - CSDN](https://blog.csdn.net/pengyan0812/article/details/43988171)
+
+## 2019-03-30 星期六
+
+### Dictionary 的使用注意
+
+* [Getting wierd "InvalidOperationException: out of sync" but my code works just fine? - Unity Forum](https://forum.unity.com/threads/getting-wierd-invalidoperationexception-out-of-sync-but-my-code-works-just-fine.141447/)
+* [Why does this cause an InvalidOperationException: Out of sync? - stackoverflow](https://stackoverflow.com/questions/30304815/why-does-this-cause-an-invalidoperationexception-out-of-sync)
+
+## 2019-03-20 星期三
+
+### 获取 iOS Application.persistentDataPath 目录中的文件
+
+* 在 Unity Build 出来的 Xcode 工程的 info.plist 中添加一行：
+
+    - Key：Application Support iTunes file sharing
+    - Type：Boolean
+    - Value: YES
+
+保存文件。Build 出来的 iOS 安装包即可以通过 iTunes 软件导出 Application 的 persistentDataPath 目录下的文件了。
+
+## 2019-03-16 星期六
+
+### iOS 中查看 Unity 程序运行时日志
+
+* [Log Files - Unity Documentation](https://docs.unity3d.com/Manual/LogFiles.html)
+* [Troubleshooting on iOS devices - Unity Documentation](https://docs.unity3d.com/Manual/TroubleShootingIPhone.html)
+* [iOS 如何实时查看 App 运行日志 - Cocoa China](http://www.cocoachina.com/ios/20170719/19933.html)
+* [iOS 和 Android 收集 Log 文件 - 雨松MOMO](https://www.xuanyusong.com/archives/2477)
+* [Unity3D 手游 Crash 定位研究 - GAD](http://gad.qq.com/article/detail/14003)
+
+### 使用 MonoDevelop 进行断点调试
+
+* [使用 MonoDevelop 进行断点调试 - 简书](https://www.jianshu.com/p/8f80e678e08b)
+
+### Xcode Build iOS 包 Tips
+
+* [iPhone has denied the launch request - stackoverflow](https://stackoverflow.com/questions/45421179/xcode-9-error-iphone-has-denied-the-launch-request)
+
+> I tracked this problem down to the "debug executable" checkbox in the product scheme (product->scheme->edit scheme->info->debug executable checkbox). I unchecked that and this stopped happening (as well as a couple other weird issues - no output in console being one).
+
 ## 2019-02-16 星期六
 
 ### Time.unscaledTime VS Time.realtimeSinceStartup
@@ -133,6 +186,13 @@ adb logcat -s Unity > c:/adblog.txt
 ![](media/15374373330373.jpg)
 
 * [TTEmulatorPortFinder 扫描各模拟器的 adb 连接端口 - 码云](https://gitee.com/tp7309/TTEmulatorPortFinder)
+
+**使用 adb 和 Android Studio 查看 Unity Android 包的实时运行日志：**
+
+* 打开 Android 手机的`开发者选项`，开启 `USB 调试`，使用数据线将手机连接到调试 PC，将 USB 连接模式设置为`传输文件`
+* 打开 Android Studio，切换到 Logcat 视窗
+* 打开 Windows 命令行窗口，输入 `adb disconnect`，再输入 `adb connect`
+* 此时 Logcat 视窗中应该可选择已连接的设备，并开始打印实时运行日志了
 
 ### LogViewer 日志查看工具
 

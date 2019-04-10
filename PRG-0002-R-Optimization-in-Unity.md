@@ -1,6 +1,7 @@
 # Optimization in Unity
 
 * [Unity 优化百科 - UWA](https://blog.uwa4d.com/archives/Index.html)
+* [Optimizing Mobile Applications - Unite Europe 2016 - YouTube](https://www.youtube.com/watch?v=j4YAY36xjwE&feature=youtu.be)
 
 # CPU
 
@@ -89,13 +90,31 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 
 # 内存
 
+## 原理
+
+Unity 游戏在运行时的内存占用情况：
+
+![](media/Screen%20Shot%202019-03-07%20at%2019.04.10.png)
+
+## 内存管理
+
+* [Memory Management in Unity - Unity Blog](https://blogs.unity3d.com/2018/06/27/new-best-practice-guide-memory-management-in-unity/)
+* [C# Memory Management for Unity Developers - GAMASUTRA](http://www.gamasutra.com/blogs/WendelinReich/20131109/203841/C_Memory_Management_for_Unity_Developers_part_1_of_3.php)
+
+* [Optimizing Scripts - Unity Documentation](https://docs.unity3d.com/Manual/MobileOptimizationPracticalScriptingOptimizations.html)
+
 * [性能优化，进无止境：内存篇（上）- UWA](https://blog.uwa4d.com/archives/optimzation_memory_1.html)
 * [性能优化，进无止境：内存篇（下）- UWA](https://blog.uwa4d.com/archives/optimzation_memory_2.html)
 * [关于 Unity 内存优化，你可能遇到这些问题 - UWA](https://blog.uwa4d.com/archives/QA_Memory-1.html)
 
+
+* [Unity 优化之内存优化（包含部分 AssetBundle 的加载原理） - 知乎专栏](https://zhuanlan.zhihu.com/p/47057411)
+
+
 ## 内存泄露
 
 * [深入浅出再谈 Unity 内存泄漏 - WeTest](https://wetest.qq.com/lab/view/150.html)
+* [Unity 游戏 Mono 内存管理及泄露 - WeTest](https://wetest.qq.com/lab/view/135.html)
 * [扒一扒 Profiler 中这几个“占坑鬼” - UWA](https://blog.uwa4d.com/archives/presentandsync.html)
 
 ## 内存泄露排查工具
@@ -112,7 +131,29 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 * [Unity Memory Porfiler 的工作机制及可能的改进 - 顾路的博客](http://gulu-dev.com/post/perf_assist/2017-01-25-unity-memoryprofiler)
 * [PerfAssist - GitHub](https://github.com/GameBuildingBlocks/PerfAssist/)
 
+* [How can I improve my application's memory use? - StackExchange](https://softwareengineering.stackexchange.com/questions/173436/how-can-i-improve-my-applications-memory-use)
+
+## Tips
+
+### 获取运行时堆内存大小
+
+* [Unity WebGL Memory: The Unity Heap - Unity Blog](https://blogs.unity3d.com/2016/12/05/unity-webgl-memory-the-unity-heap/)
+
+> System.GC.GetTotalMemory()
+> Profiler.GetMonoUsedSize()
+> Profiler.GetMonoHeapSize()
+
+* [Query the amount of heap used during runtime? - Unity Forum](https://forum.unity.com/threads/query-the-amount-of-heap-used-during-runtime.437522/)
+
 # GPU
+
+# 代码优化
+
+* [Unity 代码优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/51491283)
+
+# 性能工具
+
+
 
 ---
 
