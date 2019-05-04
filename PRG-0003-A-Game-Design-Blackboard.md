@@ -1,5 +1,16 @@
 # Game Design Blackboard
 
+## 2019-05-05 星期日
+
+### 三消游戏
+
+* [三消游戏发展史 - 知乎专栏](https://zhuanlan.zhihu.com/p/27864676)
+* [三消游戏的难度探讨 - 知乎专栏](https://zhuanlan.zhihu.com/p/28018187)
+* [三消游戏元素与关卡设计 - 知乎专栏](https://zhuanlan.zhihu.com/p/28094734)
+* [如何做三消游戏的策略性研究？以 Candy Crush 为例 - 腾讯游戏学院](https://gameinstitute.qq.com/community/detail/110566)
+* [《英雄纹章》（Hero Emblems）：战斗消除的新标杆 - 触乐](http://www.chuapp.com/2015/01/30/122365.html)
+* [Hero Emblems 全攻略](https://forum.gamer.com.tw/C.php?bsn=27690&snA=38&tnum=4)
+
 ## 2018-09-10 星期一
 
 ### 游戏关卡设计
