@@ -84,6 +84,8 @@ CPU 方面的性能开销主要可归结为两大类：**引擎模块**性能开
 
 ### GC 调用
 
+* [Optimizing garbage collection in Unity games - Unity Learn](https://unity3d.com/cn/learn/tutorials/topics/performance-optimization/optimizing-garbage-collection-unity-games?playlist=44069)
+
 ## 代码模块性能优化
 
 绝大多数项目中的性能开销都遵循「二八原则」，即 80% 的性能开销都集中在 20% 的函数上。
@@ -107,9 +109,7 @@ Unity 游戏在运行时的内存占用情况：
 * [性能优化，进无止境：内存篇（下）- UWA](https://blog.uwa4d.com/archives/optimzation_memory_2.html)
 * [关于 Unity 内存优化，你可能遇到这些问题 - UWA](https://blog.uwa4d.com/archives/QA_Memory-1.html)
 
-
 * [Unity 优化之内存优化（包含部分 AssetBundle 的加载原理） - 知乎专栏](https://zhuanlan.zhihu.com/p/47057411)
-
 
 ## 内存泄露
 
@@ -153,7 +153,9 @@ Unity 游戏在运行时的内存占用情况：
 
 # 性能工具
 
-
+* Unity Support extension in Rider or ReSharper
+* [Unity Performance Best Practices with Rider, Part 1 - JETBRAINS](https://blog.jetbrains.com/dotnet/2019/02/21/performance-indicators-unity-code-rider/)
+* [Unity performance best practice with Rider, part 2 - JETBRAINS](https://blog.jetbrains.com/dotnet/2019/02/28/performance-inspections-unity-code-rider/)
 
 ---
 
@@ -161,6 +163,7 @@ change log:
 
 	- 创建（2017-12-19）
 	- 增加内存优化相关内容（2018-09-07）
+	- 增加性能工具相关内容（2019-05-13）
 
 ---
 

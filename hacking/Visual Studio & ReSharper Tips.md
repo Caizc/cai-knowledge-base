@@ -59,10 +59,38 @@
 | File structure | Ctrl + F11 |
 | View type hierarchy | Ctrl + Alt + H |
 
-## 实用插件
+## Visual Studio 扩展插件
+
+> 扩展 -> 管理扩展
 
 * StyleCop
 * [Visual Studio 主题设置文件下载 - studiostyles](https://studiostyl.es/)
+
+## ReSharper 扩展插件
+
+> 扩展 -> ReSharper -> Extension Manager...
+
+> Tips：Visual Studio、ReSharper 以及 ReSharper Extension 三者的版本必须兼容，在 ReSharper Ultimate Extensions 中，不会显示版本不兼容的扩展，当然也就无法安装了。
+
+* [ReSharper Plugins - jetbrains](https://plugins.jetbrains.com/resharper)
+
+**JetBrains.ExtenalAnnotations**
+
+**Unity Support**
+
+* [resharper-unity - GitHub](https://github.com/JetBrains/resharper-unity)
+
+**Heap Alllocations Viewer**
+
+**Enhanced Tooltip**
+
+## ReSharper 设置
+
+* 文本编辑器中代码段颜色设置为使用 ReSharper 的配色方案：
+> 扩展 -> ReSharper -> Options -> Code Inspection -> General -> 勾选 Color identifiers
+
+* Unity Support 插件设置：
+> 扩展 -> ReSharper -> Options -> Code Editing -> Unity Engine
 
 ## Trouble Shooting
 
@@ -86,6 +114,7 @@ change log:
 
 	- 创建（2017-08-22）
 	- 更新（2019-02-11）
+	- 新增 ReSharper 插件相关内容（2019-05-14）
 
 ---
 
