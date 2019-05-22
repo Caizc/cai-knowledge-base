@@ -767,6 +767,10 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 * [SuperSocket](http://www.supersocket.net/)
 * [SuperSocket 与 Netty 之实现 protobuf 协议，包括服务端和客户端 - cnblogs](http://www.cnblogs.com/caipeiyu/p/5559112.html)
 
+# ET
+
+* [ET - GitHub](https://github.com/egametang/ET)
+
 ---
 
 change log: 
@@ -774,6 +778,7 @@ change log:
 	- 创建（2017-09-12）
 	- 更新（2017-12-29）
 	- 新增 Mirror、MLAPI、SuperSocket 相关内容（2019-05-13）
+	- 新增 ET 框架（2019-05-20）
 
 ---
 

@@ -92,6 +92,10 @@
 * Unity Support 插件设置：
 > 扩展 -> ReSharper -> Options -> Code Editing -> Unity Engine
 
+## Visual Assist
+
+* [Visual Assit 特性和技巧 - 知乎专栏](https://zhuanlan.zhihu.com/p/26643499)
+
 ## Trouble Shooting
 
 * Unity 总是打开新的 Visual Studio 实例
@@ -115,6 +119,7 @@ change log:
 	- 创建（2017-08-22）
 	- 更新（2019-02-11）
 	- 新增 ReSharper 插件相关内容（2019-05-14）
+	- 新增 Visual Assit 插件相关内容（2019-05-21）
 
 ---
 

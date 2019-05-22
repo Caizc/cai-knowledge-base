@@ -1,5 +1,41 @@
 # Game Development Blackboard
 
+## 2019-05-21 星期二
+
+### UML
+
+* [什么是UML图？常见的UML图有哪些？](https://www.edrawsoft.cn/uml-diagram-introduction/)
+
+### Unity 资源引用丢失导致 Crash
+
+* [Unity 移动端 The file 'none' is corrupted. 报错解决 - 程序园](http://www.voidcn.com/article/p-avlbztjj-brb.html)
+
+### 优秀开发经验
+
+* [2015暴雪嘉年华 - 工程师访谈](https://bbs.nga.cn/read.php?tid=8700591&rand=127)
+* [Unity3D 游戏优化之头顶 UI - 知乎专栏](https://zhuanlan.zhihu.com/p/25670078)
+* [Unity3D 特效消耗性能量化方法 - 知乎专栏](https://zhuanlan.zhihu.com/p/27121159)
+
+## 2019-05-19 星期日
+
+### 游戏系统架构
+
+* [核心游戏系统架构设计 - AI 分享站](http://www.aisharing.com/archives/769)
+
+![](media/15582581167064.jpg)
+
+* [黑板与共享数据 - AI 分享站](http://www.aisharing.com/archives/801)
+
+### 游戏服务器架构
+
+* [游戏服务器架构的演进简史 - InfoQ](https://www.infoq.cn/article/a-brief-history-of-the-game-server-architecture)
+
+### Excel 转换为 Protobuf 工具
+
+* [UnityExcelPlugin - 码云](https://gitee.com/huaiyaohuaiyao/UnityExcelPlugin)
+* [xls2protobuf - GitHub](https://github.com/JumpWu/xls2protobuf)
+* [xresloader - GitHub](https://github.com/xresloader/xresloader)
+
 ## 2019-05-13 星期一
 
 ### Awesome Game Sample
@@ -12,9 +48,13 @@
 * [MyUnityFrameWork - GitHub](https://github.com/GaoKaiHaHa/MyUnityFrameWork)
 * [Game Framework](http://gameframework.cn/)
 * [GameFramework - GitHub](https://github.com/EllanJiang/GameFramework)
+* [gameframework_demo - GitHub](https://github.com/mutouzdl/gameframework_demo)
+* [GameFramework 教程 - 笨木头与游戏开发](http://www.benmutou.com/archives/category/unity3d/game-framework)
+* [GameFramework 教程 - 自然妙有猫仙人](https://blog.csdn.net/qq_32821435/article/category/7709588)
+* [GameFramework 教程 - 烟雨迷离半世殇](https://blog.csdn.net/qq_15020543/column/info/27131)
 
 ### Unity 资源管理机制
-
+
 * [Unity 引擎资源管理代码分析1 - 腾讯云](https://cloud.tencent.com/developer/article/1005786)
 * [Unity 引擎资源管理代码分析2 - 腾讯云](https://cloud.tencent.com/developer/article/1005843)
 * [Unity 引擎资源管理代码分析3 - 腾讯云](https://cloud.tencent.com/developer/article/1005853)
