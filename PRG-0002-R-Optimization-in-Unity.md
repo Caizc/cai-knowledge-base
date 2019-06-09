@@ -147,15 +147,43 @@ Unity 游戏在运行时的内存占用情况：
 
 # GPU
 
+# 资源管理
+
+* [Unity 项目中的资源管理 - 知乎](https://zhuanlan.zhihu.com/p/27779619)
+* [Unity 项目中的资源管理（续） - 知乎](https://zhuanlan.zhihu.com/p/28324190)
+* [Unity 中资源依赖关系获取效率优化 - 知乎](https://zhuanlan.zhihu.com/p/41857024)
+* [一个灵活的 AssetBundle 打包工具 - 知乎](https://zhuanlan.zhihu.com/p/27876042)
+* [Unity 资源管理组件 - GitHub](https://github.com/GameBuildingBlocks/UnityComponent)
+* [Unity 资源目录及加载接口介绍 - 简书](https://www.jianshu.com/p/5206c7dc88c4)
+
+# 字体管理
+
+* [FontPruner 字体精简工具 - 顾路的博客](http://gulu-dev.com/post/2017/2017-09-15-font-pruner-intro/content)
+* [FontPruner - GitHub](https://github.com/GameBuildingBlocks/FontPruner)
+
+![](media/15585912857167.jpg)
+
 # 代码优化
 
 * [Unity 代码优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/51491283)
+* [C# 内存与性能优化 - 简书](https://www.jianshu.com/p/d56f79d83ebd)
+* [Unity 游戏的 string interning 优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/23877335)
+
+# lua 性能优化
+
+* [LuaProfilingTool - GitHub](https://github.com/GameBuildingBlocks/LuaProfilingTools)
 
 # 性能工具
 
 * Unity Support extension in Rider or ReSharper
 * [Unity Performance Best Practices with Rider, Part 1 - JETBRAINS](https://blog.jetbrains.com/dotnet/2019/02/21/performance-indicators-unity-code-rider/)
 * [Unity performance best practice with Rider, part 2 - JETBRAINS](https://blog.jetbrains.com/dotnet/2019/02/28/performance-inspections-unity-code-rider/)
+* [Unity 协程运行时的监控和优化 - 顾路的博客](http://gulu-dev.com/post/perf_assist/2016-12-20-unity-coroutine-optimizing)
+* [PerfAssist - GitHub](https://github.com/GameBuildingBlocks/PerfAssist)
+
+# 工作流
+
+* [Unity 快速开发和协作的模式 - 知乎专栏](https://zhuanlan.zhihu.com/p/65912649)
 
 ---
 

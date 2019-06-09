@@ -1,5 +1,23 @@
 # Game Development Blackboard
 
+## 2019-06-02 星期日
+
+### 抽象类与接口
+
+* [C# 的抽象类与接口的区别，在什么时候使用才适合？- 博客园](https://www.cnblogs.com/seapub/archive/2012/08/08/2628433.html)
+
+> 1.abstract class 在 c# 语言中表示的是一种继承关系，一个类只能使用一次继承关系。但是，一个类却可以实现多个 interface。
+> 2.在 abstract class 中可以有自己的数据成员，也可以有非 abstarct 的成员方法，而在 interface 中，只能够有静态的不能被修改的数据成员（也就是必须是 static final 的，不过在 interface 中一般不定义数据成员），所有的成员方法都是 abstract 的。
+> 3.abstract class 和interface 所反映出的设计理念不同。abstract class 表示的是 "is-a" 关系，interface 表示的是 "like-a" 关系。
+> 4.实现抽象类和接口的类必须实现其中的所有方法。抽象类中可以有非抽象方法。接口中则不能有实现方法。
+> 5.接口中定义的变量默认是 public static final 型，且必须给其初值，所以实现类中不能重新定义，也不能改变其值。
+> 6.抽象类中的变量默认是 friendly 型，其值可以在子类中重新定义，也可以重新赋值。
+> 7.接口中的方法默认都是 public abstract 类型的。
+
+### AssetBundle
+
+* [Unity AssetBundle 详解 - KinGil's Blog](http://kingil.me/2018/08/02/UnityAssetBundleMaster/)
+
 ## 2019-05-21 星期二
 
 ### UML
