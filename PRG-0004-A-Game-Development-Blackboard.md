@@ -1,5 +1,40 @@
 # Game Development Blackboard
 
+## 2019-06-22 星期六
+
+### Unity 项目资源提取工具
+
+* [提取游戏资源的三个工具 - 雨松 MOMO](https://www.xuanyusong.com/archives/3618)
+
+> 1. disunity
+> 2. UnityAssetExplorer
+> 3. AssetStudio
+
+## 2019-06-18 星期二
+
+### 反 Hook
+
+* [Android Hook 技术防范漫谈 - 美团技术团队](https://tech.meituan.com/2018/02/02/android-anti-hooking.html)
+
+## 2019-06-13 星期四
+
+### iPhone 屏幕分辨率
+
+* [iPhone 屏幕分辨率终极指南 - KANGZUBIN](https://kangzubin.com/iphone-resolutions/)
+
+![](media/15604185063907.jpg)
+
+### 神经网络
+
+* [一层简单人工神经网络的 Java 实现 - CSDN](https://blog.csdn.net/csj941227/article/details/73325695)
+
+![](media/15604993811916.jpg)
+
+![](media/15604993961128.jpg)
+
+* [BP 神经网络 Java 实现 - 博客园](https://www.cnblogs.com/hesi/p/7218602.html)
+* [BP 神经网络 Java 实现详解 - CSDN](https://blog.csdn.net/RCKLV/article/details/77510801)
+
 ## 2019-06-02 星期日
 
 ### 抽象类与接口
