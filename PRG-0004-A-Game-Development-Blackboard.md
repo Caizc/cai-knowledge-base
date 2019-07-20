@@ -1,5 +1,21 @@
 # Game Development Blackboard
 
+## 2019-07-10 星期三
+
+### Unity 知识点
+
+* [Unity3D 笔试题大全 - cnblogs](https://www.cnblogs.com/fastcam/p/5930446.html)
+* [Unity 技术面试题 100 问 - 腾讯游戏学院](https://gameinstitute.qq.com/community/detail/108207)
+
+## 2019-06-26 星期三
+
+### Live 2D
+
+* [在 Unity 游戏中使用 Live2D](http://www.hailantown.com/2017/08/use_live2d_in_girlsfront_with_unity/)
+* [在 Unity 游戏中使用 Live2D - 知乎](https://zhuanlan.zhihu.com/p/29020039)
+* [在 Unity 项目中使用 Live2D，以及 Render Texture 的简单使用 - cnblogs](https://www.cnblogs.com/Swallowtail/p/6514421.html)
+* [使用 Unity，让互动模型动起来 - Live2D](http://www.live2d.com/usermanual/cubism2_cn/lets-do-it/my-first-lapp.html)
+
 ## 2019-06-22 星期六
 
 ### Unity 项目资源提取工具
