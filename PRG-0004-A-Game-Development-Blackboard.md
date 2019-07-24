@@ -1,5 +1,38 @@
 # Game Development Blackboard
 
+## 2019-07-24 星期三
+
+### C# 的类和结构
+
+* [类和结构 - C# 编程指南](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/index)
+* [结构 - C# 编程指南](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/structs)
+
+> * 类是引用类型。 创建类的对象后，向其分配对象的变量仅保留对相应内存的引用。 将对象引用分配给新变量后，新变量会引用原始对象。 通过一个变量所做的更改将反映在另一个变量中，因为它们引用相同的数据。
+> * 结构是值类型。 创建结构时，向其分配结构的变量保留结构的实际数据。 **将结构分配给新变量时，会复制结构。 因此，新变量和原始变量包含相同数据的副本（共两个）。 对一个副本所做的更改不会影响另一个副本。**> * 一般来说，类用于对更复杂的行为或应在类对象创建后进行修改的数据建模。 结构最适用于所含大部分数据不得在结构创建后进行修改的小型数据结构。
+
+**struct 特性：**
+
+> 结构在以下方面比类的限制更多：
+
+> * 在结构声明中，除非将字段声明为 const 或 static，否则无法初始化。> * 结构不能声明无参数构造函数（没有参数的构造函数）或终结器。> * **结构在分配时进行复制。 将结构分配给新变量时，将复制所有数据，并且对新副本所做的任何修改不会更改原始副本的数据。 在处理值类型的集合（如 Dictionary<string, myStruct>）时，请务必记住这一点。**> * 结构是值类型，不同于类，类是引用类型。> * 与类不同，无需使用 new 运算符即可对结构进行实例化。> * 结构可以声明具有参数的构造函数。> * 一个结构无法继承自另一个结构或类，并且它不能为类的基类。 所有结构都直接继承自 ValueType，后者继承自 Object。> * 结构可以实现接口。> * 结构不能为 null，并且不能向结构变量分配 null，除非将变量声明为可为 null 的类型。
+
+## 2019-07-21 星期日
+
+### C# 边遍历边删除 List 元素
+
+* [C# 对 List 同时遍历删除操作 - CSDN](https://blog.csdn.net/WLDRSWGZMB/article/details/50707691)
+
+```csharp
+for(int i = list.Count - 1; i >= 0; i--)
+{
+    if(condition)
+    {
+        list.RemoveAt(i);
+        break;
+    }
+}
+```
+
 ## 2019-07-10 星期三
 
 ### Unity 知识点
