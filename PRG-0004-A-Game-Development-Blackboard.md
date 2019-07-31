@@ -127,6 +127,7 @@ for(int i = list.Count - 1; i >= 0; i--)
 ![](media/15582581167064.jpg)
 
 * [黑板与共享数据 - AI 分享站](http://www.aisharing.com/archives/801)
+* [共享性行为树的新实践 - AI 分享站](http://www.aisharing.com/archives/750)
 
 ### 游戏服务器架构
 
@@ -184,6 +185,16 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 * [反编译 so 文件（IDA Pro） - 博客园](https://www.cnblogs.com/whycxb/p/9143896.html)
 * [使用 IDA Pro 静态分析 so 文件 - CSDN](https://blog.csdn.net/pengyan0812/article/details/43988171)
+
+### SEGV_ACCERR 和 SEGV_MAPERR
+
+* [What is SEGV_MAPERR? - stackoverflow](https://stackoverflow.com/questions/1000002/what-is-segv-maperr)
+
+> There are two common kinds of SEGV, which is an error that results from an invalid memory access:> 1. A page was accessed which had the wrong permissions. E.g., it was read-only but your code tried to write to it. This will be reported as SEGV_ACCERR.> 2. A page was accessed that is not even mapped into the address space of the application at all. This will often result from dereferencing a null pointer or a pointer that was corrupted with a small integer value. This is reported as SEGV_MAPERR.
+
+* [What is the meaning of 'code' in Segmentation Fault - stackoverflow](https://stackoverflow.com/questions/19124925/what-is-the-meaning-of-code-in-segmentation-fault)
+
+> SEGV_MAPERR means you tried to access an address that doesn't map to anything.SEGV_ACCERR means you tried to access an address that you don't have permission to access.>> So in both cases you accessed an address you shouldn't have, which is probably the only thing your actual code is guilty of. In the former case there's no memory in that address range anyway. In the latter case there is memory in that address range but you don't own it.>> If you were to access a random address then which you get depends on how the OS happens to have your process set up at that moment.
 
 ### Java 多线程解压
 
