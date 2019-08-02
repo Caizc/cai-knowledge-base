@@ -4,7 +4,7 @@
 
 浏览器
 
-## MarkdownPad 2
+## Typora
 
 Markdown 编辑器
 
@@ -106,6 +106,7 @@ iCloud 客户端
 change log: 
 
 	- 创建（2017-01-17）
+	- 更新（2019-08-02）
 
 ---
 
