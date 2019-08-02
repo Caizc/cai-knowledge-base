@@ -1,5 +1,30 @@
 # Game Development Blackboard
 
+## 2019-08-02 星期五
+
+### 组合式 Entity 的架构设计
+
+* [组合式 Entity 的实现 - AI 分享站](http://www.aisharing.com/archives/475)
+* [再谈组合式实体的架构设计(1) - AI 分享站](http://www.aisharing.com/archives/627)
+* [再谈组合式实体的架构设计(2) - AI 分享站](http://www.aisharing.com/archives/643)
+
+### AI 行为树的设计与实现（lua）
+
+* [AI 行为树的设计与实现 - 理论篇 - Veinin](https://www.veinin.com/2018/08/07/ai_behavior_tree_design_and_implementation_01/)
+* [AI 行为树的设计与实现 - 实现篇 - Veinin](https://www.veinin.com/2018/08/08/ai_behavior_tree_design_and_implementation_02/)
+
+### AOI 同步方案
+
+* [MMORPG 场景同步 AOI 解决方案 - Veinin](https://www.veinin.com/2018/03/23/dev-notes-mmorpg-aoi-algorithm/)
+
+> * 空间切割网格算法
+> * 十字链表算法
+> * 分层 AOI
+
+### UI 半自动化开发方案
+
+* [游戏 UI 半自动化开发流程 - Veinin](https://www.veinin.com/2018/07/31/dev_notes-game-UI-semi-automated-development/)
+
 ## 2019-07-24 星期三
 
 ### C# 的类和结构
@@ -120,18 +145,64 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 ## 2019-05-19 星期日
 
-### 游戏系统架构
+### 核心游戏系统架构
 
 * [核心游戏系统架构设计 - AI 分享站](http://www.aisharing.com/archives/769)
 
 ![](media/15582581167064.jpg)
 
-* [黑板与共享数据 - AI 分享站](http://www.aisharing.com/archives/801)
+### 行为树与游戏 AI
+
+* [用行为树的方式思考 - AI 分享站](http://www.aisharing.com/archives/653)
+
+> 行为树的核心思想有三个方面：
+> 
+> * 逻辑分离
+> * 逻辑关联
+> * 逻辑抽象
+
 * [共享性行为树的新实践 - AI 分享站](http://www.aisharing.com/archives/750)
+
+* [如何处理被动式的行为请求 - AI 分享站](http://www.aisharing.com/archives/495)
+
+![](media/15646841457136.jpg)
+
+* [黑板与共享数据 - AI 分享站](http://www.aisharing.com/archives/801)
+* [在行为树中使用黑板 - AI 分享站](http://www.aisharing.com/archives/280)
+
+![](media/15646839831151.jpg)
+
+* [对动画的选择和控制系统的讨论 - AI 分享站](http://www.aisharing.com/archives/371)
+
+![](media/15646845806226.jpg)
+
+### AI 中的参数系统
+
+* [AI 中的参数系统设计 - AI 分享站](http://www.aisharing.com/archives/500)
+
+> 对于一个新的参数系统，我希望它能有如下的特性：
+> 
+> * 仅支持静态的参数：对于游戏来说是只读的，也就是游戏在运行时不允许修改这些参数，但可以通过外部工具进行调试
+> * 支持文档化
+> * 支持实时的修改：不需要重新启动游戏
+> * 支持序列化到文件：可以将调整好的参数存成文件，以便下一次启动游戏时生效
+> * 支持逻辑关联
+> * 支持自动的合法性检查
+> * 高效和便捷的定义和调用
 
 ### 游戏服务器架构
 
 * [游戏服务器架构的演进简史 - InfoQ](https://www.infoq.cn/article/a-brief-history-of-the-game-server-architecture)
+* [对战类全球服游戏的设计与实现 - 掘金](https://juejin.im/post/5b72a24451882560f53c6eee)
+
+> 协议的选择
+> 总体来说，COC、KOA (阿瓦隆之王)等地图类少交互的游戏用 TCP 是没有问题的，而 CR（皇室战争）、自由之战、全民枪战、枪林弹雨，这类 MOBA、FPS 等强联网需求的对战游戏，UDP 基本是必备的。
+> 同步机制
+> 帧同步: 快节奏、同时希望降低服务器不必要负载的对战类手游，帧同步是不二的选择。帧同步的好处是可以精减上传信息，只是做一些简单的数据汇总上报，需要的带宽非常少。
+> 状态同步: 安全性很高，但状态同步需要的带宽量远大于帧同步，而全球服游戏本身面临着非常严峻的全球网络环境，甚至很多情况下需要专线来解决网络问题，这时候，网络开销将是比较大的成本。
+> 简而言之，一句话：如果你想做全球服游戏，请务必学会帧同步。
+
+* [快节奏多人游戏(1)：客户端与服务器架构 - Veinin](https://www.veinin.com/2019/03/02/fast-paced-multiplayer-01/)
 
 ### Excel 转换为 Protobuf 工具
 
