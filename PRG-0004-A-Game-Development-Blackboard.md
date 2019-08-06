@@ -8,6 +8,11 @@
 * [再谈组合式实体的架构设计(1) - AI 分享站](http://www.aisharing.com/archives/627)
 * [再谈组合式实体的架构设计(2) - AI 分享站](http://www.aisharing.com/archives/643)
 
+### Entity Component System
+
+* [Understanding Component-Entity-Systems - gamedev.net](https://www.gamedev.net/articles/programming/general-and-gameplay-programming/understanding-component-entity-systems-r3013)
+* [What is an Entity Component System architecture for game development? - Richard Lord](https://www.richardlord.net/blog/ecs/what-is-an-entity-framework.html)
+
 ### AI 行为树的设计与实现（lua）
 
 * [AI 行为树的设计与实现 - 理论篇 - Veinin](https://www.veinin.com/2018/08/07/ai_behavior_tree_design_and_implementation_01/)
