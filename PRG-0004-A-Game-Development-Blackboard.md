@@ -208,6 +208,8 @@ for(int i = list.Count - 1; i >= 0; i--)
 > 简而言之，一句话：如果你想做全球服游戏，请务必学会帧同步。
 
 * [快节奏多人游戏(1)：客户端与服务器架构 - Veinin](https://www.veinin.com/2019/03/02/fast-paced-multiplayer-01/)
+* [服务端架构设计 - CSDN](https://blog.csdn.net/mooke/article/details/8913051)
+
 
 ### Excel 转换为 Protobuf 工具
 
