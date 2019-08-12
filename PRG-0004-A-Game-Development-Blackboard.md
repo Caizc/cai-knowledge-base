@@ -1,5 +1,28 @@
 # Game Development Blackboard
 
+## 2019-08-12 星期一
+
+### Unity Gameplay 工具集
+
+* [Unity Gameplay 工具集 - 知乎专栏](https://zhuanlan.zhihu.com/p/24418999)
+
+> * 实体组件（Entity-Component）> * 节点可视化编程（Node-based Visual Scripting）
+>     - 状态机（Finite State Machine）    - 行为树（Behavior Tree）    - 事件驱动可视化编程（Event Driven Visual Scripting）    - 非线性编辑（Non-linear editing）
+
+### Unity 项目性能优化
+
+* [Unity 游戏项目性能优化总结 - 知乎专栏](https://zhuanlan.zhihu.com/p/24392681)
+
+### Unity 的 GPU 内存机制
+
+* [分析 Unity 在移动设备的 GPU 内存机制（iOS 篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/50632856)
+
+### 程序化生成算法
+
+* [基于《波函数坍缩算法》的无限城市程序化随机生成 - 知乎专栏](https://zhuanlan.zhihu.com/p/66416593)
+
+![](media/15655972768420.jpg)
+
 ## 2019-08-02 星期五
 
 ### 组合式 Entity 的架构设计
@@ -209,7 +232,6 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 * [快节奏多人游戏(1)：客户端与服务器架构 - Veinin](https://www.veinin.com/2019/03/02/fast-paced-multiplayer-01/)
 * [服务端架构设计 - CSDN](https://blog.csdn.net/mooke/article/details/8913051)
-
 
 ### Excel 转换为 Protobuf 工具
 
@@ -1203,25 +1225,7 @@ CREATE TABLE `player` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
-## 2017-09-28 星期四
 
-### 帧同步技术问答
-
-* [【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
-
-* 《实时碰撞检测算法技术》
-
-我们真做了一个通用框架来帮助开发同学检测和分析不一致性，原理上大致如下：
-
-1. 定义个逻辑帧状态的切片（FrameStateSnapshot），帧切片里面是游戏对象的状态以及本帧发生的事件。
-2. 每个逻辑帧跑完，生成本帧的切片
-3. 将帧切片序列化成一个二进制串
-4. 可选：将二进制串生成MD5
-5. 可选：将MD5码和帧序号发送给服务器，服务器可以通过这个MD5码判定每个客户端的帧切片是不是一致
-6. 将帧切片的二进制串保存到本地文件（也可以带MD5）
-7. 打完一场之后，生成了一个状态录制文件
-
-比较各个客户端所录制的这些数据，可以知道哪帧不一致，这个帧里面哪个数据不一致了。
 
 ## 2017-09-19 星期二
 

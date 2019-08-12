@@ -227,6 +227,24 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 * 对于战斗时大地图MMORPG的，一个地图内会有成千上百的玩家，不是小房间性质的游戏，只能使用状态同步，只同步自己视野的状态。
 * 帧同步有个缺点，不能避免玩家采用作弊工具开图。
 
+# 帧同步技术问答
+
+* [【腾讯专家答疑专场】帧同步技术解答精选](http://gad.qq.com/article/detail/33704?sessionUserType=BFT.PARAMS.237718.TASKID&ADUIN=494074276&ADSESSION=1506562461&ADTAG=CLIENT.QQ.5527_.0&ADPUBNO=26632)
+
+* 《实时碰撞检测算法技术》
+
+我们真做了一个通用框架来帮助开发同学检测和分析不一致性，原理上大致如下：
+
+1. 定义个逻辑帧状态的切片（FrameStateSnapshot），帧切片里面是游戏对象的状态以及本帧发生的事件。
+2. 每个逻辑帧跑完，生成本帧的切片
+3. 将帧切片序列化成一个二进制串
+4. 可选：将二进制串生成MD5
+5. 可选：将MD5码和帧序号发送给服务器，服务器可以通过这个MD5码判定每个客户端的帧切片是不是一致
+6. 将帧切片的二进制串保存到本地文件（也可以带MD5）
+7. 打完一场之后，生成了一个状态录制文件
+
+比较各个客户端所录制的这些数据，可以知道哪帧不一致，这个帧里面哪个数据不一致了。
+
 # 帧同步
 
 [lockstep 网络游戏同步方案 - 云风的 BLOG](https://blog.codingnow.com/2018/08/lockstep.html)
@@ -770,6 +788,35 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 # ET
 
 * [ET - GitHub](https://github.com/egametang/ET)
+
+# 网络游戏同步技术
+
+* [网络游戏同步技术概述 - 知乎专栏](https://zhuanlan.zhihu.com/p/56923109)
+
+![](media/15655952242589.jpg)
+
+![](media/15655952467958.jpg)
+
+![](media/15655953629562.jpg)
+
+![](media/15655953788051.jpg)
+
+* [守望先锋等 FPS 游戏的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/28825322)
+* [A guide to understanding netcode - GAMEREPLAYS.ORG](https://www.gamereplays.org/overwatch/portals.php?show=page&name=overwatch-a-guide-to-understanding-netcode)
+
+* [Unity 网络同步：游戏中的网络同步解决方案 - 知乎专栏](https://zhuanlan.zhihu.com/p/49482294)
+* [Unity 网络同步：如何实现确定性的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/49483191)
+* [Unity 网络同步：服务器将状态同步给客户端（状态缓存，状态插值，估算帧）- 知乎专栏](https://zhuanlan.zhihu.com/p/49483467)
+* [Unity 网络同步：客户端本地预测（预表现）- 知乎专栏](https://zhuanlan.zhihu.com/p/49483875)
+* [Unity 网络同步：物理状态的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/49837134)
+
+* [It IS Rocket Science! The Physics of Rocket League Detailed - GDC 2018](https://www.youtube.com/watch?v=ueEmiDM94IE)
+* [Bullet Physics For Unity - Unity Asset Store](https://assetstore.unity.com/packages/tools/physics/bullet-physics-for-unity-62991)
+
+# UE4 网络同步方案
+
+* [UE4 网络同步思考：经典同步方案 - 知乎专栏](https://zhuanlan.zhihu.com/p/56548096)
+* [UE4 网络同步思考：大世界同步方案 ReplicationGraph - 知乎专栏](https://zhuanlan.zhihu.com/p/56922476)
 
 ---
 
