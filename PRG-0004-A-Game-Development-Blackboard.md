@@ -25,16 +25,39 @@
 
 ## 2019-08-02 星期五
 
+### Unity ECS
+
+* [Entity Component System - Unity Manual](https://docs.unity3d.com/Packages/com.unity.entities@0.1/manual/index.html)
+
+![](media/15656868139339.jpg)
+
+> An Entity Component System (ECS) architecture separates identity (entities), data (components), and behaviour (systems). The architecture focuses on the data. Systems transform the data from an input state to an output state by reading streams of component data, which are indexed by entities.
+
 ### 组合式 Entity 的架构设计
 
 * [组合式 Entity 的实现 - AI 分享站](http://www.aisharing.com/archives/475)
 * [再谈组合式实体的架构设计(1) - AI 分享站](http://www.aisharing.com/archives/627)
 * [再谈组合式实体的架构设计(2) - AI 分享站](http://www.aisharing.com/archives/643)
 
+> * 将实体分为属性部分（Property）和行为部分（Behavior）
+> * 行为部分用组件（Component）来实现
+> * 属性部分分为固有属性（Built-in Property）和自定义属性（User-defined Property），固有属性用成员变量来实现，自定义属性用 key-value 对来实现，可以通过继承来扩展固有属性
+> * 可以用数据驱动的方式来配置属性和组件
+> * 实体和组件的通信靠属性作为共享数据
+> * 组件和组件的通信靠消息，不暴露组件的内部变量
+> * 实体和实体的通信靠消息
+> * 使用层次化（引擎层和游戏层）的方式来设计实体和组件
+
 ### Entity Component System
 
 * [Understanding Component-Entity-Systems - gamedev.net](https://www.gamedev.net/articles/programming/general-and-gameplay-programming/understanding-component-entity-systems-r3013)
 * [What is an Entity Component System architecture for game development? - Richard Lord](https://www.richardlord.net/blog/ecs/what-is-an-entity-framework.html)
+
+### Entitas
+
+* [Entitas-CSharp - GitHub](https://github.com/sschmid/Entitas-CSharp)
+
+> Entitas is a super fast and lightweight C# Entity-Component-System (ECS) framework, specifically designed for use with the Unity engine. Internal caching and blazing fast component access makes it second to none. It's also been carefully designed to work optimally in a garbage collected environment.
 
 ### AI 行为树的设计与实现（lua）
 
@@ -52,6 +75,22 @@
 ### UI 半自动化开发方案
 
 * [游戏 UI 半自动化开发流程 - Veinin](https://www.veinin.com/2018/07/31/dev_notes-game-UI-semi-automated-development/)
+
+### MMORPG 技能系统
+
+* [一个 MMORPG 的常规技能系统 - 知乎专栏](https://zhuanlan.zhihu.com/p/26108028)
+
+> 技能模块每个部分的职责和原理：>> * 技能信息管理：管理unit所拥有的技能以及技能的等级、cd等。在我们游戏中，这里还需要负责管理符文，符文会对技能信息进行修改。> * 技能调用接口：AI或者UI操作触发技能，触发技能时可能选择了一个目标（AI），也可能并没有目标。> * 技能流程管理：一个技能可能由多个子技能以移动的执行模式组合而成，而每一个最终执行的技能执行过程也存在一个流程，一般包括：前摇过程-结算点-后摇过程。技能在前摇结束时进入技能真正的结算流程，结算流程可能创建子弹，也可能触发buf或者创建法术场。> * 技能目标查找：若技能触发时已经设置了技能目标unit(如怪物AI释放技能)，则直接将其作为目标unit，否则需要根据一定的策略选择一个目标。此外，技能释放的时候还需要释放方向和释放位置等信息，也通过这个模块获取。> * 技能表现：技能释放过程中，需要创建相应的特效以及执行相应的动作。> * 技能创生体（buf/弹道/法术场）管理：buf挂在unit身上，可能影响unit的一些行为和状态；法术场一般由场景管理，影响场景中某范围内的unit；弹道就是技能创建的一个子弹，这个子弹可能以不同的路线移动（直线／抛物线／直接命中等）
+
+* [技能系统的同步机制 - 知乎专栏](https://zhuanlan.zhihu.com/p/26188869)
+* [技能模块的防外挂机制和同步机制优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/26536892)
+* [游戏开发中防外挂的那些事儿 - 知乎专栏](https://zhuanlan.zhihu.com/p/27509434)
+
+### 游戏数值系统
+
+* [游戏的数值系统的实现和演化 - 知乎专栏](https://zhuanlan.zhihu.com/p/29151834)
+
+> （评论更精彩）
 
 ## 2019-07-24 星期三
 
@@ -176,6 +215,8 @@ for(int i = list.Count - 1; i >= 0; i--)
 ### 核心游戏系统架构
 
 * [核心游戏系统架构设计 - AI 分享站](http://www.aisharing.com/archives/769)
+
+![](media/15656333857508.jpg)
 
 ![](media/15582581167064.jpg)
 
@@ -876,14 +917,6 @@ var 可以理解为匿名类型，是一个声明变量的占位符，主要用�
 ### 网易游戏技术分享
 
 * [网易游戏技术分享](https://blog.coderzh.com/2015/06/28/163GameOpenDay/)
-
-### ECS 架构
-
-* [《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
-* [《守望先锋》中的网络脚本化的武器和技能系统 - GAD](http://gad.qq.com/article/detail/28219)
-* [Networking Scripted Weapons and Abilities in Overwatch - GDC Vault](https://www.gdcvault.com/play/1024653/Networking-Scripted-Weapons-and-Abilities)
-* [浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
-* [GDC 2017 技术选荐合辑 - 知乎专栏](https://zhuanlan.zhihu.com/p/25703934)
 
 ### Unity 框架
 

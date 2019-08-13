@@ -801,9 +801,6 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 ![](media/15655953788051.jpg)
 
-* [守望先锋等 FPS 游戏的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/28825322)
-* [A guide to understanding netcode - GAMEREPLAYS.ORG](https://www.gamereplays.org/overwatch/portals.php?show=page&name=overwatch-a-guide-to-understanding-netcode)
-
 * [Unity 网络同步：游戏中的网络同步解决方案 - 知乎专栏](https://zhuanlan.zhihu.com/p/49482294)
 * [Unity 网络同步：如何实现确定性的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/49483191)
 * [Unity 网络同步：服务器将状态同步给客户端（状态缓存，状态插值，估算帧）- 知乎专栏](https://zhuanlan.zhihu.com/p/49483467)
@@ -813,10 +810,37 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 * [It IS Rocket Science! The Physics of Rocket League Detailed - GDC 2018](https://www.youtube.com/watch?v=ueEmiDM94IE)
 * [Bullet Physics For Unity - Unity Asset Store](https://assetstore.unity.com/packages/tools/physics/bullet-physics-for-unity-62991)
 
+* [弱网络下手游的网络同步（二）- 知乎专栏](https://zhuanlan.zhihu.com/p/43840865)
+
+# 守望先锋 Overwatch ECS 架构与网络同步实现
+
+* [《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
+* [《守望先锋》中的网络脚本化的武器和技能系统 - GAD](http://gad.qq.com/article/detail/28219)
+* [Networking Scripted Weapons and Abilities in Overwatch - GDC Vault](https://www.gdcvault.com/play/1024653/Networking-Scripted-Weapons-and-Abilities)
+* [浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
+* [GDC 2017 技术选荐合辑 - 知乎专栏](https://zhuanlan.zhihu.com/p/25703934)
+
+* [守望先锋等 FPS 游戏的网络同步 - 知乎专栏](https://zhuanlan.zhihu.com/p/28825322)
+* [A guide to understanding netcode - GAMEREPLAYS.ORG](https://www.gamereplays.org/overwatch/portals.php?show=page&name=overwatch-a-guide-to-understanding-netcode)
+
+* Latency：Latency 指的是数据包从客户端发送到服务端再收到服务端回包所用的时间，通常被称为 RTT。
+* Hit Box：角色的 3D 模型代表了哪些区域是参与到「命中」计算的。
+* Tick Rate：指的是游戏服务端更新游戏状态的频率。
+* Client Update Rate：客户端接收服务端更新到频率。
+* Framerate：客户端每秒最多可以渲染多少帧，通常称为 FPS。
+* Refresh Rate：显示设备每秒钟刷新多少次。
+* Interpolation：内插值。
+* Extrapolation：外插值。
+* Lag Compensation：延迟补偿是服务端减小客户端延迟影响到一种方法。
+
 # UE4 网络同步方案
 
 * [UE4 网络同步思考：经典同步方案 - 知乎专栏](https://zhuanlan.zhihu.com/p/56548096)
 * [UE4 网络同步思考：大世界同步方案 ReplicationGraph - 知乎专栏](https://zhuanlan.zhihu.com/p/56922476)
+
+# 帧同步反外挂
+
+* [帧同步（LockStep）该如何反外挂 - 知乎专栏](https://zhuanlan.zhihu.com/p/34014063)
 
 ---
 
@@ -826,6 +850,7 @@ change log:
 	- 更新（2017-12-29）
 	- 新增 Mirror、MLAPI、SuperSocket 相关内容（2019-05-13）
 	- 新增 ET 框架（2019-05-20）
+	- 新增近期网络同步技术文章（2019-08-13）
 
 ---
 
