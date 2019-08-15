@@ -247,11 +247,13 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 
 # 帧同步
 
-[lockstep 网络游戏同步方案 - 云风的 BLOG](https://blog.codingnow.com/2018/08/lockstep.html)
+* [lockstep 网络游戏同步方案 - 云风的 BLOG](https://blog.codingnow.com/2018/08/lockstep.html)
+* [放置类游戏的网络同步 - 云风的 BLOG](https://blog.codingnow.com/2016/10/synchronization.html)
+* [继续谈网络游戏的同步问题 - 云风的 BLOG](https://blog.codingnow.com/2016/10/gamesync.html)
 
 -------
 
-[游戏中的网络同步机制—— Lockstep](https://bindog.github.io/blog/2015/03/10/synchronization-in-multiplayer-networked-game-lockstep/)
+* [游戏中的网络同步机制—— Lockstep](https://bindog.github.io/blog/2015/03/10/synchronization-in-multiplayer-networked-game-lockstep/)
 
 Warcraft III中的主机的主要功能是广播并设置timeout，也就是说在每个turn内，游戏玩家并非直接将自己的操作指令广播给其他玩家，而是先发送给主机，由主机负责广播，且每个turn都有timeout，如果超过了timeout仍然没有收到某个掉线玩家的操作指令，则忽略该玩家在该turn的行为，即认定他什么都没有做，并与其他延迟正常的玩家同步进入下一个turn。而当掉线玩家网络恢复时，主机会将之前保存的turn中操作指令集合发送给该名玩家，而该名玩家为了赶上进度，就会出现游戏快放的情况。
 
@@ -259,7 +261,7 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 -------
 
-[帧同步的一点人参经验](http://jjyy.guru/about-lockstep)
+* [帧同步的一点人参经验](http://jjyy.guru/about-lockstep)
 
 * 客户端与服务器约定一个频率更新步进，比如66ms。
 * 每个步进周期，服务器都会收集每个玩家的输入动作，组装成步进帧。
@@ -275,7 +277,7 @@ Warcraft III中的主机的主要功能是广播并设置timeout，也就是说�
 
 -------
 
-[从王者荣耀聊聊游戏的帧同步](https://my.oschina.net/u/1859679/blog/1137723)
+* [从王者荣耀聊聊游戏的帧同步](https://my.oschina.net/u/1859679/blog/1137723)
 
 * 服务器架构
 
@@ -695,7 +697,16 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # Lockstep Framework
 
+* [UnityLockstep - GitHub](https://github.com/proepkes/UnityLockstep)
+
+![](media/15658750390952.jpg)
+
+-------
+
 * [UnityLockStepDemo - GitHub](https://github.com/GaoKaiHaHa/UnityLockStepDemo)
+
+-------
+
 * [LockstepFramework - GitHub](https://github.com/SnpM/LockstepFramework)
 * [The Lockstep Framework - Unity Forums](https://forum.unity.com/threads/the-lockstep-framework.318829/)
 * [DPhysics Beta - Cross-platform Deterministic Physics engine - Unity Forums](https://forum.unity.com/threads/dphysics-beta-cross-platform-deterministic-physics-engine.318827/)
@@ -711,6 +722,28 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 * Customizable database system
 * Support for DakrRift and Photon Networking (Forge Networking support deprecated but let me know if you need it)
 * 3D Raycasting
+
+-------
+
+* [LockStepSimpleFramework-Client - GitHub](https://github.com/CraneInForest/LockStepSimpleFramework-Client)
+* [LockStepSimpleFramework-Shared - GitHub](https://github.com/CraneInForest/LockStepSimpleFramework-Shared)
+
+-------
+
+* [LockstepPlatform - GitHub](https://github.com/JiepengTan/LockstepPlatform)
+
+-------
+
+* [realtime-server(UE4) - GitHub](https://github.com/no5ix/realtime-server)
+
+-------
+
+* [Frame - GitHub](https://github.com/Enanyy/Frame)
+
+-------
+
+* [DeterministicLockstepNetworking - GitHub](https://github.com/wuyuntao/DeterministicLockstepNetworking)
+
 
 # Photon TrueSync
 
@@ -757,14 +790,10 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # uLink
 
-[uLink](http://developer.muchdifferent.com/unitypark/uLink/uLink)
+* [uLink](http://developer.muchdifferent.com/unitypark/uLink/uLink)
 
-[Experience with Unity Networking, Photon, and uLink for My Giants](https://forum.unity.com/threads/experience-with-unity-networking-photon-and-ulink-unitypark-suite-for-my-giants.113321/)
-[Multiplayer Networking Solutions Review: Photon, uLink, DarkRift, Forge, and PlayFab](https://forum.unity.com/threads/multiplayer-networking-solutions-review-photon-ulink-darkrift-forge-and-playfab.294852/)
-
-# UnityLockStepDemo
-
-* [UnityLockStepDemo - GitHub](https://github.com/GaoKaiHaHa/UnityLockStepDemo)
+* [Experience with Unity Networking, Photon, and uLink for My Giants](https://forum.unity.com/threads/experience-with-unity-networking-photon-and-ulink-unitypark-suite-for-my-giants.113321/)
+* [Multiplayer Networking Solutions Review: Photon, uLink, DarkRift, Forge, and PlayFab](https://forum.unity.com/threads/multiplayer-networking-solutions-review-photon-ulink-darkrift-forge-and-playfab.294852/)
 
 # Network Game Programming
 
