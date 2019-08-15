@@ -164,7 +164,7 @@ AI 逻辑、技能逻辑、战斗结算均由服务器运算，然后将结果�
 ## 参考
 
 * [《守望先锋》技术分享视频：如何处理网络同步与减少网络延迟](https://mp.weixin.qq.com/s?__biz=MjM5NTMxNTU0MQ==&mid=2649869814&idx=1&sn=c8da90fbfe553d9a434288d81f972a87&scene=23&srcid=0705RqymcYwrHp2g1gNBoyYx%23rd)
-* [Unite 2017《王者荣耀》技术分享 - 知乎](https://zhuanlan.zhihu.com/p/26887204)
+* [《王者荣耀》技术总监复盘回炉历程 - GAD](https://gameinstitute.qq.com/community/detail/115782)
 * [Unite 2017 MOBA 游戏的网络同步技术分享](http://bbs.gameres.com/forum.php?mod=viewthread&tid=750888)
 * [《乱斗西游》开发经验分享](http://www.sohu.com/a/20405348_204728)
 * [关于帧同步和网游游戏开发的一些心得](https://www.kisence.com/2017/11/12/guan-yu-zheng-tong-bu-de-xie-xin-de)
@@ -788,6 +788,15 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 # ET
 
 * [ET - GitHub](https://github.com/egametang/ET)
+
+# DarkRift Networking 2
+
+* [DarkRift Networking](https://darkriftnetworking.com/)
+* [DarkRift Networking 2 - Unity Asset Store](https://assetstore.unity.com/packages/tools/network/darkrift-networking-2-95309)
+
+# Forge Networking
+
+* [Forge Networking Remastered - Unity Asset Store](https://assetstore.unity.com/packages/tools/network/forge-networking-remastered-38344)
 
 # 网络游戏同步技术
 
