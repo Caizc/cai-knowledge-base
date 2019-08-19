@@ -1,5 +1,15 @@
 # Game Development Blackboard
 
+## 2019-08-17 星期六
+
+### proto3 与 proto2 的区别
+
+* [Protocol Buffer 的 proto3 与 proto2 的区别 - CSDN](https://blog.csdn.net/huanggang982/article/details/77944174)
+
+### .NET 4.x
+
+* [Using .NET 4.x in Unity - Visual Studio Docs](https://docs.microsoft.com/en-us/visualstudio/cross-platform/unity-scripting-upgrade?view=vs-2019)
+
 ## 2019-08-12 星期一
 
 ### Unity Gameplay 工具集
