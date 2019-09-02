@@ -5,6 +5,19 @@
 * [Protocol Buffers 在游戏中的应用](http://disksing.com/pb-on-gamedev)
 * [从Protocol Buffers 到 gRPC](http://www.jianshu.com/p/6c9f90538efe)
 
+## Protocol Buffers 语法
+
+* [Language Guide(proto2) - Google Developers](https://developers.google.com/protocol-buffers/docs/proto?hl=zh-cn)
+* [Language Guide(proto3) - Google Developers](https://developers.google.com/protocol-buffers/docs/proto3?hl=zh-cn)
+* [Protobuf2 语法指南 - 鸟窝](https://colobu.com/2015/01/07/Protobuf-language-guide/)
+* [Protobuf3 语法指南 - 鸟窝](https://colobu.com/2017/03/16/Protobuf3-language-guide/)
+* [Protocol Buffers 3 学习笔记 - gitbook](https://skyao.io/learning-proto3/)
+
+## protobuf-net
+
+* [protobuf-net - GitHub](https://protobuf-net.github.io/protobuf-net/version)
+* [What version of ProtoBuf does protobuf-net use? - GitHub](https://protobuf-net.github.io/protobuf-net/version)
+
 ## C# 整合 Protocol Buffers 3
 
 * [简单使用Protobuf-net（NuGet方式）](http://blog.csdn.net/u012741077/article/details/51213100)
@@ -40,6 +53,17 @@ protoc --descriptor_set_out test.pb message.proto
 ## 延伸阅读
 
 * [Unity3D —— Socket通信(C#)](http://blog.csdn.net/linshuhe1/article/details/51386559)
+
+## Protobuf 应用
+
+* [我的 Protonbuf 消息设计原则 - OSCHINA](https://my.oschina.net/cxh3905/blog/159122?p=1)
+* [我的 Protobuf 消息设计原则（续）- OSCHINA](https://my.oschina.net/cxh3905/blog/293000?p=1)
+* [一种自动反射消息类型的 Google Protobuf 网络传输方案 - 陈硕的 Blog](https://www.cnblogs.com/Solstice/archive/2011/04/03/2004458.html)
+
+## proto3 与 proto2 的区别
+
+* [Protocol Buffer 的 proto3 与 proto2 的区别 - CSDN](https://blog.csdn.net/huanggang982/article/details/77944174)
+* [proto3 默认值与可选项 - Tech For Fun](http://kaelzhang81.github.io/2017/05/15/proto3%E9%BB%98%E8%AE%A4%E5%80%BC%E4%B8%8E%E5%8F%AF%E9%80%89%E9%A1%B9/)
 
 ---
 

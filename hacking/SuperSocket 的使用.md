@@ -7,7 +7,7 @@
 * [SuperSocket.ClientEngine - GitHub](https://github.com/kerryjiang/SuperSocket.ClientEngine)
 * [SuperSocket.ProtoBase - GitHub](https://github.com/kerryjiang/SuperSocket.ProtoBase)
 
-## SuperSocket 集成 Protocol Buffer
+## SuperSocket 集成 Protobuf 2
 
 ### 参考
 
@@ -61,6 +61,8 @@ message DefeatMessage{
 protoc --descriptor_set_out=DefeatMessage.protobin --proto_path=./ --include_imports DefeatMessage.proto
 
 protogen DefeatMessage.protobin
+
+protoc --descriptor_set_out=./output/SCHello.protobin --proto_path=./output --include_imports ./output/SCHello.proto
 ```
 
 * 将生成的 `BackMessage.cs`、`CallMessage.cs` 和 `DefeatMessage.cs` 添加到项目中
@@ -85,11 +87,17 @@ protogen DefeatMessage.protobin
 6. 实现 Client 启动入口类
 7. 分别启动 ProtobufServer 和 ProtobufClient，测试前后端通信是否成功
 
+## SuperSocket 集成 Protobuf 3
+
+* 与集成 Protobuf 2 唯一不同的步骤是，从 NuGet 添加到 protobuf 依赖包时，搜索词是 `Google.Protobuf`，并确保其版本是 `v3.x.x`
+* 另外，命名空间和部分 API 也有所改动，程序代码需作相应调整
+
 ---
 
 change log: 
 
 	- 创建（2019-08-18）
+	- 更新（2019-09-02）
 
 ---
 

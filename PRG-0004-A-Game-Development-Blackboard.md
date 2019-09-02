@@ -1,10 +1,49 @@
 # Game Development Blackboard
 
+## 2019-08-28 星期三
+
+### C# 与 Lua 数据共享
+
+* [C# 与 Lua 如何超高性能传递数据 - 李嘉的博客](https://www.cnblogs.com/lijiajia/p/11219964.html?tdsourcetag=s_pcqq_aiomsg)
+
+### Sublime Text 的 Protobuf 语法高亮插件
+
+* [sublime-protobuf-syntax - GitHub](https://github.com/vihangm/sublime-protobuf-syntax)
+
+使用方法：
+
+* `Preferences -> Browse Packages...`
+* 打开 `C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages` 目录，将下载好的插件文件放置在 Protobuf 目录下
+* 重启 Sublime Text 3
+* 打开 `.proto` 文件，选择 `Protocol Buffer` 格式，即可看到语法已高亮显示
+
+### 英文缩写查询网站
+
+* [ABBREVIATIONS](https://www.abbreviations.com/)
+
+使用方法：
+
+* 点选 `Term >> Abbreviation`
+* 在搜索框输入要查询的英文单词，点击 `SEARCH`
+
+## 2019-08-24 星期六
+
+### EmmyLua 插件
+
+* [EmmyLua for IntelliJ IDEA - EmmyLua Docs](https://emmylua.github.io/zh_CN/)
+* [IntelliJ-EmmyLua - GitHub](https://github.com/EmmyLua/IntelliJ-EmmyLua)
+* [最好的 lua 编辑器 EmmyLua - cnblogs](https://www.cnblogs.com/sanyejun/p/9673198.html)
+
+### TSV 使用
+
+* [Excel 如何进行 SVN 协作、差异比较？- 简书](https://www.jianshu.com/p/2ea5468e9d5b)
+* [使用 TSV 文件，代替 Excel 表格编辑 - KSFramework Documentation](https://mr-kelly.github.io/KSFramework/setting/tsv-instead-excel/)
+
+### Unreal 4 Engine Docs
+
+* [虚幻引擎 4 文档 - Unreal Engine](https://docs.unrealengine.com/zh-CN/index.html)
+
 ## 2019-08-17 星期六
-
-### proto3 与 proto2 的区别
-
-* [Protocol Buffer 的 proto3 与 proto2 的区别 - CSDN](https://blog.csdn.net/huanggang982/article/details/77944174)
 
 ### .NET 4.x
 
