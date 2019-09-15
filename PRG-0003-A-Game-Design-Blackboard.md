@@ -1,5 +1,11 @@
 # Game Design Blackboard
 
+## 2019-09-11 星期三
+
+### 开放世界
+
+* [当我们说开放世界的时候，我们到底是在说些什么？- IndieNova](https://indienova.com/indie-game-development/what-we-talking-about-open-world-when-talking-about-it/)
+
 ## 2019-08-01 星期四
 
 ### 技能系统设计

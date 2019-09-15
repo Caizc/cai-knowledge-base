@@ -1,7 +1,88 @@
 # Game Development Blackboard
 
-## 2019-08-28 星期三
+## 2019-09-11 星期三
 
+### XML 格式设计
+
+* [如何设计 XML 格式 - IBM Developer](https://www.ibm.com/developerworks/cn/xml/x-tipflaw.html)
+* [XML 设计：选择元素还是属性 - cnblogs](https://www.cnblogs.com/silentcross/archive/2011/06/26/2090587.html)
+
+## 2019-09-09 星期一
+
+### FairyGUI
+
+* [FairyGUI](http://www.fairygui.com/)
+* [FairyGUI 的使用技巧和优化建议 - 知乎专栏](https://zhuanlan.zhihu.com/p/50556095)
+* [FairyGUI 与 NGUI 使用对比 - 腾讯游戏学院](https://gameinstitute.qq.com/community/detail/127906)
+* [FairyGUI 使用经验分享 - UWA](https://blog.uwa4d.com/archives/TechSharing_134.html)
+
+### PureMVC
+
+* [The PureMVC Framework](http://puremvc.org/)
+* [Implementation Idioms and Best Practices](http://puremvc.org/docs/PureMVC_IIBP_Chinese.pdf)
+* [PureMVC CSharp Multicore Framework - GitHub](https://github.com/PureMVC/puremvc-csharp-multicore-framework/wiki)
+* [实战 PureMVC - IBM developerWorks](https://www.ibm.com/developerworks/cn/java/j-lo-puremvc/index.html)
+* [PureMVC 一款多平台 MVC 框架 - 简书](http://www.jianshu.com/p/47deaced9eb3)
+
+![](media/15680428556278.jpg)
+
+![](media/15680428831519.jpg)
+
+在 PureMVC 实现的经典 MVC 元设计模式中，Model、View 和 Controller 分别由一个单例类来管理，合称为核心层或核心角色。另外，在 PureMVC 中还提供了一个单例类——Fasade，主要作用是作为与核心层通信的唯一接口，简化开发复杂度。
+
+除了这几个主要对象以外，框架中还有 Proxy、Mediator 和 Command，它们的作用是：
+
+* Proxy 对象负责操作数据模型，与远程服务通信存取数据，这样可以保证 Model 层的可移植性。通常 Proxy 对象的引用保存在 Model 中。
+* View 保存对 Mediator 对象的引用。由 Mediator 对象来操作具体的视图组件（View Component），它的作用还包括：添加事件监听器，发送或接收 Notification，直接改变视图组件的状态。通过这样，就可以把视图和控制它的逻辑分离开来。
+* Command 对象是无状态的，只在需要时才被创建。Command 可以获取 Proxy 对象并与之交互，发送 Notification，执行其他的 Command。经常用于复杂的或系统范围的操作，如应用程序的「启动」与「关闭」。应用程序的业务逻辑应该在这里实现。
+
+除了基本的对象结构以外，为了解耦合，PureMVC 框架中引入了事件机制，这是个非常简单的观察者设计模式，所有的事件都是一个 Notification，不同对象之间通过 Notification 来同步操作和交换信息。例如如果想更新界面中某个 Mediator，首先我们定义 Notification 用于此目的，然后注册 Mediator 监听该 Notification，然后就可以在程序中任何地方生成一个 Notification，通过事件机制，Mediator 就会接收到 Notification，然后更新需要的部分。整个过程 Mediator 只和 Notification 有关，没有其他依赖，有效地降低了对象之间的依赖程度。
+
+### 抽象物品和本地化
+
+* [抽象物品 - 硬盘在歌唱](http://disksing.com/abstract-item)
+
+> 抽象物品用于指代游戏系统中任意可以附加于玩家的东西，比如金币、宝石、经验、道具、英雄、宠物、装备、积分、体力等等，都可以用通用抽象物品接口来替代。
+> 为什么做抽象？
+> * 解耦各个模块
+> * 配表更灵活
+> * 方便交换数据
+
+* [游戏国际化的一些建议 - 硬盘在歌唱](http://disksing.com/game-i18n)
+
+> * 不要为每个语言版本建立单独分支
+> * 尽量不要针对不同地区写特殊代码
+> * 源代码中不能出现汉字或直接用于显示的字符串
+> * 服务器代码或配置中不能出现汉字或直接用于显示的字符串
+> * 尽量不要使用带文字的图片
+> * 设计结构化的字典配置，减少冗余
+> * 不用使用 %d、%s 等标识文本中的变量
+> * 注意多义词
+> * 留意 UI 中文字的长度问题
+
+### 从零开始制作 SLG 游戏
+
+* [从零开始 SLG：概览 - 知乎专栏](https://zhuanlan.zhihu.com/p/75653494)
+* [从零开始 SLG：客户端技术选型 - 知乎专栏](https://zhuanlan.zhihu.com/p/76229685)
+* [从零开始 SLG：Unity 目录分布（Asset 权限规划）- 知乎专栏](https://zhuanlan.zhihu.com/p/77058380)
+
+## 2019-09-03 星期二
+
+### 手动开启/关闭 GC
+
+* [GarbageCollector.GCMode - Unity Documentation](https://docs.unity3d.com/2018.3/Documentation/ScriptReference/Scripting.GarbageCollector.GCMode.html?tdsourcetag=s_pcqq_aiomsg)
+
+### ILRuntime
+
+* [ILRuntime wiki](https://ourpalm.github.io/ILRuntime/public/v1/guide/index.html)
+* [ILRuntime 实现热更新的优劣 - UWA](https://blog.uwa4d.com/archives/2308.html)
+
+> 1. 基本限制> 热更部分的代码都不继承MonoBehaviour，也就是都不挂脚本，非热更部分随意：热更对MonoBehaviour这种比较特殊东西的支持都挺麻烦，要么不用，要么只是做个不可热更的消息转发层；要么开发时挂脚本，打包时用某种特殊的方式把它变成代码里动态AddComponent。> 2. Android> 不用任何第三方的热更方案，用C#反射执行DLL，性能和代码写法和纯C#基本一样。Google Pay强制要求在2019年8月之前App都支持64位，Unity的应对方案是Android IL2cpp，暂时没有支持mono backend 64位的打算。所以到时候只能是IL2CPP + ILRuntime的方式，性能会差一大截，主要慢在ILRuntime上。> 3. iOS> ILRuntime + DLL 解释执行，当然是在IL2CPP下。> 4. 优点> 语言(C#)\开发环境\工具链统一，随时可以变成不支持热更形式，如果苹果未来不允许任何解释执行的方式。> 框架搭好后，满足一些限制条件(非硬性限制，主要是避免麻烦，限制主要是1个，可热更部分的代码不要继承不可热更的代码, 不继承MonoBehaviour是这个限制的子集)，写逻辑的同学开发方式和原生C#开发完全一样，包括调试。> 第三方插件直接可用（大部分插件都是基于C#写的）.> 5. 缺点> 稳定性的坑还是有一些：通常发生于一些相对高级的语言特性组合，特别是各种反射代码。另外.net4.6的async\wait所支持的现在版本应该也还不够稳定，纯计算的性能弱于Lua，计算密集型的代码还是想办法放在不可热更新的部分吧。> 历史短，Git贡献者少，项目考验少（据我的了解，上线的商业项目在x - 1x之间，具体的项目有MMO，SLG，休闲，也有棋牌），原理上大的优化空间没有，小的优化空间还是有一些；另外整合了各种常用Feature的框架也少 。
+
+[基于 ILRuntime 的完整 C# 热更方案](http://www.sohu.com/a/279598611_667928)
+
+## 2019-08-28 星期三
+
 ### C# 与 Lua 数据共享
 
 * [C# 与 Lua 如何超高性能传递数据 - 李嘉的博客](https://www.cnblogs.com/lijiajia/p/11219964.html?tdsourcetag=s_pcqq_aiomsg)
