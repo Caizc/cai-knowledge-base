@@ -1,5 +1,43 @@
 # Game Development Blackboard
 
+## 2019-09-26 星期四
+
+### C# List 自定义排序
+
+* [C# List 自定义排序 - CSDN](https://blog.csdn.net/yzf279533105/article/details/80579727)
+
+```csharp
+list.Sort(
+    delegate(Node n1, Node n2)
+    {
+        return n1.ID.CompareTo(n2.ID);
+    }
+);
+```
+
+### Unity 富文本 log
+
+```csharp
+Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
+```
+
+* [RGB 颜色对照表 - 在线工具](https://tool.oschina.net/commons?type=3)
+* [HTML 颜色值 - 菜鸟教程](https://www.runoob.com/html/html-colorvalues.html)
+
+## 2019-09-23 星期一
+
+### Unity 2017 Game Optimization
+
+### Unity Tips
+
+* [DEVDOG](https://devdog.io/blog/)
+
+### PlayerPrefs location
+
+* [PlayerPrefs - Unity Documentation](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html)
+
+> On macOS PlayerPrefs are stored in ~/Library/Preferences folder, in a file named unity.[company name].[product name].plist, where company and product names are the names set up in Project Settings. The same .plist file is used for both Projects run in the Editor and standalone players.> On Windows, PlayerPrefs are stored in the registry under HKCU\Software\[company name]\[product name] key, where company and product names are the names set up in Project Settings.> On Linux, PlayerPrefs can be found in ~/.config/unity3d/[CompanyName]/[ProductName] again using the company and product names specified in the Project Settings.> On Windows Store Apps, Player Prefs can be found in %userprofile%\AppData\Local\Packages\[ProductPackageId]>\LocalState\playerprefs.dat> On Windows Phone 8, Player Prefs can be found in application's local folder, See Also: Directory.localFolder> On Android data is stored (persisted) on the device. The data is saved in SharedPreferences. C#/JavaScript, Android Java and Native code can all access the PlayerPrefs data. The PlayerPrefs data is physically stored in /data/data/pkg-name/shared_prefs/pkg-name.xml.> On WebGL, PlayerPrefs are stored using the browser's IndexedDB API.> On iOS, PlayerPrefs are stored in /Library/Preferences/[bundle identifier].plist.
+
 ## 2019-09-11 星期三
 
 ### XML 格式设计
@@ -44,6 +82,7 @@
 
 > 抽象物品用于指代游戏系统中任意可以附加于玩家的东西，比如金币、宝石、经验、道具、英雄、宠物、装备、积分、体力等等，都可以用通用抽象物品接口来替代。
 > 为什么做抽象？
+> 
 > * 解耦各个模块
 > * 配表更灵活
 > * 方便交换数据
