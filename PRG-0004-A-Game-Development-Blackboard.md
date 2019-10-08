@@ -1,5 +1,24 @@
 # Game Development Blackboard
 
+## 2019-10-08 星期二
+
+### Unity I18N
+
+* [Unity I18N 小探 - 知乎](https://zhuanlan.zhihu.com/p/81159633)
+* [I2 Localization - Unity Asset Store](https://assetstore.unity.com/packages/tools/localization/i2-localization-14884)
+
+* [游戏国际化的一些建议 - 硬盘在歌唱](http://disksing.com/game-i18n)
+
+> * 不要为每个语言版本建立单独分支
+> * 尽量不要针对不同地区写特殊代码
+> * 源代码中不能出现汉字或直接用于显示的字符串
+> * 服务器代码或配置中不能出现汉字或直接用于显示的字符串
+> * 尽量不要使用带文字的图片
+> * 设计结构化的字典配置，减少冗余
+> * 不用使用 %d、%s 等标识文本中的变量
+> * 注意多义词
+> * 留意 UI 中文字的长度问题
+
 ## 2019-09-26 星期四
 
 ### C# List 自定义排序
@@ -76,7 +95,7 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 
 除了基本的对象结构以外，为了解耦合，PureMVC 框架中引入了事件机制，这是个非常简单的观察者设计模式，所有的事件都是一个 Notification，不同对象之间通过 Notification 来同步操作和交换信息。例如如果想更新界面中某个 Mediator，首先我们定义 Notification 用于此目的，然后注册 Mediator 监听该 Notification，然后就可以在程序中任何地方生成一个 Notification，通过事件机制，Mediator 就会接收到 Notification，然后更新需要的部分。整个过程 Mediator 只和 Notification 有关，没有其他依赖，有效地降低了对象之间的依赖程度。
 
-### 抽象物品和本地化
+### 抽象物品
 
 * [抽象物品 - 硬盘在歌唱](http://disksing.com/abstract-item)
 
@@ -86,18 +105,6 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 > * 解耦各个模块
 > * 配表更灵活
 > * 方便交换数据
-
-* [游戏国际化的一些建议 - 硬盘在歌唱](http://disksing.com/game-i18n)
-
-> * 不要为每个语言版本建立单独分支
-> * 尽量不要针对不同地区写特殊代码
-> * 源代码中不能出现汉字或直接用于显示的字符串
-> * 服务器代码或配置中不能出现汉字或直接用于显示的字符串
-> * 尽量不要使用带文字的图片
-> * 设计结构化的字典配置，减少冗余
-> * 不用使用 %d、%s 等标识文本中的变量
-> * 注意多义词
-> * 留意 UI 中文字的长度问题
 
 ### 从零开始制作 SLG 游戏
 
