@@ -185,13 +185,21 @@ Unity 游戏在运行时的内存占用情况：
 
 * [Unity 快速开发和协作的模式 - 知乎专栏](https://zhuanlan.zhihu.com/p/65912649)
 
----
+# 待阅读
 
+* [Important] **Unity 2017 Game Optimization**
+* [内存优化（一）- 知乎专栏](https://zhuanlan.zhihu.com/p/65773438)
+* [性能优化（CPU 篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/39998137)
+* [性能优化（工具篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/39529241)
+
+---
+
 change log: 
 
 	- 创建（2017-12-19）
 	- 增加内存优化相关内容（2018-09-07）
 	- 增加性能工具相关内容（2019-05-13）
+	- 增加几篇待阅读的文章（2019-10-11）
 
 ---
 
