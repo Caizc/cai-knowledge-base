@@ -1,5 +1,26 @@
 # Game Development Blackboard
 
+## 2019-10-14 星期一
+
+### C# 命名规范
+
+* [Naming Guidelines - Capitalization Styles - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1/x2dbyw72%28v%3dvs.71%29)
+
+**Pascal case (帕斯卡命名法/大驼峰命名法) :**
+
+The first letter in the identifier and the first letter of each subsequent concatenated word are capitalized. You can use Pascal case for identifiers of three or more characters.
+For example: `BackColor`.
+
+**Camel case (驼峰命名法/小驼峰命名法) :**
+
+The first letter of an identifier is lowercase and the first letter of each subsequent concatenated word is capitalized.
+For example: `backColor`.
+ 
+**Uppercase**
+
+All letters in the identifier are capitalized. Use this convention only for identifiers that consist of two or fewer letters.
+For example: `System.IO` and `System.Web.UI`.
+
 ## 2019-10-10 星期四
 
 ### C# 委托与匿名函数
