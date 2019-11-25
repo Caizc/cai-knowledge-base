@@ -1,5 +1,37 @@
 # Game Development Blackboard - Part 2
 
+## 2019-11-25 星期一
+
+### 2D 背景图片循环滚动
+
+* 方案一：控制 `Renderer.material.mainTextureOffset`，实现纹理的滚动效果
+* 方案二：将无缝 Sprite 首尾相接，通过控制 GameObject 位置，实现滚动效果
+
+* [Unity 2D 背景滚动 - CSDN](https://blog.csdn.net/wuhaishengxxx/article/details/53033095)
+* [背景循环滚动 - 知乎专栏](https://zhuanlan.zhihu.com/p/53913978)
+
+## 2019-11-21 星期四
+
+### 2D 动画
+
+* [Unity 2D 动画系统教程 - bilibli](https://www.bilibili.com/video/av38214700?p=1)
+* [Introduction to 2D Animation - Unity Docs](https://docs.unity3d.com/Packages/com.unity.2d.animation@2.2/manual/index.html)
+* [PSD Importer - Unity Docs](https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@1.2/manual/index.html)
+* [2D Inverse Kinematics（IK）- Unity Docs](https://docs.unity3d.com/Packages/com.unity.2d.ik@1.2/manual/index.html)
+
+## 2019-11-14 星期四
+
+### Object Management
+
+* [Object Management - Catlike Coding](https://catlikecoding.com/unity/tutorials/object-management/)
+* [Multiple Scenes - Catlike Coding](https://catlikecoding.com/unity/tutorials/object-management/multiple-scenes/)
+
+### Unity City Builder Asset
+
+* [Mobile Touch Camera - Unity Asset Store](https://assetstore.unity.com/packages/tools/camera/mobile-touch-camera-43960)
+* [City Adventure](https://www.beffio.com/city-adventure)
+* [RPG Medieval Kingdom Kit](https://www.beffio.com/medieval-kingdom)
+
 ## 2019-10-21 星期一
 
 ### C# 预编译符号
