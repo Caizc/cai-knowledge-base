@@ -851,6 +851,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 # 守望先锋 Overwatch ECS 架构与网络同步实现
 
+* [Overwatch - Gameplay Architecture and Netcode - GDCVault](https://www.gdcvault.com/play/1024001/-Overwatch-Gameplay-Architecture-and)
 * [《守望先锋》架构设计与网络同步 - GAD](http://gad.qq.com/article/detail/28682)
 * [《守望先锋》中的网络脚本化的武器和技能系统 - GAD](http://gad.qq.com/article/detail/28219)
 * [Networking Scripted Weapons and Abilities in Overwatch - GDC Vault](https://www.gdcvault.com/play/1024653/Networking-Scripted-Weapons-and-Abilities)

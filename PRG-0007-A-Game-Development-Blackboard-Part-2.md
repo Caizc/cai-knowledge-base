@@ -1,5 +1,123 @@
 # Game Development Blackboard - Part 2
 
+## 2019-12-12 星期四
+
+### ECS
+
+![](media/15761253452577.jpg)
+
+![](media/15761253912907.jpg)
+
+![](media/15761257357160.jpg)
+
+![](media/15761256109411.jpg)
+
+![](media/15761257484830.jpg)
+
+![](media/15761259592638.jpg)
+
+![](media/Screen%20Shot%202019-12-12%20at%2001.04.09.png)
+
+![](media/15761263118685.jpg)
+
+![](media/15761273293224.jpg)
+
+![](media/15761279211616.jpg)
+
+* World System
+* Tuple 组件元组，可以调用 Sibling() 函数获取同一个元组内的组件；Tuple 使用 struct 结构体来定义
+* EntityAdmin 是一个 World（System），会调用所有 System 的 Update()
+* 每个 System 都会执行一些工作；不在固定的 Tuple 元组组件集合上执行操作，而是选择了一些基础组件来遍历，然后再由相应的行为去调用其他兄弟组件
+* 不同的 System 作为不同的观察者，可以从不同角度/方式去处理同一个 Component；根据主体视角区分所有 Behaviour，这样来描述一个 Game Object 游戏对象的全部行为会更容易
+* Singleton Component 单例组件，单一的匿名实体，可以通过 EntityAdmin 直接访问；单例组件的使用十分普遍
+* Utility 是定义共享行为的 System；如果你想在多处调用一个 Utility 函数，那么这个函数应该依赖很少的组件，而且不应该带副作用或很少副作用；如果一个 Utility 函数依赖很多组件，那就试着限制调用点的数量
+* 好的单例组件可以通过「推迟」（Deferment）来解决系统间耦合的问题。存储行为所需的状态，然后把副作用延后到当前帧里更好的时机再执行
+* Entity 如果拥有行为所需的 Tuple 组件元组，它就会是这个行为的主体
+* 通过 Tuple 元组可以知道什么 System 可以访问什么状态
+* 定义 Tuple 元组时，可以把组件标记上「只读」属性，这意味着，即使有多个 System 都操作该组件，但都是只读的，可以并行处理
+* ECS 的使用准则：
+
+    - Component 没有函数
+    - System 没有状态
+    - 共享代码要放在 Utility 中
+    - Component 中复杂的副作用要通过队列的方式推迟处理，尤其是 Singleton Component
+    - System 不能调用其他 System
+
+* 仍然有大量代码不符合这个规范，它们是复杂度和维护工作的主要来源
+
+### Overwatch 中的 ECS 架构
+
+* [浅谈《守望先锋》中的 ECS 架构 - 云风的 BLOG](https://blog.codingnow.com/2017/06/overwatch_ecs.html)
+
+> ECS 的 E ，也就是 Entity ，可以说就是传统引擎中的 Game Object 。但在这个系统下，它仅仅是 C/Component 的组合。**它的意义在于生命期管理**，这里是用 32bit ID 而不是指针来表示的，另外附着了渲染用到的资源 ID 。因为仅负责生命期管理，而不设计调用其上的方法，用整数 ID 更健壮。整数 ID 更容易指代一个无效的对象，而指针就很难做到。> C 和 S 是这个框架的核心。System 系统，也就是我上面提到的模块。对于游戏来说，每个模块应该专注于干好一件事，而每件事要么是作用于游戏世界里同类的一组对象的每单个个体的，要么是关心这类对象的某种特定的交互行为。比如碰撞系统，就只关心对象的体积和位置，不关心对象的名字，连接状态，音效、敌对关系等。它也不一定关心游戏世界中的所有对象，比如关心那些不参与碰撞的装饰物。**所以对每个子系统来说，筛选出系统关心的对象子集以及只给它展示它所关心的数据就是框架的责任了。**> 在 ECS 框架中，把每个可能单独使用的对象属性归纳为一个个 Component ，比如对象的名字就是一个 Component ，对象的位置状态是另一个 Component 。**每个 Entity 是由多个 Component 组合而成，共享一个生命期；而 Component 之间可以组合在一起作为 System 筛选的标准。**我们在开发的时候，可以定义一个 System 关心某一个固定 Component 的组合；那么**框架就会把游戏世界中满足有这个组合的 Entity 都筛选出来供这个 System 遍历**，如果一个 Entity 只具备这组 Component 中的一部分，就不会进入这个筛选集合，也就不被这个 System 所关心了。
+
+> 游戏的业务循环就是在调用很多不同的系统，每个系统自己遍历自己感兴趣的对象，只有预定义的组件部分可以被子系统感知到，这样每个系统就能具备很强的内聚性。注意、这和传统的面向对象或是 Actor 模型是截然不同的。OO 或 Actor 强调的是对象自身处理自身的业务，然后框架去管理对象的集合，负责用消息驱动它们。**而在 ECS 中，每个系统关注的是不同的对象集合，它处理的对象中有共性的切片。**
+
+> ECS 的设计就是为了管理复杂度，它提供的指导方案就是 Component 是纯数据组合，没有任何操作这个数据的方法；而 System 是纯方法组合，它自己没有内部状态。**它要么做成无副作用的纯函数，根据它所能见到的对象 Component 组合计算出某种结果；要么用来更新特定 Component 的状态。System 之间也不需要相互调用（减少耦合），是由游戏世界（外部框架）来驱动若干 System 的。**如果满足了这些前提条件，每个 System 都可以独立开发，它只需要遍历给框架提供给它的组件集合，做出正确的处理，更新组件状态就够了。编写 Gameplay 的人更像是在用胶水粘合这些 System ，他只要清楚每个 System 到底做了什么，操作本身对哪些 Component 造成了影响，正确的书写 System 的更新次序就可以了。一个 System 对大多数 Component 是只读的，只对少量 Component 是会改写的，这个可以预先定义清楚，有了这个知识，一是容易管理复杂度，二是给并行处理留下了优化空间。
+
+> 如果产生状态改变这种副作用的行为必须存在时，又在很多 System 中都会触发，那么为了减少调用的地方，就需要把真正产生副作用的点集中在一处了。这个技巧就是**推迟行为的发生时机。就是把行为发生时需要的状态保存起来，放在队列里，由一个单独的 System 在独立的环节集中处理它们。**
+
+### Entitas
+
+* [Entitas-CSharp - GitHub](https://github.com/sschmid/Entitas-CSharp)
+* [Entity System Architecture with Unity - Unite Europe 2015](https://www.slideshare.net/sschmid/uniteeurope-2015)
+* [ECS architecture with Unity by example - Unite Europe 2016](https://www.slideshare.net/sschmid/uniteeurope-2016)
+* [Clean, fast and simple with Entitas and Unity - Unite Melbourne 2016](https://www.slideshare.net/sschmid/unite-melbourne-2016-clean-fast-and-simple-with-entitas-and-unity)
+
+* [Tutorials - Entitas-CSharp](https://github.com/sschmid/Entitas-CSharp/wiki/Tutorials)
+* [FAQ - Entitas-CSharp](https://github.com/sschmid/Entitas-CSharp/wiki/FAQ)
+* [The Basics - Entitas-CSharp](https://github.com/sschmid/Entitas-CSharp/wiki/The-Basics)
+* [Attributes - Entitas-CSharp](https://github.com/sschmid/Entitas-CSharp/wiki/Attributes)
+
+* [Entitas-Shmup - GitHub](https://github.com/sschmid/Entitas-Shmup)
+
+### Use Entitas
+
+* [How I build games with Entitas? - GitHub](https://github.com/sschmid/Entitas-CSharp/wiki/How-I-build-games-with-Entitas-%28FNGGames%29)
+
+![](media/15762125313958.jpg)
+
+> **Data**: The game state. Data such as health, inventory, experience, enemy type, ai state, movement speed etc. In Entitas these data live in Components.
+> **Logic**: The rules for how the data can be transformed. PlaceInInventory(), BuildItem(), FireWeapon() etc. In Entitas these are Systems.
+> **View**: The code responsible for displaying the game state to the player, rendering, animation, audio, ui widget etc. In my examples these will be MonoBehaviours living on GameObjects.
+> **Services**: Outside sources and sinks for information e.g. Pathfinding, Leaderboards, Anti-Cheat, Social, Physics, even the game engine itself.
+> **Input**: Outside input to the simulation, usually via limited access to parts of the game logic e.g. controller / keyboard / mouse input, network input.
+
+* Abstraction：抽象
+* Interface：接口
+* Inversion of control：依赖倒置
+* View Layer Abstraction：视图层抽象
+* Event：事件
+
+## 2019-12-02 星期一
+
+### Building apps for Android
+
+* [Getting started with Android development - Unity Manual](https://docs.unity3d.com/2018.4/Documentation/Manual/android-GettingStarted.html)
+* [Android environment setup - Unity Manual](https://docs.unity3d.com/2018.4/Documentation/Manual/android-sdksetup.html)
+* [Troubleshooting Android development - Unity Manual](https://docs.unity3d.com/2018.4/Documentation/Manual/TroubleShootingAndroid.html)
+
+* **Unity Android 发布环境设置**
+
+    - 在 Unity Hub 为相应版本的 Unity 添加 Android Build Support 模块
+    - 下载并安装 [Android Studio](https://developer.android.com/studio)
+    - 在 Android Studio 中下载并安装 Android SDK Tools 26.1.1、Android SDK Platform-Tools、Android SDK Build-Tools、SDK Platform
+    - 在 Unity 编辑器菜单 Preferences -> External Tools 的 NDK 项，点击 Download 下载相应版本的 NDK（Unity 2018.4.12f1 对应的是 android-ndk-r16b）
+
+### Android 开发调试环境设置
+
+**adb 工具所在目录：**
+
+`sdk/platform-tools/adb.exe`
+
+**monitor 工具所在目录：**
+
+`sdk/tools/monitor.bat`
+
+### 自定义 Android 闪屏
+
+* [Customizing an Android Splash Screen - Unity Manual](https://docs.unity3d.com/2018.4/Documentation/Manual/AndroidMobileCustomizeSplashScreen.html)
+
 ## 2019-11-25 星期一
 
 ### 2D 背景图片循环滚动
