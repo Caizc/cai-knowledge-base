@@ -1,8 +1,30 @@
 # Game Development Blackboard - Part 2
 
+## 2019-12-17 星期二
+
+### QFramework
+
+* [QFramework - GitHub](https://github.com/liangxiegame/QFramework)
+* [（文档）Unity 游戏框架 QFramework - bookstack](https://www.bookstack.cn/read/QFramework/a8fcbd2d1437b011.md)
+
+### Noda Time
+
+* [Noda Time](https://nodatime.org/)
+
+### Unity UI 层级
+
+* [UGUI 中粒子特效与 UI 遮挡问题 - cnblog](https://www.cnblogs.com/answer-yj/p/10758578.html)
+
+### TeamCity
+
+* [TeamCity 介绍 - 知乎专栏](https://zhuanlan.zhihu.com/p/94565840)
+* [TeamCity 搭建 Unity CI 环境 - 知乎专栏](https://zhuanlan.zhihu.com/p/94638669)
+
 ## 2019-12-12 星期四
 
 ### ECS
+
+* [Overwatch - Gameplay Architecture and Netcode - GDCVault](https://www.gdcvault.com/play/1024001/-Overwatch-Gameplay-Architecture-and)
 
 ![](media/15761253452577.jpg)
 
@@ -71,7 +93,7 @@
 
 * [Entitas-Shmup - GitHub](https://github.com/sschmid/Entitas-Shmup)
 
-### Use Entitas
+### Using Entitas
 
 * [How I build games with Entitas? - GitHub](https://github.com/sschmid/Entitas-CSharp/wiki/How-I-build-games-with-Entitas-%28FNGGames%29)
 
@@ -88,6 +110,21 @@
 * Inversion of control：依赖倒置
 * View Layer Abstraction：视图层抽象
 * Event：事件
+
+### ECS 战斗实践
+
+* [ECS 战斗（一）ECS 设计思想 - 知乎专栏](https://zhuanlan.zhihu.com/p/78155704)
+* [ECS 战斗（二）Entitas 插件 - 知乎专栏](https://zhuanlan.zhihu.com/p/78783892)
+* [ECS 战斗（三）逻辑与表现分离 - 知乎专栏](https://zhuanlan.zhihu.com/p/79454315)
+* [ECS 战斗（四）实战 ECS 架构和优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/79926811)
+* [ECS 战斗（五）浅谈 CPU 缓存命中 - 知乎专栏](https://zhuanlan.zhihu.com/p/80435200)
+* [ECS 战斗（六）Unity 面向数据技术栈（DOTS） - 知乎专栏](https://zhuanlan.zhihu.com/p/81810132)
+
+![](media/15767393821353.jpg)
+
+![](media/15767393900648.jpg)
+
+![](media/15767394647914.jpg)
 
 ## 2019-12-02 星期一
 
