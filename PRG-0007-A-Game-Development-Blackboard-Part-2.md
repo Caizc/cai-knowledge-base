@@ -1,5 +1,89 @@
 # Game Development Blackboard - Part 2
 
+## 2020-01-08 星期三
+
+### HashSet
+
+* [How to use Comparer for a HashSet? - stack overflow](https://stackoverflow.com/questions/1023424/how-to-use-comparer-for-a-hashset)
+
+### 战争迷雾
+
+* [手机端战争迷雾的实现 - Unity Connect](https://connect.unity.com/p/yuan-chuang-shou-ji-duan-zhan-zheng-mi-wu-de-shi-xian)
+
+### Unity Orthographic Camera Size
+
+* [Understanding Orthographic Camera Size - Unity Answers](https://answers.unity.com/questions/923782/please-help-to-understand-orthographic-camera-size.html)
+* [Unity Camera.orthographicSize 的含义 - CSDN](https://blog.csdn.net/qq826364410/article/details/88385120)
+
+## 2020-01-06 星期一
+
+### 对象池
+
+* [Unity 工具类系列教程（对象池）- 知乎](https://zhuanlan.zhihu.com/p/30575559)
+* [一个广为人知但鲜有人用的技巧：对象池 - InfoQ](https://www.infoq.cn/article/2015/07/ClojureWerkz/)
+
+> 两种基本的对象池回收模式：“借用（borrowing）”和引用计数。前者更清晰，而后者则意味着要实现自动回收。
+> 
+> **分配触发**负责在池中对象不足时分配新资源。Alex 介绍了如下三种分配触发方式：
+> 
+> * 空池触发：任何时候，只要池空了，就分配对象。这是一种最简单的方式。
+> * 水位线：空池触发的缺点是，某次对象请求会因为执行对象分配而中断。为了避免这种情况，可以使用水位线触发。当从池中请求新对象时，检查池中可用对象的数量。如果可用对象小于某个阈值，就触发分配过程。> * Lease/Return 速度：大多数时候，水位线触发已经足够，但有时候可能会需要更高的精度。在这种情况下，可以使用 lease 和 return 速度。例如，如果池中有 100 个对象，每秒有 20 个对象被取走，但只有 10 个对象返回，那么 9 秒后池就空了。开发者可以使用这种信息，提前做好对象分配计划。
+> 
+> **增长策略**用于指定分配过程被触发后需要分配的对象的数量。Alex 也介绍了三种方式：>> * 固定大小：这是最简单的对象池实现方式。对象一次性预分配，对象池后续不再增长。这种实现适用于对象数量相对确定的情况，但池大小固定可能会导致资源饥饿。
+> * 小步增长：为了避免出现资源饥饿，可以允许对象池小步增长，比如一次额外分配一个对象。
+> * 块增长：如果无法接受分配导致的中断，就需要保证池中任何时候都有可用的对象。这时，就必须使用块增长。例如，每当水位线到达 25% 时，就将对象池增大 25%。不过，这种方式容易导致内存溢出。搭配 Lease/Return 速度分配触发策略，可以得出更准确的池大小。
+> 
+> 使用对象池就意味着开发者开始自己管理内存，所以需要注意以下问题：
+> 
+> * 引用泄露：对象在系统中某个地方注册了，但没有返回到池中。
+> * 过早回收：消费者已经决定将对象返还给对象池，但仍然持有它的引用，并试图执行写或读操作，这时会出现这种情况。
+> * 隐式回收：当使用引用计数时可能会出现这种情况。
+> * 大小错误：这种情况在使用字节缓冲区和数组时非常常见：对象应该有不同的大小，而且是以定制的方式构造，但返回对象池后却作为通用对象重用。
+> * 重复下单：这是引用泄露的一个变种，存在多路复用时特别容易发生：一个对象被分配到多个地方，但其中一个地方释放了该对象。
+> * 就地修改：对象不可变是最好的，但如果不具备那样做的条件，就可能在读取对象内容时遇到内容被修改的问题。
+> * 缩小对象池：当池中有大量的未使用对象时，要缩小对象池。
+> * 对象重新初始化：确保每次从池中取得的对象不含有上次使用时留下的脏字段。
+
+## 2020-01-04 星期六
+
+### Sprite 与 Image
+
+* [Unity 中 Sprite 与 UI Image 的区别 - CSDN](https://blog.csdn.net/coffeecato/article/details/78536488)
+
+1. 如果 Sprite 的数量不多，想用什么用什么。2. 使用 Profiler 和 Frame Debugger 来搞清楚发生的状况。3. 避免使用透明，尽量使用不透明的物体替代透明物体。4. 避免在屏幕上渲染尺寸较大的 Sprite，这会引起更多的 overdraw。你可以通过在 Scene View 中选择rendering mode 为 Overdraw 来查看 overdraw 的情况。这对于粒子特效很关键。5. 选择更复杂的几何体而不是更多的像素，尤其对于移动设备。可以通过选择 Scene View 中的 Shading Mode 为 shaded wireframe 来查看。6. 如果需要对界面进行较多的位置操作（比如 content fitter, vertical groups 等）选择 UI Image。7. 减少渲染区域的分辨率来查看性能有没有实质的提升，通过这种方法来判断是否达到了像素填充率的限制。
+
+* [Unity2D：Sprite 与 UI Image 的区别 - CSDN](https://blog.csdn.net/zhaoguanghui2012/article/details/54089355)
+
+游戏中每帧的渲染过程：对任何物体的渲染，我们需要先准备好相关数据（顶点、UV、贴图数据和 Shader 参数等等），然后调用 GPU 的渲染接口进行绘制，这个过程称作 Draw Call。GPU 接收到 Draw Call 指令后，通过一系列流程生成最终要显示的内容并进行渲染，其中大致的步骤包括：1. CPU 发送 Draw Call 指令给 GPU；
+2. GPU 读取必要的数据到自己的显存；
+3. GPU 通过顶点着色器（vertex shader）等步骤将输入的几何体信息转化为像素点数据；
+4. 每个像素都通过片段着色器（fragment shader）处理后写入帧缓存；
+5. 当全部计算完成后，GPU将帧缓存内容显示在屏幕上。通过上面的认知，我们可以推断：
+
+1. Sprite 由于顶点数据更加复杂，在第 1、2 步时会比 Image 效率更低；
+2. Sprite 会比 Image 执行较多的顶点着色器运算；
+3. Image 会比 Sprite 执行更多的片段着色器运算；结论：看起来似乎 Image 比 Sprite 有更大的好处，然而事实上，由于片段着色器是针对每个像素运算，Sprite 通过增加顶点而裁剪掉的部分减少了相当多的运算次数，在绝大多数情况下，反而比 Image 拥有更好的效率 —— 尤其是场景中有大量的2D精灵时。
+
+## 2019-12-31 星期二
+
+### JSON in Unity
+
+* [Serialize and Deserialize Json and Json Array in Unity - stack overflow](https://stackoverflow.com/questions/36239705/serialize-and-deserialize-json-and-json-array-in-unity)
+* [JsonUtility.FromJson - Unity Scripting API](https://docs.unity3d.com/ScriptReference/JsonUtility.FromJson.html)
+
+### Render Texture
+
+* [Unity 中渲染到 Render Texture 的原理 - CSDN](https://blog.csdn.net/leonwei/article/details/54972653)
+* [使用 Render Texture 为物体生成快照 - 博客园](https://www.cnblogs.com/jimm/p/5951362.html)
+* [Unity Render Texture 的应用 - 简书](https://www.jianshu.com/p/334770f39127)
+* [使用 Render Texture 制作小地图](https://godstamps.blogspot.com/2014/12/unity-render-texture.html)
+* [Unity 使用 Render Texture 做 UI 特效 - 程序园](http://www.voidcn.com/article/p-zrycnsap-ta.html)
+* [Unity 使用 Render Texture 实现 3D 立绘 - 程序园](http://www.voidcn.com/article/p-ykfovvqu-ta.html)
+
+### Optimizing Unity UI
+
+* [Optimizing Unity UI - Unity Learn](https://learn.unity.com/tutorial/optimizing-unity-ui)
+
 ## 2019-12-17 星期二
 
 ### QFramework
@@ -14,6 +98,20 @@
 ### Unity UI 层级
 
 * [UGUI 中粒子特效与 UI 遮挡问题 - cnblog](https://www.cnblogs.com/answer-yj/p/10758578.html)
+
+能够影响渲染顺序的因素有：* Camera Depth：相机组件上设置的相机深度，深度越大越靠后渲染
+* Sorting Layer：在 `Tags & Layers` 设置中可见
+* Order in Layer：相对于 Sorting Layer 的子排序，用这个值做比较时只有都在同一层时才有效
+* Render Queue：Shader 中对 Tags 设置的队列
+
+影响程度：
+
+* Camera Depth：永远最高；Camera Depth 小的一定先进渲染管线
+* 当 Sorting Layer 和 Order in Layer 相同时，Render Queue 小的先进渲染管线
+* 当 Sorting Layer 和 Order in Layer 不同时：
+
+    - 当两个材质使用了不同的 Render Queue，且这两个 Render Queue 都在 [0~2500] 或 [2501~5000] 时，Sorting Layer 和 Order in Layer 的排序生效；
+    - 当两个材质使用了不同的 Render Queue，且这两个 Render Queue 分别在 [0~2500] 或 [2501~5000] 时，则一定会按照 Render Queue 绘制，无视 Sorting Layer 和 Order in Layer 的排序。
 
 ### TeamCity
 
@@ -290,7 +388,6 @@ void Error1() {    var printList = new List<Action>();    for ( int i = 0; i <
 * [Unity 手游开发札记（从零开始搭建手游开发的工具集）- 知乎](https://zhuanlan.zhihu.com/p/24557713)
 * [Unity 工具类系列教程（配置化和规范教程）- 知乎](https://zhuanlan.zhihu.com/p/30042447)
 * [Unity 工具类系列教程（代码自动化生成）- 知乎](https://zhuanlan.zhihu.com/p/30716595)
-* [Unity 工具类系列教程（对象池）- 知乎](https://zhuanlan.zhihu.com/p/30575559)
 
 ### UGUI 使用
 
