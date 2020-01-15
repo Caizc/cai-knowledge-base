@@ -1,5 +1,15 @@
 # Game Development Blackboard - Part 2
 
+## 2020-01-14 星期二
+
+### 逻辑与渲染分离
+
+* [浅谈游戏开发中逻辑与渲染的分离 - CSDN](https://blog.csdn.net/NRatel/article/details/88825045)
+
+### Unity Script Template
+
+* [Script Template](https://tonytang1990.github.io/2018/04/01/Unity%E5%B0%8F%E7%9F%A5%E8%AF%86/)
+
 ## 2020-01-08 星期三
 
 ### HashSet
@@ -95,7 +105,7 @@
 
 * [Noda Time](https://nodatime.org/)
 
-### Unity UI 层级
+### Unity UI 层级与 UI 粒子特效
 
 * [UGUI 中粒子特效与 UI 遮挡问题 - cnblog](https://www.cnblogs.com/answer-yj/p/10758578.html)
 
@@ -112,6 +122,10 @@
 
     - 当两个材质使用了不同的 Render Queue，且这两个 Render Queue 都在 [0~2500] 或 [2501~5000] 时，Sorting Layer 和 Order in Layer 的排序生效；
     - 当两个材质使用了不同的 Render Queue，且这两个 Render Queue 分别在 [0~2500] 或 [2501~5000] 时，则一定会按照 Render Queue 绘制，无视 Sorting Layer 和 Order in Layer 的排序。
+
+* [Unity 调整 SortingOrder 解决 UGUI 中粒子层级问题](http://blog.songyang.net/333.html)
+* [UGUI 中 UI 粒子特效自适应缩放 - 雨松 MOMO](https://www.xuanyusong.com/archives/4271)
+* [UGUI 中显示粒子特效 - 博客园](https://www.cnblogs.com/beeasy/p/8678195.html)
 
 ### TeamCity
 

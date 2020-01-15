@@ -468,6 +468,14 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 ![](media/15577555764208.jpg)
 
+### Unity AssetBundle 与打包
+
+* [Assets, Resources and AssetBundles - Unity Learn](https://learn.unity.com/tutorial/assets-resources-and-assetbundles#)
+* [AssetBundle 资源打包加载管理](https://tonytang1990.github.io/2018/10/24/AssetBundle%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85%E5%8A%A0%E8%BD%BD%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0/)
+* [Unity 资源打包之 AssetBundle - 简书](https://www.jianshu.com/p/5d4145cd900c)
+* [Unity 打包原理解析 - 简书](https://www.jianshu.com/p/4e5c9da907c4)
+* [Unity 资源目录及加载接口介绍 - 简书](https://www.jianshu.com/p/5206c7dc88c4)
+
 ## 2019-04-10 星期三
 
 ### Android Crash 堆栈解读和 so 文件反编译
