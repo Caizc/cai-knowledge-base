@@ -191,6 +191,15 @@ Unity 游戏在运行时的内存占用情况：
 * [内存优化（一）- 知乎专栏](https://zhuanlan.zhihu.com/p/65773438)
 * [性能优化（CPU 篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/39998137)
 * [性能优化（工具篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/39529241)
+* [Unity 性能优化汇总 - CSDN](https://blog.csdn.net/BillCYJ/article/details/79441193)
+* [关于 Unity 加载优化，你可能遇到这些问题 - 知乎](https://zhuanlan.zhihu.com/p/23733044)
+* [Unity 移动游戏加载性能和内存管理 - cnblogs](https://www.cnblogs.com/lijiajia/p/11392171.html)
+* [Unity 性能优化经验整理](https://lequ7.com/2019/07/23/richang/Unity-xing-neng-you-hua-jing-yan-zheng-li/)
+* [浅谈 CPU 与 GPU 如何分工？- 知乎](https://zhuanlan.zhihu.com/p/36311174)
+* [Unity 图形渲染优化 - 知乎](https://gameinstitute.qq.com/community/detail/124856)
+* [性能优化（渲染篇）- 知乎](https://zhuanlan.zhihu.com/p/40900056)
+* [关于 Unity 渲染方面的优化（上）- 知乎](https://zhuanlan.zhihu.com/p/36415323)
+* [关于 Unity 渲染方面的优化（下）- 知乎](https://zhuanlan.zhihu.com/p/36613009)
 
 ---
 
@@ -200,6 +209,7 @@ change log:
 	- 增加内存优化相关内容（2018-09-07）
 	- 增加性能工具相关内容（2019-05-13）
 	- 增加几篇待阅读的文章（2019-10-11）
+	- 增加几篇待阅读的文章（2020-01-20）
 
 ---
 
