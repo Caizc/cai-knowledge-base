@@ -1,5 +1,45 @@
 # Game Development Blackboard - Part 2
 
+## 2020-01-19 星期日
+
+### Unity 的光照贴图
+
+* [Unity 5 场景烘焙 - UWA](https://blog.uwa4d.com/archives/usparkle_unity5lightmap.html)
+* [Unity 中光照贴图一二坑及解决办法 - blog](http://qiankanglai.me/2015/07/27/unity-lightmap/)
+* [Unity 中光照贴图一二坑续 - blog](http://qiankanglai.me/2016/03/15/unity-lightmap2/index.html)
+* [Unity 5.X 打包场景为 AssetBundle 后，加载场景烘焙贴图不显示 - 简书](https://www.jianshu.com/p/dcd27cceaac7)
+* [利用 Projector 实现动态阴影 - blog](http://qiankanglai.me/2016/11/14/unity-projector/)
+
+### AssetBundle Browser
+
+* [Unity Asset Bundle Browser tool - Unity Manual](https://docs.unity3d.com/Manual/AssetBundles-Browser.html)
+* [AssetBundles-Browser - GitHub](https://github.com/Unity-Technologies/AssetBundles-Browser)
+
+### The Art of Diablo 3
+
+* [The Art of Diablo 3 - GDCVault](https://gdcvault.com/play/1015306/The-Art-of-Diablo)
+
+### Unity 光照策略
+
+* [Lighting 光照策略 - 知乎](https://zhuanlan.zhihu.com/p/37354758)
+* [Creating Believable Visuals - Unity Learn](https://learn.unity.com/tutorial/creating-believable-visuals#)
+
+### LOD 与 MipMap
+
+* [LOD 与 MipMap 为何物？- CSDN](https://blog.csdn.net/penchaoo/article/details/54291529)
+
+## 2020-01-16 星期三
+
+### C# 7.1 新增的 default 表达式 
+
+* [C# 7.1 中的新增功能 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/whats-new/csharp-7-1)
+
+### DOTween
+
+* [Easing functions](https://easings.net/)
+* [DOTween - Demigiant](http://dotween.demigiant.com/index.php)
+* [DOTween 插件使用技巧 - 知乎](https://zhuanlan.zhihu.com/p/43888860)
+
 ## 2020-01-14 星期二
 
 ### 逻辑与渲染分离
