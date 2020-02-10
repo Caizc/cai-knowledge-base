@@ -1471,13 +1471,6 @@ CREATE TABLE `player` (
 
 * [uFrame](https://www.assetstore.unity3d.com/cn/#!/content/14381)
 
-## 2017-09-07 星期四
-
-### Unity 图文插件
-
-TextMesh
-Drawcall
-
 ## 2017-09-06 星期三
 
 ### Bombermaaan
