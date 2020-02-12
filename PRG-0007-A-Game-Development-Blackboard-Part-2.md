@@ -4,6 +4,7 @@
 
 ### TextMesh Pro
 
+* [TextMesh Pro 官网](http://digitalnativestudios.com/)
 * [TextMesh Pro（一）：Text Objects](https://zhuanlan.zhihu.com/p/90759281)
 * [TextMesh Pro（二）：Text Fonts](https://zhuanlan.zhihu.com/p/90937163)
 * [TextMesh Pro（三）：Rich Text](https://zhuanlan.zhihu.com/p/91035197)
@@ -11,6 +12,17 @@
 * [TextMesh Pro（五）：Sprites](https://zhuanlan.zhihu.com/p/93171755)
 * [TextMesh Pro（六）：Color Grandients](https://zhuanlan.zhihu.com/p/93172017)
 * [TextMesh Pro（七）：Settings](https://zhuanlan.zhihu.com/p/93172400)
+* [如何使用 TextMesh Pro 显示中文？- bilibili](https://www.bilibili.com/video/av45212703/)
+
+### 常用汉字及标点符号
+
+* [标点符号 - 维基百科](https://zh.wikipedia.org/wiki/%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7)
+* [货币符号 - 维基百科](https://zh.wikipedia.org/wiki/%E8%B4%A7%E5%B8%81%E7%AC%A6%E5%8F%B7)
+
+### 免费商用字体库
+
+* [200 款免费商用字体 - 优设](https://www.uisdc.com/200-models-free-commercial-fonts#)
+* [可免费用于商业用途的免费字体 - 知乎](https://www.zhihu.com/question/19889152)
 
 ## 2020-01-19 星期日
 
