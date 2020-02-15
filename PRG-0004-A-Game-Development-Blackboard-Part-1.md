@@ -1012,7 +1012,7 @@ esac
 
 ## 2018-05-23 星期三
 
-## 将 Quaternion 装换为一个方向向量
+## 将 Quaternion 转换为一个方向向量
 
 * [How can I convert a Quaternion to a direction vector? - Unity Answers](https://answers.unity.com/questions/525952/how-i-can-converting-a-quaternion-to-a-direction-v.html)
 

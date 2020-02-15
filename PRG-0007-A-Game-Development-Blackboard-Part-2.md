@@ -1,5 +1,16 @@
 # Game Development Blackboard - Part 2
 
+## 2020-02-13 星期四
+
+### Light Probes
+
+* [Light Probes - Unity Documentation](https://docs.unity3d.com/Manual/LightProbes.html)
+* [Light Probe Proxy Volume(LPPV) - Unity Documentation](https://docs.unity3d.com/Manual/class-LightProbeProxyVolume.html)
+
+### Unity 2D 物体朝向旋转
+
+* [Unity 2D 以最小的角度旋转到目标方向 - 博客园](https://www.cnblogs.com/xiaoahui/p/10206707.html)
+
 ## 2020-02-10 星期一
 
 ### TextMesh Pro
