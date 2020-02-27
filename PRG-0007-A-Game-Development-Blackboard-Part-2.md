@@ -38,7 +38,7 @@
 > * Resources 本地资源加载
 > * AssetBundle 本地或远程资源包加载
 > * Instantiate 实例化游戏对象
-> * AssetDatabase 加载资源
+> * AssetDatabase 加载资源
 > 
 > Resources 最佳加载策略：
 > 
