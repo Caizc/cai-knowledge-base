@@ -605,6 +605,7 @@ var elapsedMs = watch.ElapsedMilliseconds;
 
 ### 使用 Unity Profiler 调试 Android 包
 
+* [Unity Profiler 直连真机测试 - CSDN](https://blog.csdn.net/liushida00/article/details/49797239?utm_source=blogxgwz7)
 * [unity-Profiler调试Android的正确姿势 - CSDN](https://blog.csdn.net/yangxuan0261/article/details/70161022)
 * [为何你无法使用ADB USB Profiling Android Player - 知乎专栏](https://zhuanlan.zhihu.com/p/30247546)
 * [Unity3D 中 Android 和 iOS 真机调试测 Profiler - GAD](http://gad.qq.com/article/detail/47054)
