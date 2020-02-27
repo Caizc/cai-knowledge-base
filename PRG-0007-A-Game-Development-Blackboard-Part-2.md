@@ -1,5 +1,70 @@
 # Game Development Blackboard - Part 2
 
+## 2020-02-25 星期二
+
+### Unity 资源加载
+
+* [Unity 资源加载入门 - 腾讯游戏学院](https://gameinstitute.qq.com/community/detail/123460#)
+* [Unity 资源加载与内存管理 - CSDN](https://blog.csdn.net/lizhenxiqnmlgb/article/details/80433752)
+
+![](media/15826121119502.jpg)
+
+* [详谈 Unity AssetBundle 资源加载 - 博客园](https://www.cnblogs.com/u3ddjw/p/6691932.html)
+* [细谈 Unity 资源管理的设计 - 博客园](https://www.cnblogs.com/zblade/p/11089050.html)
+* [细谈 Unity 资源加载和卸载 - 博客园](https://www.cnblogs.com/zblade/p/11095338.html)
+* [AssetBundle 资源打包加载管理 - TonyTang](https://tonytang1990.github.io/2018/10/24/AssetBundle%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85%E5%8A%A0%E8%BD%BD%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0/)
+* [Unity 项目资源加载与管理 - WeTest](https://www.wetest.net/apiv1/lab/view/124.html)
+
+> 现在 AssetBundle 实现的机制是只会在内存中寻找其依赖资源所在的 AssetBundle，并自动从中加载出所需的资源。
+> 通过 AssetBundle 来动态加载资源时，我们并不需要自己加载被依赖的资源，而是只要保证主体在加载时被依赖资源所在 AssetBundle 依然处于开启状态就可以正常加载资源了。
+> Shader 和 Texture 的 AssetBundle 在场景切换前都不要卸载掉。
+> Unity 5.3 以后提供的 ChunkBasedCompression 是一种基于 Chunk 的 LZ4 压缩方式，这种压缩方式可以让 AssetBundle 对单独的 Asset 进行压缩，而不是 AssetBundle 整体压缩。
+> 非常推荐大家使用 LZ4 压缩方式的 AssetBundle。
+> 极力推荐大家主要采用 AssetBundle 进行资源的动态加载，而 Resources 文件夹的使用可以只考虑这几种情况：
+> 
+> * 这些资源在整个游戏的运行期间都会用到；
+> * 这些资源无需为不同平台或硬件适配定制资源；
+> * 这些资源无需动态更新；
+> * 正在制作游戏的原型。
+> 
+> 保证当前场景中同一 AssetBundle 不会再被引用的时候卸载或者统一都在场景切换的时候使用 Unload(true) 进行卸载。
+
+* [Unity 资源的加载释放最佳策略 - 博客园](https://www.cnblogs.com/zergcom/p/10964974.html)
+* [Unity 资源的加载释放最佳策略简要心得 - 博客园](https://www.cnblogs.com/zergcom/p/11066510.html)
+
+> Unity 的资源加载方式分两大种类：静态加载和动态加载。
+> 动态加载的常见方式：
+> 
+> * Resources 本地资源加载
+> * AssetBundle 本地或远程资源包加载
+> * Instantiate 实例化游戏对象
+> * AssetDatabase 加载资源
+> 
+> Resources 最佳加载策略：
+> 
+> * 相同对象的 `Resources.Load` 只需调用一次，该资源对象可以共享，反复调用虽然不会引起内存镜像的重复建立，但依然存在性能损耗。
+> * 一般只对 GameObject 进行实例化操作，尽量避免对 Shader 、Mesh、Material、Texture 资源进行实例化从而造成内存浪费。
+> * 除了明确需要全局共享的资源，尽量避免使用全局静态变量来引用 Resources.Load 出来的资源对象，因为全局引用的对象存在释放陷阱。
+> 
+> Resources 最佳释放策略：
+> 
+> * 实例化的对象，在不再使用以后必须立刻 Destroy，该清理操作不会引起资源的丢失，风险较小，要充分满足。
+> * 对于内存消耗非常巨大，并且在场景运行过程中能够明确不再使用的资源内存镜像，可以主动使用 `Reources.UnloadAsset` 进行强制释放。对于消耗不大的，等场景结束后进行统一释放是更稳妥的选择。
+> * 大部分资源建议在场景切换以后，通过 `Resources.UnloadUnusedAssets` 方法进行后置释放，必要时再加上 `GC.Collect`。（在下一个场景的开始甚至在一个独立的换场场景中调用都是比较稳妥的选择）
+> * 全局静态变量和类成员变量引用的资源，务必先把引用设为 `null` 值，然后再调用 `Reources.UnloadUnusedAssets` 才能正确释放。
+> 
+> AssetBundle 最佳加载策略：
+> 
+> * 相同内容的 AssetBundle 只 Load 一次，在其 Unload 之前反复加载会造成不必要的浪费和风险。
+> * 相同名称的资源用 LoadAsset 也只需加载一次，这个和 Resources.Load 基本类似。
+> 
+> AssetBundle 最佳释放策略：
+> 
+> * 实例化的对象使用 Destroy 这个不加累述了。
+> * 已经加载的资源 prefab，如果消耗巨大而且明确不再使用，可以直接使用 `Object.Destroy` 释放。
+> * 如果 AssetBundle 能够一次性加载完成所需资源的，可以使用 `AssetBundle.Unload(false)` 将 AssetBundle 的内存立刻释放，然后再场景切换以后通过 `Resources.UnloadUnusedAssets` 方法释放所有加载的资源，这种方案的缺陷是不能在 `AssetBundle.Unload` 以后再次使用该 AssetBundle。
+> * 如果在场景运行过程中需要不断从 AssetBundle 加载资源，在这种情况下无须提前做任何释放行为，可以在场景切换以后，最终调用 `AssetBundle.Unload(true)` 将全部资源包和资源释放。这种方式的主要缺陷是， AssetBundle 占用的资源会在整个场景过程中一直存在，造成内存浪费，但如果 AssetBundle 体积不大，这种方式也带来了一定的灵活性。
+
 ## 2020-02-13 星期四
 
 ### Light Probes
