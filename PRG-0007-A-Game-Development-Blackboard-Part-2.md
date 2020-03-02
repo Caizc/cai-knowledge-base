@@ -84,27 +84,32 @@
 > * Resources 本地资源加载
 > * AssetBundle 本地或远程资源包加载
 > * Instantiate 实例化游戏对象
-> * AssetDatabase 加载资源
+> * AssetDatabase 加载资源（仅 Editor 中有效）
 > 
-> Resources 最佳加载策略：
+> **Resources 最佳加载策略：**
 > 
 > * 相同对象的 `Resources.Load` 只需调用一次，该资源对象可以共享，反复调用虽然不会引起内存镜像的重复建立，但依然存在性能损耗。
 > * 一般只对 GameObject 进行实例化操作，尽量避免对 Shader 、Mesh、Material、Texture 资源进行实例化从而造成内存浪费。
 > * 除了明确需要全局共享的资源，尽量避免使用全局静态变量来引用 Resources.Load 出来的资源对象，因为全局引用的对象存在释放陷阱。
 > 
-> Resources 最佳释放策略：
+> **Resources 最佳释放策略：**
 > 
 > * 实例化的对象，在不再使用以后必须立刻 Destroy，该清理操作不会引起资源的丢失，风险较小，要充分满足。
 > * 对于内存消耗非常巨大，并且在场景运行过程中能够明确不再使用的资源内存镜像，可以主动使用 `Reources.UnloadAsset` 进行强制释放。对于消耗不大的，等场景结束后进行统一释放是更稳妥的选择。
 > * 大部分资源建议在场景切换以后，通过 `Resources.UnloadUnusedAssets` 方法进行后置释放，必要时再加上 `GC.Collect`。（在下一个场景的开始甚至在一个独立的换场场景中调用都是比较稳妥的选择）
 > * 全局静态变量和类成员变量引用的资源，务必先把引用设为 `null` 值，然后再调用 `Reources.UnloadUnusedAssets` 才能正确释放。
 > 
-> AssetBundle 最佳加载策略：
+> 注意：
+> 
+> 1. 释放 Sprite 需要先释放 Sprite.Texture 否则 Texture 就会残留在内存。
+> 2. `UnloadUnusedAssets` 是一个异步函数，在其执行过程中，一旦资源又被使用将会导致无法预知的后果。实际开发中发现在场景运行中反复调用 `UnloadUnusedAssets` 存在闪退的风险。
+> 
+> **AssetBundle 最佳加载策略：**
 > 
 > * 相同内容的 AssetBundle 只 Load 一次，在其 Unload 之前反复加载会造成不必要的浪费和风险。
 > * 相同名称的资源用 LoadAsset 也只需加载一次，这个和 Resources.Load 基本类似。
 > 
-> AssetBundle 最佳释放策略：
+> **AssetBundle 最佳释放策略：**
 > 
 > * 实例化的对象使用 Destroy 这个不加累述了。
 > * 已经加载的资源 prefab，如果消耗巨大而且明确不再使用，可以直接使用 `Object.Destroy` 释放。
