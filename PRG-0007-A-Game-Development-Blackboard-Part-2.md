@@ -1,5 +1,51 @@
 # Game Development Blackboard - Part 2
 
+## 2020-02-29 星期六
+
+### C#/Unity 异步编程
+
+* [Async-Await instead of coroutines in Unity 2017](http://www.stevevermeulen.com/index.php/2017/09/using-async-await-in-unity3d-2017/)
+
+> **Never call `async Task` methods without also awaiting on the returned Task. If you don’t want to wait for the async behaviour to complete, you should call an `async void` method instead.**
+> 
+> * Avoid async void in favour of async Task, except in ‘fire and forget’ cases where you want to start async code from non-async code.
+> * Attach the suffix ‘Async’ to all async methods which return Task. This is helpful in conveying the fact that it should always be preceded by an ‘await’ and allows an async void counterpart to be added easily without conflict.
+> * Debugging async methods using breakpoints in visual studio doesn’t work yet.
+
+* [Async/Await - Best Practices in Asynchronous Programming](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming)
+
+> **Summary of Asynchronous Programming Guidelines**
+> 
+> | Name | Description | Exceptions |
+> | --- | --- | --- |
+> | Avoid async void | Prefer async Task methods over async void methods | Event handlers |
+> | Async all the way | Don’t mix blocking and async code | Console main method |
+> | Configure context | Use ConfigureAwait(false) when you can | Methods that require con­text |
+
+* [Don't Block on Async Code](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+* [Tasks are (still) not threads and async is not parallel](https://docs.microsoft.com/zh-cn/archive/blogs/benwilli/tasks-are-still-not-threads-and-async-is-not-parallel)
+
+>  The event handler has absolutely no idea whether its tasks are going to run on one thread or multiple threads. All it knows is that it has requested 3 potentially asynchronous tasks to be completed. The underlying implementation will determine whether additional threads come in to play or not. And whether you have multiple threads determines whether you run in parallel or not. So you need to be prepared for either behavior when writing and debugging your app because in the end, it just depends.
+
+* [Unity 的 Task 存在的坑 - 知乎](https://zhuanlan.zhihu.com/p/86168785)
+
+> * context 争用死锁
+> * 避免使用 async void
+> * 注意 Task 与 Struct 配合使用的问题
+> * Exception 信息传递
+
+### UniTask
+
+* [Deep Dive async/await in Unity with UniTask - SlideShare](https://www.slideshare.net/neuecc/deep-dive-asyncawait-in-unity-with-unitasken)
+* [UniTask - GitHub](https://github.com/Cysharp/UniTask)
+* [UniTask 介绍 - CSDN](https://blog.csdn.net/unity3d_xyz/article/details/103678562)
+* [UniRx - GitHub](https://github.com/neuecc/UniRx)
+* [UniRx 在 Unity 资源加载中的使用](https://www.yxkfw.com/thread-58233-1-1.html)
+
+### Async Await 编辑器工具
+
+* [Async Await Support - Unity Asset Store](https://assetstore.unity.com/packages/tools/integration/async-await-support-101056)
+
 ## 2020-02-25 星期二
 
 ### Unity 资源加载
@@ -64,6 +110,12 @@
 > * 已经加载的资源 prefab，如果消耗巨大而且明确不再使用，可以直接使用 `Object.Destroy` 释放。
 > * 如果 AssetBundle 能够一次性加载完成所需资源的，可以使用 `AssetBundle.Unload(false)` 将 AssetBundle 的内存立刻释放，然后再场景切换以后通过 `Resources.UnloadUnusedAssets` 方法释放所有加载的资源，这种方案的缺陷是不能在 `AssetBundle.Unload` 以后再次使用该 AssetBundle。
 > * 如果在场景运行过程中需要不断从 AssetBundle 加载资源，在这种情况下无须提前做任何释放行为，可以在场景切换以后，最终调用 `AssetBundle.Unload(true)` 将全部资源包和资源释放。这种方式的主要缺陷是， AssetBundle 占用的资源会在整个场景过程中一直存在，造成内存浪费，但如果 AssetBundle 体积不大，这种方式也带来了一定的灵活性。
+
+* [新版 AssetBundle 使用方案及策略 - 知乎](https://zhuanlan.zhihu.com/p/21457764)
+
+### Unity 资源热更新
+
+* [如何实现高效的 Unity AssetBundle 热更新 - 知乎](https://zhuanlan.zhihu.com/p/43215816)
 
 ## 2020-02-13 星期四
 
