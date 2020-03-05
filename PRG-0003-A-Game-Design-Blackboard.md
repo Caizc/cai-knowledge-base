@@ -1,5 +1,11 @@
 # Game Design Blackboard
 
+## 2020-03-05 星期四
+
+### 圆桌理论
+
+* [圆桌理论 - 百度百科](https://baike.baidu.com/item/%E5%9C%86%E6%A1%8C%E7%90%86%E8%AE%BA/6817139?fr=aladdin)
+
 ## 2019-09-11 星期三
 
 ### 开放世界
