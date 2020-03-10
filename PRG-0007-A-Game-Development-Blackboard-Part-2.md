@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 2
 
+## 2020-03-06 星期五
+
+### Scriptable Object
+
+* [ScriptableObject - Unity Manual](https://docs.unity3d.com/Manual/class-ScriptableObject.html)
+* [Create Scriptable Objects with Unity - GAMASUTRA](https://www.gamasutra.com/blogs/VivekTank/20180716/322124/Create_Scriptable_Objects_with_Unity.php)
+
 ## 2020-02-29 星期六
 
 ### C#/Unity 异步编程
