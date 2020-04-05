@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 2
 
+## 2020-03-19 星期四
+
+### 闪电链效果
+
+* [闪电链实现 - CSDN](https://blog.csdn.net/aceyan0718/article/details/52317231)
+* [UnityEffects - GitHub](https://github.com/aceyan/UnityEffects)
+
 ## 2020-03-06 星期五
 
 ### Scriptable Object
