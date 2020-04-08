@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 2
 
+## 2020-04-08 星期三
+
+### Unity 全局光照技术
+
+* [Unity 全局光照详解（理论篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/126362480)
+* [Unity 全局光照详解（参数篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/126370177)
+
 ## 2020-03-19 星期四
 
 ### 闪电链效果
