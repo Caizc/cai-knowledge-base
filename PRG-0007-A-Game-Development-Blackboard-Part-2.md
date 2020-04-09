@@ -7,6 +7,17 @@
 * [Unity 全局光照详解（理论篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/126362480)
 * [Unity 全局光照详解（参数篇）- 知乎专栏](https://zhuanlan.zhihu.com/p/126370177)
 
+### Audio Mixer 与 AssetBundle
+
+* Unity 的 AudioMixer 无法被打包到 AssetBundle 中，因此也无法通过 `AssetBundle.LoadAsset()` 方法加载，只能将 AudioMixer 作为某个 Prefab 的依赖资源，通过加载 Prefab 来获得 AudioMixer 的引用
+* 切换场景时，切换 AudioMixer 的 Snapshot 可能不会成功
+
+* [Audio Mixer and AssetBundle - Unity Forum](https://forum.unity.com/threads/audio-mixer-and-asset-bundle.338077/)
+* [如何在 AssetBundle 中使用 AudioMixer - UWA](https://answer.uwa4d.com/question/598bde72a81220bc7a7326b7?tdsourcetag=s_pctim_aiomsg)
+
+> AudioMixer asset.
+> This is a singleton representing a specific audio mixer asset in the project.
+
 ## 2020-03-19 星期四
 
 ### 闪电链效果
