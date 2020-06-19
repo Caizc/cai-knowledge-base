@@ -1,5 +1,15 @@
 # Game Development Blackboard - Part 2
 
+## 2020-06-19 星期五
+
+### 2D Lighting
+
+* [2D Lighting - Unity Forum](https://forum.unity.com/threads/2d-lighting.210642/)
+* [2D Lights and Shadows in Unity 2019 - YouTube](https://www.youtube.com/watch?v=F5l8vP90EvU)
+* [Realistic 2D Lighting in Unity - YouTube](https://www.youtube.com/watch?v=F5l8vP90EvU)
+* [Lost Crypt: Explore Unity's new 2D features - YouTube](https://www.youtube.com/watch?v=vRPW3H4X9PE)
+* [《Lost Crypt》2D 示例项目 - Unity AssetStore](https://assetstore.unity.com/packages/essentials/tutorial-projects/lost-crypt-2d-sample-project-158673)
+
 ## 2020-04-08 星期三
 
 ### Unity 全局光照技术

@@ -812,6 +812,7 @@ A总是通过B之前的移动去预测其接下来的移动情况（Q3的做法�
 
 * [SuperSocket](http://www.supersocket.net/)
 * [SuperSocket 与 Netty 之实现 protobuf 协议，包括服务端和客户端 - cnblogs](http://www.cnblogs.com/caipeiyu/p/5559112.html)
+* [SuperSocket 集成 KCP 的例子 - GitHub](https://github.com/GaoKaiHaHa/UnityLockStepDemo)
 
 # ET
 
