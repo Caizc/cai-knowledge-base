@@ -1,5 +1,20 @@
 # Game Development Blackboard - Part 2
 
+## 2020-06-23 星期二
+
+### Unity 资源管理
+
+* [Unity 引擎资源管理模块知识树 - UWA](https://blog.uwa4d.com/archives/UWA_ResourceTree.html)
+
+### Unity Update() 执行顺序
+
+* [Unity Update 方式执行顺序 - GitHub](https://gist.github.com/tsubaki/5887a9375d99c94fc951f6782b970dff)
+
+```
+------Initialization------Initialization.PlayerUpdateTimeInitialization.AsyncUploadTimeSlicedUpdateInitialization.SynchronizeInputsInitialization.SynchronizeStateInitialization.XREarlyUpdate------EarlyUpdate------EarlyUpdate.PollPlayerConnectionEarlyUpdate.ProfilerStartFrameEarlyUpdate.GpuTimestampEarlyUpdate.UnityConnectClientUpdateEarlyUpdate.CloudWebServicesUpdateEarlyUpdate.UnityWebRequestUpdateEarlyUpdate.ExecuteMainThreadJobsEarlyUpdate.ProcessMouseInWindowEarlyUpdate.ClearIntermediateRenderersEarlyUpdate.ClearLinesEarlyUpdate.PresentBeforeUpdateEarlyUpdate.ResetFrameStatsAfterPresentEarlyUpdate.UpdateAllUnityWebStreamsEarlyUpdate.UpdateAsyncReadbackManagerEarlyUpdate.UpdateTextureStreamingManagerEarlyUpdate.UpdatePreloadingEarlyUpdate.RendererNotifyInvisibleEarlyUpdate.PlayerCleanupCachedDataEarlyUpdate.UpdateMainGameViewRectEarlyUpdate.UpdateCanvasRectTransformEarlyUpdate.UpdateInputManagerEarlyUpdate.ProcessRemoteInputEarlyUpdate.XRUpdateEarlyUpdate.TangoUpdateEarlyUpdate.ScriptRunDelayedStartupFrameEarlyUpdate.UpdateKinectEarlyUpdate.DeliverIosPlatformEventsEarlyUpdate.DispatchEventQueueEventsEarlyUpdate.DirectorSampleTimeEarlyUpdate.PhysicsResetInterpolatedTransformPositionEarlyUpdate.NewInputBeginFrameEarlyUpdate.SpriteAtlasManagerUpdateEarlyUpdate.PerformanceAnalyticsUpdate------FixedUpdate------FixedUpdate.ClearLinesFixedUpdate.NewInputEndFixedUpdateFixedUpdate.DirectorFixedSampleTimeFixedUpdate.AudioFixedUpdateFixedUpdate.ScriptRunBehaviourFixedUpdateFixedUpdate.DirectorFixedUpdateFixedUpdate.LegacyFixedAnimationUpdateFixedUpdate.XRFixedUpdateFixedUpdate.PhysicsFixedUpdateFixedUpdate.Physics2DFixedUpdateFixedUpdate.DirectorFixedUpdatePostPhysicsFixedUpdate.ScriptRunDelayedFixedFrameRateFixedUpdate.ScriptRunDelayedTasksFixedUpdate.NewInputBeginFixedUpdate------PreUpdate------PreUpdate.PhysicsUpdatePreUpdate.Physics2DUpdatePreUpdate.CheckTexFieldInputPreUpdate.IMGUISendQueuedEventsPreUpdate.NewInputUpdatePreUpdate.SendMouseEventsPreUpdate.AIUpdatePreUpdate.WindUpdatePreUpdate.UpdateVideo------Update------Update.ScriptRunBehaviourUpdateUpdate.ScriptRunDelayedDynamicFrameRateUpdate.DirectorUpdate------PreLateUpdate------PreLateUpdate.AIUpdatePostScriptPreLateUpdate.DirectorUpdateAnimationBeginPreLateUpdate.LegacyAnimationUpdatePreLateUpdate.DirectorUpdateAnimationEndPreLateUpdate.DirectorDeferredEvaluatePreLateUpdate.UpdateNetworkManagerPreLateUpdate.UpdateMasterServerInterfacePreLateUpdate.UNetUpdatePreLateUpdate.EndGraphicsJobsLatePreLateUpdate.ParticleSystemBeginUpdateAllPreLateUpdate.ScriptRunBehaviourLateUpdatePreLateUpdate.ConstraintManagerUpdate------PostLateUpdate------PostLateUpdate.PlayerSendFrameStartedPostLateUpdate.DirectorLateUpdatePostLateUpdate.ScriptRunDelayedDynamicFrameRatePostLateUpdate.PhysicsSkinnedClothBeginUpdatePostLateUpdate.UpdateCanvasRectTransformPostLateUpdate.PlayerUpdateCanvasesPostLateUpdate.UpdateAudioPostLateUpdate.ParticlesLegacyUpdateAllParticleSystemsPostLateUpdate.ParticleSystemEndUpdateAllPostLateUpdate.UpdateCustomRenderTexturesPostLateUpdate.UpdateAllRenderersPostLateUpdate.EnlightenRuntimeUpdatePostLateUpdate.UpdateAllSkinnedMeshesPostLateUpdate.ProcessWebSendMessagesPostLateUpdate.SortingGroupsUpdatePostLateUpdate.UpdateVideoTexturesPostLateUpdate.UpdateVideoPostLateUpdate.DirectorRenderImagePostLateUpdate.PlayerEmitCanvasGeometryPostLateUpdate.PhysicsSkinnedClothFinishUpdatePostLateUpdate.FinishFrameRenderingPostLateUpdate.BatchModeUpdatePostLateUpdate.PlayerSendFrameCompletePostLateUpdate.UpdateCaptureScreenshotPostLateUpdate.PresentAfterDrawPostLateUpdate.ClearImmediateRenderersPostLateUpdate.PlayerSendFramePostPresentPostLateUpdate.UpdateResolutionPostLateUpdate.InputEndFramePostLateUpdate.TriggerEndOfFrameCallbacksPostLateUpdate.GUIClearEventsPostLateUpdate.ShaderHandleErrorsPostLateUpdate.ResetInputAxisPostLateUpdate.ThreadedLoadingDebugPostLateUpdate.ProfilerSynchronizeStatsPostLateUpdate.MemoryFrameMaintenancePostLateUpdate.ExecuteGameCenterCallbacksPostLateUpdate.ProfilerEndFrame
+```
+
+
 ## 2020-06-19 星期五
 
 ### 2D Lighting
@@ -27,6 +42,8 @@
 
 > AudioMixer asset.
 > This is a singleton representing a specific audio mixer asset in the project.
+
+* 切换 AudioMixer 的 Snapshot 的正确方式是，使用 `void AudioMixer.TransitionToSnapshots(AudioMixerSnapshot[] snapshots, float[] weights, float timeToReach);` 方法
 
 ## 2020-03-19 星期四
 
