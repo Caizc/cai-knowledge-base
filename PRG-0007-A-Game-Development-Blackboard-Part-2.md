@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 2
 
+## 2020-07-03 星期五
+
+### Unity 带 Alpha 通道视频播放
+
+* [视频透明度支持 - Unity Documentation](https://docs.unity3d.com/cn/current/Manual/VideoTransparency.html)
+* [Unity 如何播放带有 Alpha 通道的视频](https://www.shuzhiduo.com/A/Vx5MPgl9JN/)
+
 ## 2020-06-23 星期二
 
 ### Unity 资源管理
