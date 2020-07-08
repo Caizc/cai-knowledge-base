@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 2
 
+## 2020-07-08 星期三
+
+### C# override Equals() and GetHashCode()
+
+* [C# 如何重写 Equals()、GetHashCode() 及重写的意义 - CSDN](https://blog.csdn.net/BillCYJ/article/details/90519496)
+
 ## 2020-07-03 星期五
 
 ### Unity 带 Alpha 通道视频播放
