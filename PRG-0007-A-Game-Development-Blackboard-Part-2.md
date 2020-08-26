@@ -1,5 +1,18 @@
 # Game Development Blackboard - Part 2
 
+## 2020-07-23 星期四
+
+### Make a countdown timer in Unity
+
+* [How to make a countdown timer in Unity(in minutes + seconds) - gamedevbeginner](https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/)
+
+### Start vs Awake in Unity
+
+* [Start vs Awake in Unity - gamedevbeginner](https://gamedevbeginner.com/start-vs-awake-in-unity/)
+
+> Start and Awake work in similar ways except that Awake is called first and, unlike Start, will be called even if the script component is disabled.
+> Using Start and Awake together is useful for separating initialisation tasks into two steps. For example, a script’s self-initialisation (e.g. creating component references and initialising variables) can be done in Awake before another script attempts to access and use that data in Start, avoiding errors.
+
 ## 2020-07-08 星期三
 
 ### C# override Equals() and GetHashCode()
