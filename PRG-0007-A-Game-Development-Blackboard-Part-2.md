@@ -1,5 +1,23 @@
 # Game Development Blackboard - Part 2
 
+## 2020-09-01 星期二
+
+### Audio Clip Import Settings
+
+* [Audio Clip - Unity Manual](https://docs.unity3d.com/Manual/class-AudioClip.html)
+* [Unity 3D Audio Clip Import Settings For The Best Performance - SharpCodeBlog](https://sharpcoderblog.com/blog/unity-3d-audio-clip-import-settings-for-the-best-performance)
+
+* **Frequently played sounds**
+These are the sounds that are played in large quantities (ex. weapon sounds, footsteps, impact sounds etc.).Such sounds work best with the following settings (These settings are also suitable for any short sounds that are under 10 seconds, even if they are not played frequently):Load Type: **Decompress on Load**Compression Format: **ADPCM**
+
+* **Periodical or rare playing sounds**
+
+Sounds that do not need to played frequently, for example an announcer voice at the beginning of the round, a timer sound at the beginning of the racing game or basically any sound that is over 10 seconds but under 1 minute.Load Type: **Compressed In Memory**Compression Format: **ADPCM**
+
+* **Background/Ambient sounds**
+
+Usually background sounds are over a minute long so the settings above are not be suitable for these types of sounds.The settings below should be applied to the sounds that are over 1 minute long.Load Type: **Streaming** (or Compressed In Memory if you are targeting WebGL)Compression Format: **Vorbis** (Adjust the Quality according to your needs)
+
 ## 2020-07-23 星期四
 
 ### Make a countdown timer in Unity
