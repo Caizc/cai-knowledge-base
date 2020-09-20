@@ -1,5 +1,16 @@
 # Game Development Blackboard - Part 2
 
+## 2020-09-15 星期二
+
+### 新手引导遮罩与点击事件透传
+
+* [新手引导镂空遮罩与事件透传 - CSDN](https://blog.csdn.net/linxinfa/article/details/89310579)
+* [Unity Shader 实现新手引导遮罩镂空效果 - 编程客栈](http://www.cppcns.com/ruanjian/csharp/300360.html)
+
+### World Space to Canvas Space
+
+* [How to convert from World Space to Canvas Space? - Unity Answers](https://answers.unity.com/questions/799616/unity-46-beta-19-how-to-convert-from-world-space-t.html)
+
 ## 2020-09-01 星期二
 
 ### Audio Clip Import Settings
