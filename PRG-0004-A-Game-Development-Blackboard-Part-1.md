@@ -455,7 +455,7 @@ for(int i = list.Count - 1; i >= 0; i--)
 * [GameFramework 教程 - 烟雨迷离半世殇](https://blog.csdn.net/qq_15020543/column/info/27131)
 
 ### Unity 资源管理机制
-
+
 * [Unity 引擎资源管理代码分析1 - 腾讯云](https://cloud.tencent.com/developer/article/1005786)
 * [Unity 引擎资源管理代码分析2 - 腾讯云](https://cloud.tencent.com/developer/article/1005843)
 * [Unity 引擎资源管理代码分析3 - 腾讯云](https://cloud.tencent.com/developer/article/1005853)
@@ -1354,7 +1354,8 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 ### Shader
 
 * [Unity3D Shader入门指南（一）](https://onevcat.com/2013/07/shader-tutorial-1/)
-* [Unity3D Shader入门指南（二）](https://onevcat.com/2013/08/shader-tutorial-2/)[Shader Part 1 - UnityGems](https://unitygem.wordpress.com/shader-part-1/)
+* [Unity3D Shader入门指南（二）](https://onevcat.com/2013/08/shader-tutorial-2/)
+* [Shader Part 1 - UnityGems](https://unitygem.wordpress.com/shader-part-1/)
 * [Surface Shader examples - Unity Manual](https://docs.unity3d.com/Manual/SL-SurfaceShaderExamples.html)
 * [Materials, Shaders & Textures - Unity Manual](https://docs.unity3d.com/Manual/Shaders.html)
 * [初探Surface Shader背后的机制 - CSDN](http://blog.csdn.net/candycat1992/article/details/39994049)
@@ -1382,9 +1383,6 @@ Failed running /Applications/Unity/Unity.app/Contents/il2cpp/build/UnityLinker.e
 * [How to calculate sizeDelta in RectTransform?](https://stackoverflow.com/questions/44471568/how-to-calculate-sizedelta-in-recttransform)
 * [RectTransform.sizeDelta](https://docs.unity3d.com/ScriptReference/RectTransform-sizeDelta.html)
 
-* 将 Android SDK 的 tools 降级为 tools_r25.2.5-windows.zip 即可。
-* 同时 JDK 使用 1.8 版本，而不是 1.7 或 1.9。
-
 ### 编译 Android 失败
 
 * [Unable to list target platforms. Please make sure the android sdk path is correct. See the Console for more details.](https://answers.unity.com/questions/1323731/unable-to-list-target-platforms-please-make-sure-t.html)
@@ -1394,6 +1392,9 @@ Failed running /Applications/Unity/Unity.app/Contents/il2cpp/build/UnityLinker.e
 ### idea 编译项目错误
 
 * [编译报错，javacTask:源发行版1.8需要目标发行版1.8](http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-windows-x64.exe?AuthParam=1511150650_dfc5d83b121b76d58e82c4b2679486dc)
+
+* 将 Android SDK 的 tools 降级为 tools_r25.2.5-windows.zip 即可。
+* 同时 JDK 使用 1.8 版本，而不是 1.7 或 1.9。
 
 ## 2017-11-17 星期五
 
@@ -1424,8 +1425,6 @@ CREATE TABLE `player` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
-
-
 ## 2017-09-19 星期二
 
 ### ASCII 码表
@@ -1439,7 +1438,8 @@ CREATE TABLE `player` (
 ## 2017-09-15 星期五
 
 ### C# decompile
-* [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
+
+* [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
 
 ## 2017-09-12 星期二
 
