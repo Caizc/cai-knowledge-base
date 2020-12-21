@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 2
 
+## 2020-12-14 星期一
+
+### UE4 插件与示例合集
+
+* [Gameplay Assets and Examples Collections](https://dawnarc.com/2019/03/ue4gameplay-assets-and-examples-collections/)
+
 ## 2020-09-15 星期二
 
 ### 新手引导遮罩与点击事件透传
