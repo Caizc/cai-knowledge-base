@@ -1,14 +1,53 @@
 # Game Development Blackboard - Part 3
 
+## 2021-01-21 星期四
+
+### Gameplay Abilities System
+
+* [A Guided Tour of Gameplay Abilities | Inside Unreal - YouTube](https://youtu.be/YvXvWa6vbAA)
+
+### PCG 技术
+
+* [近代游戏技术革新与 PCG 技术的思考 - 腾讯 GWB 游戏无界](https://mp.weixin.qq.com/s?__biz=MzA4MDc5OTg5MA==&mid=2650621043&idx=1&sn=5c820d1c916342cba922ce86b6d47f2d&chksm=8797558eb0e0dc9837a8c8986de2e82034f4a2fc2e978042f6bbdacaf2cfdb32e2a1abd61670&mpshare=1&scene=1&srcid=0120SFdvj5guKGDUs4f6yOEB&sharer_sharetime=1611122670451&sharer_shareid=5d7b409587e4faafde1de8c005380dd7&version=3.1.1.3002&platform=win#rd)
+
+### UE 编译游戏项目
+
+* [编译游戏项目 - Unreal Engine](https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/CompilingProjects/index.html)
+
+### 代码规范
+
+* [代码规范 - Unreal Engine](https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/CodingStandard/index.html)
+
 ## 2021-01-19 星期二
 
-### Multiplayer in Unreal Engine
+### UE4 类图
 
-* [Multiplayer in Unreal Engine: How to Understand Network Replication - YouTube](https://youtu.be/JOJP0CvpB8w)
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20210121105932185.png)
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/Ue4_class_tree.png)
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/ue4_class_diagram.png)
 
 ### UE4 GamePlay 框架
 
 * [Inside UE4 - 知乎专栏](https://zhuanlan.zhihu.com/p/22813908)
+* [GamePlay 架构总结 - 知乎专栏](https://zhuanlan.zhihu.com/p/24170697)
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/v2-b4e0dd15956ccb819fca93e73d1b8ed2_r.jpg)
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/v2-c0cd2e5121f63c37615f78476e2a425c_r.jpg)
+
+> UGameplayStatics
+>
+> 我们在蓝图里见到的GetPlayerController、SpawActor和OpenLevel等都是来至于这个类的接口。这个类比较简单，相当于一个C++的静态类，只为蓝图暴露提供了一些静态方法。在想借鉴或者是查询某个功能的实现时，此处往往会是一个入口。
+
+* [GamePlay 架构 Subsystems - 知乎专栏](https://zhuanlan.zhihu.com/p/158717151)
+
+![](media\PRG-0008-A-Game-Development-Blackboard-Part-3\v2-69546312c4c3c05093f94f12b60904cf_r.jpg)
+
+### Multiplayer in Unreal Engine
+
+* [Multiplayer in Unreal Engine: How to Understand Network Replication - YouTube](https://youtu.be/JOJP0CvpB8w)
 
 ## 2021-01-12 星期二
 
@@ -16,7 +55,9 @@
 
 * [A blank window shows after opening an actor blueprint?](https://answers.unrealengine.com/questions/247411/a-blank-window-shows-after-opening-an-actor-bluepr.html)
 
-> If you open a blueprint and the view is mostly blank like above use the menu of that blueprint editor window and click on **Window->Class Defaults**> This will show you a message at the top that says "Note: This is a data only blueprint, so only the default values are shown. It does not have any script or variables. If you want to add some, Open the Full Blueprint Editor"> Click the blue link that reads **"Open the Full Blueprint Editor."** You will now be able to use that blueprint again like normal.
+> If you open a blueprint and the view is mostly blank like above use the menu of that blueprint editor window and click on **Window->Class Defaults**
+> This will show you a message at the top that says "Note: This is a data only blueprint, so only the default values are shown. It does not have any script or variables. If you want to add some, Open the Full Blueprint Editor"
+> Click the blue link that reads **"Open the Full Blueprint Editor."** You will now be able to use that blueprint again like normal.
 
 ### Enable mouse during playing?
 
