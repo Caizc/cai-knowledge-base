@@ -1,5 +1,26 @@
 # Game Development Blackboard - Part 3
 
+## 2021-01-25 星期一
+
+### C++ 中 .h 和 .cpp 的作用
+
+* [理解 C++ 中头文件和源文件的作用 - 菜鸟教程](https://www.runoob.com/w3cnote/cpp-header.html)
+
+> .h 文件中能包含：
+>
+> - 类成员数据的声明，但不能赋值
+> - 类静态数据成员的定义和赋值，但不建议，只是个声明就好
+> - 类的成员函数的声明
+> - 非类成员函数的声明
+> - 常数的定义：如：`constint a=5;`
+> - 静态函数的定义
+> - 类的内联函数的定义
+>
+> 不能包含：
+>
+> - 所有非静态变量（不是类的数据成员）的声明
+> - 默认命名空间声明不要放在头文件，`using namespace std;` 等应放在 .cpp 中，在 .h 文件中使用 `std::string`
+
 ## 2021-01-21 星期四
 
 ### Gameplay Abilities System
