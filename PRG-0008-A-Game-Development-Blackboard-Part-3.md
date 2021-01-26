@@ -29,6 +29,51 @@
 
 * [UnrealVS Extension - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/UnrealVS/index.html)
 
+### UE4 log 显示优化
+
+* [Change the color of Log Text - Unreal Engine Forums](https://forums.unrealengine.com/development-discussion/c-gameplay-programming/40184-change-the-color-of-log-text)
+
+> I started using cygwin and multitail to achieve colored logs. It takes a bit more doing because you have to regex to get the coloring you want, but you get exactly what you want.
+>
+> This is the multitail ue4 colorscheme I have so far: (drop this in /etc/multitail.conf)
+>
+> ```
+> colorscheme:ue4
+> # Pickout Specials Words etc.
+> cs_re:87:LogAbilitySystem
+> cs_re:99:Task
+> cs_re:99:Ability
+> cs_re:9:Fatal
+> cs_re:9:Error
+> cs_re:3:Warning
+> cs_re:11:Display
+> cs_re:82:Verbose
+> cs_re:81:VeryVerbose
+> 
+> # General Color Formatting
+> cs_re:2:^\[[0-9]*.[0-9]*.[0-9]*-[0-9]*.[0-9]*.[0-9]*:[0-9]*]
+> cs_re_s:3:^\[[0-9]*.[0-9]*.[0-9]*-[0-9]*.[0-9]*.[0-9]*:[0-9]*](\[...*\])
+> cs_re_s:5:^\[[0-9]*.[0-9]*.[0-9]*-[0-9]*.[0-9]*.[0-9]*:[0-9]*]\[...*\]([^ ]*)
+> cs_re_s:6:^\[[0-9]*.[0-9]*.[0-9]*-[0-9]*.[0-9]*.[0-9]*:[0-9]*]\[...*\][^ ]*(.*)
+> ```
+>
+> Also, check out this link for setting up a nice shell (no affiliation with this person, just found it and sharing)
+> https://www.trueneutral.eu/2014/win-proper-term.html
+>
+> **Output of command:**
+>
+> ```shell
+> multitail.exe -cS ue4 <your logfile>.log
+> ```
+>
+> Bonus Links:
+>
+> \- 256 (Xterm) colors : https://jonasjacek.github.io/colors/
+> \- Regex Tester: https://regex101.com/r/nI8xB8/1055
+
+* [Cygwin](https://www.cygwin.com/)
+* [MultiTail](https://www.vanheusden.com/multitail/)
+
 ## 2021-01-21 星期四
 
 ### Gameplay Abilities System
