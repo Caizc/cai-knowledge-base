@@ -2,6 +2,10 @@
 
 ## 2021-01-25 星期一
 
+### UE4 C++ 编码规范
+
+* [Coding Standard - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard/index.html)
+
 ### C++ 中 .h 和 .cpp 的作用
 
 * [理解 C++ 中头文件和源文件的作用 - 菜鸟教程](https://www.runoob.com/w3cnote/cpp-header.html)
@@ -20,6 +24,10 @@
 >
 > - 所有非静态变量（不是类的数据成员）的声明
 > - 默认命名空间声明不要放在头文件，`using namespace std;` 等应放在 .cpp 中，在 .h 文件中使用 `std::string`
+
+### UnrealVS 扩展
+
+* [UnrealVS Extension - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/UnrealVS/index.html)
 
 ## 2021-01-21 星期四
 
