@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 3
 
+## 2021-02-04 星期四
+
+### 函数参数前的 class 关键字
+
+* [What is the class keyword before a function argument? - stackoverflow](https://stackoverflow.com/questions/35959438/what-is-the-class-keyword-before-a-function-argument/35959483)
+
 ## 2021-01-27 星期三
 
 ### UE4 中的字符串
@@ -51,6 +57,14 @@
 >
 > - 所有非静态变量（不是类的数据成员）的声明
 > - 默认命名空间声明不要放在头文件，`using namespace std;` 等应放在 .cpp 中，在 .h 文件中使用 `std::string`
+
+* [What is the difference between #include <filename> and #include "filename"? - stackoverflow](https://stackoverflow.com/questions/21593/what-is-the-difference-between-include-filename-and-include-filename)
+
+> In practice, the difference is in the location where the preprocessor searches for the included file.
+>
+> For `#include <filename>` the preprocessor searches in an implementation dependent manner, normally in search directories pre-designated by the compiler/IDE. This method is normally used to include standard library header files.
+>
+> For `#include "filename"` the preprocessor searches first in the same directory as the file containing the directive, and then follows the search path used for the `#include <filename>` form. This method is normally used to include programmer-defined header files.
 
 ### UnrealVS 扩展
 
