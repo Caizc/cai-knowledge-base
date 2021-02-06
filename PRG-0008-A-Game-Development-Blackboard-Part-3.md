@@ -1,10 +1,38 @@
 # Game Development Blackboard - Part 3
 
+## 2021-02-06 星期六
+
+### Movement in UE4
+
+* [游戏角色的移动原理（上）- 游戏开发那些事](https://mp.weixin.qq.com/s?__biz=MzU4NDYwNDI2NQ==&mid=2247483959&idx=1&sn=6b48226aac96cd5b1972cf392f70c207&chksm=fd960d31cae1842724cbcb679e316873f1a60394397391484d71cded58a36e7101f82fc85c8e&mpshare=1&scene=1&srcid=0206gYidfI9o034qSpECGIXC&sharer_sharetime=1612598181454&sharer_shareid=247cb15e3482d664cd16d96b3a3f3f73&version=3.1.2.2211&platform=win#rd)
+* [游戏角色的移动原理（下）- 游戏开发那些事](https://mp.weixin.qq.com/s?__biz=MzU4NDYwNDI2NQ==&mid=2247483960&idx=1&sn=b9f51039e0bc0376df576da948fc4d2b&chksm=fd960d3ecae18428b6d4d76db2658516b7f617b19deb3d1da8c0f7b91228c47f6a414da752bc&cur_album_id=1342928497043537921&scene=189#rd)
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/640)
+
+* [RootMotion 详解 - 游戏开发那些事](https://mp.weixin.qq.com/s?__biz=MzU4NDYwNDI2NQ==&mid=2247483965&idx=1&sn=b731f781ffddbbd483f759790089cfbd&chksm=fd960d3bcae1842df3a4bd265bd68b2e911f603dbba0f858c18e2b7ddf7f9f160f7ec0e16f8c&cur_album_id=1342928497043537921&scene=189#rd)
+* [How to achieve smooth rotation using Navmesh? - UE Answers](https://answers.unrealengine.com/questions/76200/view.html)
+
+> Go to your AI Pawn and under Components > CharacterMovement > Enable "Orient Rotation to Movement"
+>
+> Then under Defaults > Pawn > Disable "Use Controller Rotation Yaw" & Under Character Movement > set "Yaw" to a value you like (for example 180).
+
+### Navigation in UE4
+
+Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，会导致 AI 的导航失效，从而导致 AI 寻路失效。 
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20210206212056955.png)
+
 ## 2021-02-04 星期四
 
 ### 函数参数前的 class 关键字
 
 * [What is the class keyword before a function argument? - stackoverflow](https://stackoverflow.com/questions/35959438/what-is-the-class-keyword-before-a-function-argument/35959483)
+
+### UE4 教程
+
+* [Unreal Engine C++ Tutorials - YouTube](https://youtube.com/playlist?list=PL3gCaTLUSAUsHG2BzsAs-HIeP08DyWtHh)
+* [Learn Unreal Engine (with C++) - YouTube](https://youtu.be/LsNW4FPHuZE)
+* [Learn C++ For Unreal Engine - YouTube](https://youtube.com/playlist?list=PLZhNP5qJ2IA0aAwjC3_3kAuF01oG_ol3d)
 
 ## 2021-01-27 星期三
 
