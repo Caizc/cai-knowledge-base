@@ -18,7 +18,7 @@
 
 ### Navigation in UE4
 
-Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，会导致 AI 的导航失效，从而导致 AI 寻路失效。 
+Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，会导致 AI 的导航失效，从而导致 AI 寻路失败。 
 
 ![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20210206212056955.png)
 
@@ -27,6 +27,14 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 ### 函数参数前的 class 关键字
 
 * [What is the class keyword before a function argument? - stackoverflow](https://stackoverflow.com/questions/35959438/what-is-the-class-keyword-before-a-function-argument/35959483)
+
+### UE4 C++ 文件中的宏
+
+* [宏 GENERATED_UCLASS_BODY() 与 GENERATED_BODY() 简析 - CSDN](https://blog.csdn.net/xi_niuniu/article/details/50523928)
+
+> 紧随 GENERATED_BODY() 之后的成员的默认访问方式为 private，而紧随 GENERATED_UCLASS_BODY() 之后的成员的默认访问方式为 public。
+>
+> GENERATED_BODY() 为我们生成默认构造函数，而 GENERATED_UCLASS_BODY() 为我们生成带有指定参数类型的构造函数。
 
 ### UE4 教程
 
@@ -66,6 +74,10 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 ### UE4 C++ 编码规范
 
 * [Coding Standard - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard/index.html)
+
+### UE4 工程规范
+
+* [UE4 Style Guide - GitHub](https://github.com/Allar/ue4-style-guide)
 
 ### C++ 中 .h 和 .cpp 的作用
 
