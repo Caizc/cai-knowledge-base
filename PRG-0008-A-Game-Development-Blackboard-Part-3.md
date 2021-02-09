@@ -28,6 +28,12 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 * [What is the class keyword before a function argument? - stackoverflow](https://stackoverflow.com/questions/35959438/what-is-the-class-keyword-before-a-function-argument/35959483)
 
+### 函数声明后的 const 关键字
+
+* [What is meant with const at end of function declaration? - stackoverflow](https://stackoverflow.com/questions/3141087/what-is-meant-with-const-at-end-of-function-declaration)
+
+> A "const function", denoted with the keyword `const` after a function declaration, makes it a compiler error for this class function to change a member variable of the class. However, reading of a class variables is okay inside of the function, but writing inside of this function will generate a compiler error.
+
 ### UE4 C++ 文件中的宏
 
 * [宏 GENERATED_UCLASS_BODY() 与 GENERATED_BODY() 简析 - CSDN](https://blog.csdn.net/xi_niuniu/article/details/50523928)
@@ -36,7 +42,18 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 >
 > GENERATED_BODY() 为我们生成默认构造函数，而 GENERATED_UCLASS_BODY() 为我们生成带有指定参数类型的构造函数。
 
-### UE4 教程
+### UE4 学习资料
+
+#### 网站
+
+* [Unreal Engine 4 Documentation](https://docs.unrealengine.com/en-US/index.html)
+* [虚幻在线学习](https://www.unrealengine.com/zh-CN/onlinelearning-courses)
+
+#### 书籍
+
+* 《大象无形 - 虚幻引擎程序设计浅析》
+
+#### 视频
 
 * [Unreal Engine C++ Tutorials - YouTube](https://youtube.com/playlist?list=PL3gCaTLUSAUsHG2BzsAs-HIeP08DyWtHh)
 * [Learn Unreal Engine (with C++) - YouTube](https://youtu.be/LsNW4FPHuZE)
