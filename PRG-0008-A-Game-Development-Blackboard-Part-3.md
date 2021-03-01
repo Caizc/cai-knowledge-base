@@ -59,6 +59,10 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 * [Learn Unreal Engine (with C++) - YouTube](https://youtu.be/LsNW4FPHuZE)
 * [Learn C++ For Unreal Engine - YouTube](https://youtube.com/playlist?list=PLZhNP5qJ2IA0aAwjC3_3kAuF01oG_ol3d)
 
+#### 文章
+
+* [UE4 推荐文章列表 - 知乎专栏](https://zhuanlan.zhihu.com/p/126611976)
+
 ## 2021-01-27 星期三
 
 ### UE4 中的字符串
@@ -174,13 +178,24 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 ## 2021-01-21 星期四
 
-### Gameplay Abilities System
+### Gameplay Ability System
 
-* [A Guided Tour of Gameplay Abilities | Inside Unreal - YouTube](https://youtu.be/YvXvWa6vbAA)
-
-* [GAS Content - GitHub](https://github.com/Pantong51/GASContent)
+* [Gameplay Ability System - UE Documentation](https://docs.unrealengine.com/en-US/InteractiveExperiences/GameplayAbilitySystem/index.html)
 * [GAS Documentation - GitHub](https://github.com/tranek/GASDocumentation)
+* [UE4 游戏技能系统文档 - CSDN](https://blog.csdn.net/pirate310/article/details/106311256)
+* [Gameplay Ability System 插件入门教程 - 博客园](https://www.cnblogs.com/JackSamuel/p/7155500.html)
+* [GAS Content - GitHub](https://github.com/Pantong51/GASContent)
 * [Gameplay Abilities Slide Show- GoogleDocs](https://docs.google.com/presentation/d/1GeuDO2as1b12ei5OHh6jyfxczVYymXJQDBWoRLDMpOI/edit?usp=sharing)
+* [A Guided Tour of Gameplay Abilities | Inside Unreal - YouTube](https://youtu.be/YvXvWa6vbAA)
+* [GAS 插件介绍（入门篇）- Bilibili](https://www.bilibili.com/video/BV1X5411V7jh)
+* [深入 GAS 架构设计 - Bilibili](https://www.bilibili.com/video/BV1zD4y1X77M)
+
+![image-20210226144235623](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20210226144235623.png)
+
+* [Gameplay Ability System 系统完整学习 - Bilibili](https://www.bilibili.com/video/BV1qh411X7ZN)
+* [Introduction to Unreal Engine 4 Ability System - Udemy](https://www.udemy.com/course/introduction-to-unreal-engine-4-ability-system/)
+* [Introduction to Unreal Engine 4 Ability System - Bilibili](https://www.bilibili.com/video/BV1NQ4y1K7jR)
+* [Gameplay Ability System Tutorial - Youtube](https://youtube.com/playlist?list=PLw-lnbqWlRJCYPwesxD36q8bYq_Yv_mMN)
 
 ### PCG 技术
 
