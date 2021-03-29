@@ -2,6 +2,25 @@
 
 ## 2021-03-22 星期一
 
+### UE4 C++ Programming
+
+* [Introduction to C++ Programming in UE4](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/IntroductionToCPP/index.html)
+* [Unreal Property System(Reflection) - UE Blog](https://www.unrealengine.com/zh-CN/blog/unreal-property-system-reflection)
+
+### UE4 Actors
+
+* [Actors - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/index.html)
+* [Actors Lifecycle - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/ActorLifecycle/index.html)
+
+![UE4 Actor LifeCycle](media/PRG-0008-A-Game-Development-Blackboard-Part-3/UE4ActorLifeCycle.png)
+
+### UE4 字符串
+
+* [String Handling - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/index.html)
+* [Character Encoding - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/CharacterEncoding/index.html)
+* [FString - UE4 Documentation](https://docs.unrealengine.com/en-US/API/Runtime/Core/Containers/FString/index.html)
+* [FString - UE API Reference](https://docs.unrealengine.com/en-US/API/Runtime/Core/Containers/FString/index.html)
+
 ### UE4 容器类
 
 * [TArray - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/TArrays/index.html)
@@ -10,9 +29,26 @@
 * [UE4 容器的使用 - CSDN](https://blog.csdn.net/yangxuan0261/article/details/52078303)
 * [Optimizing TArray Usage for Performance - UE Blog](https://www.unrealengine.com/en-US/blog/optimizing-tarray-usage-for-performance)
 
+### UE4 Libraries
+
+* [UE4 Libraries You Should Know About - UE Blog](https://www.unrealengine.com/zh-CN/blog/ue4-libraries-you-should-know-about)
+
+> * *Engine\Source\Runtime\Core\Public\Containers\Array.h*
+> * *Engine\Source\Runtime\Core\Public\Containers\Set.h*
+> * *Engine\Source\Runtime\Core\Public\Containers\Map.h*
+> * *Engine\Source\Runtime\Core\Public\Containers\UnrealString.h*
+> * *Engine\Source\Runtime\Core\Public\UObject\NameTypes.h*
+> * *Engine\Source\Runtime\Core\Public\Internationalization\Text.h*
+> * *Engine\Source\Runtime\Core\Public\Math\UnrealMathUtility.h*
+> * *Engine\Source\Runtime\Core\Public\GenericPlatform\GenericPlatformMath.h*
+
 ### UE4 性能优化
 
 * [How to improve game thread CPU performance in Unreal Engine? - UE Blog](https://www.unrealengine.com/en-US/blog/how-to-improve-game-thread-cpu-performance)
+
+### UE4 Localization
+
+* [Localization Overview - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/Localization/Overview/index.html)
 
 ## 2021-03-06 星期六
 
