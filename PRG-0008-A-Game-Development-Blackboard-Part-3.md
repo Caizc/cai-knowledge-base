@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 3
 
+## 2021-04-01 星期四
+
+### C++ 成员变量初始化
+
+* [C++ initializing variables in header vs with constructor - stackoverflow](https://stackoverflow.com/questions/28413154/c-initializing-variables-in-header-vs-with-constructor)
+
 ## 2021-03-22 星期一
 
 ### UE4 C++ Programming
