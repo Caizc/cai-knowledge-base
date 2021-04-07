@@ -1,5 +1,31 @@
 # Game Development Blackboard - Part 3
 
+## 2021-04-06 星期二
+
+### UE4 动态读写 DataTable
+
+* [UE4 动态读写 DataTable 数据表 - 知乎](https://zhuanlan.zhihu.com/p/158714495)
+
+### UE4 Plugin
+
+* [Unreal Engine C++ Tutorial: Plugins - YouTube](https://youtu.be/mgFrFdzb7hg)
+* [C++ Extending the Editor - YouTube](https://youtu.be/zg_VstBxDi8)
+
+### UE4 C++ 单例
+
+* [Unreal-style Singletons with Subsystems](https://benui.ca/unreal/subsystem-singleton/)
+* [在虚幻引擎实现单例模式 - 知乎](https://zhuanlan.zhihu.com/p/57218085)
+* [UE4SingletonDemo - GitHub](https://github.com/ReturnZero23/UE4SingletonDemo)
+* [自定义单例类 - CSDN](https://blog.csdn.net/ttm2d/article/details/106441788)
+* [error LNK2001: unresolved external symbol - stackoverflow](https://stackoverflow.com/questions/16049306/error-lnk2001-unresolved-external-symbol-private-static-class/28823331)
+
+> The definition for a static data member shall appear in a namespace scope enclosing the member’s class definition.
+
+### UE4 Log
+
+* [Logs, Printing Messages To Yourself During Runtime](https://nerivec.github.io/old-ue4-wiki/pages/logs-printing-messages-to-yourself-during-runtime.html)
+* [Custom Log Categories](https://blog.jamie.holdings/2020/04/21/unreal-engine-4-custom-log-categories/)
+
 ## 2021-04-01 星期四
 
 ### C++ 成员变量初始化
