@@ -1,5 +1,49 @@
 # Game Development Blackboard - Part 3
 
+## 2021-04-10 星期六
+
+### UE4 C++ include
+
+* [pragma once - Wikipedia](https://en.wikipedia.org/wiki/Pragma_once)
+
+> In the C and C++ programming languages, pragma once is a non-standard but widely supported preprocessor directive designed to cause the current source file to be included only once in a single compilation.
+
+### UE4 IWYU(Include-What-You-Use)
+
+* [IWYU - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/IWYU/index.html)
+
+> When writing IWYU code, there are four specific conventions that we adopt:
+>
+> 1. **All header files include their required dependencies.**
+> 2. **.cpp files include their matching \*.h files first.**
+> 3. **PCH files are no longer explicitly included.**
+> 4. **Monolithic header files are no longer included.**
+>
+> If you want your game to opt-in to IWYU, there are a few tips to keep in mind:
+>
+> 1. Include `CoreMinimal.h` at the top of each header file.
+> 2. To verify that all of your source files include all of their required dependencies, compile your game project in non-unity mode with PCH files disabled.
+> 3. If you need to access **UEngine** or **GEngine**, which are defined in `Runtime\Engine\Classes\Engine\Engine.h`, you can `#include Engine/Engine.h` (distinguishing from the monolithic header file, which is located at `Runtime\Engine\Public\Engine.h`).
+> 4. If you use a class that the compiler doesn't recognize, and don't know what you need to include may be missing the header file. This is especially the case if you are converting from non-IWYU code that compiled correctly. You can look up the class in the API Documentation, and find the necessary modules and header files at the bottom of the page.
+
+### UE4 C++ Forward Declaration 前置声明
+
+* [Forward Declarations](https://nerivec.github.io/old-ue4-wiki/pages/forward-declarations.html)
+
+> Using Forward Declarations you can have as many inter-relating classes as you want in your c++ code without having circular dependencies.
+
+### region and endregion pragma
+
+* [region and endregion pragma - Microsoft Documentation](https://docs.microsoft.com/en-us/cpp/preprocessor/region-endregion)
+
+> `#pragma region` lets you specify a block of code that you can expand or collapse when using the outlining feature of the Visual Studio editor.
+
+### TSubclassOf
+
+* [TSubclassOf - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/TSubclassOf/index.html)
+
+> **TSubclassOf** is a template class that provides UClass type safety.
+
 ## 2021-04-06 星期二
 
 ### UE4 动态读写 DataTable
