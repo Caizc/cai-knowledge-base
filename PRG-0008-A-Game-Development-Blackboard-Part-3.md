@@ -44,6 +44,10 @@
 
 > **TSubclassOf** is a template class that provides UClass type safety.
 
+### UE4 UPROPERTY Access Modifiers
+
+![](media/PRG-0008-A-Game-Development-Blackboard-Part-3/UE4AccessToVariables.jpg)
+
 ## 2021-04-06 星期二
 
 ### UE4 动态读写 DataTable
