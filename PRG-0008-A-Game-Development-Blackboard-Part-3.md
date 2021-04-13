@@ -1,5 +1,84 @@
 # Game Development Blackboard - Part 3
 
+## 2021-04-13 星期二
+
+### UE4 C++ deprecated
+
+* [UE4: Deprecating Symbols](https://blog.squareys.de/ue4-deprecating-symbols/)
+
+```c++
+/** Number of elements
+ * @deprecated Use Size instead
+ */
+UPROPERTY(meta=(DeprecatedProperty, DeprecationMessage="Use Size instead."))
+int32 Count_DEPRECATED;
+
+/** @brief Get answer to everything
+ * @deprecated Use GetEarth() and GetAnswer() instead.
+ */
+UFUNCTION(BlueprintPure, meta=(DeprecatedFunction,
+    DeprecationMessage="Use GetEarth() and GetAnswer() instead."))
+int GetAnswerToEverything() const {
+    return 42;
+}
+
+UCLASS(Deprecated)
+class UDEPRECATED_MyObject : public UObject {
+    GENERATED_BODY()
+    /* ... */
+};
+
+/* @deprecated This was removed in version XY */
+UENUM()
+enum class EMyEnum_DEPRECATED : uint32 {
+    /* @deprecated This was removed in version XY */
+    MyValue_DEPRECATED = 0,
+    /* @deprecated This was removed in version XY */
+    YourValue_DEPRECATED = 1,
+    /* ... */
+};
+
+USTRUCT()
+struct DEPRECATED(4.20, "MyStruct is deprecated, use YourStruct instead.") FMyStruct {
+    GENERATED_BODY()
+    /* ... */
+
+    UPROPERTY(meta=(Deprecated,
+        DeprecationMessage="MyStruct is deprecated, use YourStruct instead."))
+    FString Name_DEPRECATED;
+};
+
+DEPRECATED(4.20, "Use bar() instead.")
+virtual void foo();
+```
+
+* [C++ attribute: deprecated](https://en.cppreference.com/w/cpp/language/attributes/deprecated)
+
+```c++
+#include <iostream>
+ 
+[[deprecated]]
+void TriassicPeriod() {
+    std::clog << "Triassic Period: [251.9 - 208.5] million years ago.\n";
+}
+ 
+[[deprecated("Use NeogenePeriod() instead.")]]
+void JurassicPeriod() {
+    std::clog << "Jurassic Period: [201.3 - 152.1] million years ago.\n";
+}
+ 
+[[deprecated("Use calcSomethingDifferently(int).")]]    
+int calcSomething(int x) {
+    return x * 2;
+}
+ 
+int main()
+{
+    TriassicPeriod();
+    JurassicPeriod();
+}
+```
+
 ## 2021-04-10 星期六
 
 ### UE4 C++ include
