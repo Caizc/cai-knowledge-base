@@ -39,7 +39,7 @@ enum class EMyEnum_DEPRECATED : uint32 {
 };
 
 USTRUCT()
-struct DEPRECATED(4.20, "MyStruct is deprecated, use YourStruct instead.") FMyStruct {
+struct UE_DEPRECATED(4.20, "MyStruct is deprecated, use YourStruct instead.") FMyStruct {
     GENERATED_BODY()
     /* ... */
 
@@ -48,7 +48,7 @@ struct DEPRECATED(4.20, "MyStruct is deprecated, use YourStruct instead.") FMySt
     FString Name_DEPRECATED;
 };
 
-DEPRECATED(4.20, "Use bar() instead.")
+UE_DEPRECATED(4.20, "Use bar() instead.")
 virtual void foo();
 ```
 
