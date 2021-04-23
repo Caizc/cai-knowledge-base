@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 3
 
+## 2021-04-24 星期六
+
+### UE4 C++ Assert
+
+* [Asserts - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/Assertions/index.html)
+* [When should I use Check()? - UE Answers](https://answers.unrealengine.com/questions/418935/when-should-i-use-check.html)
+
 ## 2021-04-13 星期二
 
 ### UE4 C++ deprecated
