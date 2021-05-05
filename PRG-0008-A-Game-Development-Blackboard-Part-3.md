@@ -1,5 +1,9 @@
 # Game Development Blackboard - Part 3
 
+## 2021-05-06 星期四
+
+* [Blueprint Best Practices - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Blueprints/BestPractices/index.html)
+
 ## 2021-04-24 星期六
 
 ### UE4 C++ Assert
@@ -503,7 +507,6 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 * [Houdini Engine for Unity - SideFX](https://www.sidefx.com/docs/unity/index.html#Welcome)
 
 -------
-
 
 
 
