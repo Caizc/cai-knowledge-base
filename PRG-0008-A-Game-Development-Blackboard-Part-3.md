@@ -1,6 +1,21 @@
 # Game Development Blackboard - Part 3
 
+## 2021-06-03 星期四
+
+### UE4 Delete C++ Class
+
+* [Delete a specific C++ Class](https://www.orfeasel.com/deleting-a-c-class/)
+
+> 1. Close Visual Studio
+> 2. Close UE4 Editor
+> 3. Remove the corresponding .cpp and .h file from your disk in explorer
+> 4. Remove everything in the folder Binaries
+> 5. Right click the .uproject file and click **Generate Visual Studio project Files**
+> 6. Get back to your normal activity
+
 ## 2021-05-06 星期四
+
+### Blueprint Best Practices
 
 * [Blueprint Best Practices - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Blueprints/BestPractices/index.html)
 
