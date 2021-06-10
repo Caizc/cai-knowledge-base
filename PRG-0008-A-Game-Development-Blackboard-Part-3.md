@@ -238,10 +238,6 @@ int main()
 * [Shared References - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/SharedReference/index.html)
 * [Weak Pointers - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/WeakPointer/index.html)
 
-### UE4 性能优化
-
-* [How to improve game thread CPU performance in Unreal Engine? - UE Blog](https://www.unrealengine.com/en-US/blog/how-to-improve-game-thread-cpu-performance)
-
 ### UE4 Localization
 
 * [Localization Overview - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/Localization/Overview/index.html)
