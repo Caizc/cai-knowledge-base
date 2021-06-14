@@ -2,6 +2,8 @@
 
 * [Performance and Profiling - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/)
 
+* [Performance Guidelines for Mobile Devices - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/)
+
 * [Profiling and Optimization in UE4 | Unreal Indie Dev Days 2019 - YouTube](https://youtu.be/EbXakIuZPFo)
 
 * [UE4 里的性能分析与优化 - 虚幻独立开发日 2019 - bilibili](https://www.bilibili.com/video/av883251191/)
@@ -24,6 +26,11 @@
 
 * [UE4 性能调试分析常用方法 - 知乎](https://zhuanlan.zhihu.com/p/273608458)
 
+# 代码块性能调试
+
+* [Profiling Code Blocks](https://www.orfeasel.com/profiling-code-blocks/)
+* [Profiling, How To Count CPU Cycles Of Specific Blocks Of Your Game Code](https://michaeljcole.github.io/wiki.unrealengine.com/Profiling,_How_To_Count_CPU_Cycles_Of_Specific_Blocks_Of_Your_Game_Code/)
+
 # CPU
 
 * [How to improve game thread CPU performance in Unreal Engine? - UE Blog](https://www.unrealengine.com/en-US/blog/how-to-improve-game-thread-cpu-performance)
@@ -35,10 +42,6 @@
 # UI
 
 * [UI 性能优化 - 知乎](https://zhuanlan.zhihu.com/p/117577253)
-
-# 包体大小
-
-
 
 # 加载
 
@@ -93,6 +96,8 @@ Saved/Profiling/UnrealStats
 ## 性能工具
 
 * Session Frontend
+* Android Studio Logcat
+* [使用 Logcat 写入和查看日志 - Android Studio](https://developer.android.com/studio/debug/am-logcat)
 
 ## 减少 Draw Call
 
@@ -108,6 +113,22 @@ Saved/Profiling/UnrealStats
 ## 减少 Over Draw
 
 * Shader Complexity 检查工具
+
+## 纹理
+
+* [Textures for Mobile Platforms - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Textures/)
+
+> When creating Textures for mobile platforms you will need to make sure that the Textures you create adhere to the following restrictions:
+>
+> - Textures can only be a maximum size of 2048 in either dimension as this is the largest size allowed by the PVR compressor.
+> - Texture sizes need to be a power of 2 (for example, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, or 2048).
+>   - You can have non-square Textures like 512 x 64, just as long as the size remains a power of 2.
+> - You should use square Textures whenever possible as they make more efficient use of memory.
+>
+> When importing Textures into Unreal Engine 4 (UE4) the following Texture settings need to be applied to your Textures to ensure they work and perform correctly:
+>
+> - It is recommended that you only use **TC_Default** or **TC_NormalMap** in the **Compression Settings** to help ensure that your Textures take up as little memory as possible.
+> - The **sRGB** property should be enabled on all Texture maps except for Normal Maps and Masks.
 
 ## 材质
 
@@ -132,6 +153,21 @@ Saved/Profiling/UnrealStats
 * 引用过多？
 * 滥用高消耗的蓝图节点
 * 滥用循环
+
+# Packaging
+
+* [Setting Up Android SDK and NDK for Unreal - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/Setup/AndroidStudio/)
+
+| Unreal Engine Version | Required Android Studio Version | Compatible NDK Versions |
+| :-------------------- | :------------------------------ | :---------------------- |
+| 4.26.2                | Android Studio 4.0              | NDK r21b                |
+| 4.25                  | Android Studio 3.5.3            | NDK r21b, NDK r20b      |
+| 4.21 - 4.24           |                                 | NDK r14b                |
+| 4.19 - 4.20           |                                 | NDK r12b                |
+
+* [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
+* [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
+* [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
 
 ---
 change log: 
