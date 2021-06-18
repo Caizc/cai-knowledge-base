@@ -39,14 +39,35 @@
 
 # 内存
 
+* [UE 性能分析：内存优化](https://imzlp.com/posts/19135/)
+
 # UI
 
 * [UI 性能优化 - 知乎](https://zhuanlan.zhihu.com/p/117577253)
 
-# 加载
+# PSO 缓存
+
+### 官方文档阅读顺序
 
 * [PSO Caching - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/)
+
+> PSO caching works by first creating a list of all the needed Shaders that are required by the Materials that are used in your UE4 project. This list is then used to help speed up the compiling process of these Shaders when they are first encountered by your UE4 project. This, in turn, helps reduce any hitches your project might encounter when a Material requires a new Shader to be compiled.
+
+![PSO_Caching_Digramh.jpg](https://docs.unrealengine.com/4.26/Images/SharingAndReleasing/PSOCaching/PSO_Caching_Digramh.jpg)
+
+* [Enabling & Building PSO Caching - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/EnablingBuildingPSOCaching/)
+* [Gathering PSO Data - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/GatheringPSOData/)
+* [Building the PSO Cache - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/BuildingPSOCache/)
+* [Building A UE4 Project with PSO Caching - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/BuildingUE4ProjectWithPSOCaching/)
+* [Compiling & Using PSO Caching Data - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/CompilingUsingPSOCachingData/)
+* [PSO Reference - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/PSOReference/)
+* [PSO Questions and Answers - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/PSOCaching/FAQ/)
+
+### 项目实战文章
+
 * [如何使用 UE4 的 PSO 缓存改善性能 - 知乎](https://zhuanlan.zhihu.com/p/372800310)
+* [UE 项目优化：PSO Caching](https://imzlp.com/posts/24336/)
+* [UE4：PSO 使用指南](https://www.muchenhen.com/2020/10/20/UE4-PSO%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)
 
 # 性能优化实践
 
@@ -64,6 +85,16 @@ r.vsync 0
 
 ```
 Project Settings -> Engine -> General Settings -> Smooth Frame Rate
+```
+
+
+
+* 项目设置
+
+ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line Parameters 中填入参数，以自动将录制的 Profiler 数据从终端设备中传送回编辑器中进行分析：
+
+```
+-messaging -SendAutomationAnalytics
 ```
 
 
