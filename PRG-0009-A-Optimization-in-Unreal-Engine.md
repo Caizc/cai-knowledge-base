@@ -26,6 +26,8 @@
 
 * [UE4 性能调试分析常用方法 - 知乎](https://zhuanlan.zhihu.com/p/273608458)
 
+* [UE4 性能优化操作手册 - 知乎](https://zhuanlan.zhihu.com/p/54284627)
+
 # 代码块性能调试
 
 * [Profiling Code Blocks](https://www.orfeasel.com/profiling-code-blocks/)
@@ -40,6 +42,10 @@
 # 内存
 
 * [UE 性能分析：内存优化](https://imzlp.com/posts/19135/)
+
+# 垃圾收集
+
+* [UE4 垃圾收集大杂烩 - 知乎](https://zhuanlan.zhihu.com/p/219588301)
 
 # UI
 
@@ -68,6 +74,131 @@
 * [如何使用 UE4 的 PSO 缓存改善性能 - 知乎](https://zhuanlan.zhihu.com/p/372800310)
 * [UE 项目优化：PSO Caching](https://imzlp.com/posts/24336/)
 * [UE4：PSO 使用指南](https://www.muchenhen.com/2020/10/20/UE4-PSO%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)
+
+### 实践记录
+
+修改 `Config/Android/AndroidEngine.ini` 配置文件，加入以下配置项：
+
+```ini
+;====== PSO Caching related config begin ======
+
+[/Script/Engine.RendererSettings]
+;If true, Android apps will restart after precompiling the binary program cache. Enabled by default only on Android.
+r.ProgramBinaryCache.RestartAndroidAfterPrecompile=false
+
+[DevOptions.Shaders]
+;Enable this option on Android, otherwise PSO Caching won't take effect.
+NeedsShaderStableKeys=true
+
+[ConsoleVariables]
+;1 Enables the PipelineFileCache, 0 disables it.
+r.ShaderPipelineCache.Enabled=0
+
+;1 Logs new PSO entries into the file cache and allows saving.
+r.ShaderPipelineCache.LogPSO=1
+
+;If > 0 then a log of all bound PSOs for this run of the program will be saved to a writable user cache file. Defaults to 0 but is forced on with -logpso.
+r.ShaderPipelineCache.SaveBoundPSOLog=1
+
+;Sets the startup mode for the PSO cache, determining what the cache does after initialisation:
+;0: Precompilation is paused and nothing will compile until a call to ResumeBatching().
+;1: Precompilation is enabled in the 'Fast' mode.
+;2: Precompilation is enabled in the 'Background' mode.
+;Default is 1.
+r.ShaderPipelineCache.StartupMode=1
+
+;Set the number of PipelineStateObjects to compile in a single batch operation when compiling takes priority. Defaults to a maximum of 50 per frame, due to async. file IO it is less in practice.
+r.ShaderPipelineCache.BatchSize=50
+
+;The target time (in ms) to spend precompiling each frame when compiling takes priority or 0.0 to disable. When precompiling is faster the batch size will grow and when slower will shrink to attempt to occupy the full amount. Defaults to 16.0 (max. ms per-frame of precompilation).
+r.ShaderPipelineCache.BatchTime=16.0
+
+;Set the number of PipelineStateObjects to compile in a single batch operation when compiling takes priority. Defaults to a maximum of 50 per frame, due to async. file IO it is less in practice.
+r.ShaderPipelineCache.BackgroundBatchSize=1
+
+;Set the number of PipelineStateObjects to compile in a single batch operation when pre-optimizing the cache. Defaults to a maximum of 50 per frame, due to async. file IO it is less in practice.
+r.ShaderPipelineCache.PrecompileBatchSize=50
+
+;The target time (in ms) to spend precompiling each frame when in the background or 0.0 to disable. When precompiling is faster the batch size will grow and when slower will shrink to attempt to occupy the full amount. Defaults to 0.0 (off).
+r.ShaderPipelineCache.BackgroundBatchTime=11.0
+
+;The target time (in ms) to spend precompiling each frame when cpre-optimizing or 0.0 to disable. When precompiling is faster the batch size will grow and when slower will shrink to attempt to occupy the full amount. Defaults to 10.0 (off).
+r.ShaderPipelineCache.PrecompileBatchTime=10.0
+
+;Set the number of PipelineStateObjects to log before automatically saving. 0 will disable automatic saving. Shipping defaults to 0, otherwise default is 100.
+r.ShaderPipelineCache.SaveAfterPSOsLogged=100
+
+;Set the time where any logged PSO's will be saved if the number is < r.ShaderPipelineCache.SaveAfterPSOsLogged. Disabled when r.ShaderPipelineCache.SaveAfterPSOsLogged is 0
+r.ShaderPipelineCache.AutoSaveTime=30
+
+;Mask used to precompile the cache. Defaults to all PSOs (-1)
+r.ShaderPipelineCache.PreCompileMask=-1
+
+;Set the time where any logged PSO's will be saved when -logpso is on the command line.
+r.ShaderPipelineCache.AutoSaveTimeBoundPSO=10
+
+;Set non zero to use GameFileMask during PSO precompile - recording should always save out the usage masks to make that data availble when needed.
+r.ShaderPipelineCache.GameFileMaskEnabled=0
+
+;Set non zero to PreOptimize PSOs - this allows some PSOs to be compiled in the foreground before going in to game
+r.ShaderPipelineCache.PreOptimizeEnabled=1
+
+;The minimum bind count to allow a PSO to be precompiled.  Changes to this value will not affect PSOs that have already been removed from consideration.
+r.ShaderPipelineCache.MinBindCount=30
+
+;The maximum time to allow a PSO to be precompiled.  if greather than 0, the amount of wall time we will allow pre-compile of PSOs and then switch to background processing.
+r.ShaderPipelineCache.MaxPrecompileTime=3
+
+;====== PSO Caching related config end ======
+```
+
+### Trouble Shooting
+
+* Android 平台下，编译完 PSO 缓存后，游戏会自动重启，日志如下：
+
+![image-20210625155548390](media/PRG-0009-A-Optimization-in-Unreal-Engine/image-20210625155548390.png)
+
+查阅 UE4 源码 `OpenGLShaders.cpp`：
+
+```c++
+void FOpenGLProgramBinaryCache::OnShaderPipelineCachePrecompilationComplete(uint32 Count, double Seconds, const FShaderPipelineCache::FShaderCachePrecompileContext& ShaderCachePrecompileContext)
+{
+	UE_LOG(LogRHI, Log, TEXT("OnShaderPipelineCachePrecompilationComplete: %d shaders"), Count);
+	
+	// Want to ignore any subsequent Shader Pipeline Cache opening/closing, eg when loading modules
+	FShaderPipelineCache::GetCacheOpenedDelegate().Remove(OnShaderPipelineCacheOpenedDelegate);
+	FShaderPipelineCache::GetPrecompilationCompleteDelegate().Remove(OnShaderPipelineCachePrecompilationCompleteDelegate);
+	OnShaderPipelineCacheOpenedDelegate.Reset();
+	OnShaderPipelineCachePrecompilationCompleteDelegate.Reset();
+
+	check(IsBuildingCache_internal() || BinaryFileState == EBinaryFileState::ValidCacheFile);
+
+	if (IsBuildingCache_internal())
+	{
+		CloseWriteHandle();
+
+#if PLATFORM_ANDROID
+		FAndroidMisc::bNeedsRestartAfterPSOPrecompile = true;
+		if (CVarRestartAndroidAfterPrecompile.GetValueOnAnyThread() == 1)
+		{
+#if USE_ANDROID_JNI
+			extern void AndroidThunkCpp_RestartApplication(const FString& IntentString);
+			AndroidThunkCpp_RestartApplication(TEXT(""));
+#endif
+		}
+#endif
+		OpenAsyncReadHandle();
+		BinaryFileState = EBinaryFileState::ValidCacheFile;
+	}
+}
+```
+
+因此修改 `Config/Android/AndroidEngine.ini` 配置文件，加入以下配置项，即可禁用编译完成 PSO 缓存后重启游戏的行为：
+
+```ini
+[/Script/Engine.RendererSettings]
+r.ProgramBinaryCache.RestartAndroidAfterPrecompile=false
+```
 
 # 性能优化实践
 
@@ -206,3 +337,4 @@ change log:
 	- 创建（2021-06-08）
 
 ---
+
