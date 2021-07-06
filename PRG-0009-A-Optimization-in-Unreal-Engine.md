@@ -16,6 +16,8 @@
 
 * [UE4 性能优化指南（美术向）- 知乎](https://zhuanlan.zhihu.com/p/55335653)
 
+* [UE4 性能观察的基础 - CSDN](https://blog.csdn.net/u013412391/article/details/108394619)
+
 * [UE4 移动平台性能优化：搭建优化流程 - 知乎](https://zhuanlan.zhihu.com/p/97310033)
 
 * [UE4 性能优化方法（工具篇）- 博客园](https://www.cnblogs.com/ghl_carmack/p/5481763.html)
@@ -42,6 +44,8 @@
 # 内存
 
 * [UE 性能分析：内存优化](https://imzlp.com/posts/19135/)
+* [在 UE4 中处理内存泄漏问题 - UE Documentation](https://www.unrealengine.com/zh-CN/tech-blog/dealing-with-memory-leaks-in-ue4?lang=zh-CN)
+* [UE4 内存 Profiler - 知乎](https://zhuanlan.zhihu.com/p/61366273)
 
 # 垃圾收集
 
