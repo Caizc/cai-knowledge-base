@@ -1,5 +1,20 @@
 # Game Development Blackboard - Part 3
 
+## 2021-06-30 星期三
+
+### Android 应用 Crash 堆栈
+
+* [Android Native Crash 捕获与解析 - 知乎](https://zhuanlan.zhihu.com/p/352651095)
+* [Bugly Android 符号表](https://bugly.qq.com/docs/user-guide/symbol-configuration-android/?v=20200622202242)
+
+### References in C++
+
+* [Why don't I need to check if references are invalid/null? - stackoverflow](https://stackoverflow.com/questions/2524870/why-dont-i-need-to-check-if-references-are-invalid-null)
+
+### Crash 定位与修复
+
+* [What do you do when Unreal Editor crashes? - YouTube](https://youtu.be/TXZGIvpEhW8)
+
 ## 2021-06-21 星期一
 
 ### Unreal Engine 开发笔记
