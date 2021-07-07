@@ -258,10 +258,18 @@ int main()
 * [Shared Pointers - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/SharedPointer/index.html)
 * [Shared References - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/SharedReference/index.html)
 * [Weak Pointers - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/WeakPointer/index.html)
+* [UE4 智能指针](https://cloud.tencent.com/developer/article/1374075)
+* [UE4 智能指针基础 - 知乎](https://zhuanlan.zhihu.com/p/94198883)
 
 ### UE4 Localization
 
 * [Localization Overview - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/Localization/Overview/index.html)
+
+### UE4 GC 垃圾回收
+
+* [UE4 对象内存管理几种模式 - 知乎](https://zhuanlan.zhihu.com/p/49046671)
+* [UE4 内存管理实践 - CSDN](https://blog.csdn.net/yangxuan0261/article/details/52075581)
+* [UE4 垃圾回收剖析 - 博客园](https://www.cnblogs.com/ghl_carmack/p/6112118.html)
 
 ## 2021-03-06 星期六
 
