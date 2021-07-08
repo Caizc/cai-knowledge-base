@@ -1,5 +1,30 @@
 # Game Development Blackboard - Part 3
 
+## 2021-07-08 星期四
+
+### UE4 动态加载 UObject
+
+* [Dynamic Load Object](https://michaeljcole.github.io/wiki.unrealengine.com/Dynamic_Load_Object/)
+
+### IsValid() vs IsVlidLowLevel()
+
+* [What's the diference between using TWeakObjectPtr or using UObject*? - UE4 Answerhub](https://answers.unrealengine.com/questions/48818/whats-the-difference-between-using-tweakobjectptr.html)
+* [Discussion: The use of IsValidLowLevel - UE Forums](https://forums.unrealengine.com/t/discussion-the-ab-use-of-isvalidlowlevel/21795/3)
+
+> In this circumstance, doing a simple pointer check was insufficient, and my game was crashing because the interior UObject data was already partially destroyed but the pointer was still valid.
+>
+> **I found that IsValidLowLevel() was the only way to verify the full integrity of the UObject.**
+>
+> I agree that in many cases this extra check is not necessary!
+>
+> You should use your own judgement as to whether you feel IsValidLowLevel() will help you or not.
+>
+> The main thing you can take away from this post of mine is that if you ever get inexplicable crashes with UObjects using only simple pointer validity checks, you should certainly try out IsValidLowLevel()
+>
+> Ever since my experience during the Beta, I chose to always be as safe as possible and do IsValidLowLevel() checks.
+>
+> I’ve had cases where doing this extra check has helped in multiplayer games with replicated proxies being passed via Server function, and people besides myself have also encountered this.
+
 ## 2021-06-30 星期三
 
 ### Android 应用 Crash 堆栈
@@ -252,6 +277,10 @@ int main()
 > * *Engine\Source\Runtime\Core\Public\Math\UnrealMathUtility.h*
 > * *Engine\Source\Runtime\Core\Public\GenericPlatform\GenericPlatformMath.h*
 
+### UE4 Localization
+
+* [Localization Overview - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/Localization/Overview/index.html)
+
 ### UE4 智能指针
 
 * [Unreal Smart Pointer Library - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/SmartPointerLibrary/index.html)
@@ -261,19 +290,18 @@ int main()
 * [UE4 智能指针](https://cloud.tencent.com/developer/article/1374075)
 * [UE4 智能指针基础 - 知乎](https://zhuanlan.zhihu.com/p/94198883)
 
-### UE4 Localization
-
-* [Localization Overview - UE4 Documentation](https://docs.unrealengine.com/en-US/ProductionPipelines/Localization/Overview/index.html)
-
 ### UE4 GC 垃圾回收
 
 * [UE4 对象内存管理几种模式 - 知乎](https://zhuanlan.zhihu.com/p/49046671)
 * [UE4 内存管理实践 - CSDN](https://blog.csdn.net/yangxuan0261/article/details/52075581)
 * [UE4 垃圾回收剖析 - 博客园](https://www.cnblogs.com/ghl_carmack/p/6112118.html)
+* [Garbage Collection Overview](https://michaeljcole.github.io/wiki.unrealengine.com/Garbage_Collection_Overview/)
+* [Garbage Collection & Dynamic Memory Alloction](https://michaeljcole.github.io/wiki.unrealengine.com/Garbage_Collection_&_Dynamic_Memory_Allocation/)
+* [Garbage Collection: Count References to Any Object](https://michaeljcole.github.io/wiki.unrealengine.com/Garbage_Collection_~_Count_References_To_Any_Object/)
 
 ## 2021-03-06 星期六
 
-### UE4 Networking	
+### UE4 Networking
 
 * [UE4 的 MMO 移动同步方案 - 知乎](https://zhuanlan.zhihu.com/p/352386027)
 
@@ -325,6 +353,7 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 * [Unreal Engine 4 Documentation](https://docs.unrealengine.com/en-US/index.html)
 * [虚幻在线学习](https://www.unrealengine.com/zh-CN/onlinelearning-courses)
+* [An Archive.org backup of wiki.unrealengine.com](https://michaeljcole.github.io/wiki.unrealengine.com/)
 
 #### 书籍
 
