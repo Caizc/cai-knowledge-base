@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 3
 
+## 2021-07-12 星期一
+
+### UE4 热更新插件
+
+* [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
+
 ## 2021-07-08 星期四
 
 ### UE4 动态加载 UObject
