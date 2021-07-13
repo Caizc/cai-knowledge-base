@@ -12,7 +12,7 @@
 
 * [Dynamic Load Object](https://michaeljcole.github.io/wiki.unrealengine.com/Dynamic_Load_Object/)
 
-### IsValid() vs IsVlidLowLevel()
+### IsValid() vs IsValidLowLevel()
 
 * [What's the diference between using TWeakObjectPtr or using UObject*? - UE4 Answerhub](https://answers.unrealengine.com/questions/48818/whats-the-difference-between-using-tweakobjectptr.html)
 * [Discussion: The use of IsValidLowLevel - UE Forums](https://forums.unrealengine.com/t/discussion-the-ab-use-of-isvalidlowlevel/21795/3)
