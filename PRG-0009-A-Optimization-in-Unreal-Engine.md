@@ -46,6 +46,7 @@
 * [UE 性能分析：内存优化](https://imzlp.com/posts/19135/)
 * [在 UE4 中处理内存泄漏问题 - UE Documentation](https://www.unrealengine.com/zh-CN/tech-blog/dealing-with-memory-leaks-in-ue4?lang=zh-CN)
 * [UE4 内存 Profiler - 知乎](https://zhuanlan.zhihu.com/p/61366273)
+* [UE4 Low Level Memory Tracker 的使用 - 知乎](https://zhuanlan.zhihu.com/p/78005333)
 
 # 垃圾收集
 
@@ -334,6 +335,7 @@ Saved/Profiling/UnrealStats
 * [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
 * [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
 * [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
+* [游戏打包 - 知乎](https://zhuanlan.zhihu.com/p/60996027)
 
 ---
 change log: 
