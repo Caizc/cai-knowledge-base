@@ -6,6 +6,16 @@
 
 * [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
 
+### JetBrains IDE 的行长度限制修改
+
+* [How can I set the line limit length for different types of files? - stackoverflow](https://stackoverflow.com/questions/21873543/how-can-i-set-the-line-limit-length-for-different-types-of-files)
+
+![image-20210715150534753](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20210715150534753.png)
+
+### UE4 编译日志乱码问题解决
+
+* [UE4 编译时出现中文乱码问题 - CSDN](https://blog.csdn.net/netyeaxi/article/details/81206896)
+
 ## 2021-07-08 星期四
 
 ### UE4 动态加载 UObject
