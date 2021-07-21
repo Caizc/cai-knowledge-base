@@ -92,7 +92,7 @@
 r.ProgramBinaryCache.RestartAndroidAfterPrecompile=false
 
 [DevOptions.Shaders]
-;Enable this option on Android, otherwise PSO Caching won't take effect.
+;Enable this option on Android and iOS, otherwise PSO Caching won't take effect.
 NeedsShaderStableKeys=true
 
 [ConsoleVariables]
