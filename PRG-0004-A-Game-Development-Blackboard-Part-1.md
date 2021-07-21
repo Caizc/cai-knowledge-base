@@ -36,7 +36,14 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 
 * [PlayerPrefs - Unity Documentation](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html)
 
-> On macOS PlayerPrefs are stored in ~/Library/Preferences folder, in a file named unity.[company name].[product name].plist, where company and product names are the names set up in Project Settings. The same .plist file is used for both Projects run in the Editor and standalone players.> On Windows, PlayerPrefs are stored in the registry under HKCU\Software\[company name]\[product name] key, where company and product names are the names set up in Project Settings.> On Linux, PlayerPrefs can be found in ~/.config/unity3d/[CompanyName]/[ProductName] again using the company and product names specified in the Project Settings.> On Windows Store Apps, Player Prefs can be found in %userprofile%\AppData\Local\Packages\[ProductPackageId]>\LocalState\playerprefs.dat> On Windows Phone 8, Player Prefs can be found in application's local folder, See Also: Directory.localFolder> On Android data is stored (persisted) on the device. The data is saved in SharedPreferences. C#/JavaScript, Android Java and Native code can all access the PlayerPrefs data. The PlayerPrefs data is physically stored in /data/data/pkg-name/shared_prefs/pkg-name.xml.> On WebGL, PlayerPrefs are stored using the browser's IndexedDB API.> On iOS, PlayerPrefs are stored in /Library/Preferences/[bundle identifier].plist.
+> On macOS PlayerPrefs are stored in ~/Library/Preferences folder, in a file named unity.[company name].[product name].plist, where company and product names are the names set up in Project Settings. The same .plist file is used for both Projects run in the Editor and standalone players.
+> On Windows, PlayerPrefs are stored in the registry under HKCU\Software\[company name]\[product name] key, where company and product names are the names set up in Project Settings.
+> On Linux, PlayerPrefs can be found in ~/.config/unity3d/[CompanyName]/[ProductName] again using the company and product names specified in the Project Settings.
+> On Windows Store Apps, Player Prefs can be found in %userprofile%\AppData\Local\Packages\[ProductPackageId]>\LocalState\playerprefs.dat
+> On Windows Phone 8, Player Prefs can be found in application's local folder, See Also: Directory.localFolder
+> On Android data is stored (persisted) on the device. The data is saved in SharedPreferences. C#/JavaScript, Android Java and Native code can all access the PlayerPrefs data. The PlayerPrefs data is physically stored in /data/data/pkg-name/shared_prefs/pkg-name.xml.
+> On WebGL, PlayerPrefs are stored using the browser's IndexedDB API.
+> On iOS, PlayerPrefs are stored in /Library/Preferences/[bundle identifier].plist.
 
 ## 2019-09-11 星期三
 
@@ -104,7 +111,20 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 * [ILRuntime wiki](https://ourpalm.github.io/ILRuntime/public/v1/guide/index.html)
 * [ILRuntime 实现热更新的优劣 - UWA](https://blog.uwa4d.com/archives/2308.html)
 
-> 1. 基本限制> 热更部分的代码都不继承MonoBehaviour，也就是都不挂脚本，非热更部分随意：热更对MonoBehaviour这种比较特殊东西的支持都挺麻烦，要么不用，要么只是做个不可热更的消息转发层；要么开发时挂脚本，打包时用某种特殊的方式把它变成代码里动态AddComponent。> 2. Android> 不用任何第三方的热更方案，用C#反射执行DLL，性能和代码写法和纯C#基本一样。Google Pay强制要求在2019年8月之前App都支持64位，Unity的应对方案是Android IL2cpp，暂时没有支持mono backend 64位的打算。所以到时候只能是IL2CPP + ILRuntime的方式，性能会差一大截，主要慢在ILRuntime上。> 3. iOS> ILRuntime + DLL 解释执行，当然是在IL2CPP下。> 4. 优点> 语言(C#)\开发环境\工具链统一，随时可以变成不支持热更形式，如果苹果未来不允许任何解释执行的方式。> 框架搭好后，满足一些限制条件(非硬性限制，主要是避免麻烦，限制主要是1个，可热更部分的代码不要继承不可热更的代码, 不继承MonoBehaviour是这个限制的子集)，写逻辑的同学开发方式和原生C#开发完全一样，包括调试。> 第三方插件直接可用（大部分插件都是基于C#写的）.> 5. 缺点> 稳定性的坑还是有一些：通常发生于一些相对高级的语言特性组合，特别是各种反射代码。另外.net4.6的async\wait所支持的现在版本应该也还不够稳定，纯计算的性能弱于Lua，计算密集型的代码还是想办法放在不可热更新的部分吧。> 历史短，Git贡献者少，项目考验少（据我的了解，上线的商业项目在x - 1x之间，具体的项目有MMO，SLG，休闲，也有棋牌），原理上大的优化空间没有，小的优化空间还是有一些；另外整合了各种常用Feature的框架也少 。
+> 1. 基本限制
+> 热更部分的代码都不继承MonoBehaviour，也就是都不挂脚本，非热更部分随意：热更对MonoBehaviour这种比较特殊东西的支持都挺麻烦，要么不用，要么只是做个不可热更的消息转发层；要么开发时挂脚本，打包时用某种特殊的方式把它变成代码里动态AddComponent。
+> 2. Android
+> 不用任何第三方的热更方案，用C#反射执行DLL，性能和代码写法和纯C#基本一样。
+Google Pay强制要求在2019年8月之前App都支持64位，Unity的应对方案是Android IL2cpp，暂时没有支持mono backend 64位的打算。所以到时候只能是IL2CPP + ILRuntime的方式，性能会差一大截，主要慢在ILRuntime上。
+> 3. iOS
+> ILRuntime + DLL 解释执行，当然是在IL2CPP下。
+> 4. 优点
+> 语言(C#)\开发环境\工具链统一，随时可以变成不支持热更形式，如果苹果未来不允许任何解释执行的方式。
+> 框架搭好后，满足一些限制条件(非硬性限制，主要是避免麻烦，限制主要是1个，可热更部分的代码不要继承不可热更的代码, 不继承MonoBehaviour是这个限制的子集)，写逻辑的同学开发方式和原生C#开发完全一样，包括调试。
+> 第三方插件直接可用（大部分插件都是基于C#写的）.
+> 5. 缺点
+> 稳定性的坑还是有一些：通常发生于一些相对高级的语言特性组合，特别是各种反射代码。另外.net4.6的async\wait所支持的现在版本应该也还不够稳定，纯计算的性能弱于Lua，计算密集型的代码还是想办法放在不可热更新的部分吧。
+> 历史短，Git贡献者少，项目考验少（据我的了解，上线的商业项目在x - 1x之间，具体的项目有MMO，SLG，休闲，也有棋牌），原理上大的优化空间没有，小的优化空间还是有一些；另外整合了各种常用Feature的框架也少 。
 
 [基于 ILRuntime 的完整 C# 热更方案](http://www.sohu.com/a/279598611_667928)
 
@@ -163,8 +183,13 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 
 * [Unity Gameplay 工具集 - 知乎专栏](https://zhuanlan.zhihu.com/p/24418999)
 
-> * 实体组件（Entity-Component）> * 节点可视化编程（Node-based Visual Scripting）
->     - 状态机（Finite State Machine）    - 行为树（Behavior Tree）    - 事件驱动可视化编程（Event Driven Visual Scripting）    - 非线性编辑（Non-linear editing）
+> * 实体组件（Entity-Component）
+> * 节点可视化编程（Node-based Visual Scripting）
+> 
+    - 状态机（Finite State Machine）
+    - 行为树（Behavior Tree）
+    - 事件驱动可视化编程（Event Driven Visual Scripting）
+    - 非线性编辑（Non-linear editing）
 
 ### Unity 项目性能优化
 
@@ -237,7 +262,14 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 
 * [一个 MMORPG 的常规技能系统 - 知乎专栏](https://zhuanlan.zhihu.com/p/26108028)
 
-> 技能模块每个部分的职责和原理：>> * 技能信息管理：管理unit所拥有的技能以及技能的等级、cd等。在我们游戏中，这里还需要负责管理符文，符文会对技能信息进行修改。> * 技能调用接口：AI或者UI操作触发技能，触发技能时可能选择了一个目标（AI），也可能并没有目标。> * 技能流程管理：一个技能可能由多个子技能以移动的执行模式组合而成，而每一个最终执行的技能执行过程也存在一个流程，一般包括：前摇过程-结算点-后摇过程。技能在前摇结束时进入技能真正的结算流程，结算流程可能创建子弹，也可能触发buf或者创建法术场。> * 技能目标查找：若技能触发时已经设置了技能目标unit(如怪物AI释放技能)，则直接将其作为目标unit，否则需要根据一定的策略选择一个目标。此外，技能释放的时候还需要释放方向和释放位置等信息，也通过这个模块获取。> * 技能表现：技能释放过程中，需要创建相应的特效以及执行相应的动作。> * 技能创生体（buf/弹道/法术场）管理：buf挂在unit身上，可能影响unit的一些行为和状态；法术场一般由场景管理，影响场景中某范围内的unit；弹道就是技能创建的一个子弹，这个子弹可能以不同的路线移动（直线／抛物线／直接命中等）
+> 技能模块每个部分的职责和原理：
+>
+> * 技能信息管理：管理unit所拥有的技能以及技能的等级、cd等。在我们游戏中，这里还需要负责管理符文，符文会对技能信息进行修改。
+> * 技能调用接口：AI或者UI操作触发技能，触发技能时可能选择了一个目标（AI），也可能并没有目标。
+> * 技能流程管理：一个技能可能由多个子技能以移动的执行模式组合而成，而每一个最终执行的技能执行过程也存在一个流程，一般包括：前摇过程-结算点-后摇过程。技能在前摇结束时进入技能真正的结算流程，结算流程可能创建子弹，也可能触发buf或者创建法术场。
+> * 技能目标查找：若技能触发时已经设置了技能目标unit(如怪物AI释放技能)，则直接将其作为目标unit，否则需要根据一定的策略选择一个目标。此外，技能释放的时候还需要释放方向和释放位置等信息，也通过这个模块获取。
+> * 技能表现：技能释放过程中，需要创建相应的特效以及执行相应的动作。
+> * 技能创生体（buf/弹道/法术场）管理：buf挂在unit身上，可能影响unit的一些行为和状态；法术场一般由场景管理，影响场景中某范围内的unit；弹道就是技能创建的一个子弹，这个子弹可能以不同的路线移动（直线／抛物线／直接命中等）
 
 * [技能系统的同步机制 - 知乎专栏](https://zhuanlan.zhihu.com/p/26188869)
 * [技能模块的防外挂机制和同步机制优化 - 知乎专栏](https://zhuanlan.zhihu.com/p/26536892)
@@ -257,13 +289,22 @@ Debug.Log("<color=darkgreen>这是深绿色的日志</color>");
 * [结构 - C# 编程指南](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/structs)
 
 > * 类是引用类型。 创建类的对象后，向其分配对象的变量仅保留对相应内存的引用。 将对象引用分配给新变量后，新变量会引用原始对象。 通过一个变量所做的更改将反映在另一个变量中，因为它们引用相同的数据。
-> * 结构是值类型。 创建结构时，向其分配结构的变量保留结构的实际数据。 **将结构分配给新变量时，会复制结构。 因此，新变量和原始变量包含相同数据的副本（共两个）。 对一个副本所做的更改不会影响另一个副本。**> * 一般来说，类用于对更复杂的行为或应在类对象创建后进行修改的数据建模。 结构最适用于所含大部分数据不得在结构创建后进行修改的小型数据结构。
+> * 结构是值类型。 创建结构时，向其分配结构的变量保留结构的实际数据。 **将结构分配给新变量时，会复制结构。 因此，新变量和原始变量包含相同数据的副本（共两个）。 对一个副本所做的更改不会影响另一个副本。**
+> * 一般来说，类用于对更复杂的行为或应在类对象创建后进行修改的数据建模。 结构最适用于所含大部分数据不得在结构创建后进行修改的小型数据结构。
 
 **struct 特性：**
 
 > 结构在以下方面比类的限制更多：
 
-> * 在结构声明中，除非将字段声明为 const 或 static，否则无法初始化。> * 结构不能声明无参数构造函数（没有参数的构造函数）或终结器。> * **结构在分配时进行复制。 将结构分配给新变量时，将复制所有数据，并且对新副本所做的任何修改不会更改原始副本的数据。 在处理值类型的集合（如 Dictionary<string, myStruct>）时，请务必记住这一点。**> * 结构是值类型，不同于类，类是引用类型。> * 与类不同，无需使用 new 运算符即可对结构进行实例化。> * 结构可以声明具有参数的构造函数。> * 一个结构无法继承自另一个结构或类，并且它不能为类的基类。 所有结构都直接继承自 ValueType，后者继承自 Object。> * 结构可以实现接口。> * 结构不能为 null，并且不能向结构变量分配 null，除非将变量声明为可为 null 的类型。
+> * 在结构声明中，除非将字段声明为 const 或 static，否则无法初始化。
+> * 结构不能声明无参数构造函数（没有参数的构造函数）或终结器。
+> * **结构在分配时进行复制。 将结构分配给新变量时，将复制所有数据，并且对新副本所做的任何修改不会更改原始副本的数据。 在处理值类型的集合（如 Dictionary<string, myStruct>）时，请务必记住这一点。**
+> * 结构是值类型，不同于类，类是引用类型。
+> * 与类不同，无需使用 new 运算符即可对结构进行实例化。
+> * 结构可以声明具有参数的构造函数。
+> * 一个结构无法继承自另一个结构或类，并且它不能为类的基类。 所有结构都直接继承自 ValueType，后者继承自 Object。
+> * 结构可以实现接口。
+> * 结构不能为 null，并且不能向结构变量分配 null，除非将变量声明为可为 null 的类型。
 
 ## 2019-07-21 星期日
 
@@ -496,11 +537,18 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 * [What is SEGV_MAPERR? - stackoverflow](https://stackoverflow.com/questions/1000002/what-is-segv-maperr)
 
-> There are two common kinds of SEGV, which is an error that results from an invalid memory access:> 1. A page was accessed which had the wrong permissions. E.g., it was read-only but your code tried to write to it. This will be reported as SEGV_ACCERR.> 2. A page was accessed that is not even mapped into the address space of the application at all. This will often result from dereferencing a null pointer or a pointer that was corrupted with a small integer value. This is reported as SEGV_MAPERR.
+> There are two common kinds of SEGV, which is an error that results from an invalid memory access:
+> 1. A page was accessed which had the wrong permissions. E.g., it was read-only but your code tried to write to it. This will be reported as SEGV_ACCERR.
+> 2. A page was accessed that is not even mapped into the address space of the application at all. This will often result from dereferencing a null pointer or a pointer that was corrupted with a small integer value. This is reported as SEGV_MAPERR.
 
 * [What is the meaning of 'code' in Segmentation Fault - stackoverflow](https://stackoverflow.com/questions/19124925/what-is-the-meaning-of-code-in-segmentation-fault)
 
-> SEGV_MAPERR means you tried to access an address that doesn't map to anything.SEGV_ACCERR means you tried to access an address that you don't have permission to access.>> So in both cases you accessed an address you shouldn't have, which is probably the only thing your actual code is guilty of. In the former case there's no memory in that address range anyway. In the latter case there is memory in that address range but you don't own it.>> If you were to access a random address then which you get depends on how the OS happens to have your process set up at that moment.
+> SEGV_MAPERR means you tried to access an address that doesn't map to anything.
+SEGV_ACCERR means you tried to access an address that you don't have permission to access.
+>
+> So in both cases you accessed an address you shouldn't have, which is probably the only thing your actual code is guilty of. In the former case there's no memory in that address range anyway. In the latter case there is memory in that address range but you don't own it.
+>
+> If you were to access a random address then which you get depends on how the OS happens to have your process set up at that moment.
 
 ### Java 多线程解压
 
@@ -519,7 +567,7 @@ for(int i = list.Count - 1; i >= 0; i--)
 
 * 在 Unity Build 出来的 Xcode 工程的 info.plist 中添加一行：
 
-    - Key：Application Support iTunes file sharing
+    - Key：Application Support iTunes file sharing0
     - Type：Boolean
     - Value: YES
 
@@ -557,7 +605,9 @@ unscaledTime:
 The timeScale-independant time for this frame (Read Only). This is the time in seconds since the start of the game.
 ```
 
-It's the amount of time that has passed since the start of the game at the beginning of this frame.Where as realTimeSinceStartup:
+It's the amount of time that has passed since the start of the game at the beginning of this frame.
+
+Where as realTimeSinceStartup:
 
 ```csharp
 Note that realtimeSinceStartup returns time as reported by system timer. Depending on the platform and the hardware, it may report the same time even in several consecutive frames. If you're dividing something by time difference, take this into account (time difference may become zero!).
@@ -1319,7 +1369,15 @@ Rigidbody 的转向跟随其速度方向的实现采用这种方法：
 ### 游戏程序团队分工
 
 一种游戏程序团队可能的分工
-客户端1：负责战斗系统客户端2：负责底层（网络、资源管理、热更等）客户端3：UI类系统、AI客户端4：UI类系统服务端1：战斗系统服务端2：底层服务端3：功能类系统
+
+客户端1：负责战斗系统
+客户端2：负责底层（网络、资源管理、热更等）
+客户端3：UI类系统、AI
+客户端4：UI类系统
+
+服务端1：战斗系统
+服务端2：底层
+服务端3：功能类系统
 
 ## 2017-12-04 星期一
 
@@ -1400,7 +1458,13 @@ Failed running /Applications/Unity/Unity.app/Contents/il2cpp/build/UnityLinker.e
 
 ### Unity 配置文件读取
 
-```csharp[CreateAssetMenu(fileName = "NetworkConfig", menuName = "Proton/NetworkConfig", order = 0)]public class NetworkConfig : ScriptableObject{    public string Host = "127.0.0.1";    public int Port = 9527;}
+```csharp
+[CreateAssetMenu(fileName = "NetworkConfig", menuName = "Proton/NetworkConfig", order = 0)]
+public class NetworkConfig : ScriptableObject
+{
+    public string Host = "127.0.0.1";
+    public int Port = 9527;
+}
 
 // 读取配置
 NetworkConfig networkConfig = Resources.Load<NetworkConfig>("NetworkConfig");
@@ -1624,7 +1688,8 @@ https://github.com/cloudwu/pbc/issues/97
 
 ### 网络游戏编程资料
 
-http://www.gad.qq.com/article/detail/28052http://fabiensanglard.net/quake3/index.php
+http://www.gad.qq.com/article/detail/28052
+http://fabiensanglard.net/quake3/index.php
 
 -------
 
