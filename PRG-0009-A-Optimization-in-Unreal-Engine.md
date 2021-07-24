@@ -4,6 +4,10 @@
 
 * [Performance Guidelines for Mobile Devices - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/)
 
+* [Mobile Performance Tips and Tricks - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/TipsAndTricks/)
+
+* [Performance Guidelines for Artists and Designers - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/Guidelines/)
+
 * [Profiling and Optimization in UE4 | Unreal Indie Dev Days 2019 - YouTube](https://youtu.be/EbXakIuZPFo)
 
 * [UE4 里的性能分析与优化 - 虚幻独立开发日 2019 - bilibili](https://www.bilibili.com/video/av883251191/)
@@ -30,7 +34,9 @@
 
 * [UE4 性能优化操作手册 - 知乎](https://zhuanlan.zhihu.com/p/54284627)
 
-# 代码块性能调试
+* [Performance Profiling & Optimization Guide - Gamedev Guide](https://ikrima.dev/ue4guide/performance-optimization/performance-guide-overview/)
+
+# Code
 
 * [Profiling Code Blocks](https://www.orfeasel.com/profiling-code-blocks/)
 * [Profiling, How To Count CPU Cycles Of Specific Blocks Of Your Game Code](https://michaeljcole.github.io/wiki.unrealengine.com/Profiling,_How_To_Count_CPU_Cycles_Of_Specific_Blocks_Of_Your_Game_Code/)
@@ -41,14 +47,15 @@
 * [UE4 渲染管线与性能分析系列（CPU 篇）- 知乎](https://zhuanlan.zhihu.com/p/148886428)
 * [UE4 的执行流程和 CPU 优化 - 知乎](https://zhuanlan.zhihu.com/p/365764136)
 
-# 内存
+# Memory
 
 * [UE 性能分析：内存优化](https://imzlp.com/posts/19135/)
 * [在 UE4 中处理内存泄漏问题 - UE Documentation](https://www.unrealengine.com/zh-CN/tech-blog/dealing-with-memory-leaks-in-ue4?lang=zh-CN)
 * [UE4 内存 Profiler - 知乎](https://zhuanlan.zhihu.com/p/61366273)
 * [UE4 Low Level Memory Tracker 的使用 - 知乎](https://zhuanlan.zhihu.com/p/78005333)
+* [Debugging and Optimizing Memory - UE Blog](https://www.unrealengine.com/en-US/blog/debugging-and-optimizing-memory)
 
-# 垃圾收集
+# Garbage Collect
 
 * [UE4 垃圾收集大杂烩 - 知乎](https://zhuanlan.zhihu.com/p/219588301)
 
@@ -56,7 +63,51 @@
 
 * [UI 性能优化 - 知乎](https://zhuanlan.zhihu.com/p/117577253)
 
-# PSO 缓存
+# Asset Management
+
+* [Assets and Packages - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/AssetsAndPackages/)
+* [Cooking and Chunking - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Patching/GeneralPatching/CookingAndChunking/)
+* [Asset Management - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/AssetManagement/)
+* [Asset Manager for Data Assets & Async Loading - Tom Looman](https://www.tomlooman.com/asset-manager-ue4/)
+* Runtime_Asset_Management.pdf
+
+# Load Time
+
+* [Improving Memory Usage and Load Times in UE4 - oculus developers](https://developer.oculus.com/blog/developer-perspective-improving-memory-usage-and-load-times-in-ue4/)
+
+> * Disable extraneous plugins
+> * Make an empty startup map
+> * change plugin loading order
+> * skip OBB verification
+> * Avoid static ConstructorHelpers
+> * Decrease texture streaming pool size
+> * Reduce shader permutations
+> * Understanding the asset reference system
+> * Investigating your memory usage
+> * The Pipeline State Object Cache
+
+* [UE4 中 Loading 和 GC 的优化](https://blog.ch-wind.com/ue4-loading-gc-optimize/)
+* [Asset Size Reduction and Loading Time Optimization - Gamedev Guide](https://ikrima.dev/ue4guide/performance-optimization/asset-size-loading/)
+* [Async Loading Screens and Transition Levels | Unreal Fest Europe 2019 - YouTube](https://youtu.be/ON1_dEHoNDg)
+* [Referencing Assets - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/Assets/ReferencingAssets/)
+* [Asynchronous Asset Loading - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/Assets/AsyncLoading/)
+* [How do you profile load times? - UE4 AnswerHub](https://answers.unrealengine.com/questions/258839/how-do-you-profile-load-times.html)
+
+
+
+# Rendering
+
+* [Rendering Optimization for Mobile - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Rendering/MobileOptimization/OptimizationandDevelopmentBestPracticesforMobile/)
+
+> The factors that affect boot time include the following:
+>
+> - The amount of time required to load and decompress initial assets
+> - The overall size of your application
+> - Any plugins that need to be activated in your user's installation
+> - The amount of string data that needs to be parsed
+> - Any memory allocation or fragmentation on the user's device
+
+# PSO Caching
 
 ### 官方文档阅读顺序
 
@@ -237,6 +288,8 @@ ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line P
 
 ## 常用命令
 
+* [Stat Commands - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/StatCommands/)
+
 ```
 stat fps
 stat unit
@@ -262,9 +315,13 @@ Saved/Profiling/UnrealStats
 
 ## 性能工具
 
-* Session Frontend
+* [Session Frontend](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Deployment/UnrealFrontend/)
 * Android Studio Logcat
+* [Logging and Console Commands for Mobile VR - oculus developers](https://developer.oculus.com/blog/developer-perspective-ue4-logging-and-console-commands-for-mobile-vr/)
 * [使用 Logcat 写入和查看日志 - Android Studio](https://developer.android.com/studio/debug/am-logcat)
+* [Reference Viewer - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/ContentBrowser/ReferenceViewer/)
+* [Reference Tree Tool - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/ContentBrowser/ReferenceTreeTool/)
+* [Unreal Insights Overview - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/UnrealInsights/Overview/)
 
 ## 减少 Draw Call
 
@@ -336,6 +393,11 @@ Saved/Profiling/UnrealStats
 * [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
 * [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
 * [游戏打包 - 知乎](https://zhuanlan.zhihu.com/p/60996027)
+
+# Patch
+
+* [How to Create a Patch - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Patching/GeneralPatching/HowToCreatePatch/)
+* [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
 
 ---
 change log: 
