@@ -1,5 +1,24 @@
 # Game Development Blackboard - Part 3
 
+## 2021-07-30 星期五
+
+### UE4 编译原理
+
+> 不要成为编译器的奴隶！
+
+* [Build flow of the Unreal Engine 4 project](https://imzlp.com/posts/6362/)
+* [UE4 中的反射之一：编译阶段 - 知乎](https://zhuanlan.zhihu.com/p/46836554)
+* [从源码剖析虚幻引擎编译原理](https://yinpengd.github.io/2019/08/13/%E4%BB%8E%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/)
+* [UE4 属性系统（反射）- 博客园](https://www.cnblogs.com/ghl_carmack/p/5698438.html)
+* [编译器的工作过程 - 阮一峰](http://www.ruanyifeng.com/blog/2014/11/compiler.html)
+* [UE4 如何编译 C++ - 简书](https://www.jianshu.com/p/393aeabae3d6)
+* [Unreal Build System - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/UnrealBuildSystem/)
+* [Build Configurations Reference - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/BuildConfigurations/)
+
+**Clang 编译器的报错信息有时候并非准确，会误导人！**
+
+* [Template compilation error: 'X' does not refer to a value - stackoverflow](https://stackoverflow.com/questions/41222330/template-compilation-error-x-does-not-refer-to-a-value)
+
 ## 2021-07-22 星期四
 
 ### FF7R 动画技术
