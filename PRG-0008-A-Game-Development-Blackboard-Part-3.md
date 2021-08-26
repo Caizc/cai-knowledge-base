@@ -1,5 +1,12 @@
 # Game Development Blackboard - Part 3
 
+## 2021-08-25 星期三
+
+### Wwise
+
+* [Wwise 音频解决方案概述 - 博客园](https://www.cnblogs.com/kekec/p/11714507.html)
+* [UE4 中整合 Wwise - 知乎](https://zhuanlan.zhihu.com/p/41761623)
+
 ## 2021-07-30 星期五
 
 ### UE4 编译原理
