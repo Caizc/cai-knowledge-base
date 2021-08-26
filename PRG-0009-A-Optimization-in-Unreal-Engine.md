@@ -93,8 +93,6 @@
 * [Asynchronous Asset Loading - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/Assets/AsyncLoading/)
 * [How do you profile load times? - UE4 AnswerHub](https://answers.unrealengine.com/questions/258839/how-do-you-profile-load-times.html)
 
-
-
 # Rendering
 
 * [Rendering Optimization for Mobile - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Rendering/MobileOptimization/OptimizationandDevelopmentBestPracticesforMobile/)
@@ -284,10 +282,15 @@ ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line P
 -messaging -SendAutomationAnalytics
 ```
 
+填入如下参数，以启用 Low Level Memory Tracker：
 
+```
+-LLM -LLMCSV
+```
 
 ## 常用命令
 
+* [UE4 Console Variables and Commands](https://digilander.libero.it/ZioYuri78/)
 * [Stat Commands - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/StatCommands/)
 
 ```
@@ -322,6 +325,26 @@ Saved/Profiling/UnrealStats
 * [Reference Viewer - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/ContentBrowser/ReferenceViewer/)
 * [Reference Tree Tool - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/ContentBrowser/ReferenceTreeTool/)
 * [Unreal Insights Overview - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/UnrealInsights/Overview/)
+
+## 内存优化
+
+启动参数设置
+
+```shell
+-LLM #启用LLM
+-LLMCSV #连续将所有值写入CSV文件。自动启用-LLM。
+-llmtagsets=Assets #实验性功能。显示每个资源分配的内存总计。
+-llmtagsets=AssetClasses #实验性功能。显示每个UObject类类型的总计。
+```
+
+控制台命令
+
+```shell
+stat llm #显示LLM摘要。所有较低级别的引擎统计信息都归入单个引擎统计信息。
+stat llmfull #显示LLM所有统计信息
+stat LLMPlatform #显示从OS分配的所有内存信息 
+stat LLMOverhead #显示LLM内部使用的内存
+```
 
 ## 减少 Draw Call
 
