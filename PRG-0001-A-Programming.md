@@ -1195,4 +1195,10 @@ C::C( double a, double b, double c): X(a), Y(b), Z(c)
 
 ## 数据类型
 
+## 运算符
+
+* [Lua 中的三目运算符](https://www.runoob.com/w3cnote/trinocular-operators-in-lua.html)
+
+> 更一般化的 Lua 三目运算为：(a and {b} or {c})[1]
+
 // to be continue...
