@@ -6,6 +6,7 @@
 
 * [Wwise 音频解决方案概述 - 博客园](https://www.cnblogs.com/kekec/p/11714507.html)
 * [UE4 中整合 Wwise - 知乎](https://zhuanlan.zhihu.com/p/41761623)
+* [SoundBank 的管理策略 - audiokinetic](https://www.audiokinetic.com/zh/library/2019.1.11_7296/?source=Help&id=strategies_for_managing_soundbanks)
 
 ## 2021-07-30 星期五
 
