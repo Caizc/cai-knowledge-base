@@ -1,12 +1,27 @@
 # Game Development Blackboard - Part 3
 
+## 2021-09-11 星期六
+
+### UE4 Packaging C++ Macro define
+
+* [How to add C++ macro define for android packaging - UE4 ANSWERHUB](https://answers.unrealengine.com/questions/380484/how-to-add-c-macro-define-for-android-packaging.html)
+
 ## 2021-08-25 星期三
 
 ### Wwise
 
 * [Wwise 音频解决方案概述 - 博客园](https://www.cnblogs.com/kekec/p/11714507.html)
 * [UE4 中整合 Wwise - 知乎](https://zhuanlan.zhihu.com/p/41761623)
+* [Wwise 快速上手指南：程序员篇（v2016.1）- 腾讯游戏学堂](https://gameinstitute.qq.com/community/detail/107700#)
+* [示例 - audiokinetic](https://www.audiokinetic.com/zh/library/edge/?source=SDK&id=samplecode.html)
 * [SoundBank 的管理策略 - audiokinetic](https://www.audiokinetic.com/zh/library/2019.1.11_7296/?source=Help&id=strategies_for_managing_soundbanks)
+* [Wwise 中的 Game Object - AA Audio](http://jazzlost.me/2019/04/28/Game-Object-In-Wwise/)
+
+**音频程序 blog**
+
+* [AA Audio](http://jazzlost.me/)
+* [FPS 项目声音设计框架 - AA Audio](http://jazzlost.me/2019/08/12/FPS-Project-Sound-Framework/)
+* [《双生视界》的音频设计 - audiokinetic](https://blog.audiokinetic.com/zh/sound-design-of-girl-cafe-gun-2/)
 
 ## 2021-07-30 星期五
 
@@ -413,6 +428,7 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 #### 文章
 
 * [UE4 推荐文章列表 - 知乎专栏](https://zhuanlan.zhihu.com/p/126611976)
+* [Unreal Engine 官方程序设计范式分析（Shooter Game） - 看云](https://www.kancloud.cn/ldl19691031/ue-official-programming-pattern/347442)
 
 ## 2021-01-27 星期三
 
