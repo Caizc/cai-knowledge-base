@@ -429,6 +429,11 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 * [UE4 推荐文章列表 - 知乎专栏](https://zhuanlan.zhihu.com/p/126611976)
 * [Unreal Engine 官方程序设计范式分析（Shooter Game） - 看云](https://www.kancloud.cn/ldl19691031/ue-official-programming-pattern/347442)
+* [UE 项目的设计规范和代码标准 - 循迹研究室](https://imzlp.com/posts/25915/)
+
+### Blog
+
+* [循迹研究室](https://imzlp.com/)
 
 ## 2021-01-27 星期三
 
