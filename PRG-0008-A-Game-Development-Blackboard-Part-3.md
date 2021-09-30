@@ -1,5 +1,11 @@
 # Game Development Blackboard - Part 3
 
+## 2021-09-27 星期一
+
+### UE4 Derived Data Cache
+
+* [Derived Data Cache - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DerivedDataCache/)
+
 ## 2021-09-11 星期六
 
 ### UE4 Packaging C++ Macro define
