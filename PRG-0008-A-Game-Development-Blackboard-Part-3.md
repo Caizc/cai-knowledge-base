@@ -1,5 +1,55 @@
 # Game Development Blackboard - Part 3
 
+## 2021-10-26 星期二
+
+### 引擎中台
+
+* [引擎中台助力《使命召唤手游》技术升级 - 腾讯游戏学堂](https://gameinstitute.qq.com/course/detail/10195)
+
+![img](media/PRG-0008-A-Game-Development-Blackboard-Part-3/QMzhVw3UA9FX1o3ZuG75.jpg)
+
+![img](media/PRG-0008-A-Game-Development-Blackboard-Part-3/Sl1T2Q1wvjfzluEpcIU5.jpg)
+
+## 2021-10-10 星期日
+
+### Support for Google Android App Bundle(AAB) in Unreal Engine 4.24
+
+* [Android App Bundle - Android Developers](https://developer.android.com/platform/technology/app-bundle)
+
+  > Android App Bundle 是 Android 新推出的一种官方发布格式，可让您以更高效的方式开发和发布应用。借助 Android App Bundle，您可以更轻松地以更小的应用提供优质的使用体验，从而提升安装成功率并减少卸载量。转换过程轻松便捷。您无需重构代码即可开始获享较小应用的优势。改用这种格式后，您可以体验模块化应用开发和可自定义功能交付，并从中受益。
+
+* [Android App Bundle 简介 - Android Developers](https://developer.android.com/guide/app-bundle)
+
+![image-20211010173630604](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211010173630604.png)
+
+* [Play Asset Delivery - Android Developers](https://developer.android.com/guide/playcore/asset-delivery)
+
+> Play Asset Delivery (PAD) 将 app bundle 的优势带到游戏中。它允许超过 150 MB 的游戏替换旧版扩展文件 (OBB)，方法是将包含游戏所需的所有资源的单个工件发布到 Play。PAD 提供了灵活的分发模式、自动更新、压缩和增量修补功能，并且可免费使用。使用 PAD，所有资源包均在 Google Play 上托管和提供，因此您无需使用内容分发网络 (CDN) 向玩家提供游戏资源。
+>
+> Play Asset Delivery 使用资源包，资源包由资源（如纹理、着色器和声音）组成，但不包含可执行代码。通过 Dynamic Delivery，您可以按照以下三种分发模式自定义如何以及何时将各个资源包下载到设备上：安装时分发、快速跟进式分发和按需分发。
+
+> **下载大小上限**
+>
+> Asset Pack 因具有较高的大小上限而成为大型游戏的理想之选：
+>
+> 1. 每个 `fast-follow` 和 `on-demand` Asset Pack 的下载大小上限为 512 MB。
+> 2. 所有 `install-time` Asset Pack 的总下载大小上限为 1 GB。
+> 3. 一个 Android App Bundle 中的所有 Asset Pack 的总下载大小上限为 2 GB。
+> 4. 一个 Android App Bundle 中最多可以使用 50 个资源包。
+
+* [Play Feature Delivery 概览 - Android Developers](https://developer.android.com/guide/app-bundle/dynamic-delivery)
+* [Build and test your Android App Bundle - Android Developers](https://developer.android.com/guide/app-bundle/test)
+* [bundletool - Android Developers](https://developer.android.com/studio/command-line/bundletool)
+* [啥是 Android App Bundle？- 知乎](https://zhuanlan.zhihu.com/p/61663559)
+
+> * 资源选择性加载
+> * 动态下发 lib
+
+* [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
+* [Google Play Asset Delivery Reference - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/Android/Distribution/GooglePlayAssetDeliveryReference/)
+* [Google Play Game's Asset Delivery - YouTube](https://youtu.be/WW9GevpEo1s)
+* [Build error: "Installed Build Tools revision 31.0.0 is corrupted" - stackoverflow](https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted)
+
 ## 2021-10-07 星期四
 
 ### Unreal Engine on GitHub
@@ -657,3 +707,4 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 
 
+​	
