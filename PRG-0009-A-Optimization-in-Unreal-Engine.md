@@ -412,6 +412,7 @@ stat LLMOverhead #显示LLM内部使用的内存
 | 4.21 - 4.24           |                                 | NDK r14b                |
 | 4.19 - 4.20           |                                 | NDK r12b                |
 
+* [NDK Downloads - Android Developers](https://developer.android.com/ndk/downloads)
 * [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
 * [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
 * [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
