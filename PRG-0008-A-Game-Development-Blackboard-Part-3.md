@@ -1,5 +1,46 @@
 # Game Development Blackboard - Part 3
 
+## 2021-11-11 星期四
+
+### 代码静态检查工具
+
+* [TscanCode - GitHub](https://github.com/Tencent/TscanCode)
+
+## 2021-11-05 星期五
+
+### UE4 Android Packaging
+
+* [Setting Up Android SDK and NDK for Unreal - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/Setup/AndroidStudio/)
+
+| Unreal Engine Version | Required Android Studio Version | Compatible NDK Versions |
+| :-------------------- | :------------------------------ | :---------------------- |
+| 4.26.2                | Android Studio 4.0              | NDK r21b                |
+| 4.25                  | Android Studio 3.5.3            | NDK r21b, NDK r20b      |
+| 4.21 - 4.24           |                                 | NDK r14b                |
+| 4.19 - 4.20           |                                 | NDK r12b                |
+
+* [NDK Downloads - Android Developers](https://developer.android.com/ndk/downloads)
+* [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
+* [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
+* [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
+* [游戏打包 - 知乎](https://zhuanlan.zhihu.com/p/60996027)
+
+### UE4 iOS Packaging
+
+* [iOS Quick Start - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/QuickStart/)
+* [iOS Provisioning - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/Provisioning/)
+* [UE4 打包 iOS 的两种方案 - 知乎](https://zhuanlan.zhihu.com/p/374158520)
+* [Apple Developer](https://developer.apple.com/)
+
+### UE4 Patch
+
+* [How to Create a Patch - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Patching/GeneralPatching/HowToCreatePatch/)
+* [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
+
+#### UE4 查看 pak 文件内容
+
+* [UnrealPakViewer - GitHub](https://github.com/jashking/UnrealPakViewer)
+
 ## 2021-10-26 星期二
 
 ### 引擎中台
