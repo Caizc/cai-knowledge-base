@@ -401,28 +401,6 @@ stat LLMOverhead #显示LLM内部使用的内存
 * 滥用高消耗的蓝图节点
 * 滥用循环
 
-# Packaging
-
-* [Setting Up Android SDK and NDK for Unreal - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/Setup/AndroidStudio/)
-
-| Unreal Engine Version | Required Android Studio Version | Compatible NDK Versions |
-| :-------------------- | :------------------------------ | :---------------------- |
-| 4.26.2                | Android Studio 4.0              | NDK r21b                |
-| 4.25                  | Android Studio 3.5.3            | NDK r21b, NDK r20b      |
-| 4.21 - 4.24           |                                 | NDK r14b                |
-| 4.19 - 4.20           |                                 | NDK r12b                |
-
-* [NDK Downloads - Android Developers](https://developer.android.com/ndk/downloads)
-* [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
-* [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
-* [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
-* [游戏打包 - 知乎](https://zhuanlan.zhihu.com/p/60996027)
-
-# Patch
-
-* [How to Create a Patch - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Patching/GeneralPatching/HowToCreatePatch/)
-* [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
-
 ---
 change log: 
 
