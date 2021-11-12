@@ -6,6 +6,21 @@
 
 * [TscanCode - GitHub](https://github.com/Tencent/TscanCode)
 
+### UE4 中的 C++ 对象类型检查
+
+* [Best way to check class type in C++? - UE4 ANSWERHUB](https://answers.unrealengine.com/questions/660033/best-way-to-check-class-type-in-c.html)
+
+```c++
+if(myGrabbedItem->IsA(ABaseWeapon::StaticClass()))
+{
+    this->GrabWeapon(myGrabbedItem);
+}
+else
+{
+    this->GrabItem(myGrabbedItem);
+}
+```
+
 ## 2021-11-05 星期五
 
 ### UE4 Android Packaging
