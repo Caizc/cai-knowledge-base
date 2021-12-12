@@ -1,5 +1,13 @@
 # Game Development Blackboard - Part 3
 
+## 2021-12-12 星期日
+
+### Android Device Monitor
+
+* [Android Device Monitor - Android Developers](https://developer.android.com/studio/profile/monitor)
+
+> 位于 android-sdk/tools/ 目录下
+
 ## 2021-11-11 星期四
 
 ### 代码静态检查工具
@@ -50,7 +58,12 @@ else
 ### UE4 Patch
 
 * [How to Create a Patch - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Patching/GeneralPatching/HowToCreatePatch/)
+
+### HotPatcher
+
 * [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
+* [UE 热更新：需求分析与方案设计 - imzlp.com](https://imzlp.com/posts/17371/)
+* [UE 资源热更打包工具 HotPatcher - imzlp.com](https://imzlp.com/posts/17590/)
 
 #### UE4 查看 pak 文件内容
 
