@@ -1,5 +1,88 @@
 # Game Development Blackboard - Part 3
 
+## 2021-12-15 星期三
+
+### Building Unreal Engine from Source
+
+* [Building Unreal Engine from Source - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/BuildingUnrealEngine/)
+* [从源码构建虚幻引擎](http://docs.manew.com/ue4/775.html)
+* [Versioning of Binaries - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/VersioningofBinaries/)
+* [Compiling Game Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/CompilingProjects/)
+
+### Making an Unreal Engine Installed Build
+
+* [Using an Installed Build - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DeployingTheEngine/UsinganInstalledBuild/)
+* [Unreal Binary Builder - GitHub](https://github.com/ryanjon2040/Unreal-Binary-Builder)
+
+### Develop UE4 Games on Mac
+
+* [ue4-xcode-vscode-mac - GitHub](https://github.com/botman99/ue4-xcode-vscode-mac)
+
+### dos2unix
+
+* [Dos2Unix / Unix2Dos - Text file format converters](https://waterlan.home.xs4all.nl/dos2unix.html)
+
+```shell
+PS D:\dos2unix-7.4.2-win64\bin> get-childitem -path . -filter '*.sh' -recurse | foreach-object {.\dos2unix.exe $_.Fullname}
+```
+
+### UE4 断言
+
+* [UE4 断言总结 - 知乎](https://zhuanlan.zhihu.com/p/64462945)
+
+> 1. 停止执行 (check族)
+> 表达式为false即立刻中断，引擎崩溃
+> 2. Debug(DO_GUARD_SLOW=1)时停止执行 (checkSlow族)
+> 仅在Debug模式下崩溃
+> 3. 不停止执行 (ensure族)
+> 不会中断 但会生成callstack报告供debug
+> ensure会返回bool型结果
+
+### UE 4.26 Android Crash on "/apex/com.android.runtime/lib/bionic/libc.so"
+
+> D/UE4(17975): Ensure condition failed: GetShadowIndex() == 0 [File:E:/Epic Games/UE_4.26.2/Engine/Source/Runtime/Core/Public\HAL/IConsoleManager.h] [Line: 1296]
+
+```c++
+// IConsoleManager.h
+// faster than GetValueOnAnyThread()
+T GetValueOnGameThread() const
+{
+	// compiled out in shipping for performance (we can change in development later), if this get triggered you need to call GetValueOnRenderThread() or GetValueOnAnyThread(), the last one is a bit slower
+	cvarCheckCode(ensure(GetShadowIndex() == 0));	// ensure to not block content creators, #if to optimize in shipping
+	return ShadowedValue[0];
+}
+```
+
+* [Application crash on android when switching from the game level to the main menu level - UE4 AnswerHub](https://answers.unrealengine.com/questions/1005324/application-crash-on-android-when-switching-from-t.html?sort=oldest)
+
+```ini
+;BaseEngine.ini
+gc.MultithreadedDestructionEnabled=False
+```
+
+### SVN 上传 .so 和 .a 文件
+
+* [SVN 上传不了 .so .a 库可尝试的解决方法 - CSDN](https://blog.csdn.net/brlf_gz/article/details/78402755?spm=1001.2014.3001.5501)
+
+### SVN 递归忽略指定目录
+
+* [Ignore some directories recursively - stackoverflow](https://stackoverflow.com/questions/2035335/svn-ignore-some-directories-recursively)
+* [How do I ignore files in SVN? - stackoverflow](https://stackoverflow.com/questions/86049/how-do-i-ignore-files-in-subversion)
+
+> SVN 不区分文件和文件夹，符合规则的文件和目录都会被忽略，但不能对已添加过版本控制的文件进行忽略。
+
+### SVN Cleanup 失败修复方法
+
+* [solution of svn run cleanup failed](https://www.anujvarma.com/svn-cleanup-failedprevious-operation-has-not-finished-run-cleanup-if-it-was-interrupted/)
+
+> 1. Install sqllite
+>
+> 2. sqlite .svn/wc.db “select * from work_queue”
+>
+> The SELECT should show you your offending folder/file as part of the work queue. What you need to do is delete this item from the work queue.
+>
+> 3. sqlite .svn/wc.db “delete from work_queue”
+
 ## 2021-12-12 星期日
 
 ### Android Device Monitor
@@ -7,6 +90,25 @@
 * [Android Device Monitor - Android Developers](https://developer.android.com/studio/profile/monitor)
 
 > 位于 android-sdk/tools/ 目录下
+
+### UE4 Android Error "Failed to open descriptor file xxx.uproject" or "Project file not found: xxx.uproject"
+
+* 可能为缺少 “访问内部存储” 或 “访问所有文件” 权限
+* ["Failed to open descriptor file" error with Android target SDK 29 - UE4 AnswerHub](https://answers.unrealengine.com/questions/974736/view.html)
+* [Android 权限大全 - 博客园](https://www.cnblogs.com/classic/archive/2011/06/20/2085055.html)
+* [“所有文件访问权限”的使用 - Play 管理中心帮助](https://support.google.com/googleplay/android-developer/answer/10467955?hl=zh-Hans)
+
+```ini
+android:requestLegacyExternalStorage="true"
+
+android.permission.MANAGE_EXTERNAL_STORAGE
+```
+
+![image-20211217212223446](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211217212223446.png)
+
+### UE4 应用在 Android 平台的启动流程
+
+* [Android 启动流程 - 知乎](https://zhuanlan.zhihu.com/p/31892319)
 
 ## 2021-11-11 星期四
 
