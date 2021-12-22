@@ -12,7 +12,27 @@
 ### Making an Unreal Engine Installed Build
 
 * [Using an Installed Build - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DeployingTheEngine/UsinganInstalledBuild/)
+* [BuildGraph Usage - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/BuildTools/AutomationTool/BuildGraph/Usage/)
+* [Need VS 2017 to build plugins in 4.25? - UE4 AnswerHub](https://answers.unrealengine.com/questions/975709/need-vs-2017-to-build-plugins-in-425.html)
+* [BuildGraph：构建支持多平台打包的二进制引擎 - 循迹研究室](https://imzlp.com/posts/11956/)
+
+![image-20211221215941432](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211221215941432.png)
+
+修改 `Engine/Build/InstalledEngineBuild.xml`，找到 `Compile UE4Game Win64` 节点，移除 `-allmodules` 和 `-nolink` 选项，以加快编译速度。
+
+```shell
+# 需要安装并使用 Visual Studio 2017 来构建 Installed Build
+cd Engine\Build\BatchFiles
+.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=false -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false -set:GameConfigurations=Development
+```
+
 * [Unreal Binary Builder - GitHub](https://github.com/ryanjon2040/Unreal-Binary-Builder)
+
+### Derived Data Cache
+
+* [Derived Data Cache - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DerivedDataCache/)
+* [Windows 共享文件夹设置无密码访问 - CSDN](https://blog.csdn.net/u013992330/article/details/104864422)
+* [Windows Guest 无密码共享 - 简书](https://www.jianshu.com/p/f11e075b415c)
 
 ### Develop UE4 Games on Mac
 
@@ -77,11 +97,11 @@ gc.MultithreadedDestructionEnabled=False
 
 > 1. Install sqllite
 >
-> 2. sqlite .svn/wc.db “select * from work_queue”
+> 2. sqlite3 .svn/wc.db “select * from work_queue”
 >
 > The SELECT should show you your offending folder/file as part of the work queue. What you need to do is delete this item from the work queue.
 >
-> 3. sqlite .svn/wc.db “delete from work_queue”
+> 3. sqlite3 .svn/wc.db “delete from work_queue”
 
 ## 2021-12-12 星期日
 
