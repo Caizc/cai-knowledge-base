@@ -1,5 +1,47 @@
 # Game Development Blackboard - Part 3
 
+## 2021-12-31 星期五
+
+### UE4 Android Debugging
+
+* [Android Debugging - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/AndroidDebugging/)
+* [UE4 Android 联机调试 - 知乎（亲测可行）](https://zhuanlan.zhihu.com/p/46089199)
+* [UE4 Android Studio 调试 - 博客园](https://www.cnblogs.com/kekec/p/12632422.html)
+
+### Visual Studio Tips and Tricks
+
+* [Visual Studio Tips and Tricks - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/VisualStudioTipsAndTricks/)
+
+> **Fixing the Configuration Combobox Width**
+>
+> The default solution configuration combobox is too small to see the full name of the option currently selected. To fix that, right-click on the **toolbar**, select **Customize**, select the **Commands** tab, select the **radio Toolbar > Standard**, scroll down to the **Solution Configurations**, click on **Modify Selection**, and put in the width you would like. A width of 200 is typically useful.
+
+![Fixing the configuration combobox](media/PRG-0008-A-Game-Development-Blackboard-Part-3/combobox.jpg)
+
+## 2021-12-28 星期二
+
+### UE4 Device Profiles and Scalability
+
+> Scalability settings define levels of quality for individual features like shadows, foliage, and mesh detail, condensing an array of different settings into one easily scaled value. Device profiles then map those settings to devices that are compatible with them.
+
+* [Mobile Performance Tips and Tricks - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/TipsAndTricks/)
+* [Performance Guidelines for Mobile Devices - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/)
+* [Configuration Files - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/ConfigurationFiles/)
+* [Android Configuration Rules System - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/AndroidConfigRulesSystem/)
+* [Customizing Device Profiles and Scalability for Android - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/CustomizingDeviceProfiles/)
+* [iOS Device Compatibility - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/DeviceCompatibility/)
+
+* [Scalability and The Developer - UE Documentation](https://docs.unrealengine.com/4.27/en-US/TestingAndOptimization/PerformanceAndProfiling/Scalability/ScalabilityAndYou/)
+* [Scalability Reference - UE Documentation](https://docs.unrealengine.com/4.27/en-US/TestingAndOptimization/PerformanceAndProfiling/Scalability/ScalabilityReference/)
+
+### UE4 开启 Cook 调试信息
+
+![image-20211228181523927](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211228181523927.png)
+
+![image-20211228181701612](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211228181701612.png)
+
+![image-20211228181830957](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211228181830957.png)
+
 ## 2021-12-15 星期三
 
 ### Building Unreal Engine from Source
@@ -24,6 +66,8 @@
 # 需要安装并使用 Visual Studio 2017 来构建 Installed Build
 cd Engine\Build\BatchFiles
 .\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=false -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false -set:GameConfigurations=Development
+
+.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=true -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false -set:GameConfigurations=Development -set:GameConfigurations=Shipping
 ```
 
 * [Unreal Binary Builder - GitHub](https://github.com/ryanjon2040/Unreal-Binary-Builder)
@@ -80,7 +124,7 @@ T GetValueOnGameThread() const
 gc.MultithreadedDestructionEnabled=False
 ```
 
-### SVN 上传 .so 和 .a 文件
+### SVN 上传 .so  .a .o 文件
 
 * [SVN 上传不了 .so .a 库可尝试的解决方法 - CSDN](https://blog.csdn.net/brlf_gz/article/details/78402755?spm=1001.2014.3001.5501)
 
@@ -186,6 +230,11 @@ else
 * [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
 * [UE 热更新：需求分析与方案设计 - imzlp.com](https://imzlp.com/posts/17371/)
 * [UE 资源热更打包工具 HotPatcher - imzlp.com](https://imzlp.com/posts/17590/)
+
+### UnrealPak
+
+* [UnrealPak 与 Pak 的制作、挂载、加载 - 博客园](https://www.cnblogs.com/shiroe/p/14803859.html)
+* [UE4 的 Pak 从打包到加载 - 知乎](https://zhuanlan.zhihu.com/p/340563727)
 
 #### UE4 查看 pak 文件内容
 
