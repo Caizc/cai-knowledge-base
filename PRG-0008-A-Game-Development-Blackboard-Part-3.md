@@ -230,6 +230,7 @@ else
 * [UE4 Plugin: HotPatcher - GitHub](https://github.com/hxhb/HotPatcher)
 * [UE 热更新：需求分析与方案设计 - imzlp.com](https://imzlp.com/posts/17371/)
 * [UE 资源热更打包工具 HotPatcher - imzlp.com](https://imzlp.com/posts/17590/)
+* [UE 热更新：Questions & Answers - imzlp.com](https://imzlp.com/posts/16895/)
 
 ### UnrealPak
 
