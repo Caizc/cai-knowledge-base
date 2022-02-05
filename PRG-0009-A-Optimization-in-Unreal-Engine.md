@@ -14,13 +14,13 @@
 
   
 
+* [UE4 性能优化操作手册 - 知乎](https://zhuanlan.zhihu.com/p/54284627)
+
 * [UE4 项目移动端画面效果适配 - 知乎](https://zhuanlan.zhihu.com/p/145189072)
 
 * [UE4 性能优化指南（程序向）- 知乎](https://zhuanlan.zhihu.com/p/55335907)
 
 * [UE4 性能优化指南（美术向）- 知乎](https://zhuanlan.zhihu.com/p/55335653)
-
-* [UE4 性能观察的基础 - CSDN](https://blog.csdn.net/u013412391/article/details/108394619)
 
 * [UE4 移动平台性能优化：搭建优化流程 - 知乎](https://zhuanlan.zhihu.com/p/97310033)
 
@@ -32,7 +32,7 @@
 
 * [UE4 性能调试分析常用方法 - 知乎](https://zhuanlan.zhihu.com/p/273608458)
 
-* [UE4 性能优化操作手册 - 知乎](https://zhuanlan.zhihu.com/p/54284627)
+* [UE4 性能观察的基础 - CSDN](https://blog.csdn.net/u013412391/article/details/108394619)
 
 * [Performance Profiling & Optimization Guide - Gamedev Guide](https://ikrima.dev/ue4guide/performance-optimization/performance-guide-overview/)
 
