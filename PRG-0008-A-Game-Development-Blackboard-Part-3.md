@@ -1,5 +1,89 @@
 # Game Development Blackboard - Part 3
 
+## 2022-01-16 星期日
+
+### Logcat window missing from Android Stuido
+
+* [Logcat Missing from Android Studio - stackoverflow](https://stackoverflow.com/questions/51381604/logcat-missing-from-android-studio-3-1-3)
+
+> 1. Go to File > Open
+> 2. Select the folder with the 'app' folder inside your project
+> 3. Press 'Open'
+
+### 批处理文件操作
+
+* [bat：删除部分文件和文件夹，仅保留指定文件和文件夹 - CSDN](https://blog.csdn.net/shijianduan1/article/details/105718813)
+
+## 2022-01-10 星期一
+
+### UE4 D3D11RHI Crash Fix
+
+Standalone 模式下，加载某个关卡时，必定崩溃，日志如下：
+
+```
+LogWindows: Error: Error reentered: Assertion failed: EnumHasAllFlags(Pipeline, AllowedSrc) [File:E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Public\RHI.h] [Line: 1989] 
+Transition is being used on a source pipeline that it wasn't created for.
+LogThreadingWindows: Error: Runnable thread RenderThread 1 crashed.
+LogWindows: Error: === Critical error: ===
+LogWindows: Error: 
+LogWindows: Error: Fatal error: [File:E:/Epic Games/UE_4.26/Engine/Source/Runtime/Windows/D3D11RHI/Private/D3D11Commands.cpp] [Line: 1444] 
+LogWindows: Error: Null SRV (resource 0 bind 2) on UB Layout FInstancedStaticMeshVertexFactoryUniformShaderParameters
+LogWindows: Error: 
+LogWindows: Error: 
+LogWindows: Error: [Callstack] 0x00007fff4aa94f69 KERNELBASE.dll!UnknownFunction []
+LogWindows: Error: [Callstack] 0x00007ffec1759af6 UE4Editor-Core.dll!ReportAssert() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Windows\WindowsPlatformCrashContext.cpp:1616]
+LogWindows: Error: [Callstack] 0x00007ffec175d489 UE4Editor-Core.dll!FWindowsErrorOutputDevice::Serialize() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Windows\WindowsErrorOutputDevice.cpp:78]
+LogWindows: Error: [Callstack] 0x00007ffec147528d UE4Editor-Core.dll!FOutputDevice::LogfImpl() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Misc\OutputDevice.cpp:61]
+LogWindows: Error: [Callstack] 0x00007ffead94a67a UE4Editor-D3D11RHI.dll!SetShaderResourcesFromBuffer_SRV<0>() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Windows\D3D11RHI\Private\D3D11Commands.cpp:1448]
+LogWindows: Error: [Callstack] 0x00007ffead9491e7 UE4Editor-D3D11RHI.dll!FD3D11DynamicRHI::SetResourcesFromTables<FD3D11VertexShader>() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Windows\D3D11RHI\Private\D3D11Commands.cpp:1567]
+LogWindows: Error: [Callstack] 0x00007ffead95b9a3 UE4Editor-D3D11RHI.dll!FD3D11DynamicRHI::CommitGraphicsResourceTables() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Windows\D3D11RHI\Private\D3D11Commands.cpp:1643]
+LogWindows: Error: [Callstack] 0x00007ffead980aec UE4Editor-D3D11RHI.dll!FD3D11DynamicRHI::RHIDrawIndexedPrimitive() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Windows\D3D11RHI\Private\D3D11Commands.cpp:1752]
+LogWindows: Error: [Callstack] 0x00007ffec0f0d971 UE4Editor-RHI.dll!FRHICommandDrawIndexedPrimitive::Execute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Public\RHICommandListCommandExecutes.inl:203]
+LogWindows: Error: [Callstack] 0x00007ffeb08e45e2 UE4Editor-Renderer.dll!FRHICommand<FRHICommandDrawIndexedPrimitive,FRHICommandDrawIndexedPrimitiveString1015>::ExecuteAndDestruct() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Public\RHICommandList.h:763]
+LogWindows: Error: [Callstack] 0x00007ffec0f17a95 UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteInner_DoExecute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:368]
+LogWindows: Error: [Callstack] 0x00007ffec0f174c4 UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteInner() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:659]
+LogWindows: Error: [Callstack] 0x00007ffec0f1818c UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteList() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:682]
+LogWindows: Error: [Callstack] 0x00007ffec0f0faf7 UE4Editor-RHI.dll!FRHICommandWaitForAndSubmitSubList::Execute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:1109]
+LogWindows: Error: [Callstack] 0x00007ffec0f152f5 UE4Editor-RHI.dll!FRHICommand<FRHICommandWaitForAndSubmitSubList,FRHICommandWaitForAndSubmitSubListString1075>::ExecuteAndDestruct() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Public\RHICommandList.h:763]
+LogWindows: Error: [Callstack] 0x00007ffec0f17a95 UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteInner_DoExecute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:368]
+LogWindows: Error: [Callstack] 0x00007ffec0f174c4 UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteInner() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:659]
+LogWindows: Error: [Callstack] 0x00007ffec0f187c5 UE4Editor-RHI.dll!FRHICommandListExecutor::ExecuteList() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:709]
+LogWindows: Error: [Callstack] 0x00007ffec0f0aea2 UE4Editor-RHI.dll!FRHICommandList::EndScene() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:1575]
+LogWindows: Error: [Callstack] 0x00007ffeb0f81160 UE4Editor-Renderer.dll!TRDGLambdaPass<FEmptyShaderParameters,<lambda_07b80eccfb5e773bbe1f3ce853d577a8> >::ExecuteImpl() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Public\RenderGraphPass.h:424]
+LogWindows: Error: [Callstack] 0x00007ffed14a5509 UE4Editor-RenderCore.dll!FRDGPass::Execute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Private\RenderGraphPass.cpp:302]
+LogWindows: Error: [Callstack] 0x00007ffed14a92ba UE4Editor-RenderCore.dll!FRDGBuilder::ExecutePass() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Private\RenderGraphBuilder.cpp:1593]
+LogWindows: Error: [Callstack] 0x00007ffed14a4ab3 UE4Editor-RenderCore.dll!FRDGBuilder::Execute() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Private\RenderGraphBuilder.cpp:1253]
+LogWindows: Error: [Callstack] 0x00007ffeb099a751 UE4Editor-Renderer.dll!FDeferredShadingSceneRenderer::Render() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Renderer\Private\DeferredShadingRenderer.cpp:2618]
+LogWindows: Error: [Callstack] 0x00007ffeb0fa4b3b UE4Editor-Renderer.dll!RenderViewFamily_RenderThread() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Renderer\Private\SceneRendering.cpp:3619]
+LogWindows: Error: [Callstack] 0x00007ffeb0f5a8ef UE4Editor-Renderer.dll!<lambda_3e02a5f531a5d4cb7f869072a107ef0b>::operator()() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Renderer\Private\SceneRendering.cpp:3889]
+LogWindows: Error: [Callstack] 0x00007ffeb0f7e78d UE4Editor-Renderer.dll!TEnqueueUniqueRenderCommandType<`FRendererModule::BeginRenderingViewFamily'::`35'::FDrawSceneCommandName,<lambda_3e02a5f531a5d4cb7f869072a107ef0b> >::DoTask() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Public\RenderingThread.h:183]
+LogWindows: Error: [Callstack] 0x00007ffeb0f827c3 UE4Editor-Renderer.dll!TGraphTask<TEnqueueUniqueRenderCommandType<`FRendererModule::BeginRenderingViewFamily'::`35'::FDrawSceneCommandName,<lambda_3e02a5f531a5d4cb7f869072a107ef0b> > >::ExecuteTask() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Public\Async\TaskGraphInterfaces.h:886]
+LogWindows: Error: [Callstack] 0x00007ffec1215e34 UE4Editor-Core.dll!FNamedTaskThread::ProcessTasksNamedThread() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Async\TaskGraph.cpp:709]
+LogWindows: Error: [Callstack] 0x00007ffec121623e UE4Editor-Core.dll!FNamedTaskThread::ProcessTasksUntilQuit() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Async\TaskGraph.cpp:601]
+LogWindows: Error: [Callstack] 0x00007ffed14cb0d2 UE4Editor-RenderCore.dll!RenderingThreadMain() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp:373]
+LogWindows: Error: [Callstack] 0x00007ffed14d37a4 UE4Editor-RenderCore.dll!FRenderingThread::Run() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp:509]
+LogWindows: Error: [Callstack] 0x00007ffec176bb2b UE4Editor-Core.dll!FRunnableThreadWin::Run() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Windows\WindowsRunnableThread.cpp:86]
+LogWindows: Error: [Callstack] 0x00007ffec17678f7 UE4Editor-Core.dll!FRunnableThreadWin::GuardedRun() [E:\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Private\Windows\WindowsRunnableThread.cpp:35]
+LogWindows: Error: [Callstack] 0x00007fff4cb67034 KERNEL32.DLL!UnknownFunction []
+LogWindows: Error: [Callstack] 0x00007fff4d162651 ntdll.dll!UnknownFunction []
+LogWindows: Error: 
+LogWindows: Error: Crash in runnable thread RenderThread 1
+```
+
+查阅 UDN 上的相似的问题，[Crash from FD3D11DynamicRHI / SetShaderResourcesFromBuffer_SRV - UDN](https://udn.unrealengine.com/s/question/0D54z00007Ahw5tCAB/crash-from-fd3d11dynamicrhi-setshaderresourcesfrombuffersrv)，回答中提到可以尝试开启 RHI 线程；经过实际尝试后，并未能修复该 crash。
+
+最终修复该 crash 的，是以下问题中提到的，在 UE 4.26 中存在的 bug，然后在 UE 4.27 中被修复。
+
+* [HISM causes crash in build/standalone on reload level - UE4 ANSWERHUB](https://answers.unrealengine.com/questions/1002738/hism-causes-crash-in-buildstandalone-on-reload-lev.html)
+* [Crash when spawning multiple HISM at runtime in a packaged shipping build - Unreal Engine Issues](https://issues.unrealengine.com/issue/UE-109511)
+* [UnrealEngine - GitHub](https://github.com/EpicGames/UnrealEngine/commit/d19c69784b3160cbd0c0ddf77237f14ed64dba39)
+
+![image-20220111163251902](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220111163251902.png)
+
+### UE4 并行渲染
+
+* [Parallel Rendering Overview - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/Rendering/ParallelRendering/)
+
 ## 2021-12-31 星期五
 
 ### UE4 Android Debugging
@@ -67,7 +151,7 @@
 cd Engine\Build\BatchFiles
 .\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=false -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false -set:GameConfigurations=Development
 
-.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=true -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false -set:GameConfigurations=Development -set:GameConfigurations=Shipping
+.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -set:WithWin32=false -set:WithLinux=false -set:WithLinuxAArch64=false -set:WithAndroid=true -set:WithHoloLens=false -set:WithLumin=false -set:WithMac=false -set:WithIOS=false -set:WithTVOS=false -set:WithLuminMac=false -set:WithDDC=false
 ```
 
 * [Unreal Binary Builder - GitHub](https://github.com/ryanjon2040/Unreal-Binary-Builder)
