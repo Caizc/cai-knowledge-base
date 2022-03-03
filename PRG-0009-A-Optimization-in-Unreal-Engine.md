@@ -36,6 +36,8 @@
 
 * [Performance Profiling & Optimization Guide - Gamedev Guide](https://ikrima.dev/ue4guide/performance-optimization/performance-guide-overview/)
 
+* [游戏性能指标 - 博客园](https://www.cnblogs.com/kekec/p/7724865.html)
+
 # Code
 
 * [Profiling Code Blocks](https://www.orfeasel.com/profiling-code-blocks/)
