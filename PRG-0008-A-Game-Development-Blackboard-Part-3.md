@@ -1,5 +1,34 @@
 # Game Development Blackboard - Part 3
 
+## 2022-02-21 星期一
+
+### 游戏安全
+
+* [深入解析 Lua 脚本加密技术，提升游戏代码的安全性](https://dun.163.com/news/p/ab38146da80b4a6a9b689729f62ce1ea)
+
+### macOS 安全设置
+
+* [macOS 允许任何来源的 App - 知乎](https://zhuanlan.zhihu.com/p/51328476)
+
+```sh
+sudo spctl --master-disable
+```
+
+## 2022-02-08 星期二
+
+### UE4 内存分配器
+
+* [UE4 MallocBinned2 分配器 - 知乎](https://zhuanlan.zhihu.com/p/79715624)
+* [UE4 MallocBinned 分配器 - 知乎](https://zhuanlan.zhihu.com/p/393382059)
+
+### C/C++ 内存错误检测器
+
+* [AddressSanitizer - GitHub](https://github.com/google/sanitizers/wiki/AddressSanitizer)
+
+> [Build Configuration - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/BuildConfiguration/)
+>
+> **bEnableAddressSanitizer**: Enables address sanitizer (ASan)
+
 ## 2022-01-16 星期日
 
 ### Logcat window missing from Android Stuido
@@ -139,7 +168,7 @@ LogWindows: Error: Crash in runnable thread RenderThread 1
 
 * [Using an Installed Build - UE Documentation](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DeployingTheEngine/UsinganInstalledBuild/)
 * [BuildGraph Usage - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/BuildTools/AutomationTool/BuildGraph/Usage/)
-* [Need VS 2017 to build plugins in 4.25? - UE4 AnswerHub](https://answers.unrealengine.com/questions/975709/need-vs-2017-to-build-plugins-in-425.html)
+* [Need VS 2017 to build plugins in 4.25? - UE4 AnswerHub](https://forums.unrealengine.com/t/need-vs-2017-to-build-plugins-in-4-25/469289)
 * [BuildGraph：构建支持多平台打包的二进制引擎 - 循迹研究室](https://imzlp.com/posts/11956/)
 
 ![image-20211221215941432](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211221215941432.png)
@@ -302,8 +331,19 @@ else
 
 * [iOS Quick Start - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/QuickStart/)
 * [iOS Provisioning - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/Provisioning/)
+* [Distribution on iOS - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/iOS/Distribution/)
 * [UE4 打包 iOS 的两种方案 - 知乎](https://zhuanlan.zhihu.com/p/374158520)
 * [Apple Developer](https://developer.apple.com/)
+* [Remove obsolete mobile provision profiles - Unreal Engine Forums](https://forums.unrealengine.com/t/remove-obsolete-mobileprovision-profiles-ios/317570)
+
+```sh
+[Mac]
+~/Library/MobileDevice/Provisioning Profiles
+/Library/MobileDevice/Provisioning Profiles
+```
+
+* [iPhonePackager - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/iOS/iPhonePackager/)
+* [UE 开发笔记：Mac/iOS 篇 - imzlp](https://imzlp.com/posts/1948/)
 
 ### UE4 Patch
 
