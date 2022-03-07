@@ -14,6 +14,12 @@
 sudo spctl --master-disable
 ```
 
+### UE4 Editor Splash
+
+* [Editor Splash screen customisation - Unreal Engine Forums](https://forums.unrealengine.com/t/editor-splash-screen-customisation/624)
+
+> /Engine/Content/Splash/EdSplash.bmp
+
 ## 2022-02-08 星期二
 
 ### UE4 内存分配器
@@ -355,6 +361,7 @@ else
 * [UE 热更新：需求分析与方案设计 - imzlp.com](https://imzlp.com/posts/17371/)
 * [UE 资源热更打包工具 HotPatcher - imzlp.com](https://imzlp.com/posts/17590/)
 * [UE 热更新：Questions & Answers - imzlp.com](https://imzlp.com/posts/16895/)
+* [UE 热更新：拆分基础包 - imzlp.com](https://imzlp.com/posts/13765/)
 
 ### UnrealPak
 
