@@ -1,5 +1,22 @@
 # Game Development Blackboard - Part 3
 
+## 2022-04-28 星期四
+
+### Android 渠道包
+
+* [开源 Android 渠道包生成工具 Walle - 美团技术团队](https://tech.meituan.com/2017/01/13/android-apk-v2-signature-scheme.html)
+* [walle - GitHub](https://github.com/Meituan-Dianping/walle)
+* [Android 多渠道打包的三种方式 - CSDN](https://blog.csdn.net/mayn666/article/details/79878469)
+* [Android 多渠道打包（相同工程不同包名等）- 简书](https://www.jianshu.com/p/9bfc4b23b2c0)
+
+## 2022-04-21 星期四
+
+### UE4 的光照与阴影
+
+* [Unreal Engine 4 的光与影 - Unreal Engine Blog](https://www.unrealengine.com/zh-CN/blog/chn-unreal-engine-4-light-and-shadow?sessionInvalidated=true)
+
+![02.png](media/PRG-0008-A-Game-Development-Blackboard-Part-3/Unreal+Engine%252Fblog%252Fchn-unreal-engine-4-light-and-shadow%252F02-2063x783-fa4f00db9d0035b35baa5e7c51403e02694b04db.png)
+
 ## 2022-04-11 星期一
 
 ### UE4 资源管理
