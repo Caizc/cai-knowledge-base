@@ -353,19 +353,120 @@ else
 ### UE4 Android Packaging
 
 * [Setting Up Android SDK and NDK for Unreal - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/Setup/AndroidStudio/)
-
-| Unreal Engine Version | Required Android Studio Version | Compatible NDK Versions |
-| :-------------------- | :------------------------------ | :---------------------- |
-| 4.26.2                | Android Studio 4.0              | NDK r21b                |
-| 4.25                  | Android Studio 3.5.3            | NDK r21b, NDK r20b      |
-| 4.21 - 4.24           |                                 | NDK r14b                |
-| 4.19 - 4.20           |                                 | NDK r12b                |
-
 * [NDK Downloads - Android Developers](https://developer.android.com/ndk/downloads)
 * [Packaging Android Projects - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/PackagingAndroidProject/)
 * [Reducing Packaged Game Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/ReducingPackageSize/)
 * [Reducing APK Package Size - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Android/ReducingAPKSize/)
 * [游戏打包 - 知乎](https://zhuanlan.zhihu.com/p/60996027)
+* [如何完全卸载 Android Studio - CSDN](https://blog.csdn.net/qq_33721320/article/details/114977456)
+* [Android Gradle plugin release notes - Android Developers](https://developer.android.google.cn/studio/releases/gradle-plugin)
+
+### UE4 Android Packaging 工具链版本设置
+
+#### NDK Version
+
+> `C:\Users\[USERNAME]\AppData\Local\Android\Sdk\ndk\21.4.7075529`
+
+![image-20220510194347481](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510194347481.png)
+
+![image-20220510194625248](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510194625248.png)
+
+> ..\Engine\Programs\AutomationTool\Saved\Logs\UBT-[PROJECT_NAME]-Android-Development.txt
+
+```
+AndroidPlatform.SetUpSpecificEnvironment: PLATFORM_ANDROID_NDK_VERSION = 210500
+AndroidPlatform.SetUpSpecificEnvironment: NDK toolchain: r21e, NDK version: 30, GccVersion: 4.9, ClangVersion: 9.0.9
+```
+
+#### NDK API Level
+
+> C:\Users\[USERNAME]\AppData\Local\Android\Sdk\ndk\21.4.7075529\platforms
+
+![image-20220510200535345](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510200535345.png)
+
+> ..\Engine\Programs\AutomationTool\Saved\Logs\UBT-[PROJECT_NAME]-Android-Development.txt
+
+```
+AndroidPlatform.SetUpSpecificEnvironment: PLATFORM_ANDROID_NDK_VERSION = 210500
+AndroidPlatform.SetUpSpecificEnvironment: NDK toolchain: r21e, NDK version: 30, GccVersion: 4.9, ClangVersion: 9.0.9
+```
+
+#### SDK Build-Toos Version
+
+> C:\Users\[USERNAME]\AppData\Local\Android\Sdk\build-tools\30.0.3
+
+![image-20220510200925849](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510200925849.png)
+
+![image-20220510201245759](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510201245759.png)
+
+> ..\Engine\Programs\AutomationTool\Saved\Logs\UBT-[PROJECT_NAME]-Android-Development.txt
+
+```
+UEDeployAndroid.GetSdkApiLevel: Building Java with SDK API level 'android-31'
+UEDeployAndroid.GetBuildToolsVersion: Building with Build Tools version '30.0.3'
+```
+
+#### SDK API Level
+
+> C:\Users\[USERNAME]\AppData\Local\Android\Sdk\platforms\android-31
+
+![image-20220510201652277](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510201652277.png)
+
+![image-20220510201742944](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510201742944.png)
+
+> ..\Engine\Programs\AutomationTool\Saved\Logs\UBT-[PROJECT_NAME]-Android-Development.txt
+
+```
+UEDeployAndroid.GetSdkApiLevel: Building Java with SDK API level 'android-31'
+UEDeployAndroid.GetBuildToolsVersion: Building with Build Tools version '30.0.3'
+```
+
+#### Target SDK Version
+
+![image-20220510202613823](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220510202613823.png)
+
+> ..\Engine\Programs\AutomationTool\Saved\Logs\UBT-[PROJECT_NAME]-Android-Development.txt
+
+```
+AndroidPlatform.Package: Target SDK Version 29
+```
+
+#### Android Gradle Plugin(AGP) Version & Gradle Version
+
+AGP Version 与 Gradle Version 应兼容匹配，详见：[Android Gradle plugin release notes - Android Developers](https://developer.android.google.cn/studio/releases/gradle-plugin)
+
+```c++
+class UEDeployAndroid : UEBuildDeploy, IAndroidDeploy
+{
+    //...
+	// classpath of default android build tools gradle plugin
+	private const string ANDROID_TOOLS_BUILD_GRADLE_VERSION = "com.android.tools.build:gradle:4.0.0";   
+    //...
+}
+```
+
+UE4 的 AutomationTool 在 Make APK 时，实际上并不根据 AGP Version 确定最终使用的 Gradle Version，而是根据以下配置文件中的 `distributionUrl`，下载指定版本的 Gradle 并在用于执行后续生成 APK 的工作。
+
+> ..\Engine\Build\Android\Java\gradle\gradle\wrapper\gradle-wrapper.properties
+
+```properties
+#Tue Feb 04 16:06:19 EST 2020
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
+```
+
+> ..\[PROJECT]\Intermediate\Android\arm64\gradle\\.gradle
+
+#### UE4 默认的 Android 工具链版本
+
+> ..\Engine\Extras\Android\SetupAndroid.bat
+
+```bash
+call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
+```
 
 ### UE4 iOS Packaging
 
