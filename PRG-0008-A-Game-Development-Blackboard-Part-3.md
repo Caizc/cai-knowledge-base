@@ -1,5 +1,78 @@
 # Game Development Blackboard - Part 3
 
+## 2022-06-08 星期三
+
+### iOS TestFlight
+
+* [iOS 之 TestFlight 的使用教程 - 简书](https://www.jianshu.com/p/478a8c35cbe0)
+
+### 移动端息屏
+
+* [移动端息屏控制 - 虚幻社区知识库](https://ue5wiki.com/wiki/14280/)
+
+## 2022-05-27 星期五
+
+### Android APK 签名
+
+* [Android v1 v2 v3 签名详解 - 知乎](https://zhuanlan.zhihu.com/p/89126018)
+* [对应用进行签名 - Android Developers](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)
+* [应用签名 - Android Source](https://source.android.com/security/apksigning)
+* [APK 签名方案 v2 - Android Source](https://source.android.com/security/apksigning/v2)
+* [APK 签名方案 v3 - Android Source](https://source.android.com/security/apksigning/v3)
+* [apksigner - Android Developers](https://developer.android.com/studio/command-line/apksigner)
+* [Android APK 的签名 - CSDN](https://blog.csdn.net/chichoxian/article/details/95767768)
+* [SignatureTools - GitHub](https://github.com/DeMonJavaSpace/SignatureTools)
+* [Android 新版 v2 签名&渠道包工具 - CSDN](https://blog.csdn.net/DeMonliuhui/article/details/109455135)
+* [细说 Android apk 四代签名 - 腾讯云](https://cloud.tencent.com/developer/article/1916927)
+
+## 2022-05-18 星期三
+
+### Sublime Text 2
+
+* [Sublime Text 2 - Show file navigation in sidebar - stackoverflow](https://stackoverflow.com/questions/11995591/sublime-text-2-show-file-navigation-in-sidebar)
+
+## 2022-05-11 星期三
+
+### Android 代码裁剪
+
+* [裁剪、混淆和优化你的应用 - Android Developers](https://developer.android.com/studio/build/shrink-code)
+
+```groovy
+android {
+    buildTypes {
+        release {
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+            minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
+
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+    ...
+}
+```
+
+### UE4 Android WebView
+
+* [UE4 内嵌 Web - Goulandis](https://goulandis.github.io/2021/05/14/%E3%80%90UE4%E3%80%91UE4%E5%86%85%E5%B5%8CWeb%E5%8F%8A%E4%B8%8EWeb%E9%80%9A%E4%BF%A1/#)
+
+### UE4 Android HTTP
+
+* [UE 开发笔记：Android 篇 - imzlp](https://imzlp.com/posts/17996/)
+
+![image-20220517201055094](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220517201055094.png)
+
+* [Network Security Configuration File - Unreal Engine Forums](https://forums.unrealengine.com/t/network-security-configuration-file/139286)
+
 ## 2022-04-28 星期四
 
 ### Android 渠道包
@@ -880,8 +953,8 @@ int main()
 
 ### UE4 字符串
 
-* [String Handling - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/index.html)
-* [Character Encoding - UE4 Documentation](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/CharacterEncoding/index.html)
+* [String Handling - UE4 Documentation](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/)
+* [Character Encoding - UE4 Documentation](https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/CharacterEncoding/)
 * [FString - UE4 Documentation](https://docs.unrealengine.com/en-US/API/Runtime/Core/Containers/FString/index.html)
 * [FString - UE API Reference](https://docs.unrealengine.com/en-US/API/Runtime/Core/Containers/FString/index.html)
 
