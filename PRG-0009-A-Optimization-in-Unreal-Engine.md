@@ -129,7 +129,8 @@
 
 * [如何使用 UE4 的 PSO 缓存改善性能 - 知乎](https://zhuanlan.zhihu.com/p/372800310)
 * [UE 项目优化：PSO Caching](https://imzlp.com/posts/24336/)
-* [UE4：PSO 使用指南](https://www.muchenhen.com/2020/10/20/UE4-PSO%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)
+* [UE4：PSO 使用指南](https://muchenhen.com/posts/47560/)
+* [UE4：4.27 版本 PSO 变化](https://muchenhen.com/posts/2274/)
 
 ### 实践记录
 
