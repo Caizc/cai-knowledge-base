@@ -6,7 +6,7 @@
 
 * [File directory path/breadcrumbs missing in Rider for Windows?](https://www.reddit.com/r/Jetbrains/comments/suwgqg/file_directory_pathbreadcrumbs_missing_in_rider/)
 
-![6QMbSCp](media\6QMbSCp-16588726411512.png)
+![6QMbSCp](media/PRG-0008-A-Game-Development-Blackboard-Part-3/6QMbSCp-16588726411512.png)
 
 ### UE4 Pak 加密与解密
 
