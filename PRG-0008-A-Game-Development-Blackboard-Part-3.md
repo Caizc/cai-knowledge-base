@@ -1,5 +1,43 @@
 # Game Development Blackboard - Part 3
 
+## 2022-07-27 星期三
+
+### Rider 显示导航栏
+
+* [File directory path/breadcrumbs missing in Rider for Windows?](https://www.reddit.com/r/Jetbrains/comments/suwgqg/file_directory_pathbreadcrumbs_missing_in_rider/)
+
+![6QMbSCp](E:\[cai-knowledge-base]\media\6QMbSCp-16588726411512.png)
+
+### UE4 Pak 加密与解密
+
+* [Singing and Encryption - UE Documentation](https://docs.unrealengine.com/4.26/en-US/Basics/Projects/Packaging/#signingandencryption)
+* [UE4 Pak 加密与解密调研 - 知乎](https://zhuanlan.zhihu.com/p/523750676)
+
+### MD5 检查
+
+```shell
+#Mac
+md5 [filename]
+
+#Windows
+certutil -hashfile [filename] md5
+```
+
+## 2022-07-04 星期一
+
+### iOS 语言本地化
+
+* [Localize 'plist' and 'NSLocalizedString' in an iOS Project - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/iOS/LocalizePlistInIOSProject/)
+* [App Store 介绍页中显示的语言列表如何设置 - 简书](https://www.jianshu.com/p/92c21eb71537)
+* [3 分钟实现 iOS 语言本地化/国际化 - 腾讯云开发者社区](https://cloud.tencent.com/developer/article/1143302)
+
+### iOS 产品页优化
+
+* [产品页优化 - Apple Developer](https://developer.apple.com/cn/app-store/product-page-optimization/)
+* [Xcode 配置多套 App 图标的方法 - 稀土掘金](https://juejin.cn/post/7044748618078617613)
+* [iOS 动态更换 APP 图标 - 简书](https://www.jianshu.com/p/e34b9805b424)
+* [Dynaminally Change the App Icon - medium](https://medium.com/ios-os-x-development/dynamically-change-the-app-icon-7d4bece820d2)
+
 ## 2022-06-08 星期三
 
 ### iOS TestFlight

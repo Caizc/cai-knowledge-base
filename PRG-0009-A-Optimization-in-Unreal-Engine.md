@@ -16,6 +16,8 @@
 
 * [UE4 性能优化操作手册 - 知乎](https://zhuanlan.zhihu.com/p/54284627)
 
+* [UE4 手游如何进行性能优化？- GameLook](http://www.gamelook.com.cn/2020/12/405959)
+
 * [UE4 项目移动端画面效果适配 - 知乎](https://zhuanlan.zhihu.com/p/145189072)
 
 * [UE4 性能优化指南（程序向）- 知乎](https://zhuanlan.zhihu.com/p/55335907)
@@ -37,6 +39,14 @@
 * [Performance Profiling & Optimization Guide - Gamedev Guide](https://ikrima.dev/ue4guide/performance-optimization/performance-guide-overview/)
 
 * [游戏性能指标 - 博客园](https://www.cnblogs.com/kekec/p/7724865.html)
+
+* [手游性能原理篇 - 知乎](https://zhuanlan.zhihu.com/p/543466481)
+
+* [iOS 底层原理 - 性能优化 - 知乎](https://zhuanlan.zhihu.com/p/152662208)
+
+* [深度分析说明书 - PerfDog](https://perfdog.qq.com/article_detail?id=10206&issue_id=0&plat_id=1)
+
+* [GPU 指标详细说明 - PerfDog](https://perfdog.qq.com/article_detail?id=10161&issue_id=0&plat_id=1)
 
 # Code
 
@@ -267,16 +277,13 @@ r.ProgramBinaryCache.RestartAndroidAfterPrecompile=false
 r.vsync 0
 ```
 
-
-
 * 关闭帧率平滑
 
 ```
 Project Settings -> Engine -> General Settings -> Smooth Frame Rate
 ```
 
-
-
+* 开启 PSO Caching 功能
 * 项目设置
 
 ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line Parameters 中填入参数，以自动将录制的 Profiler 数据从终端设备中传送回编辑器中进行分析：
