@@ -1,5 +1,40 @@
 # Game Development Blackboard - Part 3
 
+## 2022-09-04 星期日
+
+### iOS mouse support in UE4
+
+* [Bring keyboard and mouse gaming to iPad - Apple Developer](https://developer.apple.com/videos/play/wwdc2020/10617/)
+
+![image-20220904022807097](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220904022807097.png)
+
+```c++
+// Engine/Source/Runtime/ApplicationCore/Private/IOS/IOSView.cpp
+
+- (BOOL)prefersPointerLocked
+{
+    UE_LOG(LogIOS, Log, TEXT("IOSViewController prefersPointerLocked"));
+    return YES; // Change the return value to NO to unlock the pointer
+}
+```
+
+### iOS Home Indicator
+
+* [How to force user to swipe twice home indicator to go home-screen? - stackoverflow](https://stackoverflow.com/questions/47347403/iphone-x-how-to-force-user-to-swipe-twice-home-indicator-to-go-home-screen)
+
+```c++
+// Engine/Source/Runtime/ApplicationCore/Private/IOS/IOSView.cpp
+
+/**
+ * Tell the OS to hide the home bar
+ */
+- (BOOL)prefersHomeIndicatorAutoHidden
+{
+	// return YES; // If return YES, the user swipe only once to go to the home screen, but the home indicator will auto hide completely.
+	return NO; // If return NO, force the user swipe twice to go to the home screen, but the gray home indicator will stay on the bottom on the screen.
+}
+```
+
 ## 2022-07-27 星期三
 
 ### Rider 显示导航栏
@@ -7,6 +42,10 @@
 * [File directory path/breadcrumbs missing in Rider for Windows?](https://www.reddit.com/r/Jetbrains/comments/suwgqg/file_directory_pathbreadcrumbs_missing_in_rider/)
 
 ![6QMbSCp](media/PRG-0008-A-Game-Development-Blackboard-Part-3/6QMbSCp-16588726411512.png)
+
+### Rider 代码自动换行的字数设置
+
+![image-20220821202540017](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20220821202540017.png)
 
 ### UE4 Pak 加密与解密
 
@@ -288,6 +327,7 @@ LogWindows: Error: Crash in runnable thread RenderThread 1
 
 > Scalability settings define levels of quality for individual features like shadows, foliage, and mesh detail, condensing an array of different settings into one easily scaled value. Device profiles then map those settings to devices that are compatible with them.
 
+* [Setting Device Profiles - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/DeviceProfiles/)
 * [Mobile Performance Tips and Tricks - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/TipsAndTricks/)
 * [Performance Guidelines for Mobile Devices - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/Performance/)
 * [Configuration Files - UE Documentation](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/ConfigurationFiles/)
