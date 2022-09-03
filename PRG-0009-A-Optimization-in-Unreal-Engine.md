@@ -20,6 +20,8 @@
 
 * [UE4 项目移动端画面效果适配 - 知乎](https://zhuanlan.zhihu.com/p/145189072)
 
+* [UE4 性能优化指南 - 知乎](https://zhuanlan.zhihu.com/p/381890846)
+
 * [UE4 性能优化指南（程序向）- 知乎](https://zhuanlan.zhihu.com/p/55335907)
 
 * [UE4 性能优化指南（美术向）- 知乎](https://zhuanlan.zhihu.com/p/55335653)
@@ -48,6 +50,10 @@
 
 * [GPU 指标详细说明 - PerfDog](https://perfdog.qq.com/article_detail?id=10161&issue_id=0&plat_id=1)
 
+* [UE4 制作多人大地形游戏的优化 - 知乎](https://zhuanlan.zhihu.com/p/43742565)
+
+* [剖析虚幻渲染体系 - 博客园](https://www.cnblogs.com/timlly/p/13512787.html)
+
 # Code
 
 * [Profiling Code Blocks](https://www.orfeasel.com/profiling-code-blocks/)
@@ -66,6 +72,8 @@
 * [UE4 内存 Profiler - 知乎](https://zhuanlan.zhihu.com/p/61366273)
 * [UE4 Low Level Memory Tracker 的使用 - 知乎](https://zhuanlan.zhihu.com/p/78005333)
 * [Debugging and Optimizing Memory - UE Blog](https://www.unrealengine.com/en-US/blog/debugging-and-optimizing-memory)
+* [UE4 内存统计工具 LLM - 知乎](https://zhuanlan.zhihu.com/p/437778238)
+* [sluaunreal 内存分析 - GitHub](https://github.com/Tencent/sluaunreal/wiki/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90)
 
 # Garbage Collect
 
@@ -273,13 +281,17 @@ r.ProgramBinaryCache.RestartAndroidAfterPrecompile=false
 
 * 关闭垂直同步
 
-```
+```shell
 r.vsync 0
+
+#Config/Android/AndroidEngine.ini or Config/IOS/IOSEngine.ini 中添加：
+[ConsoleVariables]
+r.VSync=0
 ```
 
 * 关闭帧率平滑
 
-```
+```shell
 Project Settings -> Engine -> General Settings -> Smooth Frame Rate
 ```
 
@@ -288,13 +300,13 @@ Project Settings -> Engine -> General Settings -> Smooth Frame Rate
 
 ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line Parameters 中填入参数，以自动将录制的 Profiler 数据从终端设备中传送回编辑器中进行分析：
 
-```
+```shell
 -messaging -SendAutomationAnalytics
 ```
 
 填入如下参数，以启用 Low Level Memory Tracker：
 
-```
+```shell
 -LLM -LLMCSV
 ```
 
@@ -303,7 +315,7 @@ ProjectLauncher -> Launch -> Using default role -> 在 Additional Command Line P
 * [UE4 Console Variables and Commands](https://digilander.libero.it/ZioYuri78/)
 * [Stat Commands - UE Documentation](https://docs.unrealengine.com/4.26/en-US/TestingAndOptimization/PerformanceAndProfiling/StatCommands/)
 
-```
+```shell
 stat fps
 stat unit
 stat game
@@ -394,6 +406,10 @@ stat LLMOverhead #显示LLM内部使用的内存
 * [UE4 Mobile 使用动态阴影的一些小结 - 知乎](https://zhuanlan.zhihu.com/p/90883687)
 * Light Complexity 检查工具
 * 关闭阴影
+
+## 特效
+
+* [Cascade Particle Cut-Out tutorial (less overdraw) - YouTube](https://youtu.be/_T-BTiMF7XA)
 
 ## Game Thread
 
