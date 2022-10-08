@@ -1,5 +1,18 @@
 # Game Development Blackboard - Part 3
 
+## 2022-10-08 星期六
+
+### UE4 File Management
+
+* [File and Folder Management, Create, Find, Delete - Unreal Engine Community Wiki](https://unrealcommunity.wiki/file-and-folder-management-create-find-delete-et2g64gx)
+
+## 2022-09-10 星期六
+
+### Texture Streaming in UE4
+
+* [Managing the Texture Streaming Pool - YouTube](https://youtu.be/uk3W8Zhahdg)
+* [Texture Streaming Configuration - UE Documentation](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Textures/Streaming/Config/)
+
 ## 2022-09-04 星期日
 
 ### iOS mouse support in UE4
