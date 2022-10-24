@@ -1,5 +1,15 @@
 # Game Development Blackboard - Part 3
 
+## 2022-10-23 星期日
+
+### UE4 多线程
+
+* [UE4_MultiThread - GitHub](https://github.com/tiax615/UE4_MultiThread)
+
+  ![image-20221023224323237](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20221023224323237.png)
+
+* [《Exploring in UE4》多线程机制详解[原理分析] -知乎](https://zhuanlan.zhihu.com/p/38881269)
+
 ## 2022-10-08 星期六
 
 ### UE4 File Management
