@@ -1,5 +1,47 @@
 # Game Development Blackboard - Part 3
 
+## 2022-11-26 星期六
+
+### Windows 线程栈空间
+
+* [线程堆栈大小 - MSDN](https://learn.microsoft.com/zh-cn/windows/win32/procthread/thread-stack-size?redirectedfrom=MSDN)
+* [Set Stack Size - Learn Microsoft](https://learn.microsoft.com/en-us/cpp/build/reference/f-set-stack-size?view=msvc-170)
+* [OverrideStackSize - UE4 Documentation](https://docs.unrealengine.com/4.26/en-US/API/Runtime/Core/Misc/FQueuedThreadPool/OverrideStackSize/)
+
+## 2022-11-16 星期四
+
+### iOS App Rating
+
+* [设计 iOS 评分引导 - 知乎](https://zhuanlan.zhihu.com/p/567156652)
+* [Ratings and reviews - Apple Developer](https://developer.apple.com/design/human-interface-guidelines/patterns/ratings-and-reviews/)
+* [SKStoreReviewController - Apple Developer](https://developer.apple.com/documentation/storekit/skstorereviewcontroller)
+* [Requesting App Ratings and Reviews Tutorial for iOS - Kodeco](https://www.kodeco.com/9009-requesting-app-ratings-and-reviews-tutorial-for-ios)
+* [Increase App Ratings by using SKStoreReviewController - SwiftLee](https://www.avanderlee.com/swift/skstorereviewcontroller-app-ratings/)
+
+> ## SKStoreReviewController Limitations
+>
+> Apple does enforce certain limitations on how you use this API:
+>
+> - No matter how many times you request the review prompt, the system will show the prompt a maximum of three times in a 365-day period.
+> - Calling the method is not a guarantee that the prompt will display. This means that it’s not appropriate to call the API in response to a button tap or other user action.
+> - The system must not have shown the prompt for a version of the app bundle that matches the current bundle version. This ensures that the user is not asked to review the same version of your app multiple times.
+>
+> *Note*: The review prompt will behave differently depending on the type of build that you are running:
+>
+> - *Development*: Shown every time the you request the prompt.
+> - *Test Flight*: Prompt is never shown.
+> - *App Store*: Shown with the limitations described above.
+
+## 2022-11-09 星期三
+
+### UE4 自定义编译选项
+
+* [How to use custom compiler options? - Epic Games Dev Community](https://forums.unrealengine.com/t/how-to-use-custom-compiler-options/409262)
+
+> ﻿In VCToolChain.cs (\Engine\Source\Programs\UnrealBuildTool\Windows\VCToolChain.cs) you can append additional compilation argument in AppendCLArguments_Global() or AppendCLArguments_CPP(), if it’s c++ specific arguments.
+>
+> You can do that for every platform you need, (Linus, Mac, IOS, Android, etc) in their respective ToolChain file (LinuxToolChain.cs, for example).
+
 ## 2022-10-23 星期日
 
 ### UE4 多线程
