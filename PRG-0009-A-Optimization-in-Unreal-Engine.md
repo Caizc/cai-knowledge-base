@@ -74,6 +74,8 @@
 * [Debugging and Optimizing Memory - UE Blog](https://www.unrealengine.com/en-US/blog/debugging-and-optimizing-memory)
 * [UE4 内存统计工具 LLM - 知乎](https://zhuanlan.zhihu.com/p/437778238)
 * [sluaunreal 内存分析 - GitHub](https://github.com/Tencent/sluaunreal/wiki/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90)
+* [Understanding Memory on iOS - CSDN](https://blog.csdn.net/cubesky/article/details/107842444)
+* [UE4 iOS 内存分布和优化 - INDIENOVA](https://indienova.com/indie-game-development/unreal-engine-mobile-optimization/)
 
 # Garbage Collect
 
@@ -366,6 +368,8 @@ stat llm #显示LLM摘要。所有较低级别的引擎统计信息都归入单�
 stat llmfull #显示LLM所有统计信息
 stat LLMPlatform #显示从OS分配的所有内存信息 
 stat LLMOverhead #显示LLM内部使用的内存
+
+memreport -full
 ```
 
 ## 减少 Draw Call
