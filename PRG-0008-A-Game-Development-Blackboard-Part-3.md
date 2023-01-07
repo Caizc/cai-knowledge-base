@@ -701,6 +701,7 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 
 * [iPhonePackager - UE Documentation](https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/Mobile/iOS/iPhonePackager/)
 * [UE 开发笔记：Mac/iOS 篇 - imzlp](https://imzlp.com/posts/1948/)
+* [Using the Windows Metal Shader Compiler for iOS - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/iOS/WindowsMetalShader/)
 
 ### UE4 Patch
 
@@ -713,6 +714,7 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 * [UE 资源热更打包工具 HotPatcher - imzlp.com](https://imzlp.com/posts/17590/)
 * [UE 热更新：Questions & Answers - imzlp.com](https://imzlp.com/posts/16895/)
 * [UE 热更新：拆分基础包 - imzlp.com](https://imzlp.com/posts/13765/)
+* [UE 热更新：Shader 更新策略](https://imzlp.com/posts/15810/)
 
 ### UnrealPak
 
@@ -1069,6 +1071,14 @@ int main()
 
 * [Logs, Printing Messages To Yourself During Runtime](https://nerivec.github.io/old-ue4-wiki/pages/logs-printing-messages-to-yourself-during-runtime.html)
 * [Custom Log Categories](https://blog.jamie.holdings/2020/04/21/unreal-engine-4-custom-log-categories/)
+
+### UE4 Mac Build Log
+
+`~/Library/Logs/Unreal\ Engine/LocalBuildLogs`
+
+* `Log.txt`
+* `UBT-UnrealPak-Mac-Development.txt`
+* `UBT-ChessWar-IOS-Shipping.txt`
 
 ### UE4 Json
 
