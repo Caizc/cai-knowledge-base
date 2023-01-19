@@ -1,5 +1,16 @@
 # Game Development Blackboard - Part 3
 
+## 2023-01-19 星期四
+
+### Oodle Compression
+
+* [Reducing Package Sizes with Oodle Compression - Epic Games Dev Community](https://dev.epicgames.com/community/learning/tutorials/ry2D/unreal-engine-reducing-package-sizes-with-oodle-compression)
+* [Oodle Data Compression](http://www.radgametools.com/oodlecompressors.htm)
+
+![oodle260_typical_combined](media/PRG-0008-A-Game-Development-Blackboard-Part-3/oodle260_typical_combined-1674142653839-2.png)
+
+![image-20230119222430794](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20230119222430794.png)
+
 ## 2022-11-26 星期六
 
 ### Windows 线程栈空间
@@ -734,6 +745,10 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 ![img](media/PRG-0008-A-Game-Development-Blackboard-Part-3/QMzhVw3UA9FX1o3ZuG75.jpg)
 
 ![img](media/PRG-0008-A-Game-Development-Blackboard-Part-3/Sl1T2Q1wvjfzluEpcIU5.jpg)
+
+### 游戏工业化
+
+* [2022 游戏工业化之战 - 知乎](https://zhuanlan.zhihu.com/p/479291088)
 
 ## 2021-10-10 星期日
 
