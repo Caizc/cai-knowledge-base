@@ -672,7 +672,7 @@ class UEDeployAndroid : UEBuildDeploy, IAndroidDeploy
 }
 ```
 
-UE4 的 AutomationTool 在 Make APK 时，实际上并不根据 AGP Version 确定最终使用的 Gradle Version，而是根据以下配置文件中的 `distributionUrl`，下载指定版本的 Gradle 并在用于执行后续生成 APK 的工作。
+UE4 的 AutomationTool 在 Make APK 时，实际上并不根据 AGP Version 确定最终使用的 Gradle Version，而是根据以下配置文件中的 `distributionUrl`，下载指定版本的 Gradle 并用于执行后续生成 APK 的工作。
 
 > ..\Engine\Build\Android\Java\gradle\gradle\wrapper\gradle-wrapper.properties
 
@@ -752,7 +752,9 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 
 ## 2021-10-10 星期日
 
-### Support for Google Android App Bundle(AAB) in Unreal Engine 4.24
+### Support for Google Android App Bundle(AAB) in Unreal Engine
+
+* [Customizable delivery with the App Bundle and easy sharing of test builds (Google I/O 19) - YouTube](https://youtu.be/flhib2krW7U)
 
 * [Android App Bundle - Android Developers](https://developer.android.com/platform/technology/app-bundle)
 
@@ -780,6 +782,7 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 * [Play Feature Delivery 概览 - Android Developers](https://developer.android.com/guide/app-bundle/dynamic-delivery)
 * [Build and test your Android App Bundle - Android Developers](https://developer.android.com/guide/app-bundle/test)
 * [bundletool - Android Developers](https://developer.android.com/studio/command-line/bundletool)
+* [Build your app from the command line - Android Developers](https://developer.android.com/build/building-cmdline#build_bundle)
 * [啥是 Android App Bundle？- 知乎](https://zhuanlan.zhihu.com/p/61663559)
 
 > * 资源选择性加载
@@ -789,6 +792,9 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 * [Google Play Asset Delivery Reference - UE Documentation](https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/Mobile/Android/Distribution/GooglePlayAssetDeliveryReference/)
 * [Google Play Game's Asset Delivery - YouTube](https://youtu.be/WW9GevpEo1s)
 * [Build error: "Installed Build Tools revision 31.0.0 is corrupted" - stackoverflow](https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted)
+* [Share app bundles and APKs internally - Play Console Help](https://support.google.com/googleplay/android-developer/answer/9844679)
+* [Play Internal App Sharing URL - Google Play](https://play.google.com/console/internal-app-sharing/)
+* [Inspect app versions with app bundle explorer - Play Console Help](https://support.google.com/googleplay/android-developer/answer/9844279)
 
 ## 2021-10-07 星期四
 
