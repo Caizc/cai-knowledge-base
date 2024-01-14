@@ -1504,6 +1504,7 @@ CREATE TABLE `player` (
 ### C# decompile
 
 * [推荐.Net、C# 逆向反编译四大工具利器](http://blog.csdn.net/kongwei521/article/details/54927689)
+* [Decompiling source code](https://rimworld.huijiwiki.com/wiki/Mod%E6%95%99%E7%A8%8B/Decompiling_source_code)
 
 ## 2017-09-12 星期二
 

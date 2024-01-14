@@ -5,13 +5,16 @@
 * Download and add the repository, then update.
 
 ```
-wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpmsudo rpm -ivh mysql-community-release-el7-5.noarch.rpmyum update
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum update
 ```
 
 * Install MySQL as usual and start the service.
 
 ```
-sudo yum install mysql-serversudo systemctl start mysqld
+sudo yum install mysql-server
+sudo systemctl start mysqld
 ```
 
 ## Harden MySQL Server
@@ -31,16 +34,21 @@ mysql -u root -p
 * Create a New MySQL User and Database
 
 ```
- create database testdb; grant all on testdb.* to 'testuser' identified by 'password';
+ create database testdb;
+ grant all on testdb.* to 'testuser' identified by 'password';
  exit
 ```
 
 * Reset the MySQL Root Password
 
 ```
-$ sudo systemctl stop mysqld$ sudo mysqld_safe --skip-grant-tables &
+$ sudo systemctl stop mysqld
+$ sudo mysqld_safe --skip-grant-tables &
 $ mysql -u root
-> use mysql;> update user SET PASSWORD=PASSWORD("password") WHERE USER='root';> flush privileges;> exit
+> use mysql;
+> update user SET PASSWORD=PASSWORD("password") WHERE USER='root';
+> flush privileges;
+> exit
 $ sudo systemctl start mysqld
 ```
 
@@ -144,6 +152,15 @@ service mysqld restart
 
 ## 完成
 
+# SSL 证书申请与安装 - 腾讯云
+
+* [免费 SSL 证书申请流程 - 腾讯云](https://cloud.tencent.com/document/product/400/6814)
+* [如何选择 SSL 证书安装部署类型？- 腾讯云](https://cloud.tencent.com/document/product/400/4143)
+* [Tomcat 服务器 SSL 证书安装部署（JKS 格式）（Linux）- 腾讯云](https://cloud.tencent.com/document/product/400/35224)
+* [Tomcat 服务器 SSL 证书安装部署（PFX 格式）- 腾讯云](https://cloud.tencent.com/document/product/400/65706)
+* [SSL 证书安装相关 - 腾讯云](https://cloud.tencent.com/document/product/400/61387)
+* [无法使用 HTTPS 访问网站 - 腾讯云](https://cloud.tencent.com/document/product/400/53650)
+
 # Trouble Shooting
 
 ## 防火墙 iptables 导致无法访问
@@ -159,14 +176,30 @@ dd if=/dev/zero of=/mnt/swap bs=1M count=2048
 # block_size、number_of_block 大小可以自定义，比如 bs=1M count=2048 代表设置 2G 大小swap 分区
 ```
 
-* 设置交换分区文件
+* 设置交换分区文件
+
 ```
 mkswap /mnt/swap
-```* 立即启用交换分区文件
+```
+
+* 立即启用交换分区文件
+
 ```
 swapon /mnt/swap
 # 如果在 /etc/rc.local 中有 swapoff -a 需要修改为 swapon -a
-```* 设置开机时自启用 swap 分区需要修改文件 /etc/fstab 中的 swap 行：添加 `/mnt/swap swap swap defaults 0 0`注：/mnt/swap 路径可以修改，可以根据创建的swap文件具体路径来配置。* 查看效果设置后可以执行 `free -m` 命令查看效果
+```
+
+* 设置开机时自启用 swap 分区
+
+需要修改文件 /etc/fstab 中的 swap 行：
+
+添加 `/mnt/swap swap swap defaults 0 0`
+
+注：/mnt/swap 路径可以修改，可以根据创建的swap文件具体路径来配置。
+
+* 查看效果
+
+设置后可以执行 `free -m` 命令查看效果
 
 [解决阿里云 VPS 服务器 mysql 自动关闭的问题](https://zhuanlan.zhihu.com/p/24888793)
 [Linux服务器mysql,nginx等自动停止的排查,以及解决方法](https://www.jisec.com/linux/302.html)
@@ -183,6 +216,7 @@ swapon /mnt/swap
 change log: 
 
 	- 创建（2017-11-09）
+	- 新增 SSL 证书申请与安装相关内容（2024-01-11）
 
 ---
 
