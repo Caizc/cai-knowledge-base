@@ -4,7 +4,7 @@
 
 * Download and add the repository, then update.
 
-```
+```sh
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 yum update
@@ -12,14 +12,14 @@ yum update
 
 * Install MySQL as usual and start the service.
 
-```
+```sh
 sudo yum install mysql-server
 sudo systemctl start mysqld
 ```
 
 ## Harden MySQL Server
 
-```
+```sh
 sudo mysql_secure_installation
 ```
 
@@ -27,13 +27,13 @@ sudo mysql_secure_installation
 
 * Root Login
 
-```
+```sh
 mysql -u root -p
 ```
 
 * Create a New MySQL User and Database
 
-```
+```sh
  create database testdb;
  grant all on testdb.* to 'testuser' identified by 'password';
  exit
@@ -41,7 +41,7 @@ mysql -u root -p
 
 * Reset the MySQL Root Password
 
-```
+```sh
 $ sudo systemctl stop mysqld
 $ sudo mysqld_safe --skip-grant-tables &
 $ mysql -u root
@@ -60,19 +60,19 @@ $ sudo systemctl start mysqld
 
 JDK 是开发 Java 程序必须安装的软件，查看一下 yum 源里面的 JDK（此步骤可省略）：
 
-```
+```sh
 yum list java*
 ```
 
 选择适合本机的JDK，并安装：
 
-```
+```sh
 yum install java-1.7.0-openjdk* -y
 ```
 
 安装完成后，查看是否安装成功：
 
-```
+```sh
 java -version
 ```
 
@@ -82,43 +82,43 @@ Tomcat 是一个应用服务器，是开发和调试 jsp 程序的首选，可�
 
 进入本地文件夹
 
-```
+```sh
 cd /usr/local
 ```
 
 到官网找到 Tomcat 的下载链接，并下载到服务器中, 这里提供了一个快速下载 Tomcat 的地址：
 
-```
+```sh
 wget https://mc.qcloudimg.com/static/archive/fa66329388f85c08e8d6c12ceb8b2ca3/apache-tomcat-7.0.77.tar.gz
 ```
 
 解压这个文件夹：
 
-```
+```sh
 tar -zxf apache-tomcat-7.0.77.tar.gz
 ```
 
 重命名这个文件：
 
-```
+```sh
 mv apache-tomcat-7.0.77 /usr/local/tomcat7
 ```
 
 进入 bin 文件夹
 
-```
+```sh
 cd /usr/local/tomcat7/bin
 ```
 
 给这个文件夹下的所有 shell 脚本授予权限：
 
-```
+```sh
 chmod 777 *.sh
 ```
 
 开启tomcat服务：
 
-```
+```sh
 ./startup.sh
 ```
 
@@ -128,19 +128,19 @@ chmod 777 *.sh
 
 使用 yum 安装 MySQL：
 
-```
+```sh
 yum install -y mysql-server mysql mysql-devel
 ```
 
 安装完成后，启动 MySQL 服务：
 
-```
+```sh
 service mysqld restart
 ```
 
 设置 MySQL 账户 root 密码：
 
-```
+```sh
 /usr/bin/mysqladmin -u root password 'Password'
 ```
 
@@ -172,20 +172,20 @@ service mysqld restart
 
 * 创建用于交换分区的文件
 
-```
+```sh
 dd if=/dev/zero of=/mnt/swap bs=1M count=2048
 # block_size、number_of_block 大小可以自定义，比如 bs=1M count=2048 代表设置 2G 大小swap 分区
 ```
 
 * 设置交换分区文件
 
-```
+```sh
 mkswap /mnt/swap
 ```
 
 * 立即启用交换分区文件
 
-```
+```sh
 swapon /mnt/swap
 # 如果在 /etc/rc.local 中有 swapoff -a 需要修改为 swapon -a
 ```
