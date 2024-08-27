@@ -156,6 +156,7 @@ service mysqld restart
 
 * [免费 SSL 证书申请流程 - 腾讯云](https://cloud.tencent.com/document/product/400/6814)
 * [如何选择 SSL 证书安装部署类型？- 腾讯云](https://cloud.tencent.com/document/product/400/4143)
+* [Nginx 服务器 SSL 证书安装部署 - 腾讯云](https://cloud.tencent.com/document/product/400/35244)
 * [Tomcat 服务器 SSL 证书安装部署（JKS 格式）（Linux）- 腾讯云](https://cloud.tencent.com/document/product/400/35224)
 * [Tomcat 服务器 SSL 证书安装部署（PFX 格式）- 腾讯云](https://cloud.tencent.com/document/product/400/65706)
 * [SSL 证书安装相关 - 腾讯云](https://cloud.tencent.com/document/product/400/61387)
