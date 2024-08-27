@@ -197,6 +197,16 @@ certutil -hashfile [filename] md5
 
 * [Sublime Text 2 - Show file navigation in sidebar - stackoverflow](https://stackoverflow.com/questions/11995591/sublime-text-2-show-file-navigation-in-sidebar)
 
+* [Highlight currently open file in the project tree - Sublime Forum](https://forum.sublimetext.com/t/highlight-currently-open-file-in-the-project-tree/10306)
+
+在侧边栏中显示当前打开的文件：打开 `Preferences -> Key Bindings`，加入以下内容，保存退出。
+
+```js
+{ "keys": ["ctrl+alt+s"], "command": "reveal_in_side_bar" },
+```
+
+
+
 ## 2022-05-11 星期三
 
 ### Android 代码裁剪
