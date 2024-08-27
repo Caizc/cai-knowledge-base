@@ -6,13 +6,13 @@
 
 如系统中已安装了旧版本的 git，需要先卸载：
 
-```
+```sh
 $ yum remove git
 ```
 
 如旧版本是编译安装的，则需要到 /usr/bin 目录下，将所有 git 相关的文件删除：
 
-```
+```sh
 cd /usr/bin
 rm -f git*
 ```
@@ -27,13 +27,13 @@ Git 是一款免费、开源的分布式版本控制系统，用于敏捷高效�
 
 为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具：
 
-```
+```sh
 yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
 ```
 
 安装编译工具：
 
-```
+```sh
 yum install gcc perl-ExtUtils-MakeMaker
 ```
 
@@ -41,13 +41,13 @@ yum install gcc perl-ExtUtils-MakeMaker
 
 选一个目录，用来放下载下来的安装包，这里将安装包放在 `/usr/local/src` 目录里：
 
-```
+```sh
 cd /usr/local/src
 ```
 
 到官网找一个新版稳定的源码包下载到 `/usr/local/src` 文件夹里：
 
-```
+```sh
 wget https://www.kernel.org/pub/software/scm/git/git-2.14.0.tar.gz
 ```
 
@@ -55,25 +55,25 @@ wget https://www.kernel.org/pub/software/scm/git/git-2.14.0.tar.gz
 
 解压下载的源码包：
 
-```
+```sh
 tar -zvxf git-2.14.0.tar.gz
 ```
 
 解压后进入 `git-2.14.0` 文件夹：
 
-```
+```sh
 cd git-2.14.0
 ```
 
 执行编译：
 
-```
+```sh
 make all prefix=/usr/local/git
 ```
 
 编译完成后, 安装到 `/usr/local/git` 目录下：
 
-```
+```sh
 make install prefix=/usr/local/git
 ```
 
@@ -83,19 +83,19 @@ make install prefix=/usr/local/git
 
 将原来的 PATH 指向目录修改为现在的目录：
 
-```
+```sh
 echo 'export PATH=$PATH:/usr/local/git/bin' >> /etc/bashrc
 ```
 
 生效环境变量：
 
-```
+```sh
 source /etc/bashrc
 ```
 
 此时我们能查看 git 版本号，说明我们已经安装成功了。
 
-```
+```sh
 git --version
 ```
 
@@ -105,7 +105,7 @@ git --version
 
 为我们刚刚搭建好的 git 创建一个账号：
 
-```
+```sh
 useradd -m git
 ```
 
@@ -113,7 +113,7 @@ useradd -m git
 
 然后为这个账号设置密码：
 
-```
+```sh
 passwd git
 ```
 
@@ -125,13 +125,13 @@ passwd git
 
 我们创建 `/usr/git/repositories` 目录用于存放 git 仓库：
 
-```
+```sh
 mkdir -p /usr/git/repositories
 ```
 
 创建好后，初始化这个仓库：
 
-```
+```sh
 cd /usr/git/repositories/
 git init --bare test.git
 ```
@@ -140,7 +140,7 @@ git init --bare test.git
 
 给 git 仓库目录设置用户和用户组并设置权限：
 
-```
+```sh
 chown -R git:git /usr/git/repositories
 chmod -R 755 /usr/git/repositories
 // 这两个命令必须在新的仓库创建好之后再执行，否则 git 用户对仓库目录没有写权限。之后再创建新的仓库时，也同样需要对新仓库目录进行 git 用户授权
@@ -150,7 +150,7 @@ chmod -R 755 /usr/git/repositories
 
 `/etc/passwd`
 
-```
+```sh
 git:x:500:500::/home/git:/usr/local/git/bin/git-shell
 ```
 
@@ -162,7 +162,7 @@ git:x:500:500::/home/git:/usr/local/git/bin/git-shell
 
 打开 Git Bash 或终端，使用 ssh-keygen 生成 SSH 的公钥和密钥：
 
-```
+```sh
 ssh-keygen -t rsa -C "mailname@gmail.com"
 ```
 
@@ -174,7 +174,7 @@ ssh-keygen -t rsa -C "mailname@gmail.com"
 
 在 `gituser` 用户目录的 `.ssh` 目录下建立 `authorized_keys` 文件来管理授权用户的 SSH 公钥：
 
-```
+```sh
 # 注意！必须是在 git 用户目录下，而不是 root 目录下
 $ cd /home/git
 $ mkdir .ssh
@@ -185,7 +185,7 @@ $ chmod -R 744 /home/git
 
 向 `authorized_keys` 文件添加（追加）用户的 SSH 公钥（可以添加多个）：
 
-```
+```sh
 $ cat id_rsa_user1.pub >> ~/.ssh/authorized_keys
 $ cat id_rsa_user2.pub >> ~/.ssh/authorized_keys
 ```
@@ -198,14 +198,20 @@ git 服务默认使用 SSH 的 `22` 号端口进行访问，所以需要确保�
 
 克隆 test 仓库到本地：
 
-```
+```sh
 cd ~
 git clone git@<服务器 IP 地址>:/usr/git/repositories/test.git
 ```
 
+## 查看客户端已配置的用户信息
+
+```sh
+git config --list
+```
+
 ## 为客户端配置用户名和 Email
 
-```
+```sh
 git config --global user.name "username"
 git config --global user.email "email@gmail.com"
 ```
@@ -233,6 +239,7 @@ change log:
 
 	- 创建（2017-09-10）
 	- 更新（2017-12-26）
+	- 更新（2024-08-27）
 
 ---
 
