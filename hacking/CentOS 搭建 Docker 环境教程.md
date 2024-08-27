@@ -6,19 +6,19 @@
 
 Docker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：
 
-```
+```sh
 yum install docker-io -y
 ```
 
 直接 yum 安装，安装成功后查看版本
 
-```
+```sh
 docker -v
 ```
 
 ## 启动 Docker
 
-```
+```sh
 service docker start
 或
 systemctl start docker
@@ -26,7 +26,7 @@ systemctl start docker
 
 设置开机启动
 
-```
+```sh
 chkconfig docker on
 或
 systemctl enable docker
@@ -37,7 +37,7 @@ systemctl enable docker
 因为国内访问 Docker Hub 较慢, 可以使用腾讯云提供的国内镜像源, 加速访问 Docker Hub。
 依次执行以下命令：
 
-```
+```sh
 echo "OPTIONS='--registry-mirror=https://mirror.ccs.tencentyun.com'" >> /etc/sysconfig/docker
 systemctl daemon-reload
 service docker restart
@@ -49,13 +49,13 @@ service docker restart
 
 下载一个官方的 CentOS 镜像到本地
 
-```
+```sh
 docker pull centos
 ```
 
 下载好的镜像就会出现在镜像列表里
 
-```
+```sh
 docker images
 ```
 
@@ -65,7 +65,7 @@ docker images
 
 生成一个 centos 镜像为模板的容器并使用 `bash shell`
 
-```
+```sh
 docker run -it centos /bin/bash
 ```
 
@@ -73,25 +73,25 @@ docker run -it centos /bin/bash
 
 在容器内执行任意命令, 不会影响到宿主机, 如下
 
-```
+```sh
 mkdir -p /data/simple_docker
 ```
 
 可以看到 `/data` 目录下已经创建成功了 `simple_docker` 文件夹
 
-```
+```sh
 ls /data
 ```
 
 ## 退出容器
 
-```
+```sh
 exit
 ```
 
 查看宿主机的 `/data` 目录, 并没有 `simple_docker` 文件夹, 说明容器内的操作不会影响到宿主机
 
-```
+```sh
 ls /data
 ```
 
@@ -99,13 +99,13 @@ ls /data
 
 查看所有的容器信息， 能获取容器的 id
 
-```
+```sh
 docker ps -a
 ```
 
 然后执行如下命令，保存镜像：
 
-```
+```sh
 docker commit -m="备注" 你的CONTAINER_ID 你的IMAGE
 ```
 
@@ -126,5 +126,4 @@ change log:
 	- 创建（2017-09-10）
 
 ---
-
 
