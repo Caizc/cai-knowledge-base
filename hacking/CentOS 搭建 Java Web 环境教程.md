@@ -56,6 +56,21 @@ $ sudo systemctl start mysqld
 
 ## 搭建 Java 开发环境
 
+* [Linux 下安装 Java 环境的三种方式（tar.gz、rpm、yum）- 博客园](https://www.cnblogs.com/antLaddie/p/17599359.html)
+
+```sh
+# 配置 Java 环境变量
+# vim /etc/profile
+# 在文件的最后加入以下内容，然后执行以下命令让环境变量生效
+# source /etc/profile
+
+export JAVA_HOME=/usr/local/jdk-21.0.4
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
+```
+
+* [Linux 启动 Java 程序 jar 包 shell 脚本 - 博客园](https://www.cnblogs.com/zhaojinhui/p/17238758.html)
+
 ### 安装 JDK
 
 JDK 是开发 Java 程序必须安装的软件，查看一下 yum 源里面的 JDK（此步骤可省略）：
@@ -218,6 +233,7 @@ change log:
 
 	- 创建（2017-11-09）
 	- 新增 SSL 证书申请与安装相关内容（2024-01-11）
+	- 新增搭建 Java 环境的相关链接（2024-09-02）
 
 ---
 
