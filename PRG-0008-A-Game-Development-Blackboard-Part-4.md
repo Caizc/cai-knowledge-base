@@ -1,5 +1,42 @@
 # Game Development Blackboard - Part 4
 
+## 2024-09-02 星期一
+
+### MongoDB 的安装与配置
+
+* 修改 yum 源：
+
+```sh
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+```
+
+* 安装前置依赖包：
+
+```sh
+yum install cyrus-sasl cyrus-sasl-gssapi cyrus-sasl-plain krb5-libs libcurl libpcap lm_sensors-libs net-snmp net-snmp-agent-libs openldap openssl rpm-libs tcp_wrappers-libsy
+```
+
+* [安装 MongoDB - MongoDB](https://www.mongodb.com/zh-cn/docs/manual/installation/)
+* [Linux 启动或关闭防火墙，开放端口 - CSDN](https://blog.csdn.net/Lin_xiaofeng/article/details/87629229)
+
+```sh
+systemctl status firewalld
+firewall-cmd --list-all
+firewall-cmd --zone=public --add-port=27017/tcp --permanent
+firewall-cmd --reload
+```
+
+* [Linux 设置开机自启动的三种方法 - CSDN](https://blog.csdn.net/hualinger/article/details/125321966)
+
+```sh
+vi /etc/rc.local
+chmod +x /etc/rc.local
+```
+
+### Maven 生成可直接运行的  jar 包
+
+* [Maven 生成可以直接运行的 jar 包 - CSDN](https://blog.csdn.net/lizongti/article/details/115288141)
+
 ## 2024-06-07 星期五
 
 ### Nginx
