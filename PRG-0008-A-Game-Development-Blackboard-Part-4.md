@@ -1,5 +1,30 @@
 # Game Development Blackboard - Part 4
 
+## 2024-09-04 星期三
+
+### Spring Boot
+
+* [Spring&SpringBoot 常用注解总结 - JavaGuide](https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html)
+
+### REST & Spring
+
+* [使用 REST - 廖雪峰](https://liaoxuefeng.com/books/java/spring/web/rest/index.html)
+* [SpringBoot 使用 Spring Data REST 快速构建 restful 应用 - 博客园](https://www.cnblogs.com/summerday152/p/14076652.html)
+
+### Java Lombok
+
+* [使用 Lombok 自动生成 POJO 所需代码 - CSDN](https://blog.csdn.net/theVicTory/article/details/117044848)
+* [Java @Data 注解校验 - 51CTO](https://blog.51cto.com/u_16175454/7096029)
+
+### Java MongoTemplate
+
+* [Java 中简单使用 MongoTemplate 操作 MongoDB - CSDN](https://blog.csdn.net/qq_45495899/article/details/114823355)
+
+### IP 归属地查询
+
+* [ipinfo](https://ipinfo.io/json)
+* [ip-api](http://ip-api.com/json)
+
 ## 2024-09-02 星期一
 
 ### MongoDB 的安装与配置
@@ -38,16 +63,6 @@ chmod +x /etc/rc.local
 * [Maven 生成可以直接运行的 jar 包 - CSDN](https://blog.csdn.net/lizongti/article/details/115288141)
 
 ## 2024-06-07 星期五
-
-### Nginx
-
-* [Nginx error: SSL_do_handshake() failed - stackoverflow](https://stackoverflow.com/questions/38931468/nginx-reverse-proxy-error14077438ssl-ssl-do-handshake-failed)
-
-> Adding this to the proxy location fixed it:
->
-> ```ini
-> proxy_ssl_server_name on;
-> ```
 
 ### 移动端使用 Javascript 实现 Clipboard 功能
 
@@ -121,8 +136,30 @@ chmod +x /etc/rc.local
 
 * [Nginx Windows 详细安装部署教程 - 博客园](https://www.cnblogs.com/taiyonghai/p/9402734.html)
 
-### CORS
+### CORS & Nginx
 
+* [Nginx 代理解决跨域问题分析 - 博客园](https://www.cnblogs.com/fnz0/p/15803011.html)
+
+```ini
+server {
+    listen       22222;
+    server_name  localhost;
+    location  / {
+        add_header Access-Control-Allow-Origin 'http://localhost:8080' always;
+        add_header Access-Control-Allow-Headers '*';
+        add_header Access-Control-Allow-Methods '*';
+        add_header Access-Control-Allow-Credentials 'true';
+        if ($request_method = 'OPTIONS') {
+            return 204;
+        }
+        proxy_pass  http://localhost:59200;
+    }
+}
+```
+
+* [跨域解决方案-基于 Nginx 的反向代理配置 - CSDN](https://blog.csdn.net/qq_33479841/article/details/123648140)
+* [Nginx 反向代理解决跨域问题](https://juejin.cn/post/6995374680114741279)
+* [HTTP、TCP/IP 协议的原理及应用](https://juejin.cn/post/6844903938232156167)
 * [CORS on Nginx](https://enable-cors.org/server_nginx.html)
 
 ```ini
@@ -160,7 +197,15 @@ location / {
 }
 ```
 
+### Nginx Error
 
+* [Nginx error: SSL_do_handshake() failed - stackoverflow](https://stackoverflow.com/questions/38931468/nginx-reverse-proxy-error14077438ssl-ssl-do-handshake-failed)
+
+> Adding this to the proxy location fixed it:
+>
+> ```ini
+> proxy_ssl_server_name on;
+> ```
 
 ## 2024-02-06 星期二
 
