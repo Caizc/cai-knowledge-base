@@ -2,6 +2,17 @@
 
 ## 2024-09-04 星期三
 
+### HttpClient
+
+* [HttpClient 中的三种超时设置详解](https://cloud.baidu.com/article/3298261)
+
+### Spring WebClient
+
+* [Spring WebClient 教程 - Spring 中文网](https://springdoc.cn/spring-5-webclient/)
+* [HTTP 客户端之 Spring WebClient - 博客园](https://www.cnblogs.com/zys2019/p/17010214.html)
+* [Spring 5 的 WebClient 使用详解 - CSDN](https://blog.csdn.net/zzhongcy/article/details/105412842)
+* [Spring 的 WebClient 基本使用 - 腾讯云](https://cloud.tencent.com/developer/article/1793360)
+
 ### Spring Boot
 
 * [Spring&SpringBoot 常用注解总结 - JavaGuide](https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html)
