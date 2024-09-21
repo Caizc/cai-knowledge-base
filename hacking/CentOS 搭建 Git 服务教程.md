@@ -48,7 +48,7 @@ cd /usr/local/src
 到官网找一个新版稳定的源码包下载到 `/usr/local/src` 文件夹里：
 
 ```sh
-wget https://www.kernel.org/pub/software/scm/git/git-2.14.0.tar.gz
+wget https://www.kernel.org/pub/software/scm/git/git-2.46.1.tar.gz
 ```
 
 ## 解压和编译
@@ -56,13 +56,13 @@ wget https://www.kernel.org/pub/software/scm/git/git-2.14.0.tar.gz
 解压下载的源码包：
 
 ```sh
-tar -zvxf git-2.14.0.tar.gz
+tar -zvxf git-2.46.1.tar.gz
 ```
 
-解压后进入 `git-2.14.0` 文件夹：
+解压后进入 `git-2.46.1` 文件夹：
 
 ```sh
-cd git-2.14.0
+cd git-2.46.1
 ```
 
 执行编译：
