@@ -12,15 +12,15 @@ yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel
 cd /usr/local
 mkdir nginx
 cd nginx
-wget http://nginx.org/download/nginx-1.24.0.tar.gz
-tar -xvf nginx-1.24.0.tar.gz
+wget http://nginx.org/download/nginx-1.27.1.tar.gz
+tar -xvf nginx-1.27.1.tar.gz
 ```
 
 * 编译并安装 nginx
 
 ```bash
-cd /usr/local/nginx/nginx-1.24.0
-./configure
+cd /usr/local/nginx/nginx-1.27.1
+./configure --prefix=/usr/local/nginx --with-http_ssl_module
 make
 make install
 ```
