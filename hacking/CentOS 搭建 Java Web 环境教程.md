@@ -59,9 +59,13 @@ $ sudo systemctl start mysqld
 * [Linux 下安装 Java 环境的三种方式（tar.gz、rpm、yum）- 博客园](https://www.cnblogs.com/antLaddie/p/17599359.html)
 
 ```sh
-# 配置 Java 环境变量
+# 1. 将 jdk-21_linux-x64_bin.tar.gz 解压
+# tar zxvf jdk-21_linux-x64_bin.tar.gz
+# 2. 将 jdk-21.0.4/ 移动到 /usr/local/ 目录下
+# 3. 配置 Java 环境变量
 # vim /etc/profile
-# 在文件的最后加入以下内容，然后执行以下命令让环境变量生效
+# 在文件的最后加入以下内容
+# 4. 执行以下命令让环境变量生效
 # source /etc/profile
 
 export JAVA_HOME=/usr/local/jdk-21.0.4
