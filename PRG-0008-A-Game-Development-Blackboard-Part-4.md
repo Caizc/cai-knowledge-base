@@ -1,5 +1,13 @@
 # Game Development Blackboard - Part 4
 
+## 2024-09-21 星期六
+
+### Google Analytics
+
+* [Analytics - Google Marketing Platform](https://marketingplatform.google.com/about/analytics/)
+* [自定义事件 - Google Analytics](https://support.google.com/analytics/answer/12229021?hl=zh-Hans)
+* [设置事件 - Google Analytics](https://developers.google.com/analytics/devguides/collection/ga4/events?hl=zh-cn&client_type=gtag)
+
 ## 2024-09-04 星期三
 
 ### HttpClient
