@@ -1,5 +1,25 @@
 # Game Development Blackboard - Part 4
 
+## 2024-10-16 星期三
+
+### Cocos Creator 报错
+
+引擎版本：
+
+Cocos Creator `v2.4.10`
+
+问题描述：
+
+项目迁移到新的文件目录后，挂载有 `TypeScript` 脚本的对象属性检查器面板中报 `MissingScript` 的问题：
+
+![image-20241016192045152](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241016192045152.png)
+
+![image-20241016192038041](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241016192038041.png)
+
+问题原因：
+
+检查后发现是迁移到的新的文件目录，文件名带有符号 `[` 和 `]` 这样的特殊字符，导致 TypeScript 脚本编译出错，将文件名中的特殊字符移除，再重新编译即可。
+
 ## 2024-09-21 星期六
 
 ### Google Analytics
@@ -7,6 +27,12 @@
 * [Analytics - Google Marketing Platform](https://marketingplatform.google.com/about/analytics/)
 * [自定义事件 - Google Analytics](https://support.google.com/analytics/answer/12229021?hl=zh-Hans)
 * [设置事件 - Google Analytics](https://developers.google.com/analytics/devguides/collection/ga4/events?hl=zh-cn&client_type=gtag)
+* [Chrome 如何分析页面加载时间 - 博客园](https://www.cnblogs.com/amyzhu/p/13125463.html)
+* [使用 Google Analytics 统计页面加载时间 - 腾讯云](https://cloud.tencent.com/developer/article/2265035)
+
+### Cocos Creator
+
+* [Cocos Creator Engine Errors - GitHub](https://github.com/cocos/cocos-engine/blob/v3.8.5/EngineErrorMap.md)
 
 ## 2024-09-04 星期三
 
@@ -76,6 +102,8 @@ firewall-cmd --reload
 vi /etc/rc.local
 chmod +x /etc/rc.local
 ```
+
+* [MongoDB 27017 端口无法远程连接的问题解决 - CSDN](https://blog.csdn.net/asmartkiller/article/details/119298095)
 
 ### Maven 生成可直接运行的  jar 包
 
