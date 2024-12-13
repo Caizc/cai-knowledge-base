@@ -1,6 +1,21 @@
 # Game Development Blackboard - Part 4
 
+## 2024-12-13 星期五
+
+### TypeScript 操作符
+
+* [细数 TS 中那些奇怪的符号](https://segmentfault.com/a/1190000023943952)
+
 ## 2024-10-16 星期三
+
+### Cocos Creator 脚本断点调试
+
+#### WebStorm
+
+![image-20241022165956071](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241022165956071-1729587602973-1.png)
+
+* [Cocos Creator 在 VS Code 中断点调试](https://juejin.cn/post/6932268366715420686)
+* [原生平台调试 - Cocos Docs](https://docs.cocos.com/creator/2.1/manual/zh/publish/debug-native.html)
 
 ### Cocos Creator 报错
 
@@ -27,6 +42,7 @@ Cocos Creator `v2.4.10`
 * [Analytics - Google Marketing Platform](https://marketingplatform.google.com/about/analytics/)
 * [自定义事件 - Google Analytics](https://support.google.com/analytics/answer/12229021?hl=zh-Hans)
 * [设置事件 - Google Analytics](https://developers.google.com/analytics/devguides/collection/ga4/events?hl=zh-cn&client_type=gtag)
+* [监控 DebugView 中的事件 - Google Analytics](https://support.google.com/analytics/answer/7201382?hl=zh-Hans#zippy=%2Cgoogle-%E4%BB%A3%E7%A0%81-gtagjs%2Cgoogle-%E8%B7%9F%E8%B8%AA%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8)
 * [Chrome 如何分析页面加载时间 - 博客园](https://www.cnblogs.com/amyzhu/p/13125463.html)
 * [使用 Google Analytics 统计页面加载时间 - 腾讯云](https://cloud.tencent.com/developer/article/2265035)
 
