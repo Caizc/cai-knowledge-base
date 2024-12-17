@@ -6,6 +6,27 @@
 
 * [细数 TS 中那些奇怪的符号](https://segmentfault.com/a/1190000023943952)
 
+### ES6 Module 加载
+
+* [Module 的加载实现](https://wangdoc.com/es6/module-loader)
+
+### Webpack
+
+* [把 npm 中的库打包成 js 文件](https://blog.wenxk.top/post/243)
+
+### rollup.js
+
+* [打包工具 rollup.js 入门教程](https://www.ruanyifeng.com/blog/2022/05/rollup.html)
+
+### Cocos Creator 使用第三方库
+
+* [Cocos Creator 之如何使用第三方库](https://blog.51cto.com/aonaufly/2647802)
+* [Cocos Creator TypeScript 项目引用第三方库的方法和问题记录](https://blog.k-res.net/archives/2428.html)
+
+### Protobuf in Node.js
+
+* [Working with Protobufs in Node.js](https://thecodebarbarian.com/working-with-protobufs-in-node-js.html)
+
 ## 2024-10-16 星期三
 
 ### Cocos Creator 脚本断点调试
