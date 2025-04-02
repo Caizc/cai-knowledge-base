@@ -146,6 +146,10 @@ chmod +x /etc/rc.local
 
 * [Maven 生成可以直接运行的 jar 包 - CSDN](https://blog.csdn.net/lizongti/article/details/115288141)
 
+### Windows cmd 中运行 jar 输出日志中文乱码问题
+
+* [java 运行 jar 时终端输出的中文乱码 - CSDN](https://blog.csdn.net/qq_33189961/article/details/132558583)
+
 ## 2024-06-07 星期五
 
 ### 移动端使用 Javascript 实现 Clipboard 功能
