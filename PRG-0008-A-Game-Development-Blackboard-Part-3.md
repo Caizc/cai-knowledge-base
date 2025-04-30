@@ -1421,9 +1421,9 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 * [编译游戏项目 - Unreal Engine](https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/CompilingProjects/index.html)
 
-### 代码规范
+### 编码规范
 
-* [代码规范 - Unreal Engine](https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/CodingStandard/index.html)
+* [编码规范 - Unreal Engine](https://docs.unrealengine.com/zh-CN/ProductionPipelines/DevelopmentSetup/CodingStandard/index.html)
 
 ## 2021-01-19 星期二
 
