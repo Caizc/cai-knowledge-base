@@ -1,5 +1,45 @@
 # Game Development Blackboard - Part 3
 
+## 2025-04-14 星期一
+
+### Windows 路径长度限制
+
+* [Maximum Path Length Limitation - Microsoft](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry)
+* [How to change the default 256 character path limitation in Windows 10](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/The-Windows-10-default-path-length-limitation-MAX-PATH-is-256-characters.html)
+
+### Building Unreal Engine from source
+
+* [Setting Up Visual Studio - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine)
+* [Building Unreal Engine from source - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/building-unreal-engine-from-source)
+
+### Unreal Engine Installed Build
+
+* [Versioning of Binaries](https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-version-binaries-in-unreal-engine?application_version=5.5)
+
+如果不希望每次构建 Installed Build 生成的所有二进制文件都发生改变，可以在 `/Engine/Build/Build.version` 文件中，加入 `BuildId` 字段来填写自定义的构建 ID。
+
+* [Installed Build Reference Guide - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/installed-build-reference-guide-for-unreal-engine)
+
+```shell
+cd Engine\Build\BatchFiles
+.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -clean -set:HostPlatformOnly=true -set:WithDDC=false
+
+cd Engine\Build\BatchFiles
+.\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script="Engine/Build/InstalledEngineBuild.xml" -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations=Development
+```
+
+### Using Perforce
+
+* [What Is Perforce Streams? - YouTube](https://youtu.be/HaRsCVLNoxA?si=plKw1rMbnFZs0lI1)
+* [Perforce Streams Quickstart - YouTube](https://youtu.be/ggty1lkL1gA?si=fUFKjD2sMlNS279M)
+
+### Using UnrealGameSync(UGS)
+
+* [UnrealGameSync(UGS) - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-game-sync-ugs-for-unreal-engine)
+* [Unreal Game Sync - YouTube](https://youtu.be/xuEXqZ0nE70?si=A-BX7f4jrAPXyaY-)
+* [Working with Custom Unreal Engine Builds & Unreal Game Sync - YouTube](https://youtu.be/ItLANIVz8UA?si=_88-tgHYP6X-Zfwe)
+* [WiX v3](https://docs.firegiant.com/wix/wix3/)
+
 ## 2023-05-10 星期三
 
 ### Timezone 时区
