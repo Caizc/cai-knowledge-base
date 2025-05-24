@@ -233,7 +233,7 @@ r.ShaderPipelineCache.MaxPrecompileTime=3
 
 * Android 平台下，编译完 PSO 缓存后，游戏会自动重启，日志如下：
 
-![image-20210625155548390](media/PRG-0009-A-Optimization-in-Unreal-Engine/image-20210625155548390.png)
+![image-20210625155548390](media/PRG-0010-A-Optimization-in-Unreal-Engine/image-20210625155548390.png)
 
 查阅 UE4 源码 `OpenGLShaders.cpp`：
 

@@ -33,7 +33,7 @@
 
 #### WebStorm
 
-![image-20241022165956071](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241022165956071-1729587602973-1.png)
+![image-20241022165956071](media/PRG-0009-A-Game-Development-Blackboard-Part-4/image-20241022165956071-1729587602973-1.png)
 
 * [Cocos Creator 在 VS Code 中断点调试](https://juejin.cn/post/6932268366715420686)
 * [原生平台调试 - Cocos Docs](https://docs.cocos.com/creator/2.1/manual/zh/publish/debug-native.html)
@@ -48,9 +48,9 @@ Cocos Creator `v2.4.10`
 
 项目迁移到新的文件目录后，挂载有 `TypeScript` 脚本的对象属性检查器面板中报 `MissingScript` 的问题：
 
-![image-20241016192045152](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241016192045152.png)
+![image-20241016192045152](media/PRG-0009-A-Game-Development-Blackboard-Part-4/image-20241016192045152.png)
 
-![image-20241016192038041](media/PRG-0008-A-Game-Development-Blackboard-Part-4/image-20241016192038041.png)
+![image-20241016192038041](media/PRG-0009-A-Game-Development-Blackboard-Part-4/image-20241016192038041.png)
 
 问题原因：
 

@@ -1,5 +1,16 @@
 # Game Development Blackboard - Part 3
 
+## 2025-05-18 星期日
+
+### UE Learning
+
+* [BeginPlay - UE Learning](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
+
+### UE5 MetaHuman and Cloth
+
+* [The Only MetaHuman Tutorial You Need - YouTube](https://youtu.be/9L3rgTvMN0c?si=K43AywurSVNmE4Ip)
+* [The Only Cloth Simulation Tutorial You Need - YouTube](https://www.youtube.com/watch?v=Z57ggNKZDy8)
+
 ## 2025-04-14 星期一
 
 ### Windows 路径长度限制
@@ -39,6 +50,7 @@ cd Engine\Build\BatchFiles
 * [Unreal Game Sync - YouTube](https://youtu.be/xuEXqZ0nE70?si=A-BX7f4jrAPXyaY-)
 * [Working with Custom Unreal Engine Builds & Unreal Game Sync - YouTube](https://youtu.be/ItLANIVz8UA?si=_88-tgHYP6X-Zfwe)
 * [WiX v3](https://docs.firegiant.com/wix/wix3/)
+* [UGS Troubleshooting - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-game-sync-troubleshooting)
 
 ## 2023-05-10 星期三
 
@@ -881,11 +893,12 @@ call "%SDKMANAGER%" "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 
 ### Wwise
 
+* [Wwise 基础知识 - audiokinetic](https://www.audiokinetic.com/zh/public-library/2024.1.5_8803/?source=WwiseFundamentalApproach&id=wwise_fundamentals)
 * [Wwise 音频解决方案概述 - 博客园](https://www.cnblogs.com/kekec/p/11714507.html)
 * [UE4 中整合 Wwise - 知乎](https://zhuanlan.zhihu.com/p/41761623)
 * [Wwise 快速上手指南：程序员篇（v2016.1）- 腾讯游戏学堂](https://gameinstitute.qq.com/community/detail/107700#)
 * [示例 - audiokinetic](https://www.audiokinetic.com/zh/library/edge/?source=SDK&id=samplecode.html)
-* [SoundBank 的管理策略 - audiokinetic](https://www.audiokinetic.com/zh/library/2019.1.11_7296/?source=Help&id=strategies_for_managing_soundbanks)
+* [SoundBank 的管理策略 - audiokinetic](https://www.audiokinetic.com/zh/public-library/2024.1.5_8803/?source=Help&id=strategies_for_managing_soundbanks)
 * [Wwise 中的 Game Object - AA Audio](http://jazzlost.me/2019/04/28/Game-Object-In-Wwise/)
 
 **音频程序 blog**
@@ -1349,7 +1362,7 @@ Pawn 身上挂载的 Actor（比如武器），如其 Collision 设置不当，�
 
 ### UE4 工程规范
 
-* [UE4 Style Guide - GitHub](https://github.com/Allar/ue4-style-guide)
+* [UE5 Style Guide - GitHub](https://github.com/Allar/ue5-style-guide)
 
 ### Unity 工程规范
 
