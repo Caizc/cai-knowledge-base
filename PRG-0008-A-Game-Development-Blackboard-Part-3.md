@@ -1,5 +1,28 @@
 # Game Development Blackboard - Part 3
 
+## 2025-06-28 星期六
+
+### UE Lyra Starter Game
+
+* [Lyra Starter Game - Epic Developer Community](https://dev.epicgames.com/community/learning/paths/Z4/lyra-starter-game)
+* [UE5 Exploring Lyra - YouTube](https://youtu.be/xy2J-KnuzQs?si=ui7N3lS7DkOU5jTt)
+* [UE5 Lyra 项目拆解 - 知乎](https://www.zhihu.com/column/c_1597245821048541184)
+* [UE5 Lyra 示例项目解读 - 知乎](https://zhuanlan.zhihu.com/p/518029029)
+* [UE5 Lyra 项目的解析与学习 - 知乎](https://zhuanlan.zhihu.com/p/690425805)
+* [UE5 Lyra 的数据驱动之数据加载与引用 - 知乎](https://zhuanlan.zhihu.com/p/505766201)
+* [UE5 Lyra 自定义 GameFeature AddWidget 类/ UI 框架 - 知乎](https://zhuanlan.zhihu.com/p/506574041)
+* [UE5 新项目 Gameplay 框架设计（以 Lyra 为例）- 知乎](https://zhuanlan.zhihu.com/p/614718286)
+
+### UI 框架
+
+* [UE4 基于栈状态机的 UI 管理（框架设计）](https://www.yuewu.dev/posts/ue4-stack-state-based-ui-management)
+* [UE5 CommonUI 框架 - 知乎](https://zhuanlan.zhihu.com/p/698935180)
+
+### Messaging
+
+* [GenericMessagePlugin - GitHub](https://github.com/wangjieest/GenericMessagePlugin)
+* [UE Generic Message Plugin 插件原理篇 - 知乎](https://zhuanlan.zhihu.com/p/377632346)
+
 ## 2025-05-18 星期日
 
 ### UE Learning
@@ -625,8 +648,9 @@ android.permission.MANAGE_EXTERNAL_STORAGE
 
 ![image-20211217212223446](media/PRG-0008-A-Game-Development-Blackboard-Part-3/image-20211217212223446.png)
 
-### UE4 应用在 Android 平台的启动流程
+### UE4 应用的启动流程
 
+* [Unreal Engine 的启动流程 - 知乎](https://zhuanlan.zhihu.com/p/610523485)
 * [Android 启动流程 - 知乎](https://zhuanlan.zhihu.com/p/31892319)
 
 ## 2021-11-11 星期四
