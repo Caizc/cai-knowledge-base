@@ -12,6 +12,7 @@
 * [UE5 Lyra 的数据驱动之数据加载与引用 - 知乎](https://zhuanlan.zhihu.com/p/505766201)
 * [UE5 Lyra 自定义 GameFeature AddWidget 类/ UI 框架 - 知乎](https://zhuanlan.zhihu.com/p/506574041)
 * [UE5 新项目 Gameplay 框架设计（以 Lyra 为例）- 知乎](https://zhuanlan.zhihu.com/p/614718286)
+* [Lyra初学者游戏包工程解读 - bilibili](https://www.bilibili.com/video/BV1Ce4y1X7k5/?share_source=copy_web&vd_source=d6bd5dc44a6dfcb416ad8d18e40abe061)
 
 ### UI 框架
 

@@ -19,6 +19,11 @@
 * [UE5 Style Guide(Chinese) - GitHub](https://github.com/thejinchao/ue5-style-guide)
 * [Coding Standard - UE Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine?application_version=5.5)
 
+## Blueprint
+
+* [Need to Know Nodes Unreal Engine 5 Blueprints - YouTube](https://youtu.be/4kezN9gr_ms?si=RktY45wklfwPMTSG)
+* [MORE Need to Know Nodes Unreal Engine 5 Blueprints - YouTube](https://youtu.be/I570uf6jkxo?si=ETXB6c00jh06YYEM)
+
 ## Audio
 
 * [UE5.4 Harmonix - YouTube](https://youtu.be/1dyXc5BKWxU?si=b62VxVYys_WQ21VQ)
