@@ -29,6 +29,11 @@
 * [如何使用 Python 进行实时数据流处理和可视化 - CSDN](https://blog.csdn.net/qq_42120268/article/details/140035371)
 * [Python 量化交易](https://www.runoob.com/python-qt/qt-tutorial.html)
 
+### Web 框架
+
+* [FastAPI](https://fastapi.tiangolo.com/zh/)
+* [FastAPI 快速入门视频教程 - Bilibili](https://www.bilibili.com/video/BV1KLcTzJETt)
+
 ### 可视化
 
 * [Matplotlib 教程](https://www.runoob.com/matplotlib/matplotlib-tutorial.html)
