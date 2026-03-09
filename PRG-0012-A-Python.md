@@ -1,5 +1,15 @@
 # Python
 
+## 2026-03-09 星期一
+
+### PostgreSQL
+
+* [PostgreSQL 介绍 - Bilibili](https://www.bilibili.com/video/BV1FUYQz7E4H)
+
+### TimescaleDB
+
+* [TimescaleDB 实战教程 - Bilibili](https://www.bilibili.com/video/BV1g2rKB6EbA)
+
 ## 2026-02-28 星期六
 
 ### Python  官方文档
