@@ -4,6 +4,7 @@
 
 ### 异步协程
 
+* [Python asyncio 模块 - 菜鸟教程](https://m.runoob.com/python3/python-asyncio.html)
 * [Python 异步协程：从 async/await 到 asyncio 再到 async with - 腾讯云](https://cloud.tencent.com/developer/article/2480588)
 
 ## 2026-03-09 星期一
