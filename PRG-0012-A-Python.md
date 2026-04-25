@@ -1,5 +1,48 @@
 # Python
 
+## 2026-04-25 星期六
+
+### Linux 中从源码安装 Python 指定版本
+
+```bash
+# 安装编译依赖
+sudo yum groupinstall "Development Tools"
+sudo yum install openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite-devel xz-devel tk-devel
+
+# 下载源码
+wget https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz
+tar -xzf Python-3.13.7.tgz
+cd Python-3.13.7
+
+# 编译安装
+./configure --enable-optimizations
+make -j$(nproc)
+sudo make altinstall # altinstall 不会覆盖系统默认的 python3
+# 安装到最后可能会看到一条警告信息（WARNING: Running pip as the 'root' user...），这是 pip 的常规提示，不影响安装结果，可以忽略
+
+# 验证安装
+python3.13 --version # 如果输出 Python 3.13.7，表示安装已完全成功
+```
+
+### Linux 中切换系统默认 Python 版本
+
+```bash
+# 查看要切换到的 python3.13 的实际安装路径
+which python3.13 # 输出 /usr/local/bin/python3.13
+
+# 创建软链接
+ln -sf /usr/local/bin/python3.13 /usr/bin/python3
+ln -sf /usr/local/bin/python3.13 /usr/bin/python
+ln -sf /usr/local/bin/python3.13 /usr/bin/py
+
+# 验证
+python3 --version # 预期输出 Python 3.13.x
+python --version # 预期输出 Python 3.13.x
+py --version # 预期输出 Python 3.13.x
+```
+
+
+
 ## 2026-03-15 星期日
 
 ### 异步协程
