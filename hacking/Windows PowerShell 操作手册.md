@@ -1,6 +1,7 @@
 # Windows PowerShell 常用操作手册
 
 > 适用版本：PowerShell 5.1 / PowerShell 7+
+> 更新日期：2026-06
 >
 > [PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/)
 
